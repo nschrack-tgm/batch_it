@@ -4,7 +4,7 @@
 
 \documentclass[12pt,twoside,a4paper,final]{book}%
 \usepackage{a4}%                        %% Verwendet mehr Platz auf einer A4 Seite als Option a4paper in book
-\usepackage[english,ngerman]{babel}%    %% Babel Sprachen
+\usepackage[german, ngerman, english]{babel}%    %% Babel Sprachen
 \usepackage[utf8]{inputenc}%          %% input encoder für umlaute usw.
 \usepackage[T1]{fontenc}
 \usepackage{amssymb}%                   %% AMS Symbole
@@ -199,7 +199,7 @@
 
 
 \begin{document}%
-\selectlanguage{english}%
+\selectlanguage{german}%
 \renewcommand{\indexname}{Index}%
 \topmargin15.0mm
 \include{tex/title}
@@ -260,7 +260,7 @@
 \include{tex/chapter6}%
 
 
-\addcontentsline{toc}{chapter}{Glossary} 
+\addcontentsline{toc}{chapter}{Glossar} 
 \printglossary[type=\acronymtype]
 \glsaddall
 
