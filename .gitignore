@@ -1,3 +1,5 @@
 
 .DS_Store
 .texpadtmp
+*.aux
+*.acn*.acr*.alg*.bbl*.blg*.glg*.glo*.gls*.lof*.log*.lol*.nlo*.out*.gz*.toc*.xdy
