@@ -5,7 +5,7 @@
 \documentclass[12pt,twoside,a4paper,final]{book}%
 \usepackage{a4}%                        %% Verwendet mehr Platz auf einer A4 Seite als Option a4paper in book
 \usepackage[english,ngerman]{babel}%    %% Babel Sprachen
-\usepackage[latin1]{inputenc}%          %% input encoder für umlaute usw.
+\usepackage[utf8]{inputenc}%          %% input encoder für umlaute usw.
 \usepackage[T1]{fontenc}
 \usepackage{amssymb}%                   %% AMS Symbole
 \usepackage{amsmath}%                   %% AMS Math Funktionen
@@ -28,17 +28,19 @@
 \usepackage{color}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{rotating}
+\usepackage{todonotes}
 \input{tex/acronyms}
 %%-----------------------------------------------------------------------
 % Using the Hyperref-Package for PDF-Online Version
 %%-----------------------------------------------------------------------
+
 
 \def\usehyperref{1}
 
 \ifnum\usehyperref=1
 \usepackage[pdftex=true,
   pdftitle={Diplomarbeit1},
-  pdfauthor={Gottfried Koppensteiner},
+  pdfauthor={AUTOR},
   bookmarksopen,
   colorlinks,
   citecolor=blue,
@@ -145,7 +147,7 @@
 \setlength{\parindent}{0pt}
 
 %%-----------------------------------------------------------------------
-%% Hyphenation for german abstract
+%% Hyphenation for german abstract TODO
 %%-----------------------------------------------------------------------
 
 \hyphenation{Fa-mi-lie
@@ -188,7 +190,7 @@
 % Define month
 %%-----------------------------------------------------------------------
 
-\def\monthdis{Oktober 2012}
+\def\monthdis{April 2015}
 
 \makeglossaries
 %%-----------------------------------------------------------------------
