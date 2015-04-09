@@ -62,7 +62,6 @@
 	% ##############################################################
 	% Programmierung einer SPS - Wie funktioniert das grundsätzlich?
 	% ##############################################################
-	\newpage
 	\section{Programmierung einer SPS}
 
 	In der Automatisierungs- und Regelungstechnik gibt es zum Erfüllen der gegebenen Anforderung mehrere Wege um diese zu lösen. Genauer gesagt handelt es sich hierbei um ganze sechs verschiedene Programmiersprachen, um auf jede möglich auftretende, sowie spezifische Anforderung individuell eingehen zu können. Diese unterteilen sich wiederum in zwei differenzierbare Untergruppen. So gibt es zum einen die textbasierten Programmiersprachen
@@ -85,8 +84,8 @@
 	
 	\textbf{zu a) - Anweisungsliste}\\
 	
-	Diese textbasierte Programmiersprache nach der Norm IEC DIN EN 61131-3 ist sehr maschinennahe. Vergleicht man die Anweisungsliste aus Abbildung 2.3 mit höheren Programmiersprachen der Informatik, so ist es eine Art Assemblersprache, die normalerweise 1:1 den jeweiligen Maschinencode übersetzt. Es werden die einzelnen Anweisungen in der Reihenfolge geschrieben, wie sie die Maschine (CPU) abarbeiten soll (auch \glqq Stackorientierte Abarbeitung\grqq \space genannt). Ein großer Vorteil gegenüber allen graphischen Programmiersprachen ist die Tatsache, das AWL funktionell über diese hinausgeht, weil beispielsweise ein komplexer Zählvorgang mittels eines Kontaktplans nicht realisierbar sein könnte.[3,4]\\
-	
+	Diese textbasierte Programmiersprache nach der Norm IEC DIN EN 61131-3 ist sehr maschinennahe. Vergleicht man die Anweisungsliste aus Abbildung 2.3 mit höheren Programmiersprachen der Informatik, so ist es eine Art Assemblersprache, die normalerweise 1:1 den jeweiligen Maschinencode übersetzt. Es werden die einzelnen Anweisungen in der Reihenfolge geschrieben, wie sie die Maschine (CPU) abarbeiten soll (auch \glqq Stackorientierte Abarbeitung\grqq \space genannt). Ein großer Vorteil gegenüber allen graphischen Programmiersprachen ist die Tatsache, das AWL funktionell über diese hinausgeht, weil beispielsweise ein komplexer Zählvorgang mittels eines Kontaktplans nicht realisierbar sein könnte.	\cite{spslehrgang_struktur, egroetsch_sps}\\
+
 	\begin{figure}
 		\begin{framed}
 			VAR\\			s1: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}			s2: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}			s3: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}			M: BOOL := 0; \color{gray}//[output] Motor Deklaration (muss initialisiert werden)\\ \color{black}			END\_VAR\\\\
@@ -94,33 +93,38 @@
 		\end{framed}
 		\caption{Beispiel einer Anweisungsliste}
 	\end{figure}
-		
+	
 	\color{black}
 	\textbf{zu b) - Strukturierter Text}\\
 	
-	Diese Programmiersprache der Automatisierungstechnik orientiert sich an der Sprache Pascal, enthält aber neben dieser Sprache zugehörigen spezifischen Elementen aber auch noch SPS-typische Elemente. Geeignet ist ST am vorteilhaftesten für Aufgaben mit mathematischem Hintergrund, sowie zum Beschreiben komplexer Algorithmen. Auch für Rezept- und Datenverwaltung hebt sich diese Art der Programmierung durch enorme Vereinfachung vor. Typische Anweisungen für ST sind solche, die in höheren Sprachen durch Bedingungen oder Schleifen ausgeführt werden können.[5]\\
+	Diese in Abbildung 2.4 angeführte Programmiersprache der Automatisierungstechnik orientiert sich an der Sprache Pascal, enthält aber neben dieser Sprache zugehörigen spezifischen Elementen aber auch noch SPS-typische Elemente. Geeignet ist ST am vorteilhaftesten für Aufgaben mit mathematischem Hintergrund, sowie zum Beschreiben komplexer Algorithmen. Auch für Rezept- und Datenverwaltung hebt sich diese Art der Programmierung durch enorme Vereinfachung vor. Typische Anweisungen für ST sind solche, die in höheren Sprachen durch Bedingungen oder Schleifen ausgeführt werden können \cite{grundlagen_automatisierungstechnik}\\
 	
-	\textbf{Beispiel eines strukturierten Textes}
-	\begin{framed}
-	VAR\\	s1: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}	s2: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}	s3: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}	M: BOOL := 0; \color{gray}//[output] Motor Deklaration ( muss initialisiert werden)\\ \color{black}	END\_VAR\\\\	M := (s1 OR s2) AND ( NOT (s3)); \color{gray}//ODER-Verknüpfung von s1 und s2, anschließendes UND-Verknüpfung von Ergebnis mit negiertem s3.\color{black}
-	\end{framed}
-
-
+	\begin{figure}[h]
+		\begin{framed}
+		\color{black}
+		VAR\\		s1: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}		s2: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}		s3: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}		M: BOOL := 0; \color{gray}//[output] Motor Deklaration ( muss initialisiert werden)\\ \color{black}		END\_VAR\\		M := (s1 OR s2) AND ( NOT (s3)); \color{gray}//ODER-Verknüpfung von s1 und s2, anschließendes UND-Verknüpfung von Ergebnis mit negiertem s3.\
+		\end{framed}
+		\caption{Beispiel eines strukturierten Textes}
+	\end{figure}
+	\todo[inline]{Schauen ob die Figur \glqq Strukturierter Text\grqq \space an der richtigen Position ist.}
+	
+	\newpage
+	\color{black}
 	\textbf{zu c, e) - Ablaufsprache}\\
 	
 	Eine Sonderstellung unter den Sprachen zur Programmierung einer SPS nimmt die Ablaufsprache ein. \\
-	
+	\todo[inline]{Ablaufsprache noch genauer beschreiben!}
 	\textbf{zu d) - Kontaktplan}\\
-	
 	Die Darstellungsart des Kontaktplans ermöglicht SPS-Programmierern ein Programm auf graphischer Ebene zu erstellen und darzustellen. Ein KOP ist einem Stromlaufplan sehr ähnlich, um Programmieranfängern, die beispielsweise nur in der Elektronik tätig sind/waren und noch nie zuvor analytisch hinterfragten Code entwickelt haben, dein Einstieg zu erleichtern. Es werden Elemente wie Spulen, Öffner/Schließer, Eingänge/Ausgänge, usw... verwendet, die zu logischen Blöcken zusammengefasst werden können und so einen Teil des gesamten Programms ergeben. Ein Nachteil dieser standardisierten Programmiersprache ist jedoch, dass es nicht für alle möglichen Operationen auch ein einheitliches Symbol in einem Stromlaufplan gibt. Das wiederum bedeutet, dass bei komplexen Steuerungen oft eine Mischung aus KOP und der Funktionsbausteinsprache (FBS) verwendet wird.\\
 	
-	\textbf{Beispiel eines Kontaktplans}	\\
+	\todo[inline]{Schauen ob das Bild \glqq kop\_Selfmade\grqq \space an der richtigen Position ist.}
 	\begin{figure}[h!]
   		\centering
-    	\includegraphics[width=0.55\textwidth]{graphics/stateoftheart/kop.jpg}
-  		\caption{Kontaktplan}
+    	\includegraphics[width=0.55\textwidth]{graphics/stateoftheart/kop_Selfmade.png}
+  		\caption{Beispiel eines Kontaktplans}
 	\end{figure}
-	
+
+	\newpage
 	\textbf{zu f) - Funktionsbausteinsprache}\\
 
 	Diese graphische Programmiersprache verwendet für ihre Anweisungen logische Symbole der Boolschen Algebra. Insbesondere ist diese Sprache für Verknüpfungssteuerungen geeignet und vorallem bei Anfängern oder Nicht-Programmierern beliebt. Durch den einfachen graphischen Aufbau ist die Programmlogik relativ schnell zu erkennen und nachzuvollziehen.
