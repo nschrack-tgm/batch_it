@@ -4,6 +4,7 @@
 *.aux
 *.acn*.acr*.alg*.bbl*.blg*.glg*.glo*.gls*.lof*.log*.lol*.nlo*.out*.gz*.toc*.xdy
 
-tex/bib_file_OLD.bib
+*.pdf
 
+tex/bib_file_OLD.bib
 tex/bib_file.bib.bak
