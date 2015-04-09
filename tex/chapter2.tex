@@ -86,14 +86,17 @@
 	
 	\textbf{zu a) - Anweisungsliste}\\
 	
-	Diese textbasierte Programmiersprache nach der Norm IEC DIN EN 61131-3 ist sehr maschinennahe. Vergleicht man AWL mit höheren Programmiersprachen der Informatik, so ist es eine Art Assemblersprache, die normalerweise 1:1 den jeweiligen Maschinencode übersetzt. Es werden die einzelnen Anweisungen in der Reihenfolge geschrieben, wie sie die Maschine (CPU) abarbeiten soll (auch \glqq Stackorientierte Abarbeitung\grqq \space genannt). Ein großer Vorteil gegenüber allen graphischen Programmiersprachen ist die Tatsache, das AWL funktionell über diese hinausgeht, weil beispielsweise ein komplexer Zählvorgang mittels eines Kontaktplans nicht realisierbar sein könnte.[3,4]\\
+	Diese textbasierte Programmiersprache nach der Norm IEC DIN EN 61131-3 ist sehr maschinennahe. Vergleicht man die Anweisungsliste aus Abbildung 2.3 mit höheren Programmiersprachen der Informatik, so ist es eine Art Assemblersprache, die normalerweise 1:1 den jeweiligen Maschinencode übersetzt. Es werden die einzelnen Anweisungen in der Reihenfolge geschrieben, wie sie die Maschine (CPU) abarbeiten soll (auch \glqq Stackorientierte Abarbeitung\grqq \space genannt). Ein großer Vorteil gegenüber allen graphischen Programmiersprachen ist die Tatsache, das AWL funktionell über diese hinausgeht, weil beispielsweise ein komplexer Zählvorgang mittels eines Kontaktplans nicht realisierbar sein könnte.[3,4]\\
 	
-	\textbf{Beispiel einer Anweisungsliste}
-	\begin{framed}
-	VAR\\	s1: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}	s2: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}	s3: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}	M: BOOL := 0; \color{gray}//[output] Motor Deklaration (muss initialisiert werden)\\ \color{black}	END\_VAR\\\\
-	LD s1; \color{gray}//[load] Lade den boolean-Wert ins Register\\ \color{black}	OR s2; \color{gray}//Oder-Verknüpfung mit s1\\ \color{black}	ANDN s3; \color{gray}//Und-Verknüpfung mit invertiertem Eingang\\ \color{black}	ST \color{gray}//[store] Ergebnis wird in die Variable Motor geschrieben\\ \color{black}
-	\end{framed}
-	
+	\begin{figure}
+		\begin{framed}
+			VAR\\			s1: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}			s2: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}			s3: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}			M: BOOL := 0; \color{gray}//[output] Motor Deklaration (muss initialisiert werden)\\ \color{black}			END\_VAR\\\\
+			LD s1; \color{gray}//[load] Lade den boolean-Wert ins Register\\ \color{black}			OR s2; \color{gray}//Oder-Verknüpfung mit s1\\ \color{black}			ANDN s3; \color{gray}//Und-Verknüpfung mit invertiertem Eingang\\ \color{black}			ST \color{gray}//[store] Ergebnis wird in die Variable Motor geschrieben\\
+		\end{framed}
+		\caption{Beispiel einer Anweisungsliste}
+	\end{figure}
+		
+	\color{black}
 	\textbf{zu b) - Strukturierter Text}\\
 	
 	Diese Programmiersprache der Automatisierungstechnik orientiert sich an der Sprache Pascal, enthält aber neben dieser Sprache zugehörigen spezifischen Elementen aber auch noch SPS-typische Elemente. Geeignet ist ST am vorteilhaftesten für Aufgaben mit mathematischem Hintergrund, sowie zum Beschreiben komplexer Algorithmen. Auch für Rezept- und Datenverwaltung hebt sich diese Art der Programmierung durch enorme Vereinfachung vor. Typische Anweisungen für ST sind solche, die in höheren Sprachen durch Bedingungen oder Schleifen ausgeführt werden können.[5]\\
