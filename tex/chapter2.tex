@@ -5,7 +5,7 @@
 	% ##################################################################
 	% Warum welche Hardware (Kriterien für unsere Nutzung, Umsetzbarkeit
 	% ##################################################################
-	\section{Hardware}
+	\section{Hardwareaufbau einer SPS}
 	
 	Um die im späteren Verlauf darauf aufbauende Hardware genauer beschreiben zu können, muss zu Beginn ein wenig thematisch ausgeholt werden. So hat der Begriff der Steuerung einen undenkbar hohen Stellenwert, welcher ebenso geklärt gehört.\\
 	
@@ -13,7 +13,7 @@
 	
 	\begin{figure}[h!]
   		\centering
-      	\includegraphics[width=0.8\textwidth]{graphics/stateoftheart/Aufbau_Steuerkreis.png}
+      	\includegraphics[width=0.8\textwidth]{graphics/stateoftheart/Aufbau_Steuerkreis_Selfmade.png}
   		\caption{Allgemeiner Aufbau eines Steuerkreises}
 	\end{figure}	
 
@@ -34,7 +34,7 @@
   		\item Soft - SPS
 	\end{enumerate}
 
-	\textbf{zu 1.)} Der im vorigen Abschnitt beschriebene Aufbau einer SPS bezieht sich auf die klassische Aufbauform einer \textit{Hardware - SPS}. Ihre Komponenten sind als gewöhnliche Einsteckkarten in einem Gehäuse oder Schaltschrank angeordnet und sind über einen Rückwandbus miteinander verbunden. Die Hardware - SPS benötigt einen externen PX als Programmiergerät.\\
+	\textbf{zu 1.)} Der im vorigen Abschnitt beschriebene Aufbau einer SPS bezieht sich auf die klassische Aufbauform einer \textit{Hardware - SPS}. Ihre Komponenten sind als gewöhnliche Einsteckkarten in einem Gehäuse oder Schaltschrank angeordnet und sind über einen Rückwandbus miteinander verbunden. Die Hardware - SPS benötigt einen externen PC als Programmiergerät.\\
 	
 	\textbf{zu 2.)} Eine Slot - SPS ist eine Einsteckkarte für den PC, welche alle Module einer SPS enthält. Anstatt einer CPU befindet sich ein Co-Prozessor in ihr, auf dem ein eigenes multitaskingfähiges Betriebssystem läuft. Zusätzlich verfügt sie über einen sogenannten multi-ported RAM (ein geteilter Speicher, der sowohl für SPS, als auch für PC zugreifbar ist).\\
 	
@@ -54,7 +54,7 @@
 	
 	\begin{figure}[h!]
   		\centering
-    	\includegraphics[width=0.8\textwidth]{graphics/stateoftheart/Signalverarbeitung.png}
+    	\includegraphics[width=0.8\textwidth]{graphics/stateoftheart/Signalverarbeitung_Selfmade.png}
   		\caption{Signalverarbeitung und Arbeitsweise einer SPS}
 	\end{figure}
 	
