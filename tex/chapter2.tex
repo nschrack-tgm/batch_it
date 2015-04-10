@@ -7,15 +7,15 @@
 	% ##################################################################
 	\section{Hardwareaufbau einer SPS}
 	
-	Um die im späteren Verlauf darauf aufbauende Hardware genauer beschreiben zu können, mu"s zu Beginn ein wenig thematisch ausgeholt werden. So hat der Begriff der Steuerung einen undenkbar hohen Stellenwert, welcher ebenso geklärt gehört.\\
+	Um die im späteren Verlauf darauf aufbauende Hardware genauer beschreiben zu können, muss zu Beginn ein wenig thematisch ausgeholt werden. So hat der Begriff der Steuerung einen undenkbar hohen Stellenwert, welcher ebenso geklärt gehört.\\
 	
-	Unter einer Steuerung eines Proze"ses versteht man nach der standardisierten Norm DIN 19226, sowie in Abbildung 2.1 ersichtlich, einen Vorgang, bei dem durch Rückführen geme"sener Proze"szustände, verglichen mit von der speicherprogrammierbaren Steuerung formulierten Parametern, Sollwerte zur Beeinflu"sung des gesamten Proze"ses erzeugt werden. Im Gegensatz zu einer Regelung, mu"s der von einem Sensor ausgelesene Ist-Wert jedoch nicht zwanghaft rückgeführt werden. \\
+	Unter einer Steuerung eines Prozesses versteht man nach der standardisierten Norm DIN 19226, sowie in Abbildung 2.1 ersichtlich, einen Vorgang, bei dem durch Rückführen gemessener Prozesszustände, verglichen mit von der speicherprogrammierbaren Steuerung formulierten Parametern, Sollwerte zur Beeinflussung des gesamten Prozesses erzeugt werden. Im Gegensatz zu einer Regelung, muss der von einem Sensor ausgelesene Ist-Wert jedoch nicht zwanghaft rückgeführt werden. \\
 	
 	Wie bereits zuvor teilweise angeführt, besteht der Steuerkreis aus Sensoren, einem Steuerungsrechner, welcher meistens mittels einer SPS realisiert wird, sowie Aktoren. Die Steuerungseinheit selbst ist ein Rechner, mit dem Hauptaufgabenbereich, die programmierten, im Speicher abgelegten Anweisungen zyklisch auszuführen und über einfach anzusprechende Schnittstellen Daten einzulesen oder auszugeben. \cite{mseitz_sps} \\
 	
 	Der Begriff SPS wird in der Norm DIN EN 61131-1 (IEC 61131-1) nochmals wie folgt definiert:\\
 	
-	\glqq \textit{Ein digital arbeitendes elektronisches System für den Einsatz in industriellen Umgebungen mit einem programmierbaren Speicher zur internen Speicherung der anwenderorientierten Steuerungsanweisungen zur Implementierung spezifischer Funktionen wie z.B. Verknüpfung"steuerung, Ablaufsteuerung, Zeit-, Zähl- und arithmetische Funktionen, um durch digitale oder analoge Eingangs- und Ausgang"signale verschiedene Arten von Maschinen und Proze"se zu steuern. Die Speicherprogrammierbare Steuerung und die zugehörige Peripheriegerät (das SPS- System) sind so konzipiert, da"s sie sich leicht in ein industrielles Steuerung"system integrieren und in allen ihren beabsichtigten Funktionen einsetzen la"sen.}\grqq \space \cite{sps_programmierung}\\
+	\glqq \textit{Ein digital arbeitendes elektronisches System für den Einsatz in industriellen Umgebungen mit einem programmierbaren Speicher zur internen Speicherung der anwenderorientierten Steuerungsanweisungen zur Implementierung spezifischer Funktionen wie z.B. Verknüpfungssteuerung, Ablaufsteuerung, Zeit-, Zähl- und arithmetische Funktionen, um durch digitale oder analoge Eingangs- und Ausgangssignale verschiedene Arten von Maschinen und Prozesse zu steuern. Die Speicherprogrammierbare Steuerung und die zugehörige Peripheriegerät (das SPS- System) sind so konzipiert, dass sie sich leicht in ein industrielles Steuerungssystem integrieren und in allen ihren beabsichtigten Funktionen einsetzen lassen.}\grqq \space \cite{sps_programmierung}\\
  
  	\begin{figure}[h!]
   		\centering
@@ -23,7 +23,7 @@
   		\caption{Allgemeiner Aufbau eines Steuerkreises \cite{mseitz_sps}}
 	\end{figure}	
  
- Zum genaueren Aufbau einer SPS gehört eine Stromversorgung, eine Verarbeitungseinheit (CPU), digitale, sowie analoge I/O Anschlü"se, eine Feldbu"schnittstelle und das Programmiergerät, wobei es sich dabei heutzutage eigentlich au"schlie"slich um einen externen Computer handelt. Die Stromversorgung PS (\textbf{P}ower \textbf{S}upply) wandelt gleichzeitig die Netzspannung in eine 24-V-Gleichspannung um, mit der die Elektronik der SPS versorgt wird.\\
+ Zum genaueren Aufbau einer SPS gehört eine Stromversorgung, eine Verarbeitungseinheit (CPU), digitale, sowie analoge I/O Anschlüsse, eine Feldbusschnittstelle und das Programmiergerät, wobei es sich dabei heutzutage eigentlich ausschließlich um einen externen Computer handelt. Die Stromversorgung PS (\textbf{P}ower \textbf{S}upply) wandelt gleichzeitig die Netzspannung in eine 24-V-Gleichspannung um, mit der die Elektronik der SPS versorgt wird.\\
 	
 	Man unterscheidet mittlerweile drei verschiedene Aufbauarten bei SPSen
 	
@@ -33,15 +33,15 @@
   		\item Soft - SPS
 	\end{enumerate}
 
-	\textbf{zu 1.)} Der im vorigen Abschnitt beschriebene Aufbau einer SPS bezieht sich auf die kla"sische Aufbauform einer \textit{Hardware - SPS}. Ihre Komponenten sind als gewöhnliche Einsteckkarten in einem Gehäuse oder Schaltschrank angeordnet und sind über einen Rückwandbus miteinander verbunden. Die Hardware - SPS benötigt einen externen PC als Programmiergerät.\\
+	\textbf{zu 1.)} Der im vorigen Abschnitt beschriebene Aufbau einer SPS bezieht sich auf die klassische Aufbauform einer \textit{Hardware - SPS}. Ihre Komponenten sind als gewöhnliche Einsteckkarten in einem Gehäuse oder Schaltschrank angeordnet und sind über einen Rückwandbus miteinander verbunden. Die Hardware - SPS benötigt einen externen PC als Programmiergerät.\\
 	
-	\textbf{zu 2.)} Eine Slot - SPS ist eine Einsteckkarte für den PC, welche alle Module einer SPS enthält. Anstatt einer CPU befindet sich ein Co-Proze"sor in ihr, auf dem ein eigenes multitaskingfähiges Betrieb"system läuft. Zusätzlich verfügt sie über einen sogenannten multi-ported RAM (ein geteilter Speicher, der sowohl für SPS, als auch für PC zugreifbar ist).\\
+	\textbf{zu 2.)} Eine Slot - SPS ist eine Einsteckkarte für den PC, welche alle Module einer SPS enthält. Anstatt einer CPU befindet sich ein Co-Prozessor in ihr, auf dem ein eigenes multitaskingfähiges Betriebssystem läuft. Zusätzlich verfügt sie über einen sogenannten multi-ported RAM (ein geteilter Speicher, der sowohl für SPS, als auch für PC zugreifbar ist).\\
 	
-	\textbf{zu 3.)} Zu guter Letzt gibt es die Soft - SPS, welche im Gegensatz zu den anderen Steuerungseinheiten eine reine Softwarelösung ist, die komplett auf der CPU des Host-PCs läuft und auch deren Hardware nutzt. Zur Ankopplung der Sensoren und Aktoren wäre eine Einsteckkarte zur Feldbuskopplung notwendig, die mit einem Proze"sor zur Buskommunikation und einem dual-ported Ram ausgestattet ist.\\
+	\textbf{zu 3.)} Zu guter Letzt gibt es die Soft - SPS, welche im Gegensatz zu den anderen Steuerungseinheiten eine reine Softwarelösung ist, die komplett auf der CPU des Host-PCs läuft und auch deren Hardware nutzt. Zur Ankopplung der Sensoren und Aktoren wäre eine Einsteckkarte zur Feldbuskopplung notwendig, die mit einem Prozessor zur Buskommunikation und einem dual-ported Ram ausgestattet ist.\\
 	
-	Die Vorteile der SPS im PC ergeben sich hauptsächlich dadurch, da"s die rasante Entwicklung der PC-Leistungen für SPSen genau dafür genutz werden kann.\\
+	Die Vorteile der SPS im PC ergeben sich hauptsächlich dadurch, dass die rasante Entwicklung der PC-Leistungen für SPSen genau dafür genutz werden kann.\\
 	
-	Die Informationsverarbeitung in einer SPS verläuft zyklisch. Die Verarbeitung"schritte la"sen sich vereinfacht mit dem EVA - Prinzip beschreibe.
+	Die Informationsverarbeitung in einer SPS verläuft zyklisch. Die Verarbeitungsschritte lassen sich vereinfacht mit dem EVA - Prinzip beschreibe.
 	
 	\begin{itemize}
 		\item \textbf{E}inlesen der Sensordaten
@@ -49,8 +49,8 @@
 		\item \textbf{A}usgeben der Soll-Werte an die Aktoren.
 	\end{itemize}
 	
-	Anfangs fragt die CPU nacheinander alle Eingangskanäle ab und legt anschlie"send die Daten in den Arbeit"speicher - es entsteht das sogenannte \glqq Eingangsabbild\grqq. Hierbei handelt es sich jedoch nicht um die aktuellen, sondern um die zum Abtastzeitpunkt ausgelesenen Werte. Die erstellten Programme werden dann von der CPU jeweils Schritt für Schritt abgearbeitet. Erst nach Abarbeitung \textbf{aller} Programme werden die im Ausgangsabbild abgelegten Sollwerte nacheinander an die Ausgangskanäle übertragen. \cite{mseitz_sps} \\ 
-		Kleinere SPS - Hersteller versuchen ihre eigene Hardware möglichst offen für fremde Software zu produzieren, um mit ihrem Produkt eine möglichst gro"se Zielgruppe anzusprechen. Gro"se Hersteller hingegen möchten ihr System eher geschlo"sen für den Zugriff mittels fremder Software halten, um die Kundenbindung auf den verschiedensten Ebenen der Automatisierungspyramide zu erhöhen.
+	Anfangs fragt die CPU nacheinander alle Eingangskanäle ab und legt anschließend die Daten in den Arbeitsspeicher - es entsteht das sogenannte \glqq Eingangsabbild\grqq. Hierbei handelt es sich jedoch nicht um die aktuellen, sondern um die zum Abtastzeitpunkt ausgelesenen Werte. Die erstellten Programme werden dann von der CPU jeweils Schritt für Schritt abgearbeitet. Erst nach Abarbeitung \textbf{aller} Programme werden die im Ausgangsabbild abgelegten Sollwerte nacheinander an die Ausgangskanäle übertragen. \cite{mseitz_sps} \\ 
+		Kleinere SPS - Hersteller versuchen ihre eigene Hardware möglichst offen für fremde Software zu produzieren, um mit ihrem Produkt eine möglichst große Zielgruppe anzusprechen. Große Hersteller hingegen möchten ihr System eher geschlossen für den Zugriff mittels fremder Software halten, um die Kundenbindung auf den verschiedensten Ebenen der Automatisierungspyramide zu erhöhen.
 	
 	\begin{figure}[h!]
   		\centering
@@ -84,11 +84,11 @@
 	
 	\textbf{zu a) - Anweisungsliste}\\
 	
-	Diese textbasierte Programmiersprache nach der Norm IEC DIN EN 61131-3 ist sehr maschinennahe. Vergleicht man die Anweisungsliste aus Abbildung 2.3 mit höheren Programmiersprachen der Informatik, so ist es eine Art A"semblersprache, die normalerweise 1:1 den jeweiligen Maschinencode übersetzt. Es werden die einzelnen Anweisungen in der Reihenfolge geschrieben, wie sie die Maschine (CPU) abarbeiten soll (auch \glqq Stackorientierte Abarbeitung\grqq \space genannt). Ein gro"ser Vorteil gegenüber allen graphischen Programmiersprachen ist die Tatsache, das AWL funktionell über diese hinausgeht, weil beispielsweise ein komplexer Zählvorgang mittels eines Kontaktplans nicht realisierbar sein könnte.	\cite{spslehrgang_struktur, egroetsch_sps}\\
+	Diese textbasierte Programmiersprache nach der Norm IEC DIN EN 61131-3 ist sehr maschinennahe. Vergleicht man die Anweisungsliste aus Abbildung 2.3 mit höheren Programmiersprachen der Informatik, so ist es eine Art Assemblersprache, die normalerweise 1:1 den jeweiligen Maschinencode übersetzt. Es werden die einzelnen Anweisungen in der Reihenfolge geschrieben, wie sie die Maschine (CPU) abarbeiten soll (auch \glqq Stackorientierte Abarbeitung\grqq \space genannt). Ein großer Vorteil gegenüber allen graphischen Programmiersprachen ist die Tatsache, das AWL funktionell über diese hinausgeht, weil beispielsweise ein komplexer Zählvorgang mittels eines Kontaktplans nicht realisierbar sein könnte.	\cite{spslehrgang_struktur, egroetsch_sps}\\
 
 	\begin{figure}[h!]
 		\begin{framed}
-			VAR\\			s1: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}			s2: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}			s3: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}			M: BOOL := 0; \color{gray}//[output] Motor Deklaration (mu"s initialisiert werden)\\ \color{black}			END\_VAR\\\\
+			VAR\\			s1: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}			s2: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}			s3: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}			M: BOOL := 0; \color{gray}//[output] Motor Deklaration (muss initialisiert werden)\\ \color{black}			END\_VAR\\\\
 			LD s1; \color{gray}//[load] Lade den boolean-Wert ins Register\\ \color{black}			OR s2; \color{gray}//Oder-Verknüpfung mit s1\\ \color{black}			ANDN s3; \color{gray}//Und-Verknüpfung mit invertiertem Eingang\\ \color{black}			ST \color{gray}//[store] Ergebnis wird in die Variable Motor geschrieben\\
 		\end{framed}
 		\caption{Beispiel einer Anweisungsliste}
@@ -102,7 +102,7 @@
 	\begin{figure}[h]
 		\begin{framed}
 		\color{black}
-		VAR\\		s1: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}		s2: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}		s3: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}		M: BOOL := 0; \color{gray}//[output] Motor Deklaration ( mu"s initialisiert werden)\\ \color{black}		END\_VAR\\		M := (s1 OR s2) AND ( NOT (s3)); \color{gray}//ODER-Verknüpfung von s1 und s2, anschlie"sendes UND-Verknüpfung von Ergebnis mit negiertem s3.\
+		VAR\\		s1: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}		s2: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}		s3: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}		M: BOOL := 0; \color{gray}//[output] Motor Deklaration ( muss initialisiert werden)\\ \color{black}		END\_VAR\\		M := (s1 OR s2) AND ( NOT (s3)); \color{gray}//ODER-Verknüpfung von s1 und s2, anschließendes UND-Verknüpfung von Ergebnis mit negiertem s3.\
 		\end{framed}
 		\caption{Beispiel eines strukturierten Textes}
 	\end{figure}
@@ -114,7 +114,7 @@
 	Eine Sonderstellung unter den Sprachen zur Programmierung einer SPS nimmt die Ablaufsprache ein. \\
 	\todo[inline]{Ablaufsprache noch genauer beschreiben!}
 	\textbf{zu d) - Kontaktplan}\\
-	Die Darstellungsart des Kontaktplans ermöglicht SPS-Programmierern ein Programm auf graphischer Ebene zu erstellen und darzustellen. Ein KOP ist einem Stromlaufplan sehr ähnlich, um Programmieranfängern, die beispielsweise nur in der Elektronik tätig sind/waren und noch nie zuvor analytisch hinterfragten Code entwickelt haben, dein Einstieg zu erleichtern. Es werden Elemente wie Spulen, Öffner/Schlie"ser, Eingänge/Ausgänge, usw... verwendet, die zu logischen Blöcken zusammengefa"st werden können und so einen Teil des gesamten Programms ergeben. Ein Nachteil dieser standardisierten Programmiersprache ist jedoch, da"s es nicht für alle möglichen Operationen auch ein einheitliches Symbol in einem Stromlaufplan gibt. Das wiederum bedeutet, da"s bei komplexen Steuerungen oft eine Mischung aus KOP und der Funktionsbausteinsprache (FBS) verwendet wird.\\
+	Die Darstellungsart des Kontaktplans ermöglicht SPS-Programmierern ein Programm auf graphischer Ebene zu erstellen und darzustellen. Ein KOP ist einem Stromlaufplan sehr ähnlich, um Programmieranfängern, die beispielsweise nur in der Elektronik tätig sind/waren und noch nie zuvor analytisch hinterfragten Code entwickelt haben, dein Einstieg zu erleichtern. Es werden Elemente wie Spulen, Öffner/Schließer, Eingänge/Ausgänge, usw... verwendet, die zu logischen Blöcken zusammengefasst werden können und so einen Teil des gesamten Programms ergeben. Ein Nachteil dieser standardisierten Programmiersprache ist jedoch, dass es nicht für alle möglichen Operationen auch ein einheitliches Symbol in einem Stromlaufplan gibt. Das wiederum bedeutet, dass bei komplexen Steuerungen oft eine Mischung aus KOP und der Funktionsbausteinsprache (FBS) verwendet wird.\\
 	
 	\todo[inline]{Schauen ob das Bild \glqq kop\_Selfmade\grqq \space an der richtigen Position ist.}
 	\begin{figure}[h!]
@@ -126,7 +126,7 @@
 	\newpage
 	\textbf{zu f) - Funktionsbausteinsprache}\\
 
-	Diese graphische Programmiersprache verwendet für ihre Anweisungen logische Symbole der Boolschen Algebra. Insbesondere ist diese Sprache für Verknüpfung"steuerungen geeignet und vorallem bei Anfängern oder Nicht-Programmierern beliebt. Durch den einfachen graphischen Aufbau ist die Programmlogik relativ schnell zu erkennen und nachzuvollziehen.
+	Diese graphische Programmiersprache verwendet für ihre Anweisungen logische Symbole der Boolschen Algebra. Insbesondere ist diese Sprache für Verknüpfungssteuerungen geeignet und vorallem bei Anfängern oder Nicht-Programmierern beliebt. Durch den einfachen graphischen Aufbau ist die Programmlogik relativ schnell zu erkennen und nachzuvollziehen.
 
 	\begin{figure}[h!]
   		\centering
@@ -144,7 +144,7 @@ TODO
 %Quellen/Bilder für Standardisierte Abbildung von Anlagen
 \subsection{SCADA}
 (Supervisory Control And Data Acquisition)\\
-Ein SCADA System ist im Allgemeinen eine Sammelstelle für alle aus der Anlagen generierten Werte. Diese Daten mü"sen dann weiterverarbeitet werden um aus ihnen Analysen zu erstellen.\\
+Ein SCADA System ist im Allgemeinen eine Sammelstelle für alle aus der Anlagen generierten Werte. Diese Daten müssen dann weiterverarbeitet werden um aus ihnen Analysen zu erstellen.\\
 \\
 Zu den Elemente eines SCADA Systems gehören:\\
 \\
@@ -158,20 +158,20 @@ Sammelstelle für Echtzeitdaten die von RTUs generiert werden. Meist herkömmlic
 Aus den gesammelten Daten Analysen (Prognosen, Diagnosen) so aufbereiten das sie für den Menschen leicht verständlich dargestellt werden.\\
 \\
 \textbf{Remote Terminal Units (RTUs)}\\
-Sensoren die Physikalische Änderungen in der Anlage mit einem Signalumformer in Elektrische Werte umwandelt. Je nachdem was geme"sen werden soll, entstehen Analoge (Füllstand, Helligkeit, Druck, ...) oder Digitale (z.B. Status eines Geräts) Werte.\\
+Sensoren die Physikalische Änderungen in der Anlage mit einem Signalumformer in Elektrische Werte umwandelt. Je nachdem was gemessen werden soll, entstehen Analoge (Füllstand, Helligkeit, Druck, ...) oder Digitale (z.B. Status eines Geräts) Werte.\\
 
 \section{Konzeptioneller Entwurf, Modellbasierte Entwicklung}
 Das Gebiet der Modellbasierten Entwicklung bzw. der automatisierten Codegenerierung aus so einem Modell als ganzes kann man nicht wirklich als State of the Art erklären.\\
 \\
 Wenn man sich jedoch die Gebiete als einzelnes anschaut, erkennt man das diese als einzelnes schon heute im Betrieb eingesetzt werden.
 \subsection{Modell}
-Ein Modell der gesamten Anlage wird schon im frühen Stadium der Entwicklung in Form eines RI-Flie"sschemas hergestellt um klar zu definieren welche Bauteile benötigt werden und welches mit welchem Bauteil verbunden ist. Dies ist nur das erste Modell das in der Industrie eingesetzt wird.\\
+Ein Modell der gesamten Anlage wird schon im frühen Stadium der Entwicklung in Form eines RI-Fliessschemas hergestellt um klar zu definieren welche Bauteile benötigt werden und welches mit welchem Bauteil verbunden ist. Dies ist nur das erste Modell das in der Industrie eingesetzt wird.\\
 \\
-Oft werden aber mehr Informationen benötigt als im RI-Flie"sschema abbildbar sind, weswegen man auf eine andere Art umsteigen mu"s ein Modell abzubilden.\\
+Oft werden aber mehr Informationen benötigt als im RI-Fliessschema abbildbar sind, weswegen man auf eine andere Art umsteigen muss ein Modell abzubilden.\\
 Auf die gängigsten Methoden (XML,Ontologie,UML) wird in den nächsten Punkten genauer eingegangen.
 \subsubsection{XML}
 XML ist eine Standardisierte Sprache in der die meisten Strukturen in irgend einer Form abgebildet werden können. Dieser Aspekt macht es zu einem Universalen Standard der in verschieden Sparten eingesetzt wird.\\
-Ein Nachteil von XML ist es, da"s es sich hierbei um eine Textuelle Form eines Modells handelt was für Menschen schwerer zu verstehen ist als eine Visuelle Abbildung.\\
+Ein Nachteil von XML ist es, dass es sich hierbei um eine Textuelle Form eines Modells handelt was für Menschen schwerer zu verstehen ist als eine Visuelle Abbildung.\\
 Dafür gibt es die nächsten 2 Werkzeuge die beide auf XML basieren.
 \subsubsection{Ontologie}
 %todo Quelle Ontologie
@@ -181,7 +181,7 @@ Dafür gibt es die nächsten 2 Werkzeuge die beide auf XML basieren.
 Eine Ontologie ist ein auf XML basierendes Konstrukt das einem das Abbilden von Dingen und deren Relationen ermöglicht. Um solch Komplexe Zustände darzustellen stehen einem neben einfachen Entitäten(Dinge) auch Eigenschaften zur verfügen.\\
 \\
 \textbf{Allgemeiner Aufbau einer Ontologie}\\
-Das Modell an sich ohne zusätzliche Attribute oder Eigenschaften ist vom Aufbau her so zu erklären, da"s es ein Thing gibt von dem alles aus geht (Sozusagen der Ursprung von allem). Von diesem Punkt aus können weitere Entitäten abgeleitet werden (Eine Vererbung, vergleichbar mit einem Stammbaum). Die neu erstellte Entität ist immer noch ein Thing, jedoch genauer beschrieben. Diese Vererbung wird dann soweit wie benötigt weitergeführt.\\
+Das Modell an sich ohne zusätzliche Attribute oder Eigenschaften ist vom Aufbau her so zu erklären, dass es ein Thing gibt von dem alles aus geht (Sozusagen der Ursprung von allem). Von diesem Punkt aus können weitere Entitäten abgeleitet werden (Eine Vererbung, vergleichbar mit einem Stammbaum). Die neu erstellte Entität ist immer noch ein Thing, jedoch genauer beschrieben. Diese Vererbung wird dann soweit wie benötigt weitergeführt.\\
 %Todo Beispiel Ontologie
 %Aufbau Grafik Thing -> Ebene 1 -> Ebene 2...
 \\
