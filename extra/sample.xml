@@ -1,0 +1,12 @@
+<rootElement>
+	<subElement1 attribute="XYZ">
+		<subsubElement>Info</subsubElement>
+	</subElement1>
+	<subElement2>
+		<titel>Dr. Dipl.</titel>
+		<name>Max Muster</name>
+	</subElement2>
+	<subElement3>
+		<subsubElement>Beschreibung</subsubElement>
+	</subElement3>
+</rootElement>
