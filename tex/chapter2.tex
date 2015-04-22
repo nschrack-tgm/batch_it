@@ -319,14 +319,13 @@ Sensoren die Physikalische Änderungen in der Anlage mit einem Signalumformer in
 \newpage
 \section{Konzeptioneller Entwurf, Modellbasierte Entwicklung}
 Das Gebiet der Modellbasierten Entwicklung bzw. der automatisierten Codegenerierung aus so einem Modell als ganzes kann man nicht wirklich als State of the Art erklären.\\
-\\
 Wenn man sich jedoch die Gebiete als einzelnes anschaut, erkennt man das diese im heutigem Betrieb eingesetzt werden.
 \subsection{Modell}
 Ein Modell der gesamten Anlage wird schon im frühen Stadium der Entwicklung in Form eines RI-Fließschemas hergestellt um klar zu definieren welche Bauteile benötigt werden und welches mit welchem Bauteil verbunden ist. Dies ist nur das erste Modell das in der Industrie eingesetzt wird.\\
 \\
 Oft werden aber mehr Informationen benötigt als im RI-Fließschema ersichtlich sind, weswegen man auf eine andere Methode umsteigen muss ein Modell abzubilden.\\
 Auf die gängigsten Methoden (XML, Ontologie, UML) wird in den nächsten Punkten genauer eingegangen.
-\subsubsection{XML}
+\subsection{XML}
 XML ist ein Textbasiertes Dateiformat das, obwohl es für Dokumente gedacht ist, oft für das Abbilden von Daten Strukturen verwendet wird.
 \\
 Ähnlich wie in HTML verwendet auch XML Tags, der unterschied besteht darin das XML keine vorgefertigten Tags besitzt und der Benutzer diese erstellt. Genau diese Benutzerdefinierten Tags ergeben die XML Struktur welche, was essentiell ist, von alleine nur ein Textfile ist und keine Funktionen besitzt.
@@ -337,7 +336,7 @@ Der Aufbau einer XML Datei ist leicht zu erklären: Es gibt 1 rootElement das de
 Einsatz findet XML meist in Programmen oder Webseiten die größere Mengen an Daten bzw. Befehle Systemunabhängig übertragen sollen. Grund dafür ist unter anderem die Tatsache dass Mensch und Maschine die Datei ohne Übersetzung/Kompilieren lesen und verstehen kann.\\
 Doch auch wenn ein Mensch XML-Dateien lesen kann, dauert es länger die Struktur eines Textes, im vergleich zu einer Grafischen Darstellung, zu verstehen.\\ 
 Dafür gibt es andere Werkzeuge, die auf XML basieren aber eine Grafische Darstellung erzeugen.
-\subsubsection{Ontologie}
+\subsection{Ontologie}
 %todo Quelle Ontologie
 %http://plato.stanford.edu/entries/logic-ontology/
 \begin{displayquote}... we have at least two parts to the overall philosophical project of ontology: first, say what there is, what exists, what the stuff is reality is made out off, secondly, say what the most general features and relations of these things are.
@@ -365,17 +364,37 @@ Daten Eigenschaften werden benötigt um Objekte genauer zu beschreiben.
 \\
 Beispiel für ein Modell einer Produktionsanlage ist es etwaigen Sensoren im Modell einen Wertebereich festzulegen in welchem dieser arbeitet bzw. was für Werte dieser sammelt/zurückgibt: Ein Füllstandsensor mit einem Wertebereich von 4-20V, wobei 4V=Leer und 20V=Voll bedeutet, kann in einer Ontologie mit wenigen Data Properties abgebildet werden.
 
-\subsubsection{UML}
+\subsection{UML}
 UML ist, wie eine Ontologie, eine auf XML basierte Modellierungssprache.
 %TODO Quelle UML
 %Quelle OMG Unified Modeling LanguageTM (OMG UML), Infrastructure
 Das Ziel von UML ist es, System Architekten, Software Ingenieuren und Software Entwicklern ein Werkzeug zur Analyse, Design, Implementation von Softwarebasierenden Systemen, sowie für Modell Entwicklung und ähnliche Prozesse zu bieten.\\
 \\
+Neben einer einfachen Abbildung der Anlage kann man ein Activity Diagram verwenden um beispielsweise einzelne Phasen oder ganze Rezepte abzubilden.\\
+\\
 \textbf{Activity}\\
 %TODO Quelle Activity
+%Quelle http://timpt.de/topic35.html
+Ein Aktivitätsdiagramm beschreibt das Verhalten von Systemen auf Grundlage von vorgegebenen Regeln. 
+
+\begin{figure}[hbt!]
+ \centering
+  \includegraphics[width=1\textwidth]{graphics/stateoftheart/Activity_Elemente}
+  \caption{Basis Elemente eines Aktivitätsdiagramm}
+\end{figure}
 %Quelle OMG Unified Modeling LanguageTM (OMG UML), Version 2.5An Activity is a kind of Behavior (see sub clause 13.2) that is specified as a graph of nodes interconnected by edges. A subset of the nodes are executable nodes that embody lower-level steps in the overall Activity. Object nodes hold data that is input to and output from executable nodes, and moves across object flow edges. Control nodes specify sequencing of executable nodes via control flow edges. Activities are essentially what are commonly called “control and data flow” models. Such models of computation are inherently concurrent, as any sequencing of activity node execution is modeled explicitly by activity edges, and no ordering is mandated for any computation not explicitly sequenced.\\Activities may describe procedural computation, forming hierarchies of Activities invoking other Activities, or, in an object- oriented model, they may be invoked indirectly as methods bound to Operations that are directly invoked. Activities may be applied to organizational modeling for business process engineering and workflow. In this context, events often originate from inside the system, such as the finishing of a task, but also from outside the system, such as a customer call. Activities can also be used for information system modeling to specify system level processes.\\
+\\
 Activity Nodes\\ActivityNodes are used to model the individual steps in the behavior specified by an Activity.\\
+\\
 Activity Edges\\An ActivityEdge is a directed connection between two ActivityNodes along which tokens may flow, from the source ActivityNode to the target ActivityNod.\\
+
+%Quelle http://www.uml-diagrams.org/shopping-process-order-uml-activity-diagram-example.html?context=activity-examples
+\begin{figure}[hbt!]
+ \centering
+  \includegraphics[width=1\textwidth]{graphics/stateoftheart/Activity_bsp}
+  \caption{Beispiel für ein Aktivitätsdiagramm}
+\end{figure}
+
 \section{Fazit}
 
 %TODO Codegenerierung
