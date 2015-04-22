@@ -199,7 +199,6 @@ Beispiele für Teilprozeduren sind:
 	\item Gewinne Vinylchlorid-Rest zurück.
 	\item Trockne PVC.
 \end{itemize}
-\\
 \textbf{Operation}\\
 Eine Operation ist eine geordnete Menge von Funktionen, die eine größere Verarbeitungssequenz festlegt und die bewirkt, daß die verarbeiteten Stoffe von einem Zustand in einen anderen überführt werden, womit gewöhnlich eine chemische oder physikalische Umwandlung verbunden ist. Häufig ist es erwünscht, die Grenzen einer Operation auf Punkte in der Prozedur zu legen, wo die normale Verarbeitung sicher ausgesetzt werden kann.\\
 Beispiele für Operationen sind:
@@ -208,7 +207,6 @@ Beispiele für Operationen sind:
 	\item Füllen: Destilliertes Wasser und Lösemittel hinzugeben.
 	\item Reaktion: Vinylchlorid-Monomer und Katalysator zugeben, heizen und Absinken des Reaktordrucks abwarten.
 \end{itemize}
-\\
 \textbf{Funktion}\\
 Das kleinste Element einer Prozedursteuerung, das eine prozeßorientierte Aufgabe ausführen kann, ist eine Funktion. Eine Funktion kann in kleinere Teile unterteilt werden. Die Schritte und Übergänge, wie sie in der IEC 60848 beschrieben sind, dokumentieren eine Methode, um Unterteilungen einer Funktion zu definieren.\\
 Ein Schritt kann eine oder mehrere Anweisungen ausgeben oder eine oder mehrere Maßnahmen bewirken, zum Beispiel:
@@ -216,18 +214,16 @@ Ein Schritt kann eine oder mehrere Anweisungen ausgeben oder eine oder mehrere M
 	\item Ein- und Ausschalten von Regelungen und zustandsorientierten Arten der Basisautomatisierung und Vorgeben ihrer Sollwerte und ihrer anfänglichen Ausgangswerte.
 	\item Setzen, Löschen und Ändern von Alarmgrenzen und anderen Grenzwerten.
 	\item Setzen und Ändern von Reglerkonstanten, Betriebsarten von Regelungen und Typen von Algorithmen.
-	\item Lesen von Prozeßvariablen, wie z. B. Gasdichte, Gastemperatur und Volumendurchfluß von einem Durchflußmesser, und Errechnen des Massendurchflusses durch den Durchflußmesser.
+	\item Lesen von Prozeßvariablen, wie z. B. Gasdichte, Gastemperatur und Volumendurchfluß von einem Durchflußmesser, und Errechnen des Massendurchflusses durch den Durchflussmesser.
 	\item Durchführen der Überprüfung der Bedienberechtigung.
 \end{itemize}
-\\
 Die Ausführung einer Funktion kann resultieren in:
 \begin{itemize}
 	\item Befehlen an die Basisautomatisierung.
 	\item Befehlen an andere Funktionen (entweder in dem gleichen oder einem anderen Einrichtungsobjekt).
 	\item der Erfassung von Daten.
 \end{itemize}
-\\
-Das Ziel einer Funktion ist es, eine prozeßorientierte Aktion zu bewirken oder zu definieren, wogegen die Logik oder die Folge von Schritten, die die Funktion ausmachen, einrichtungsspezifisch ist.\\
+Das Ziel einer Funktion ist es, eine prozessorientierte Aktion zu bewirken oder zu definieren, wogegen die Logik oder die Folge von Schritten, die die Funktion ausmachen, einrichtungsspezifisch ist.\\
 Folgende Beispiele für Funktionen seien genannt:
 \begin{itemize}
 	\item Vinylchlorid-Monomer zugeben.
@@ -262,26 +258,26 @@ Das Grundrezept ist die Rezeptstufe, die auf eine Anlage oder eine Gruppe von Ei
 Das Grundrezept ist eine unverzichtbare Rezeptstufe, da ohne es keine Steuerrezepte erzeugt und daher keine Chargen produziert werden können.
 \\\\
 \textbf{Steuerrezept}\\
-Das Steuerrezept entsteht als eine Kopie einer bestimmten Version des Grundrezeptes und wird anschließend wie erforderlich durch Informationen für Dispositionsplanung und Ausführung verändert, um spezifisch für eine einzelne Charge zu sein. Es enthält produktspezifische Prozeßinformationen, wie sie zur Produktion einer bestimmten Charge erforderlich sind. Es bietet den Detaillierungsgrad, wie er zum Start und zur Überwachung der Einrichtungsprozedurobjekte einer Anlage erforderlich ist. Es kann verändert worden sein, um die tatsächlichen RohstoffQualitäten und die tatsächlich eingesetzte Ausrüstung zu berücksichtigen. Die Auswahl von Teilanlagen und entsprechende Skalierung kann jederzeit durchgeführt werden, bevor diese Information benötigt wird.
+Das Steuerrezept entsteht als eine Kopie einer bestimmten Version des Grundrezeptes und wird anschließend wie erforderlich durch Informationen für Dispositionsplanung und Ausführung verändert, um spezifisch für eine einzelne Charge zu sein. Es enthält produktspezifische Prozessinformationen, wie sie zur Produktion einer bestimmten Charge erforderlich sind. Es bietet den Detaillierungsgrad, wie er zum Start und zur Überwachung der Einrichtungsprozedurobjekte einer Anlage erforderlich ist. Es kann verändert worden sein, um die tatsächlichen RohstoffQualitäten und die tatsächlich eingesetzte Ausrüstung zu berücksichtigen. Die Auswahl von Teilanlagen und entsprechende Skalierung kann jederzeit durchgeführt werden, bevor diese Information benötigt wird.
 \subsubsection{Bestandteile des Rezeptes}
 
 \textbf{Rezeptkopf}\\
 Die organisatorische Information im Rezept wird als Rezeptkopf bezeichnet. Typische Informationen im Rezeptkopf kann die Rezept- und Produktidentifikation, die Versionsnummer, den Rezeptersteller, das Ausgabedatum, Freigaben, Status und andere organisatorische Angaben enthalten.
 \\\\
 \textbf{Stoff- und Produktionsdaten}\\
-Die Stoff- und Produktionsdaten sind eine Kategorie von Rezeptinformation, die Prozeßeinsätze, Prozeßparameter und Prozeßausstöße umfaßt.
-Ein Prozeßeinsatz besteht aus Bezeichnung und Menge eines Rohstoffs oder eines anderen Betriebsmittels, das zur Herstellung des Produktes erforderlich ist.
-Ein Prozeßparameter enthält detaillierte Information wie zum Beispiel Temperatur, Druck und Zeit, die wesentlich für das jeweilige Produkt ist.  Prozeßparameter können als Sollwerte, Vergleichswerte oder in logischen Bedingungen verwendet werden.
-Ein Prozeßausstoß besteht aus Bezeichnung und Menge eines Stoffs, die als Ergebnis einer Ausführung des Rezeptes erwartet wird.
+Die Stoff- und Produktionsdaten sind eine Kategorie von Rezeptinformation, die Prozesseinsätze, Prozessparameter und Prozessausstöße umfasst.
+Ein Prozesseinsatz besteht aus Bezeichnung und Menge eines Rohstoffs oder eines anderen Betriebsmittels, das zur Herstellung des Produktes erforderlich ist.
+Ein Prozessparameter enthält detaillierte Information wie zum Beispiel Temperatur, Druck und Zeit, die wesentlich für das jeweilige Produkt ist.  Prozessparameter können als Sollwerte, Vergleichswerte oder in logischen Bedingungen verwendet werden.
+Ein Prozessausstoß besteht aus Bezeichnung und Menge eines Stoffs, die als Ergebnis einer Ausführung des Rezeptes erwartet wird.
 \\\\
 \textbf{Anforderungen an die Einrichtung}\\
 Anforderungen an die Einrichtung schränken die Auswahl der Einrichtungen ein, die schließlich eingesetzt werden, um einen bestimmten Teil der Prozedur durchzuführen. Im Verfahrens- und im Werksrezept werden die Anforderungen an die Einrichtung typischerweise in allgemeiner Weise, wie zum Beispiel zulässigen Werkstoffen und erforderlichen Verarbeitungscharakteristika angegeben.
 \\\\
 \textbf{Rezeptprozedur}\\
-Die Rezeptprozedur beschreibt die Strategie, um einen Prozeß durchzuführen. Verfahrensrezeptprozeduren und Werksrezeptprozeduren sind unter Benutzung der im Prozeßmodell beschriebenen Ebenen strukturiert, da diese Ebenen es gestatten, den Prozeß in einrichtungsunabhängiger Art zu beschreiben. Grundrezeptprozeduren und Steuerrezeptprozeduren werden unter Benutzung der Prozedurelemente des Prozedurmodells beschrieben, da diese Prozedurelemente einrichtungsbezogen sind.
+Die Rezeptprozedur beschreibt die Strategie, um einen Prozess durchzuführen. Verfahrensrezeptprozeduren und Werksrezeptprozeduren sind unter Benutzung der im Prozessmodell beschriebenen Ebenen strukturiert, da diese Ebenen es gestatten, den Prozess in einrichtungsunabhängiger Art zu beschreiben. Grundrezeptprozeduren und Steuerrezeptprozeduren werden unter Benutzung der Prozedurelemente des Prozedurmodells beschrieben, da diese Prozedurelemente einrichtungsbezogen sind.
 
 \subsubsection{Einrichtungssteuerung}
-Das Steuerrezept selbst enthält nicht genügend Information, um die Anlage zu betreiben. Daher wird es mit der Einrichtungssteuerung, die tatsächlich die Einrichtungen zum Betrieb und zur Produktion von Chargen veranlaßt, verknüpft. Die Einrichtungssteuerung wird nicht als Teil des Rezeptes angesehen.
+Das Steuerrezept selbst enthält nicht genügend Information, um die Anlage zu betreiben. Daher wird es mit der Einrichtungssteuerung, die tatsächlich die Einrichtungen zum Betrieb und zur Produktion von Chargen veranlasst, verknüpft. Die Einrichtungssteuerung wird nicht als Teil des Rezeptes angesehen.
 %Quelle EN 61522
 \begin{figure}[h!]
 		\centering
