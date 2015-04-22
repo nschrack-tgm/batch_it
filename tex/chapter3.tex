@@ -12,24 +12,23 @@ Es beginnt mit einer Produktionsanlage, wobei es sich um eine Chargenprozessanla
 In diesem Kapitel wird jeder Schritt, der in dem Kreislauf von Abbildung 3.1 enthalten ist, genauer elaboriert und in Perspektive zu dem entwickelten Konzept gebracht.
 \section{Produktionsanlage}
 \section{Modell}
-Die Informationen für die Codegenerierung benötigen einerseits einen Ontologie, zur Speicherung der Informationen der Produktionsanlagen,  und andererseits ein Aktivitätsdiagramm. In diesem werden die Wege (Phasen) dargestellt, die später möglich sein sollen.
+Die Informationen für die Codegenerierung benötigen einerseits einen Ontologie, zur Speicherung der Informationen der Produktionsanlagen,  und andererseits ein Aktivitätsdiagramm. In diesem werden die Wege (Phasen) dargestellt die später möglich sein sollen.
 Die beiden sind von einander Abhängig, denn die Namen, der von in der Ontologie erstellen Identitäten (Datensätze), werden den Namen des Aktivitätsdiagramms zugeordnet.
 Mithilfe der Ontologie und des Aktivitätsdiagramms können die Informationen bereitgestellt werden, die für die Codegenerierung nötige sind.  
 
-\subsection{Abbildung der Produktionsanlage}
-Hierbei handelt es sich um die Speicherung der Daten der Produktionsanlage in einer Ontologie. Zu den Daten gehören folgende Informationen. 
-Die Abbildung der Produktionsanlage  
+\subsection{Modell der Produktionsanlage}
+Hierbei handelt es sich um die Speicherung der Daten der Produktionsanlage in einer Ontologie. Desto genaue Zu den Daten gehören folgende Informationen. 
 
-\subsection{Abbildung der Wege}
-Bei der Abbildung der Wege wird die 
-Die Abbildung der Wege werden mit eine Activity Diagram nach der UML Norm erstellt.
+\subsection{Modell der Wege}
+Das Modell der Wege wird in einem Activity Diagram nach der UML Norm erstellt. Dieses enthält die Phasen die später Codegeneriert werden und im weiteren Schritt in der Chargenprozessanlage verwendbar sein sollen.
+Jede Phase wird durch einen Start- und Endpunkt definiert. Dazwischen werden die Namen der Stadtionen geschrieben und diese mit Pfeilen verbunden. Das Diagramm sieht dann so aus: 
 \begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.8\textwidth]{graphics/konzept/UML_Activity.png}
+		\includegraphics[width=0.7\textwidth]{graphics/konzept/UML_Activity.png}
 		\caption{Abbildung der Wege mittels Activity Diagram}
 		%\label{fig:MegaProxyProblem}
 \end{figure}
-
+\newpage
 \section{SPS Code}
 \subsection{Phasen}
 \subsection{Rezepte}
