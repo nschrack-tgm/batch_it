@@ -1,0 +1,50 @@
+\select@language {english}
+\select@language {german}
+\select@language {ngerman}
+\select@language {german}
+\contentsline {chapter}{\hbox to\@tempdima {\hfil }List of symbols}{xii}{chapter*.6}
+\contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Hintergrund und Ausgangspunkt}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Aufgabenstellung}{3}{section.1.2}
+\contentsline {section}{\numberline {1.3}Leitfaden durch die Arbeit}{3}{section.1.3}
+\contentsline {chapter}{\numberline {2}State of the Art}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Definition eines Prozesses}{5}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Diskreter Prozess}{6}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Kontinuierliche Prozess}{6}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Chargenprozess}{7}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Hardwareaufbau einer SPS}{7}{section.2.2}
+\contentsline {section}{\numberline {2.3}Programmierung einer SPS}{10}{section.2.3}
+\contentsline {section}{\numberline {2.4}Phasen und Rezepte}{14}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Prozedur}{14}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Rezept}{16}{subsection.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.2.1}Rezepttypen}{17}{subsubsection.2.4.2.1}
+\contentsline {subsubsection}{\numberline {2.4.2.2}Bestandteile des Rezeptes}{19}{subsubsection.2.4.2.2}
+\contentsline {subsubsection}{\numberline {2.4.2.3}Einrichtungssteuerung}{19}{subsubsection.2.4.2.3}
+\contentsline {section}{\numberline {2.5}Visualisierung von Produktionsanlagen}{20}{section.2.5}
+\contentsline {section}{\numberline {2.6}Konzeptioneller Entwurf, Modellbasierte Entwicklung}{22}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Modell}{22}{subsection.2.6.1}
+\contentsline {subsubsection}{\numberline {2.6.1.1}XML}{22}{subsubsection.2.6.1.1}
+\contentsline {subsubsection}{\numberline {2.6.1.2}Ontologie}{23}{subsubsection.2.6.1.2}
+\contentsline {subsubsection}{\numberline {2.6.1.3}UML}{25}{subsubsection.2.6.1.3}
+\contentsline {section}{\numberline {2.7}Fazit}{25}{section.2.7}
+\contentsline {chapter}{\numberline {3}Konzept/Architektur}{27}{chapter.3}
+\contentsline {section}{\numberline {3.1}Produktionsanlage}{28}{section.3.1}
+\contentsline {section}{\numberline {3.2}Modell}{28}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Abbildung der Produktionsanlage}{28}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Abbildung der Wege}{28}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}SPS Code}{28}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Phasen}{28}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Rezepte}{28}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Codegenerierung}{28}{section.3.4}
+\contentsline {section}{\numberline {3.5}Visualisierung der Produktionsanlage}{28}{section.3.5}
+\contentsline {chapter}{\numberline {4}Implementierung}{31}{chapter.4}
+\contentsline {section}{\numberline {4.1}Visualisierung}{31}{section.4.1}
+\contentsline {section}{\numberline {4.2}Phasen und Rezepte}{31}{section.4.2}
+\contentsline {section}{\numberline {4.3}Modelle}{31}{section.4.3}
+\contentsline {section}{\numberline {4.4}Codegenerierung}{31}{section.4.4}
+\contentsline {chapter}{\numberline {5}Evaluation}{33}{chapter.5}
+\contentsline {section}{\numberline {5.1}Erfolgreiche Codegenerierung}{33}{section.5.1}
+\contentsline {chapter}{\numberline {6}Zusammenfassung und Ausblick}{35}{chapter.6}
+\contentsline {chapter}{Glossar}{36}{chapter.6}
+\contentsline {chapter}{\numberline {A}Appendix}{37}{appendix.A}
+\contentsline {chapter}{Literaturverzeichnis}{39}{section*.11}

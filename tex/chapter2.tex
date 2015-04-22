@@ -177,9 +177,118 @@
   		\caption{Beispiel eines Funktionsbausteinplans \cite{funktionsbausteinplan}}
 	\end{figure}
 
-\section{Phasen und Rezepte}
+\section{Prozeduren und Rezepte}
+\subsection{Prozedur}
+Die Prozedursteuerung bestimmt, daß einrichtungsorientierte Aktionen in einer geordneten Folge stattfinden, damit eine prozeßorientierte Aufgabe ausgeführt wird. Prozedursteuerungen sind charakteristisch für chargenorientierte Prozesse. Sie sind die Art von Steuerung, die Einrichtungen in die Lage versetzt, einen Chargenprozeß auszuführen.\\
 
-TODO
+%Quelle EN 61522
+\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.4\textwidth]{graphics/stateoftheart/prozedursteuerung.png}
+		\caption{Aufbau einer Prozedur}
+\end{figure}
+\newpage
+\textbf{Prozedur}\\
+Die Prozedur ist die höchste Stufe in der Hierarchie und legt die Strategie für die Ausführung einer umfassenden Verarbeitungsaktion, wie zum Beispiel der Herstellung einer Charge, fest. Sie wird durch eine geordnete Menge von Teilprozeduren bestimmt. Ein Beispiel für eine Prozedur ist „Produziere PVC“.\\
+
+\textbf{Teilprozedur}\\
+Eine Teilprozedur besteht aus einer geordneten Menge von Operationen, die bewirken, daß eine zusammenhängende Produktionssequenz in einer Teilanlage stattfindet. Es wird angenommen, daß zu jeder Zeit immer nur eine Operation in einer Teilanlage aktiv ist. Eine Operation wird in einer einzelnen Teilanlage vollständig ausgeführt. Gleichwohl können mehrere Teilprozeduren einer Prozedur konkurrierend ablaufen, jede in einer anderen Teilanlage.\\
+Beispiele für Teilprozeduren sind:
+\begin{itemize}
+	\item Polymerisiere Vinylchlorid-Monomer.
+	\item Gewinne Vinylchlorid-Rest zurück.
+	\item Trockne PVC.
+\end{itemize}
+\\
+\textbf{Operation}\\
+Eine Operation ist eine geordnete Menge von Funktionen, die eine größere Verarbeitungssequenz festlegt und die bewirkt, daß die verarbeiteten Stoffe von einem Zustand in einen anderen überführt werden, womit gewöhnlich eine chemische oder physikalische Umwandlung verbunden ist. Häufig ist es erwünscht, die Grenzen einer Operation auf Punkte in der Prozedur zu legen, wo die normale Verarbeitung sicher ausgesetzt werden kann.\\
+Beispiele für Operationen sind:
+\begin{itemize}
+	\item Vorbereitung: Reaktor evakuieren und Reaktorwände mit Antifouling beschichten.
+	\item Füllen: Destilliertes Wasser und Lösemittel hinzugeben.
+	\item Reaktion: Vinylchlorid-Monomer und Katalysator zugeben, heizen und Absinken des Reaktordrucks abwarten.
+\end{itemize}
+\\
+\textbf{Funktion}\\
+Das kleinste Element einer Prozedursteuerung, das eine prozeßorientierte Aufgabe ausführen kann, ist eine Funktion. Eine Funktion kann in kleinere Teile unterteilt werden. Die Schritte und Übergänge, wie sie in der IEC 60848 beschrieben sind, dokumentieren eine Methode, um Unterteilungen einer Funktion zu definieren.\\
+Ein Schritt kann eine oder mehrere Anweisungen ausgeben oder eine oder mehrere Maßnahmen bewirken, zum Beispiel:
+\begin{itemize}
+	\item Ein- und Ausschalten von Regelungen und zustandsorientierten Arten der Basisautomatisierung und Vorgeben ihrer Sollwerte und ihrer anfänglichen Ausgangswerte.
+	\item Setzen, Löschen und Ändern von Alarmgrenzen und anderen Grenzwerten.
+	\item Setzen und Ändern von Reglerkonstanten, Betriebsarten von Regelungen und Typen von Algorithmen.
+	\item Lesen von Prozeßvariablen, wie z. B. Gasdichte, Gastemperatur und Volumendurchfluß von einem Durchflußmesser, und Errechnen des Massendurchflusses durch den Durchflußmesser.
+	\item Durchführen der Überprüfung der Bedienberechtigung.
+\end{itemize}
+\\
+Die Ausführung einer Funktion kann resultieren in:
+\begin{itemize}
+	\item Befehlen an die Basisautomatisierung.
+	\item Befehlen an andere Funktionen (entweder in dem gleichen oder einem anderen Einrichtungsobjekt).
+	\item der Erfassung von Daten.
+\end{itemize}
+\\
+Das Ziel einer Funktion ist es, eine prozeßorientierte Aktion zu bewirken oder zu definieren, wogegen die Logik oder die Folge von Schritten, die die Funktion ausmachen, einrichtungsspezifisch ist.\\
+Folgende Beispiele für Funktionen seien genannt:
+\begin{itemize}
+	\item Vinylchlorid-Monomer zugeben.
+	\item Katalysator zugeben.
+	\item Heizen.
+\end{itemize}
+
+\subsection{Rezept}
+Rezepte sind Teil der Europäischen Norm EN 61512, welche den Aufbau bei der Chargenorientierten Fahrweise definiert.\\\\
+„Ein Rezept ist eine Gesamtheit, die die Minimalmenge von Informationen enthält, die eindeutig die Herstellungsanforderungen für ein bestimmtes Produkt beschreibt. Rezepte bieten eine Methode, Produkte und die Art, wie diese Produkte hergestellt werden, zu beschreiben“.\\\\
+In der Norm werden die vier Typen von Rezepten, die fünf Kategorien von Informationen, die ein Rezept enthält und wie sich diese Information bei den verschiedenen Rezepttypen verändert,  behandelt.\\\\
+Es können Unternehmensintern noch eigene Rezepttypen verwendet werden, falls die definierten nicht alle benötigten Anforderungen abdeckt, ausserdem kann es sein, dass für ein Produkt mehrere Rezepte bestehen, wenn dieses zum Beispiel in verschiedenen Werken produziert wird und dadurch unterschiedliche Abläufe beinhaltet.\\
+
+\subsubsection{Rezepttypen}
+%Quelle EN 61522
+\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.6\textwidth]{graphics/stateoftheart/rezepttypen.png}
+		\caption{Zusammenhang der Rezepttypen}
+\end{figure}
+„Verfahrens- und Werksrezept beschreiben die Vorgehensweise, also wie im Prinzip produziert wird. Grund- und Steuerrezept beschreiben die Aufgabe, also wie mit den tatsächlichen Betriebsmitteln zu produzieren ist.“
+\\\\
+\textbf{Verfahrensrezept}\\
+Das Verfahrensrezept ist ein Rezept auf Unternehmensebene, das als Grundlage für Rezepte auf niedrigeren Ebenen dient. Das Verfahrensrezept wird ohne spezifische Kenntnis der Anlagenausrüstung erstellt, die zur Herstellung des Produktes benutzt werden wird. Es bestimmt die Rohstoffe, ihre relativen Mengen und die erforderliche Verarbeitung, allerdings ohne Bezug zu einem bestimmten Werk oder der in diesem Werk verfügbaren Ausrüstung. Es wird von Personen mit Kenntnissen der Chemie und den Verarbeitungsanforderungen erstellt, die für das betreffende Produkt typisch sind, und gibt deren Interessen und Überlegungen wieder.\\\\
+Das Verfahrensrezept kann für die unternehmensweite Planung und für Investitionsentscheidungen benutzt werden. Es kann ein Teil von Produktionsvorgaben sein oder von solchen in Bezug genommen werden und kann als solches für die Produktionsplanung und zur Information von Kunden und Behörden verwendet werden.
+\\\\
+\textbf{Werksrezept}\\
+Das Werksrezept ist spezifisch für ein bestimmtes Werk. Es ist eine Kombination von werksspezifischer Information und dem Verfahrensrezept. Es wird gewöhnlich aus einem Verfahrensrezept abgeleitet, um die Bedingungen einer bestimmten Produktionsstätte zu erfüllen, und bietet einen für werksbezogene, langfristige Produktionsplanung erforderlichen Detaillierungsgrad.
+\\\\
+\textbf{Grundrezept}\\
+Das Grundrezept ist die Rezeptstufe, die auf eine Anlage oder eine Gruppe von Einrichtungen einer Anlage ausgerichtet ist. Ein Grundrezept kann vom Verfahrensrezept oder vom Werksrezept abgeleitet werden. Es kann mehrere von einem Werksrezept abgeleitete Grundrezepte geben, von denen jedes den Teil des Werksrezeptes abdeckt, der in einer Anlage ausgeführt werden kann. Das Grundrezept kann produktspezifische Informationen enthalten, wie sie zur detaillierten Produktionsplanung erforderlich sind, wie zum Beispiel Informationen über Prozeßeinsätze oder Anforderungen an die Einrichtung.\\\\
+Das Grundrezept ist eine unverzichtbare Rezeptstufe, da ohne es keine Steuerrezepte erzeugt und daher keine Chargen produziert werden können.
+\\\\
+\textbf{Steuerrezept}\\
+Das Steuerrezept entsteht als eine Kopie einer bestimmten Version des Grundrezeptes und wird anschließend wie erforderlich durch Informationen für Dispositionsplanung und Ausführung verändert, um spezifisch für eine einzelne Charge zu sein. Es enthält produktspezifische Prozeßinformationen, wie sie zur Produktion einer bestimmten Charge erforderlich sind. Es bietet den Detaillierungsgrad, wie er zum Start und zur Überwachung der Einrichtungsprozedurobjekte einer Anlage erforderlich ist. Es kann verändert worden sein, um die tatsächlichen RohstoffQualitäten und die tatsächlich eingesetzte Ausrüstung zu berücksichtigen. Die Auswahl von Teilanlagen und entsprechende Skalierung kann jederzeit durchgeführt werden, bevor diese Information benötigt wird.
+\subsubsection{Bestandteile des Rezeptes}
+
+\textbf{Rezeptkopf}\\
+Die organisatorische Information im Rezept wird als Rezeptkopf bezeichnet. Typische Informationen im Rezeptkopf kann die Rezept- und Produktidentifikation, die Versionsnummer, den Rezeptersteller, das Ausgabedatum, Freigaben, Status und andere organisatorische Angaben enthalten.
+\\\\
+\textbf{Stoff- und Produktionsdaten}\\
+Die Stoff- und Produktionsdaten sind eine Kategorie von Rezeptinformation, die Prozeßeinsätze, Prozeßparameter und Prozeßausstöße umfaßt.
+Ein Prozeßeinsatz besteht aus Bezeichnung und Menge eines Rohstoffs oder eines anderen Betriebsmittels, das zur Herstellung des Produktes erforderlich ist.
+Ein Prozeßparameter enthält detaillierte Information wie zum Beispiel Temperatur, Druck und Zeit, die wesentlich für das jeweilige Produkt ist.  Prozeßparameter können als Sollwerte, Vergleichswerte oder in logischen Bedingungen verwendet werden.
+Ein Prozeßausstoß besteht aus Bezeichnung und Menge eines Stoffs, die als Ergebnis einer Ausführung des Rezeptes erwartet wird.
+\\\\
+\textbf{Anforderungen an die Einrichtung}\\
+Anforderungen an die Einrichtung schränken die Auswahl der Einrichtungen ein, die schließlich eingesetzt werden, um einen bestimmten Teil der Prozedur durchzuführen. Im Verfahrens- und im Werksrezept werden die Anforderungen an die Einrichtung typischerweise in allgemeiner Weise, wie zum Beispiel zulässigen Werkstoffen und erforderlichen Verarbeitungscharakteristika angegeben.
+\\\\
+\textbf{Rezeptprozedur}\\
+Die Rezeptprozedur beschreibt die Strategie, um einen Prozeß durchzuführen. Verfahrensrezeptprozeduren und Werksrezeptprozeduren sind unter Benutzung der im Prozeßmodell beschriebenen Ebenen strukturiert, da diese Ebenen es gestatten, den Prozeß in einrichtungsunabhängiger Art zu beschreiben. Grundrezeptprozeduren und Steuerrezeptprozeduren werden unter Benutzung der Prozedurelemente des Prozedurmodells beschrieben, da diese Prozedurelemente einrichtungsbezogen sind.
+
+\subsubsection{Einrichtungssteuerung}
+Das Steuerrezept selbst enthält nicht genügend Information, um die Anlage zu betreiben. Daher wird es mit der Einrichtungssteuerung, die tatsächlich die Einrichtungen zum Betrieb und zur Produktion von Chargen veranlaßt, verknüpft. Die Einrichtungssteuerung wird nicht als Teil des Rezeptes angesehen.
+%Quelle EN 61522
+\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\textwidth]{graphics/stateoftheart/steuerrezeptprozedur_einrichtungssteuerung.png}
+		\caption{Abgrenzung von Steuerrezeptprozedur und Einrichtungssteuerung}
+\end{figure}
+\\
 
 \section{Visualisierung von Produktionsanlagen}
 Die Visualisierung einer Produktionsanlage ist ein wesentlicher Punkt der Datenverarbeitung und wird oft als Benachrichtigungszentrale benutzt. Meist werden in diesen in Echzeit aktualisierte Statuswerte sowie Benachrichtigungen zu unerwarteten Ereignissen angezeigt. Die hierfür benötigten Daten müssen von der SPS in die Visualisierungssoftware übermittelt werden. Da dies ein sehr aufwendiger Prozess ist, gibt es SCADA-Systeme die all diese Funktionen vereinen.\\

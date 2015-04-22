@@ -1,0 +1,24 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: diplomarbeit.aux
+A level-1 auxiliary file: tex/title.aux
+A level-1 auxiliary file: tex/prefacea.aux
+A level-1 auxiliary file: tex/abstracta.aux
+A level-1 auxiliary file: tex/kurzzfsg.aux
+A level-1 auxiliary file: tex/nomenclature.aux
+A level-1 auxiliary file: tex/chapter1.aux
+A level-1 auxiliary file: tex/chapter2.aux
+A level-1 auxiliary file: tex/chapter3.aux
+A level-1 auxiliary file: tex/chapter4.aux
+A level-1 auxiliary file: tex/chapter5.aux
+A level-1 auxiliary file: tex/chapter6.aux
+A level-1 auxiliary file: tex/appendix.aux
+The style file: sty/IEEEtranS.bst
+A level-1 auxiliary file: tex/eid.aux
+Database file #1: tex/bib_file.bib
+Warning--entry type for "funktionsbausteinplan" isn't style-file defined
+--line 42 of file tex/bib_file.bib
+Warning--entry type for "kontaktplan" isn't style-file defined
+--line 49 of file tex/bib_file.bib
+Warning--missing publisher in wlepuschitz_2014
+Warning--empty booktitle in Lepuschitz_PhaseAgent
+Warning--empty year in Lepuschitz_PhaseAgent
+(There were 5 warnings)
