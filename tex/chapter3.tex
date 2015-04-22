@@ -17,15 +17,19 @@ Die beiden sind von einander Abhängig, denn die Namen, der von in der Ontologie
 Mithilfe der Ontologie und des Aktivitätsdiagramms können die Informationen bereitgestellt werden, die für die Codegenerierung nötige sind.  
 
 \subsection{Modell der Produktionsanlage}
-Hierbei handelt es sich um die Speicherung der Daten der Produktionsanlage in einer Ontologie. Desto genaue Zu den Daten gehören folgende Informationen. 
-
-\subsection{Modell der Wege}
+Hierbei handelt es sich um die Speicherung der Daten der Produktionsanlage in einer Ontologie. Je genauer diese im Modell abgebildet ist, desto mehr kann automatisch generiert werden. Wenn zum Beispiel maximum und minimum Werte einfließen, können diese berücksichtigt werden.
+\begin{figure}[hbt!]
+ \centering
+  \includegraphics[width=1\textwidth]{graphics/stateoftheart/Ontology_Aufbau}
+  \caption{Aufbau einer Ontologie}
+\end{figure}
+\subsection{Diagramm der Wege}
 Das Modell der Wege wird in einem Activity Diagram nach der UML Norm erstellt. Dieses enthält die Phasen die später Codegeneriert werden und im weiteren Schritt in der Chargenprozessanlage verwendbar sein sollen.
-Jede Phase wird durch einen Start- und Endpunkt definiert. Dazwischen werden die Namen der Stadtionen geschrieben und diese mit Pfeilen verbunden. Das Diagramm sieht dann so aus: 
+Jede Phase wird durch einen Start- und Endpunkt definiert. Dazwischen werden die Namen der Stadtionen geschrieben und diese mit Pfeilen verbunden. Das Diagramm für zwei Phasen würde ca. so aussehen: 
 \begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.7\textwidth]{graphics/konzept/UML_Activity.png}
-		\caption{Abbildung der Wege mittels Activity Diagram}
+		\caption{Abbildung der Wege mittels Aktivitätsdiagramm}
 		%\label{fig:MegaProxyProblem}
 \end{figure}
 \newpage
