@@ -287,9 +287,7 @@ Das Steuerrezept selbst enthält nicht genügend Information, um die Anlage zu b
 \\
 
 \section{Visualisierung von Produktionsanlagen}
-Die Visualisierung einer Produktionsanlage ist ein wesentlicher Punkt der Datenverarbeitung und wird oft als Benachrichtigungszentrale benutzt. Meist werden in diesen in Echzeit aktualisierte Statuswerte sowie Benachrichtigungen zu unerwarteten Ereignissen angezeigt. Die hierfür benötigten Daten müssen von der SPS in die Visualisierungssoftware übermittelt werden. Da dies ein sehr aufwendiger Prozess ist, gibt es SCADA-Systeme die all diese Funktionen vereinen.\\
-\\
-\textbf{SCADA}\\
+\subsection{SCADA}
 (Supervisory Control And Data Acquisition)\\
 Ein SCADA System ist im Allgemeinen eine Sammelstelle für alle aus der Anlagen generierten Werte. Diese Daten müssen dann weiterverarbeitet werden um aus ihnen Analysen zu erstellen.\\
 Zu den Elemente eines SCADA Systems gehören:\\
@@ -304,7 +302,12 @@ Sammelstelle für Echtzeitdaten die von RTUs generiert werden. Meist herkömmlic
 Aus den gesammelten Daten Analysen (Prognosen, Diagnosen) so aufbereiten das sie für den Menschen leicht verständlich dargestellt werden.\\
 \\
 \textbf{Remote Terminal Units (RTUs)}\\
-Sensoren die Physikalische Änderungen in der Anlage mit einem Signalumformer in Elektrische Werte umwandelt. Je nachdem was gemessen werden soll, entstehen Analoge (Füllstand, Helligkeit, Druck, ...) oder Digitale (z.B. Status eines Geräts) Werte.\\
+Sensoren die Physikalische Änderungen in der Anlage mit einem Signalumformer in Elektrische Werte umwandelt. Je nachdem was gemessen werden soll, entstehen Analoge (Füllstand, Helligkeit, Druck, ...) oder Digitale (z.B. Status eines Geräts) Werte.
+
+\subsection{HMI}
+Die Visualisierung einer Produktionsanlage ist ein wesentlicher Punkt der Datenverarbeitung und wird oft als Benachrichtigungszentrale benutzt. Meist werden in diesen in Echzeit aktualisierte Statuswerte sowie Benachrichtigungen zu unerwarteten Ereignissen angezeigt. Die hierfür benötigten Daten müssen von der SPS in die Visualisierungssoftware übermittelt werden. Da dies ein sehr aufwendiger Prozess ist, gibt es SCADA-Systeme die all diese Funktionen vereinen.\\
+\\
+Für dieses Projekt wurde eine Umsetzung in der SCADA Software zenon verlangt, daher wird im weiteren nur noch über die Visualisierung in zenon's HMI System (zenon Supervisor) gesprochen.\\
 \\
 
 %Quelle http://www.protec.at/dienstleistungen/visualisierung
@@ -312,13 +315,13 @@ Sensoren die Physikalische Änderungen in der Anlage mit einem Signalumformer in
 \begin{figure}[hbt!]
  \centering
   \includegraphics[width=1\textwidth]{graphics/stateoftheart/zenon_visualisierung}
-  \caption{Visualisierung in Zenon Supervisor}
+  \caption{Beispiel Visualisierung in Zenon Supervisor}
 \end{figure}
 
 
 \newpage
 \section{Konzeptioneller Entwurf, Modellbasierte Entwicklung}
-Das Gebiet der Modellbasierten Entwicklung bzw. der automatisierten Codegenerierung aus so einem Modell als ganzes kann man nicht wirklich als State of the Art erklären.\\
+Das Gebiet der Modellbasierten Entwicklung bzw. der automatisierten Codegenerierung aus einem Modell als ganzes kann man nicht wirklich als State of the Art erklären.\\
 Wenn man sich jedoch die Gebiete als einzelnes anschaut, erkennt man das diese im heutigem Betrieb eingesetzt werden.
 \subsection{Modell}
 Ein Modell der gesamten Anlage wird schon im frühen Stadium der Entwicklung in Form eines RI-Fließschemas hergestellt um klar zu definieren welche Bauteile benötigt werden und welches mit welchem Bauteil verbunden ist. Dies ist nur das erste Modell das in der Industrie eingesetzt wird.\\
@@ -370,9 +373,13 @@ UML ist, wie eine Ontologie, eine auf XML basierte Modellierungssprache.
 %Quelle OMG Unified Modeling LanguageTM (OMG UML), Infrastructure
 Das Ziel von UML ist es, System Architekten, Software Ingenieuren und Software Entwicklern ein Werkzeug zur Analyse, Design, Implementation von Softwarebasierenden Systemen, sowie für Modell Entwicklung und ähnliche Prozesse zu bieten.\\
 \\
+Mit Hilfe von UML können viele verschiedene Arten von Diagrammen erstellt werden, für dieses Projekt relevant ist jedoch nur das Klassendiagramm und das Aktivitätsdiagramm, daher wird im weiteren nur auf diese 2 Arten genauer eingegangen.\\
+\\
+\textbf{Klassendiagramm}\\
+\\
 Neben einer einfachen Abbildung der Anlage kann man ein Activity Diagram verwenden um beispielsweise einzelne Phasen oder ganze Rezepte abzubilden.\\
 \\
-\textbf{Activity}\\
+\textbf{Aktivität}\\
 %TODO Quelle Activity
 %Quelle http://timpt.de/topic35.html
 Ein Aktivitätsdiagramm beschreibt das Verhalten von Systemen auf Grundlage von vorgegebenen Regeln. 
@@ -395,7 +402,9 @@ Activity Edges\\An ActivityEdge is a directed connection between two ActivityNo
   \caption{Beispiel für ein Aktivitätsdiagramm}
 \end{figure}
 
+\subsection{OPC}
+OLE for Process Control\\
+Object Linking and Embedding for Process Control (OPC)\\
+%TODO OPC
+XML, nur für Industrie.
 \section{Fazit}
-
-%TODO Codegenerierung
-%Sinnvoll in State of the Art?	
