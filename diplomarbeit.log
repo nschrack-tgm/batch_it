@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.11)  22 APR 2015 13:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.11)  22 APR 2015 14:01
 entering extended mode
 **diplomarbeit.tex
 (diplomarbeit.tex
@@ -1154,7 +1154,9 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
-(diplomarbeit.aux)
+(diplomarbeit.aux (tex/title.aux) (tex/prefacea.aux) (tex/abstracta.aux) (tex/kurzzfsg.aux) (tex/nomenclature.aux)
+(tex/chapter1.aux) (tex/chapter2.aux) (tex/chapter3.aux) (tex/chapter4.aux) (tex/chapter5.aux) (tex/chapter6.aux)
+(tex/appendix.aux) (tex/eid.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 205.
 LaTeX Font Info:    ... okay on input line 205.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 205.
@@ -1198,15 +1200,14 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 205.
 LaTeX Info: Redefining \pageref on input line 205.
 LaTeX Info: Redefining \nameref on input line 205.
- (diplomarbeit.out) (diplomarbeit.out)
 \@outlinefile=\write9
-
-(tex/title.tex
+ (tex/title.tex
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 44.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-<graphics/title/tgmlogo2.png, id=189, 376.5267pt x 121.29315pt>
+<graphics/title/tgmlogo2.png, id=6, 376.5267pt x 121.29315pt>
 File: graphics/title/tgmlogo2.png Graphic file (type png)
  <use graphics/title/tgmlogo2.png>
 Package pdftex.def Info: graphics/title/tgmlogo2.png used on input line 44.
@@ -1367,9 +1368,7 @@ Package babel Info: Redefining german shorthand "~
 
 
 ]
-
-Package hyperref Warning: old toc file detected, not used; run LaTeX again.
-
+No file diplomarbeit.toc.
 \tf@toc=\write10
 Package babel Info: Redefining german shorthand "f
 (babel)             in language  on input line 234.
@@ -1400,9 +1399,7 @@ Package babel Info: Redefining german shorthand "~
 
 
 ]
-
-Package hyperref Warning: old lof file detected, not used; run LaTeX again.
-
+No file diplomarbeit.lof.
 \tf@lof=\write11
 Package babel Info: Redefining german shorthand "f
 (babel)             in language  on input line 236.
@@ -1433,9 +1430,7 @@ Package babel Info: Redefining german shorthand "~
 
 
 ]
-
-Package hyperref Warning: old lol file detected, not used; run LaTeX again.
-
+No file diplomarbeit.lol.
 \tf@lol=\write12
 Package babel Info: Redefining german shorthand "f
 (babel)             in language  on input line 238.
@@ -1485,12 +1480,6 @@ Package babel Info: Redefining german shorthand "|
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 2.
 
-LaTeX Warning: Citation `wlepuschitz_2014' on page 1 undefined on input line 42.
-
-
-LaTeX Warning: Citation `Lepuschitz_PhaseAgent' on page 1 undefined on input line 43.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 42--47
 
  []
@@ -1526,54 +1515,40 @@ Package babel Info: Redefining german shorthand "|
 (babel)             in language  on input line 47.
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 47.
+ <graphics/konzept/konzept.pdf, id=92, 271.0125pt x 391.4625pt>
+File: graphics/konzept/konzept.pdf Graphic file (type pdf)
 
+<use graphics/konzept/konzept.pdf>
+Package pdftex.def Info: graphics/konzept/konzept.pdf used on input line 53.
+(pdftex.def)             Requested size: 152.41533pt x 220.16127pt.
 
-LaTeX Warning: File `graphics/konzept/konzept.pdf' not found on input line 53.
-
-
-! Package pdftex.def Error: File `graphics/konzept/konzept.pdf' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.53 ...7\textwidth]{graphics/konzept/konzept.pdf}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 53.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
-File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
 Underfull \hbox (badness 10000) in paragraph at lines 48--59
 
  []
 
 Package babel Info: Redefining german shorthand "f
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 59.
 Package babel Info: Redefining german shorthand "|
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 59.
 Package babel Info: Redefining german shorthand "~
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 59.
 Package babel Info: Redefining german shorthand "f
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 59.
 Package babel Info: Redefining german shorthand "|
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 59.
 Package babel Info: Redefining german shorthand "~
-(babel)             in language  on input line 64.
-Package babel Info: Redefining german shorthand "f
-(babel)             in language  on input line 64.
-Package babel Info: Redefining german shorthand "|
-(babel)             in language  on input line 64.
-Package babel Info: Redefining german shorthand "~
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 59.
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.64 
-      [2]
+l.59 
+      [2 <./graphics/konzept/konzept.pdf>]
+Package babel Info: Redefining german shorthand "f
+(babel)             in language  on input line 62.
+Package babel Info: Redefining german shorthand "|
+(babel)             in language  on input line 62.
+Package babel Info: Redefining german shorthand "~
+(babel)             in language  on input line 62.
 Package babel Info: Redefining german shorthand "f
 (babel)             in language  on input line 65.
 Package babel Info: Redefining german shorthand "|
@@ -1625,7 +1600,7 @@ Package babel Info: Redefining german shorthand "|
 (babel)             in language  on input line 10.
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 10.
-<graphics/stateoftheart/Prozess.png, id=286, 130.3269pt x 274.8669pt>
+<graphics/stateoftheart/Prozess.png, id=146, 130.3269pt x 274.8669pt>
 File: graphics/stateoftheart/Prozess.png Graphic file (type png)
  <use graphics/stateoftheart/Prozess.png>
 Package pdftex.def Info: graphics/stateoftheart/Prozess.png used on input line 15.
@@ -1725,9 +1700,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--54
  []
 
 
-LaTeX Warning: Citation `mseitz_sps' on page 7 undefined on input line 55.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 55--56
 
  []
@@ -1736,9 +1708,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 55--56
 Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
-
-
-LaTeX Warning: Citation `sps_programmierung' on page 7 undefined on input line 59.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 59--60
@@ -1757,16 +1726,12 @@ Package babel Info: Redefining german shorthand "|
 (babel)             in language  on input line 60.
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 60.
-[7] <graphics/stateoftheart/Aufbau_Steuerkreis_Selfmade.png, id=306, 1023.5841pt x 401.3394pt>
+[7] <graphics/stateoftheart/Aufbau_Steuerkreis_Selfmade.png, id=175, 1023.5841pt x 401.3394pt>
 File: graphics/stateoftheart/Aufbau_Steuerkreis_Selfmade.png Graphic file (type png)
 
 <use graphics/stateoftheart/Aufbau_Steuerkreis_Selfmade.png>
 Package pdftex.def Info: graphics/stateoftheart/Aufbau_Steuerkreis_Selfmade.png used on input line 63.
 (pdftex.def)             Requested size: 411.93877pt x 161.51886pt.
-
-
-LaTeX Warning: Citation `mseitz_sps' on page 8 undefined on input line 64.
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
@@ -1820,22 +1785,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--88
  []
 
 
-LaTeX Warning: Citation `mseitz_sps' on page 9 undefined on input line 97.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 97--98
 
  []
 
-<graphics/stateoftheart/Signalverarbeitung_Selfmade.png, id=316, 563.9469pt x 311.0019pt>
+<graphics/stateoftheart/Signalverarbeitung_Selfmade.png, id=189, 563.9469pt x 311.0019pt>
 File: graphics/stateoftheart/Signalverarbeitung_Selfmade.png Graphic file (type png)
 
 <use graphics/stateoftheart/Signalverarbeitung_Selfmade.png>
 Package pdftex.def Info: graphics/stateoftheart/Signalverarbeitung_Selfmade.png used on input line 103.
 (pdftex.def)             Requested size: 411.93877pt x 227.1766pt.
-
-
-LaTeX Warning: Citation `mseitz_sps' on page 9 undefined on input line 104.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1881,12 +1840,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 130--131
  []
 
 
-LaTeX Warning: Citation `spslehrgang_struktur' on page 11 undefined on input line 132.
-
-
-LaTeX Warning: Citation `egroetsch_sps' on page 11 undefined on input line 132.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
  []
@@ -1905,9 +1858,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 136--146
 Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
-
-
-LaTeX Warning: Citation `grundlagen_automatisierungstechnik' on page 11 undefined on input line 153.
 
 Package babel Info: Redefining german shorthand "f
 (babel)             in language  on input line 168.
@@ -1965,15 +1915,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 171--172
 
  []
 
-<graphics/stateoftheart/kop_Selfmade.png, id=334, 537.9297pt x 383.2719pt>
+<graphics/stateoftheart/kop_Selfmade.png, id=215, 537.9297pt x 383.2719pt>
 File: graphics/stateoftheart/kop_Selfmade.png Graphic file (type png)
 
 <use graphics/stateoftheart/kop_Selfmade.png>
 Package pdftex.def Info: graphics/stateoftheart/kop_Selfmade.png used on input line 180.
 (pdftex.def)             Requested size: 329.55226pt x 234.8131pt.
-
-
-LaTeX Warning: Citation `kontaktplan' on page 12 undefined on input line 181.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1995,16 +1942,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 185--186
 
  []
 
-<graphics/stateoftheart/funktionsbausteinplan_Selfmade.png, id=342, 531.9072pt x 166.4619pt>
+<graphics/stateoftheart/funktionsbausteinplan_Selfmade.png, id=224, 531.9072pt x 166.4619pt>
 File: graphics/stateoftheart/funktionsbausteinplan_Selfmade.png Graphic file (type png)
 
 <use graphics/stateoftheart/funktionsbausteinplan_Selfmade.png>
 Package pdftex.def Info: graphics/stateoftheart/funktionsbausteinplan_Selfmade.png used on input line 191.
 (pdftex.def)             Requested size: 329.55226pt x 103.13925pt.
-
-
-LaTeX Warning: Citation `funktionsbausteinplan' on page 13 undefined on input line 192.
-
 Package babel Info: Redefining german shorthand "f
 (babel)             in language  on input line 195.
 Package babel Info: Redefining german shorthand "|
@@ -2038,7 +1981,7 @@ Package babel Info: Redefining german shorthand "|
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 198.
  [13 <./graphics/stateoftheart/kop_Selfmade.png> <./graphics/stateoftheart/funktionsbausteinplan_Selfmade.png>]
-<graphics/stateoftheart/prozedursteuerung.png, id=351, 177.66376pt x 405.01312pt>
+<graphics/stateoftheart/prozedursteuerung.png, id=236, 177.66376pt x 405.01312pt>
 File: graphics/stateoftheart/prozedursteuerung.png Graphic file (type png)
 
 <use graphics/stateoftheart/prozedursteuerung.png>
@@ -2171,7 +2114,7 @@ Package babel Info: Redefining german shorthand "|
 (babel)             in language  on input line 259.
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 259.
- <graphics/stateoftheart/rezepttypen.png, id=366, 367.3725pt x 384.6872pt>
+ <graphics/stateoftheart/rezepttypen.png, id=254, 367.3725pt x 384.6872pt>
 File: graphics/stateoftheart/rezepttypen.png Graphic file (type png)
 
 <use graphics/stateoftheart/rezepttypen.png>
@@ -2260,7 +2203,7 @@ Package babel Info: Redefining german shorthand "|
 (babel)             in language  on input line 298.
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 298.
- <graphics/stateoftheart/steuerrezeptprozedur_einrichtungssteuerung.png, id=376, 442.65375pt x 344.03531pt>
+ <graphics/stateoftheart/steuerrezeptprozedur_einrichtungssteuerung.png, id=265, 442.65375pt x 344.03531pt>
 File: graphics/stateoftheart/steuerrezeptprozedur_einrichtungssteuerung.png Graphic file (type png)
 
 <use graphics/stateoftheart/steuerrezeptprozedur_einrichtungssteuerung.png>
@@ -2339,7 +2282,7 @@ Package babel Info: Redefining german shorthand "|
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 328.
  [20 <./graphics/stateoftheart/steuerrezeptprozedur_einrichtungssteuerung.png>] <graphics/stateoftheart/zenon_visualisie
-rung.jpg, id=386, 764.8575pt x 428.60126pt>
+rung.jpg, id=278, 764.8575pt x 428.60126pt>
 File: graphics/stateoftheart/zenon_visualisierung.jpg Graphic file (type jpg)
 
 <use graphics/stateoftheart/zenon_visualisierung.jpg>
@@ -2430,7 +2373,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 364--368
 
  []
 
-<graphics/stateoftheart/Ontology_Aufbau.png, id=407, 496.85625pt x 380.42125pt>
+<graphics/stateoftheart/Ontology_Aufbau.png, id=302, 496.85625pt x 380.42125pt>
 File: graphics/stateoftheart/Ontology_Aufbau.png Graphic file (type png)
 
 <use graphics/stateoftheart/Ontology_Aufbau.png>
@@ -2551,6 +2494,10 @@ Using draft setting for this image.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 7.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
 Package babel Info: Redefining german shorthand "f
 (babel)             in language  on input line 13.
 Package babel Info: Redefining german shorthand "|
@@ -2575,7 +2522,7 @@ Package babel Info: Redefining german shorthand "|
 (babel)             in language  on input line 18.
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 18.
-[27]
+ [27]
 Package babel Info: Redefining german shorthand "f
 (babel)             in language  on input line 19.
 Package babel Info: Redefining german shorthand "|
@@ -2583,21 +2530,41 @@ Package babel Info: Redefining german shorthand "|
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 19.
 Package babel Info: Redefining german shorthand "f
-(babel)             in language  on input line 23.
+(babel)             in language  on input line 22.
 Package babel Info: Redefining german shorthand "|
-(babel)             in language  on input line 23.
+(babel)             in language  on input line 22.
 Package babel Info: Redefining german shorthand "~
-(babel)             in language  on input line 23.
- <graphics/konzept/UML_Activity.png, id=435, 517.935pt x 534.99875pt>
+(babel)             in language  on input line 22.
+
+<graphics/konzept/UML_Activity.png, id=335, 517.935pt x 534.99875pt>
 File: graphics/konzept/UML_Activity.png Graphic file (type png)
  <use graphics/konzept/UML_Activity.png>
-Package pdftex.def Info: graphics/konzept/UML_Activity.png used on input line 28.
-(pdftex.def)             Requested size: 329.55226pt x 340.42249pt.
+Package pdftex.def Info: graphics/konzept/UML_Activity.png used on input line 27.
+(pdftex.def)             Requested size: 288.35587pt x 297.86661pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Package babel Info: Redefining german shorthand "f
+(babel)             in language  on input line 31.
+Package babel Info: Redefining german shorthand "|
+(babel)             in language  on input line 31.
+Package babel Info: Redefining german shorthand "~
+(babel)             in language  on input line 31.
+Package babel Info: Redefining german shorthand "f
+(babel)             in language  on input line 31.
+Package babel Info: Redefining german shorthand "|
+(babel)             in language  on input line 31.
+Package babel Info: Redefining german shorthand "~
+(babel)             in language  on input line 31.
+[28]
+Package babel Info: Redefining german shorthand "f
+(babel)             in language  on input line 32.
+Package babel Info: Redefining german shorthand "|
+(babel)             in language  on input line 32.
+Package babel Info: Redefining german shorthand "~
+(babel)             in language  on input line 32.
+Package babel Info: Redefining german shorthand "f
 (babel)             in language  on input line 33.
 Package babel Info: Redefining german shorthand "|
 (babel)             in language  on input line 33.
@@ -2621,26 +2588,7 @@ Package babel Info: Redefining german shorthand "|
 (babel)             in language  on input line 36.
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 36.
-Package babel Info: Redefining german shorthand "f
-(babel)             in language  on input line 37.
-Package babel Info: Redefining german shorthand "|
-(babel)             in language  on input line 37.
-Package babel Info: Redefining german shorthand "~
-(babel)             in language  on input line 37.
 )
-Package babel Info: Redefining german shorthand "f
-(babel)             in language  on input line 261.
-Package babel Info: Redefining german shorthand "|
-(babel)             in language  on input line 261.
-Package babel Info: Redefining german shorthand "~
-(babel)             in language  on input line 261.
-Package babel Info: Redefining german shorthand "f
-(babel)             in language  on input line 261.
-Package babel Info: Redefining german shorthand "|
-(babel)             in language  on input line 261.
-Package babel Info: Redefining german shorthand "~
-(babel)             in language  on input line 261.
- [28]
 Package babel Info: Redefining german shorthand "f
 (babel)             in language  on input line 261.
 Package babel Info: Redefining german shorthand "|
@@ -2868,50 +2816,9 @@ Package babel Info: Redefining german shorthand "|
 (babel)             in language  on input line 292.
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 292.
- (diplomarbeit.bbl
-LaTeX Font Info:    Try loading font information for U+msa on input line 32.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 32.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Underfull \hbox (badness 1975) in paragraph at lines 31--34
-[]\T1/cmr/m/n/12 [Online]. Availa-ble: [][]$http : / / www . sps-[]programm . info / images / articles /
- []
-
-
-Underfull \hbox (badness 1975) in paragraph at lines 37--40
-[]\T1/cmr/m/n/12 [Online]. Availa-ble: [][]$http : / / www . sps-[]programm . info / images / articles /
- []
-
-** WARNING: IEEEtranS.bst: No hyphenation pattern has been
-** loaded for the language `German'. Using the pattern for
-** the default language instead.
-** WARNING: IEEEtranS.bst: No hyphenation pattern has been
-** loaded for the language `German'. Using the pattern for
-** the default language instead.
-** WARNING: IEEEtranS.bst: No hyphenation pattern has been
-** loaded for the language `German'. Using the pattern for
-** the default language instead.
-)
-Package babel Info: Redefining german shorthand "f
-(babel)             in language  on input line 303.
-Package babel Info: Redefining german shorthand "|
-(babel)             in language  on input line 303.
-Package babel Info: Redefining german shorthand "~
-(babel)             in language  on input line 303.
-Package babel Info: Redefining german shorthand "f
-(babel)             in language  on input line 303.
-Package babel Info: Redefining german shorthand "|
-(babel)             in language  on input line 303.
-Package babel Info: Redefining german shorthand "~
-(babel)             in language  on input line 303.
- [39
-
-] (tex/eid.tex)
+No file diplomarbeit.bbl.
+(tex/eid.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 12--303
 
  []
@@ -2928,7 +2835,7 @@ Package babel Info: Redefining german shorthand "|
 (babel)             in language  on input line 303.
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 303.
-[40
+[39
 
 ]
 Package babel Info: Redefining german shorthand "f
@@ -2943,7 +2850,7 @@ Package babel Info: Redefining german shorthand "|
 (babel)             in language  on input line 303.
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 303.
- [41]
+ [40]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 307.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 307.
  (diplomarbeit.aux (tex/title.aux) (tex/prefacea.aux) (tex/abstracta.aux) (tex/kurzzfsg.aux)
@@ -2951,37 +2858,57 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 307.
 (tex/chapter6.aux) (tex/appendix.aux) (tex/eid.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 307.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 307.
-Package rerunfilecheck Info: File `diplomarbeit.out' has not changed.
-(rerunfilecheck)             Checksum: 72A2635A4C141544823C3C57E44F9A85;2995.
 
 
-LaTeX Warning: There were undefined references.
+Package rerunfilecheck Warning: File `diplomarbeit.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+Package rerunfilecheck Info: Checksums for `diplomarbeit.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  C362BF00648905DEFDD18E3791A9993D;2993.
  ) 
 Here is how much of TeX's memory you used:
- 24901 strings out of 493698
- 435828 string characters out of 3141988
- 581889 words of memory out of 3000000
- 27416 multiletter control sequences out of 15000+200000
- 20907 words of font info for 49 fonts, out of 3000000 for 9000
+ 24842 strings out of 493698
+ 435028 string characters out of 3141988
+ 593509 words of memory out of 3000000
+ 27358 multiletter control sequences out of 15000+200000
+ 16817 words of font info for 33 fonts, out of 3000000 for 9000
  1039 hyphenation exceptions out of 8191
  62i,9n,82p,1818b,1991s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Philipp\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Philipp\AppData\
-Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\Philipp\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
-our\jknappen\ec\dpi600\ectt1200.pk> <C:\Users\Philipp\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx17
-28.pk> <C:\Users\Philipp\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsl1200.pk> <C:\Users\Philipp\AppD
-ata\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Philipp\AppData\Local\MiKTeX\2.9\fonts\pk
-\ljfour\jknappen\ec\dpi600\ecss2488.pk> <C:\Users\Philipp\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
-rm1200.pk> <C:\Users\Philipp\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecss1440.pk> <C:\Users\Philipp\
-AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecss1200.pk> <C:\Users\Philipp\AppData\Local\MiKTeX\2.9\font
-s\pk\ljfour\jknappen\ec\dpi600\ecsx2074.pk> <C:\Users\Philipp\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
-0\ecss1728.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on diplomarbeit.pdf (57 pages, 1260549 bytes).
+pdfTeX warning (dest): name{cite.funktionsbausteinplan} has been referenced but does not exist, replaced by a fixed on
+e
+
+pdfTeX warning (dest): name{cite.kontaktplan} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.grundlagen_automatisierungstechnik} has been referenced but does not exist, replaced by
+ a fixed one
+
+pdfTeX warning (dest): name{cite.egroetsch_sps} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.spslehrgang_struktur} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.sps_programmierung} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.mseitz_sps} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.Lepuschitz_PhaseAgent} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.wlepuschitz_2014} has been referenced but does not exist, replaced by a fixed one
+
+ <C:\Users\Philipp\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk> <C:\Users\Philipp\AppData\Lo
+cal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Philipp\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
+r\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Philipp\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200
+.pk> <C:\Users\Philipp\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\Philipp\AppDat
+a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsl1200.pk> <C:\Users\Philipp\AppData\Local\MiKTeX\2.9\fonts\pk\l
+jfour\jknappen\ec\dpi600\ecss2488.pk> <C:\Users\Philipp\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm
+1200.pk> <C:\Users\Philipp\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecss1440.pk> <C:\Users\Philipp\Ap
+pData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecss1200.pk> <C:\Users\Philipp\AppData\Local\MiKTeX\2.9\fonts\
+pk\ljfour\jknappen\ec\dpi600\ecsx2074.pk> <C:\Users\Philipp\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
+ecss1728.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on diplomarbeit.pdf (56 pages, 1266130 bytes).
 PDF statistics:
- 1108 PDF objects out of 1200 (max. 8388607)
- 149 named destinations out of 1000 (max. 500000)
- 441 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 998 PDF objects out of 1000 (max. 8388607)
+ 147 named destinations out of 1000 (max. 500000)
+ 78 words of extra memory for PDF output out of 10000 (max. 10000000)
 
