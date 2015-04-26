@@ -314,8 +314,7 @@ Für dieses Projekt wurde eine Umsetzung in der SCADA Software zenon verlangt, d
 %Quelle http://www.protec.at/tl_files/protec/uploads/Bilder_Logos/Visualisierung/visualisierung2.jpg
 \begin{figure}[hbt!]
  \centering
-  \includegraphics[width=1\textwidth]{graphics/stateoftheart/zenon_visualisierung}
-  \caption{Beispiel Visualisierung in Zenon Supervisor}
+	\caption{Beispiel Visualisierung in Zenon Supervisor}
 \end{figure}
 
 
@@ -342,10 +341,10 @@ Dafür gibt es andere Werkzeuge, die auf XML basieren aber eine Grafische Darste
 \subsection{Ontologie}
 %todo Quelle Ontologie
 %http://plato.stanford.edu/entries/logic-ontology/
-\begin{displayquote}... we have at least two parts to the overall philosophical project of ontology: first, say what there is, what exists, what the stuff is reality is made out off, secondly, say what the most general features and relations of these things are.
-\end{displayquote}
 Eine Ontologie ist ein auf XML basierendes Konstrukt das einem das Abbilden von Dingen und deren Relationen ermöglicht. Um solch Komplexe Zustände darzustellen stehen einem neben einfachen Entitäten(Dinge) auch Eigenschaften zur verfügen.\\
 \\
+\begin{displayquote}... we have at least two parts to the overall philosophical project of ontology: first, say what there is, what exists, what the stuff is reality is made out off, secondly, say what the most general features and relations of these things are.
+\end{displayquote}
 \textbf{Allgemeiner Aufbau einer Ontologie}\\
 Das Modell an sich ohne zusätzliche Attribute oder Eigenschaften ist vom Aufbau her so zu erklären: Es gibt ein 'Thing' von dem alles aus geht (das root Element bei XML). Von diesem Punkt aus können weitere Entitäten abgeleitet werden (Eine Vererbung, vergleichbar mit einem Stammbaum). Die neu erstellte Entität ist immer noch ein Thing, jedoch genauer definiert. Es gibt keine Grenzen oder Vorschriften in welche Tiefe diese Definition gehen muss und kann daher für sehr Komplexe aber auch Simple Modelle eingesetzt werden.\\
 
@@ -389,7 +388,8 @@ Ein Aktivitätsdiagramm beschreibt das Verhalten von Systemen auf Grundlage von 
   \includegraphics[width=1\textwidth]{graphics/stateoftheart/Activity_Elemente}
   \caption{Basis Elemente eines Aktivitätsdiagramm}
 \end{figure}
-%Quelle OMG Unified Modeling LanguageTM (OMG UML), Version 2.5An Activity is a kind of Behavior (see sub clause 13.2) that is specified as a graph of nodes interconnected by edges. A subset of the nodes are executable nodes that embody lower-level steps in the overall Activity. Object nodes hold data that is input to and output from executable nodes, and moves across object flow edges. Control nodes specify sequencing of executable nodes via control flow edges. Activities are essentially what are commonly called “control and data flow” models. Such models of computation are inherently concurrent, as any sequencing of activity node execution is modeled explicitly by activity edges, and no ordering is mandated for any computation not explicitly sequenced.\\Activities may describe procedural computation, forming hierarchies of Activities invoking other Activities, or, in an object- oriented model, they may be invoked indirectly as methods bound to Operations that are directly invoked. Activities may be applied to organizational modeling for business process engineering and workflow. In this context, events often originate from inside the system, such as the finishing of a task, but also from outside the system, such as a customer call. Activities can also be used for information system modeling to specify system level processes.\\
+%Quelle OMG Unified Modeling LanguageTM (OMG UML), Version 2.5
+%Als Zitat lassen und das Beispiel auf Deutsch dann erklären (Eng. Begriffe verwenden)An Activity is a kind of Behavior that is specified as a graph of nodes interconnected by edges. A subset of the nodes are executable nodes that embody lower-level steps in the overall Activity. Object nodes hold data that is input to and output from executable nodes, and moves across object flow edges. Control nodes specify sequencing of executable nodes via control flow edges. Activities are essentially what are commonly called “control and data flow” models. Such models of computation are inherently concurrent, as any sequencing of activity node execution is modeled explicitly by activity edges, and no ordering is mandated for any computation not explicitly sequenced.\\Activities may describe procedural computation, forming hierarchies of Activities invoking other Activities, or, in an object- oriented model, they may be invoked indirectly as methods bound to Operations that are directly invoked. Activities may be applied to organizational modeling for business process engineering and workflow. In this context, events often originate from inside the system, such as the finishing of a task, but also from outside the system, such as a customer call. Activities can also be used for information system modeling to specify system level processes.\\
 \\
 Activity Nodes\\ActivityNodes are used to model the individual steps in the behavior specified by an Activity.\\
 \\
@@ -401,7 +401,7 @@ Activity Edges\\An ActivityEdge is a directed connection between two ActivityNo
   \includegraphics[width=1\textwidth]{graphics/stateoftheart/Activity_bsp}
   \caption{Beispiel für ein Aktivitätsdiagramm}
 \end{figure}
-
+%
 \subsection{OPC}
 OLE for Process Control\\
 Object Linking and Embedding for Process Control (OPC)\\
