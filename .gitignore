@@ -13,3 +13,5 @@ tex/bib_file.bib.bak
 *.log
 
 *.bak
+
+graphics/.DS_Store
