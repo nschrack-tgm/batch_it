@@ -9,3 +9,9 @@
 
 tex/bib_file_OLD.bib
 tex/bib_file.bib.bak
+
+*.log
+
+*.bak
+
+graphics/.DS_Store

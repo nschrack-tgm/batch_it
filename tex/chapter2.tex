@@ -5,14 +5,27 @@
 	% ##################################################################
 	% Definition Prozessen, für die späterer Verwendung der Worte 
 	% ##################################################################
+
+	\section{Konzeptionelle Planung einer Anlage}
+	Es ist gängige Praxis in der Anlagen- \& Verfahrenstechnik, vor Realisierung der Anlage eine schematische Darstellung dieser zu modellieren. Das Rohr- \& Instrumentenfließschema ist hierfür ein probates Mittel, ein vollständiges Abbild dieser zu erstellen. Die verwendeten Bauteile sind jedenfalls namentlich beschriftet, können aber auch zusätzliche Informationen, die zum Verständnis der Verwendung beitragen, beinhalten. Das beschriebene Schema ist im Standard \todo{Welcher Standard?} wie folgt niedergeschrieben \todo[color=green]{Lepu: Wo ist der Standard niedergeschrieben?}\\
 	
-	\todo[inline]{Position, wo die Prozessdefinition im SotA stehen soll}	
+	Zur Anwendung kommt der beschriebene Arbeitsschritt beispielsweise bei einem Reaktor, welcher die hinreichende Bedingung \glqq Name \grqq \space und darüber hinaus fakultative Invarianten wie Anzahl und Lokalisation der Ein- \& Ausgänge hat. Weiteres könnten auch Angaben zur Implementierung von Sensoren oder Aktoren vermerkt sein. Rohre werden im Rohr- \& Instrumentenfließschema als Verbindungslinien zwischen Bauteilen dargestellt. Detailinformationen wie Nenndruck, Rohrklasse oder Spezifikationsnummer können ergänzend vermerkt werden. Somit sind in einem Rohr- \& Instrumentenfließschema Apparate (Tanks, Speicherbehälter, Reaktoren, o. Ä.), Maschinen (Pumpen, Verdichter, o. Ä.) und Leitungen darstellbar.\\
+	
+	Die folgende Abbildung 2.1 \todo{Ist die Abbildungsnummer 2.1 noch aktuell?} zeigt den Aufbau einer simplen Anlage mit Hilfe des Rohr- \& Instrumentenfließschemas.\\
+
+	\begin{figure}[h!]
+  		\centering
+		\includegraphics[height=0.7\textwidth]{graphics/stateoftheart/RI_SotA.jpg}
+		\caption{Rohr- \& Instrumentenfließschema}
+	\end{figure}
+
+	\newpage
 	\section{Definition eines Prozesses}
-	Ein Prozess ist dadurch definiert, was getan werden muss, um als Ergebnis das gewünschte Produkt zu erlangen. Die Anforderungen beziehungsweise das Zielprodukt formt somit den Arbeitsprozess.
+	Ein Prozess ist dadurch definiert, welche Arbeitsschritte bewerkstelligt werden müssen, um als Ergebnis das gewünschte Produkt zu erlangen. Die Anforderungen beziehungsweise das Zielprodukt formt somit den Arbeitsprozess.
 	
 	\begin{figure}[h!]
   		\centering
-	\includegraphics[height=0.5\textwidth]{graphics/stateoftheart/Prozess.png}
+		\includegraphics[height=0.5\textwidth]{graphics/stateoftheart/Prozess.jpg}
 		\caption{Prozess}
 	\end{figure}
 	
@@ -49,8 +62,9 @@
 	\section{Hardwareaufbau einer SPS}
 	
 	Um die im späteren Verlauf aufbauende Hardware genauer beschreiben zu können, muss zu Beginn ein wenig thematisch ausgeholt werden. So hat der Begriff der Steuerung einen undenkbar hohen Stellenwert, welcher ebenso geklärt gehört.\\
-	
-	Unter einer Prozess - Steuerung versteht man nach der Norm DIN 19226, sowie in Abbildung 2.1 ersichtlich, einen Vorgang, bei dem durch Rückführen gemessener Prozesszustände, verglichen mit von der speicherprogrammierbaren Steuerung formulierten Parametern, Sollwerte zur Beeinflussung des gesamten Prozesses erzeugt werden. Im Gegensatz zu einer Regelung, muss der von einem Sensor ausgelesene Ist-Wert jedoch nicht zwanghaft rückgeführt werden. \\
+
+	\todo{Ist die Abbildungsnummer 2.3 noch aktuell?}
+	Unter einer Prozess - Steuerung versteht man nach der Norm DIN 19226, sowie in Abbildung 2.3 ersichtlich, einen Vorgang, bei dem durch Rückführen gemessener Prozesszustände, verglichen mit von der speicherprogrammierbaren Steuerung formulierten Parametern, Sollwerte zur Beeinflussung des gesamten Prozesses erzeugt werden. Im Gegensatz zu einer Regelung, muss der von einem Sensor ausgelesene Ist-Wert jedoch nicht zwanghaft rückgeführt werden.\\
 	
 	Der Steuerkreis besteht aus Sensoren, einem Steuerungsrechner, welcher meistens mittels einer SPS realisiert wird, sowie Aktoren. Die Steuerungseinheit selbst ist ein Rechner, mit dem Hauptaufgabenbereich, die programmierten, im Speicher abgelegten Anweisungen zyklisch auszuführen und über einfach anzusprechende Schnittstellen Daten einzulesen oder auszugeben. \cite{mseitz_sps} \\
 	
@@ -128,7 +142,7 @@
 	
 	\textbf{a) Anweisungsliste}\\
 	
-	Diese textbasierte Programmiersprache nach der Norm IEC DIN EN 61131-3 ist sehr maschinennahe. Vergleicht man die Anweisungsliste aus Abbildung 2.3 mit höheren Programmiersprachen der Informatik, so ist es eine Art Assemblersprache, die normalerweise 1:1 den jeweiligen Maschinencode übersetzt. Es werden die einzelnen Anweisungen in der Reihenfolge geschrieben, wie sie die Maschine (CPU) abarbeiten soll (auch \glqq Stackorientierte Abarbeitung\grqq \space genannt). Ein großer Vorteil gegenüber allen graphischen Programmiersprachen ist die Tatsache, das AWL funktionell über diese hinausgeht, weil beispielsweise ein komplexer Zählvorgang mittels eines Kontaktplans nicht realisierbar sein könnte.	\cite{spslehrgang_struktur, egroetsch_sps}\\
+	Diese textbasierte Programmiersprache nach der Norm IEC DIN EN 61131-3 ist sehr maschinennahe. Vergleicht man die Anweisungsliste aus Abbildung 2.5 \todo{Ist die Abbildungsnummer 2.5 noch aktuell?} mit höheren Programmiersprachen der Informatik, so ist es eine Art Assemblersprache, die normalerweise 1:1 den jeweiligen Maschinencode übersetzt. Es werden die einzelnen Anweisungen in der Reihenfolge geschrieben, wie sie die Maschine (CPU) abarbeiten soll (auch \glqq Stackorientierte Abarbeitung\grqq \space genannt). Ein großer Vorteil gegenüber allen graphischen Programmiersprachen ist die Tatsache, das AWL funktionell über diese hinausgeht, weil beispielsweise ein komplexer Zählvorgang mittels eines Kontaktplans nicht realisierbar sein könnte.	\cite{spslehrgang_struktur, egroetsch_sps}\\
 
 	\begin{figure}[h!]
 		\begin{framed}
@@ -141,7 +155,7 @@
 	\color{black}
 	\textbf{b) Strukturierter Text}\\
 	
-	Diese in Abbildung 2.4 angeführte Programmiersprache der Automatisierungstechnik orientiert sich an der Sprache Pascal, enthält aber neben dieser Sprache zugehörigen spezifischen Elementen aber auch noch SPS-typische Elemente. Geeignet ist ST am vorteilhaftesten für Aufgaben mit mathematischem Hintergrund, sowie zum Beschreiben komplexer Algorithmen. Auch für Rezept- und Datenverwaltung hebt sich diese Art der Programmierung durch enorme Vereinfachung vor. Typische Anweisungen für ST sind solche, die in höheren Sprachen durch Bedingungen oder Schleifen ausgeführt werden können \cite{grundlagen_automatisierungstechnik}
+	Diese in Abbildung 2.6 \todo{Ist die Abbildungsnummer 2.6 noch aktuell?} angeführte Programmiersprache der Automatisierungstechnik orientiert sich an der Sprache Pascal, enthält aber neben dieser Sprache zugehörigen spezifischen Elementen aber auch noch SPS-typische Elemente. Geeignet ist ST am vorteilhaftesten für Aufgaben mit mathematischem Hintergrund, sowie zum Beschreiben komplexer Algorithmen. Auch für Rezept- und Datenverwaltung hebt sich diese Art der Programmierung durch enorme Vereinfachung vor. Typische Anweisungen für ST sind solche, die in höheren Sprachen durch Bedingungen oder Schleifen ausgeführt werden können \cite{grundlagen_automatisierungstechnik}
 	\todo[inline]{Schauen ob die Figur \glqq Strukturierter Text\grqq \space an der richtigen Position ist.}
 	
 	\begin{figure}[h]
@@ -319,8 +333,10 @@ Für dieses Projekt wurde eine Umsetzung in der SCADA Software zenon verlangt, d
 
 
 \newpage
-\section{Konzeptioneller Entwurf, Modellbasierte Entwicklung}
+
+\section{Modellbasierte Entwicklung der Steuerung}
 Das Gebiet der Modellbasierten Entwicklung bzw. der automatisierten Codegenerierung aus einem Modell als ganzes kann man nicht wirklich als State of the Art erklären.\\
+
 Wenn man sich jedoch die Gebiete als einzelnes anschaut, erkennt man das diese im heutigem Betrieb eingesetzt werden.
 \subsection{Modell}
 Ein Modell der gesamten Anlage wird schon im frühen Stadium der Entwicklung in Form eines RI-Fließschemas hergestellt um klar zu definieren welche Bauteile benötigt werden und welches mit welchem Bauteil verbunden ist. Dies ist nur das erste Modell das in der Industrie eingesetzt wird.\\

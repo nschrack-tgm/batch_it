@@ -1,40 +1,85 @@
 % Chapter3
 
-\chapter{Konzept/Architektur} \label{chapter:architecture}
-Die Abfolge der Arbeitsschritte für die modellbasierte Entwicklung der Steuerung einer Chargenprozessanlage sieht wie folgt aus. 
+\chapter{Konzept} \label{chapter:architecture}
+Die Abfolge der Arbeitsschritte für die modellbasierte Entwicklung der Steuerung einer Chargenprozessanlage sieht wie folgt aus.
 \begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.37\textwidth]{graphics/konzept/konzept_allblack.pdf}
+		\includegraphics[width=0.37\textwidth]{graphics/konzept/konzept_new.pdf}
 		\caption{Konzept für die modellbasierte Entwicklung der Steuerung}
 		%\label{fig:MegaProxyProblem}
 \end{figure} \\
+
 Es beginnt mit einer Produktionsanlage, wobei es sich um eine Chargenprozessanlage handelt, die in einem Modell abgebildet wird. Dieses Modell beinhaltet die nötigen Daten, die gebraucht werden, um im weiteren Schritt den Code für die SPS zu generieren. Dieser Code ist nach dem IEC 61512 Standard genormt. Nachdem der Code in die SPS eingespielt wird, kann die Chargenprozessanlage gesteuert werden. 
-In diesem Kapitel wird jeder Schritt, der in dem Kreislauf von Abbildung 3.1 enthalten ist, genauer elaboriert und in Perspektive zu dem entwickelten Konzept gebracht.
+In diesem Kapitel wird jeder Schritt, der in dem Kreislauf von Abbildung 3.1 \todo{Schauen ob die Abbildungsnummerierung noch aktuell ist} enthalten ist, genauer elaboriert und in Perspektive zu dem entwickelten Konzept gebracht.
+
 \section{Produktionsanlage}
+Für unserer Anlage gibt es gewisse Parameter, die beim konzeptionellen Entwurf beachtet werden müssen. Für die von uns gestellten Anforderungen, sowie für die zukünftig darauf aufbauenden Projekte, ist es unentbehrlich, dass diverse Redundanzen vorhanden sind. Eine Voraussetzung ist jedenfalls eine Vielzahl an Hauptleitungen. Durch diese kann erst ermöglicht werden, zwei Arbeitsschritte parallel auszuführen. Ebenso ist das Vorhandensein von mehr als einer Pumpe eine essentielle Bedingung. Dadurch kann die Anlage, bei der Eventualität eines Ausfalls einer Pumpe, diese vollständig kompensieren. Die Ansteuerung jeder einzelnen Funktion muss somit stets von geringstenfalls einer anderen Pumpe durchführbar sein. Zudem ist es vorgesehen, auf ausgewählten Routen die Steuerung mit Hilfe der Schwerkraft durchzuführen.\\
+
+Die Disponibilität jeglicher Parameter trägt dazu bei, eine möglichst hohe Effizienz mit der modellbasierten Entwicklung zu erreichen.\\
+
+\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.9\textwidth]{graphics/konzept/RI_K.jpg}
+		\caption{Konzept einer Anlage mit Redundanzen}
+\end{figure}
+
 \section{Modell}
 Die Informationen für die Codegenerierung benötigen einerseits einen Ontologie, zur Speicherung der Informationen der Produktionsanlagen,  und andererseits ein Aktivitätsdiagramm. In diesem werden die Wege (Phasen) dargestellt die später möglich sein sollen.
+
+Es beginnt mit einer Produktionsanlage, wobei es sich um eine Chargenprozessanlage handelt, die in einer Ontologie abgebildet wird. Die Ontologie und das Diagramm der Prozdere beinhaltet die nötigen Daten, die gebraucht werden, um im weiteren Schritt den Code für die SPS zu generieren. Dieser Code ist nach dem IEC 61512 Standard genormt. Nachdem der Code in die SPS eingespielt wird, kann die Chargenprozessanlage gesteuert werden. 
+In diesem Kapitel wird jeder Schritt, der in dem Kreislauf von Abbildung 3.1 enthalten ist, genauer elaboriert und in Perspektive zu dem entwickelten Konzept gebracht.
+\section{Produktionsanlage}
+\section{Informationskonzept}
+Die Informationen für die Codegenerierung benötigen einerseits einen Ontologie, zur Speicherung der Informationen der Produktionsanlagen,  und andererseits ein Aktivitätsdiagramm. In diesem werden die Prozedere dargestellt die später möglich sein sollen.
 Die beiden sind von einander Abhängig, denn die Namen, der von in der Ontologie erstellen Identitäten (Datensätze), werden den Namen des Aktivitätsdiagramms zugeordnet.
 Mithilfe der Ontologie und des Aktivitätsdiagramms können die Informationen bereitgestellt werden, die für die Codegenerierung nötige sind.  
 
-\subsection{Modell der Produktionsanlage}
-Hierbei handelt es sich um die Speicherung der Daten der Produktionsanlage in einer Ontologie. Je genauer diese im Modell abgebildet ist, desto mehr kann automatisch generiert werden. Wenn zum Beispiel maximum und minimum Werte einfließen, können diese berücksichtigt werden.
+\subsection{Ontologie der Chargenprozessanlage}
+Hierbei handelt es sich um die Speicherung der Daten der Produktionsanlage in einer Ontologie. Je genauer diese abgebildet ist, desto mehr kann automatisch generiert werden. Wenn zum Beispiel Maximal- und Minimalwerte einfließen, können diese berücksichtigt werden.
+Eine Ontologie, die eine Produktionsanlage abbildet, kann folgendermaßen aussehen. 
 \begin{figure}[hbt!]
  \centering
   \includegraphics[width=0.6\textwidth]{graphics/stateoftheart/Ontology_Aufbau}
   \caption{Aufbau einer Ontologie}
-\end{figure}
-\subsection{Diagramm der Wege}
-Das Modell der Wege wird in einem Activity Diagram nach der UML Norm erstellt. Dieses enthält die Phasen die später Codegeneriert werden und im weiteren Schritt in der Chargenprozessanlage verwendbar sein sollen.
-Jede Phase wird durch einen Start- und Endpunkt definiert. Dazwischen werden die Namen der Stadtionen geschrieben und diese mit Pfeilen verbunden. Das Diagramm für zwei Phasen würde ca. so aussehen: 
+\end{figure}\\
+%Die Verbindungen zwischen den Klassen (In Abbildung 3.2. die Vierecke) 
+Damit bei der Codegenerierung ein hoher Automatisierungsgrad  erreicht werden kann, müssen möglichst viele Daten abgespeichert werden. In einer Ontologie können unteranderem Klassen (Classes), Eigenschaften von Klassen (Object Properties) und Verbindungen zwischen Klassen (Data Properties) definiert werden. Für genauerer Erklärung einer Ontologie siehe Kapitel 2.3 \glqq Modellbasierte Entwicklung der Steuerung\grqq. Dies wird sich zu Nutze gemacht um die Produktionsanlagen sehr genau abzubilden. Damit die Codegenerierung best möglich umgesetzt werden kann, werden folgende Daten einer Chargenprozessanlage gebraucht:
+
+\begin{itemize}
+  \item Elektrische Elemente (Pumpe, Ventil, SPS)
+  \item Nicht- Elektronische Elemente (Tank, Reaktor)
+  \item Eigenschaften der Elemente (Maximal- Minimalwert, Analog/Digital)
+  \item Verbindung zwischen den Elementen (Eins-zu-Eins, Kreuzung)
+\end{itemize}
+
+\textbf{Elektrische Elemente}\\
+Diese Kategorie beinhaltet alle Elemente die einen I/O Port in einer SPS brauchen, um mit Strom versorgt und angesprochen zu werden. Darunter können zum Beispiel eine Pumpe, ein Ventil, jegliche Art von Sensor aber auch ein Rührstab oder ein Heizelement fallen. \\\\
+\textbf{Nicht- Elektrische Elemente}\\
+Hierbei werden alle Elemente beschrieben die kein I/0 Port in der SPS haben, aber wichtig für die Chargenprozessanlage sind. Somit fällt zum Beispiel ein Tank und Reaktor in diese Gruppe.\\\\
+\textbf{Eigenschaften der Elemente}  \\
+Diese Kategorie kann beliebig genau behandelt werden, wobei ein gutes Mittelmaß gefunden werden sollte. Grundsätzlich ist jede zusätzliche Information eines Elements wertvoll für die Codegenerierung, allerdings kann eine zu detailreiche Beschreibung umständlich bzw. aufwändig zu verwenden sein und keinen wirklichen Nutzen bringen.
+So sind zum Beispiel Maximal- und Minimalwerte sehr sinnvoll, aber die Abmessung der jeweiligen Elemente überflüssig. Weitere wertvolle Eigenschaften sind die Übertragungsarten (Analog oder Digital) und der standard Zustand, ob z.B. das Ventil offen oder zu ist wenn kein Strom fließt, von elektronische Elementen.   \\\\
+\textbf{Verbindung zwischen den Elementen}  \\
+Dabei werden die Verbindungen (z.B. mit Rohren) der Chargenprozessanlage zwischen den Elementen beschrieben. 
+%Es kann sich entweder um eine Element zu Element (Eins-zu-eins) Verbindung handeln oder einen Kreuzung, also mehr als zwei Elemente miteinander.
+Es kann entweder eine Eins-zu-eins Verbindung sein oder eine Kreuzung, das heißt es sind mehr als zwei Elemente miteinander verbunden. Eine wichtige Zusatzinformation ist die Richtung der Verbindung.
+
+%3.32 Weg (Strom) (en: path, stream): Die Reihenfolge der Einrichtungen innerhalb einer Anlage, die zur Herstellung einer bestimmten Charge genutzt wird oder genutzt werden soll.
+
+%3.37 Prozedur (en: procedure): Die Strategie, nach der ein Prozeß durchgeführt wird.%ANMERKUNG: Im allgemeinen bezieht sich der Begriff auf die Strategie, nach der eine Charge in einer Anlage hergestellt wird. Er kann sich auch auf einen Prozeß beziehen, der nicht zur Herstellung eines Produkts dient, wie z. B. ein Reinigungsvorgang.
+
+\subsection{Diagramm der Prozedere}
+Die Abbildung der Prozeder ist die zweite Komponente der benötigten Informationen für die Codegenerierung. Es wird in einem Aktivitätsdiagramm nach der UML Norm erstellt. Dieses enthält die Prozedere, die später codegeneriert und im weiteren Schritt in der Chargenprozessanlage verwendet werden. \\\\
+Jedes Prozedure wird durch einen Start- und Endpunkt definiert. Dazwischen werden die Namen der Stationen geschrieben und diese mit Pfeilen verbunden. Das Diagramm für zwei Prozedere kann so aussehen: 
 \begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.7\textwidth]{graphics/konzept/UML_Activity.png}
 		\caption{Abbildung der Wege mittels Aktivitätsdiagramm}
 		%\label{fig:MegaProxyProblem}
-\end{figure}
-\section{SPS Code}
+\end{figure}\\
+In Abbildung 3.3 ist das erste Element des \glqq Prozedere 1\grqq ein Tank (T1), gefolgt von der Öffnung zweier Ventile (V1, V2) und der Betriebsnahme einer Pumpe (P1). Danach ist die Messung des Durchflusssensor (DS1) gefolgt von der Öffnung weiterer Ventile (V3, V4) mit dem Ziel im Reaktor (R1). 
+Mithilfe einer solchen Folge kann der Ablauf eines Prozedere genau bestimmt werden, um bei der Codegenerierung dieses erstellen zu können.
+\section{Codegenerierung}
 \subsection{Phasen}
 \subsection{Rezepte}
-\section{Codegenerierung}
-\section{Visualisierung der Produktionsanlage}
 
