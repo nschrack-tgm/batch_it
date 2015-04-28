@@ -298,7 +298,63 @@ Das Steuerrezept selbst enthält nicht genügend Information, um die Anlage zu b
 		\includegraphics[width=0.8\textwidth]{graphics/stateoftheart/steuerrezeptprozedur_einrichtungssteuerung.png}
 		\caption{Abgrenzung von Steuerrezeptprozedur und Einrichtungssteuerung}
 \end{figure}
-\\
+
+
+\section{Zenon Wizard}
+Ein Zenon Wizard ist ein Programm, das verwendet wird um projektspezifische Daten zu manipulieren, löschen oder erstellen. Dies kann mit oder ohne Benutzeroberfläche geschehen.\\
+Der zenon Supervisor enthält schon bei der Installation Wizards zum importieren sowie auch exportieren von in XML gespeicherten Daten und zum erzeugen von Variablen.\\
+Der Quellcode der mitgelieferten Wizards kann geöffnet und auch editiert werden. Zenon Wizards können mittels VSTA oder VBA erstellt werden.
+
+\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\textwidth]{graphics/stateoftheart/demowizard.png}
+		\caption{Beispiel eines VSTA Wizards}
+\end{figure}
+
+\subsubsection{VSTA}
+VSTA steht für \textit{Visual Studio Tools for Applications}, es ist eine Ansammlung von Werkzeugen zum erstellen von Programmen. VSTA unterstützt die Programmiersprachen Visual Basic .Net und C\#.
+VSTA ist in Zenon als Editor integriert.
+
+\begin{figure}[h]
+	\begin{framed}
+	\color{black}
+		String strName;\\
+		zenOn.IDriver Driver;\\
+		zenOn.tpKanaltypes ChannelType;\\
+		zenOn.IVarType VarType;\\
+		zenOn.IVariable Var;\\
+		\\
+		strName = "Variable";\\
+		Driver = proj.Drivers().Item("Treiber");\\
+		ChannelType = zenOn.tpKanaltypes.tpSPSMerker;\\
+		VarType = proj.VarTypes().Item("Typ");\\
+		Var = MyWorkspace.ActiveDocument.Variables().CreateVar(strName, Driver, ChannelType, VarType);
+	\end{framed}
+	\caption{Anlegen einer Variable in C\#}
+\end{figure}
+
+\subsubsection{VBA}
+VBA steht für \textit{Visual Basic for Applications} und ist eine Skriptsprache, die hauptsächlich für die Steuerung in Microsoft Office Produkten verwendet wird.
+Ein Editor für VBA ist in Zenon integriert.
+
+\begin{figure}[h]
+	\begin{framed}
+		\color{black}
+		Dim strName As String\\
+		Dim Driver As Driver\\
+		Dim ChannelType As Integer\\
+		Dim VarType As VarType\\
+		Dim Var As Variable\\
+		\\
+		strName = "Variable"\\
+		Driver = MyWorkspace.ActiveDocument.Drivers.Item("Treiber")\\
+		ChannelType = GetChannelType("SPSMerker")\\
+		VarType = MyWorkspace.ActiveDocument.VarTypes.Item("Typ")\\
+		Var = MyWorkspace.ActiveDocument.Variables.CreateVar(strName, Driver, ChannelType, VarType)
+	\end{framed}
+	\caption{Anlegen einer Variable in VBA}
+\end{figure}
+
 
 \section{Visualisierung von Produktionsanlagen}
 \subsection{SCADA}
