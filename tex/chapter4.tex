@@ -1,6 +1,28 @@
 % Chapter4
 \chapter{Implementierung} \label{chapter:thevetestcase}
 \section{Modellierung der Anlage}
+Für das Aufbauen einer Anlage, ist ein vorab überlegtes Konzept von großer Bedeutung. Mittels des Rohr- \& Instrumentenfließschemas wird ein später noch des öfteren abgeändertes Abbild erstellt. Die in der Anfangsphase aufkommenden Änderungen ergeben sich angesichts der nur partiellen Implementierung der Anforderungen. Initial wird hoher Wert auf Redundanzen gelegt. Erst eine größere Anzahl an Bauteilen kann einen parallelen Ablauf mehrerer Arbeitsschritte ermöglichen. Durch die drei eingebauten Tanks und zwei Reaktoren, die mittels der drei Hauptleitungen verbunden sind, ist das Umfüllen zwischen zwei Tanks, sowie das gleichzeitige Befördern von Flüssigkeit vom dritten Tank in einen der Reaktoren möglich.\\
+
+Die zwei Pumpen sind so platziert, dass bei einem eventuell auftretenden Defekt die andere Pumpe deren Aufgabe übernehmen kann. Arbeitsschritte können dadurch zwar nur noch sequentiell abgearbeitet werden, jedoch kommt es nicht gleich zu einem totalen Ausfall der Funktionalität der Anlage. Eine weitere Absicherung gegen möglich aufkommende Störfälle ist die Position der Tanks. Durch ihre Lokalisation an der höchsten Stelle der Apparatur besteht die Opportunität die Schwerkraft zu nutzen.\\
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=1\textwidth]{graphics/implementation/RI_Impl_cropped.jpg}
+  \caption{Mögliche Parallelität im RI ersichtlich}
+\end{figure}
+
+Jedes Ventil hat eine vorteilhafte Durchflussrichtung, die meistens mit einem Pfeil direkt auf dem Bauteil gekennzeichnet ist. Ganz abgesehen davon, ob es sich um ein Ventil handelt, welches im stromlosen Zustand geschlossen ist oder ob es ein schließendes Ventil ist, diese Vorgabe sollte stets eingehalten werden. Aspekte wie dieser haben in die Modellierung der Anlage selbstverständlich eingebaut zu werden.\\
+
+\todo[inline]{BILD EINFÜGEN}
+
+\begin{figure}[h!]
+  \centering
+  %\includegraphics[width=0.7\textwidth]{graphics/implementation/BILD}
+  \caption{Ventil mit vorteilhafter Fließrichtung}
+\end{figure}
+
+Um in der Anlage befindliche Flüssigkeiten zu entfernen muss ein eigens für den Auslass vorgesehenes Ventil installiert werden. Vorteilhafterweise handelt es sich bei der Position dieses Bauteils um den tiefsten Punkt der Apperatur. Alternativ dazu kann dieses auch direkt nach einer Pumpe montiert werden.
+
 \section{Aufbau der Anlage}
 \section{Phasen und Rezepte}
 \section{HMI}
