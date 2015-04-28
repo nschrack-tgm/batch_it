@@ -6,10 +6,8 @@
 \section{HMI}
 Für dieses Projekt wurde als SCADA System die Software zenon vorgegeben, daher wurde das HMI in zenon Supervisor (zenons HMI Programm) umgesetzt.\\
 \\
-Zum HMI gehört die Visualisierung der Anlage
 \textbf{Visualisierung}\\
-Als Ausgangspunkt für die Anlage wurde das RI-Fließeschema zur Hand genommen. Von diesem wurde die Anzahl der Elemente und die Grundstruktur übernommen.\\
-Als nächsten Schritt musste evaluiert werden, welche Inhalte des RI-Fließschemas für die Visualisierung relevant waren, bzw. welche Informationen/Elemente fehlten.
+Als Ausgangspunkt für die Anlage wurde das RI-Fließeschema zur Hand genommen. Von diesem wurde die Anzahl der Elemente und die Grundstruktur übernommen. Als nächsten Schritt musste evaluiert werden, welche Inhalte des RI-Fließschemas für die Visualisierung relevant, bzw. welche Informationen/Elemente nicht vorhanden waren.
 \begin{description}
 \item[Wichtige Elemente]~\par
 	\begin{itemize}
@@ -21,9 +19,13 @@ Als nächsten Schritt musste evaluiert werden, welche Inhalte des RI-Fließschem
 ABBILDUNG\\
 
 \textbf{Einbinden von Sensorwerten}\\
-Um die Visualisierung mit aktuellen Sensorwerten zu befüllen benötigt man eine Verbindung zu der SPS. In zenon stellt man diese Verbindung mittels zenon Logic (im weiteren nur noch Logic genannt) her.\\
+Um eine Visualisierung mit aktuellen Sensorwerten zu befüllen, wird eine Verbindung zur SPS benötigt. In zenon wird eine Verbindung über zenon Logic (im weiteren nur noch Logic genannt) hergestellt.\\
 \\
-Als ersten Schritt, um in Logic eine SPS hinzuzufügen, musste im Unterpunkt "Feldbuskonfiguration" die Treibersoftware für die ADAM5550 SPS hinzugefügt werden. Darauf hin wurden alle Module, die an der SPS angebracht wurden, in dieser Konfiguration hinzugefügt. 
+Als ersten Schritt, um in Logic eine SPS hinzuzufügen, musste im Unterpunkt "Feldbuskonfiguration" die Treibersoftware für die ADAM5550 SPS hinzugefügt werden. Darauf hin wurden alle Module, die an der SPS angebracht wurden, in dieser Konfiguration hinzugefügt.\\
+\begin{figure}[h!]
+  \includegraphics{graphics/implementation/Feldbuskonfiguration}
+  \caption{Feldbuskonfig}%todo Grafik name
+\end{figure}
 
 Feldbuskonfiguration -> Konfiguration einfügen (Advantech ADAM 5550) -> Master/Port hinzufügen (ADAM 5550) -> Slave/Datenblock einfügen (Slot:Steckplatz an SPS; Module: Analog/Digital|In/Out|4/8/16 Channels...) -> Variable hinzufügen (Channel; Variablenname)
 
