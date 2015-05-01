@@ -9,8 +9,8 @@ Die Abfolge der Arbeitsschritte für die modellbasierte Entwicklung der Steuerun
 		%\label{fig:MegaProxyProblem}
 \end{figure} \\
 
-Es beginnt mit einer Produktionsanlage, wobei es sich um eine Chargenprozessanlage handelt, die in einer Ontologie abgebildet wird. Die Ontologie und das Diagramm der Prozedur beinhaltet die nötigen Daten, die gebraucht werden, um im weiteren Schritt den Code für die SPS zu generieren. Dieser Code ist nach dem IEC 61512 Standard genormt. Nachdem der Code in die SPS eingespielt wird, kann die Chargenprozessanlage gesteuert werden. 
-In diesem Kapitel wird jeder Schritt, der in dem Kreislauf von \todo{Abb. Nr.}Abbildung 3.1 enthalten ist, genauer elaboriert und in Perspektive zu dem entwickelten Konzept gebracht.
+Es beginnt mit einer Produktionsanlage, wobei es sich um eine Chargenprozessanlage handelt, die in einer Ontologie abgebildet wird. Die Ontologie und das Diagramm der Prozeduren beinhaltet die nötigen Daten, die gebraucht werden, um im weiteren Schritt den Code für die SPS zu generieren. Dieser Code ist nach dem IEC 61512 Standard genormt. Nachdem der Code in die SPS eingespielt wird, kann die Chargenprozessanlage gesteuert werden. 
+In diesem Kapitel wird jeder Schritt, der im Kreislauf von \todo{Abb. Nr.}Abbildung 3.1 enthalten ist, genauer elaboriert und in Perspektive zu dem entwickelten Konzept gebracht.
 \section{Produktionsanlage}
 Für eine Anlage gibt es gewisse Parameter, die beim konzeptionellen Entwurf beachtet werden müssen. Für die gestellten Anforderungen, sowie für die zukünftig darauf aufbauenden Projekte, ist es unentbehrlich, dass diverse Redundanzen vorhanden sind. Eine Voraussetzung ist jedenfalls eine Vielzahl an Hauptleitungen. Durch diese kann erst ermöglicht werden, zwei Arbeitsschritte parallel auszuführen. Das noch folgende Vorhaben, einen Wegfindungsalgorithmus zu integrieren, ist obendrein nur nutzbringend, wenn mehrere, durch die Redundanz gebotene Wege zur Auswahl stehen. Ebenso ist die Disponibilität von mehr als einer Pumpe eine essentielle Bedingung. Dadurch kann die Anlage, bei der Eventualität eines Ausfalls einer Pumpe, diese vollständig kompensieren. Die Ansteuerung jeder einzelnen Funktion muss somit stets von geringstenfalls einer anderen Pumpe durchführbar sein. Zudem ist es vorgesehen, auf ausgewählten Routen die Steuerung mit Hilfe der Schwerkraft durchzuführen.\\
 
@@ -70,7 +70,7 @@ Jede Prozedur wird durch einen Start- und Endpunkt definiert. Dazwischen werden 
 		\caption{Abbildung der Wege mittels Aktivitätsdiagramm}
 		%\label{fig:MegaProxyProblem}
 \end{figure}\\
-In Abbildung 3.3 ist das erste Element der \glqq Prozedur 1\grqq ein Tank (T1), gefolgt von der Öffnung zweier Ventile (V1, V2) und der Betriebsnahme einer Pumpe (P1). Danach ist die Messung des Durchflusssensor (DS1) gefolgt von der Öffnung weiterer Ventile (V3, V4) mit dem Ziel im Reaktor (R1). 
+In Abbildung 3.3 ist das erste Element der „Prozedur 1“ ein Tank (T1), gefolgt von der Öffnung zweier Ventile (V1, V2) und der Betriebsnahme einer Pumpe (P1). Danach ist die Messung des Durchflusssensor (DS1) gefolgt von der Öffnung weiterer Ventile (V3, V4) mit dem Ziel im Reaktor (R1). 
 Mithilfe einer solchen Folge kann der Ablauf einer Prozedur genau bestimmt werden, um bei der Codegenerierung diese erstellen zu können.
 \section{Codegenerierung}
 \subsection{Phasen}
