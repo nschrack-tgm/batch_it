@@ -6,16 +6,17 @@ Die Abfolge der Arbeitsschritte für die modellbasierte Entwicklung der Steuerun
 		\centering
 		\includegraphics[width=0.37\textwidth]{graphics/konzept/konzept_new.pdf}
 		\caption{Konzept für die modellbasierte Entwicklung der Steuerung}
-		%\label{fig:MegaProxyProblem}
+		\label{fig:konz_konzept_new}
 \end{figure} \\
 
 Es beginnt mit einer Produktionsanlage, wobei es sich um eine Chargenprozessanlage handelt, die in einer Ontologie abgebildet wird. Die Ontologie und das Diagramm der Prozeduren beinhaltet die nötigen Daten, die gebraucht werden, um im weiteren Schritt den Code für die SPS zu generieren. Dieser Code ist nach dem IEC 61512 Standard genormt. Nachdem der Code in die SPS eingespielt wird, kann die Chargenprozessanlage gesteuert werden. 
-In diesem Kapitel wird jeder Schritt, der im Kreislauf von \todo{Abb. Nr.}Abbildung 3.1 enthalten ist, genauer elaboriert und in Perspektive zu dem entwickelten Konzept gebracht.
+In diesem Kapitel wird jeder Schritt, der im Kreislauf von Abbildung~\ref{fig:konz_konzept_new} enthalten ist, genauer elaboriert und in Perspektive zu dem entwickelten Konzept gebracht.
 \section{Produktionsanlage}
 Für eine Anlage gibt es gewisse Parameter, die beim konzeptionellen Entwurf beachtet werden müssen. Für die gestellten Anforderungen, sowie für die zukünftig darauf aufbauenden Projekte, ist es unentbehrlich, dass diverse Redundanzen vorhanden sind. Eine Voraussetzung ist jedenfalls eine Vielzahl an Hauptleitungen. Durch diese kann erst ermöglicht werden, zwei Arbeitsschritte parallel auszuführen. Das noch folgende Vorhaben, einen Wegfindungsalgorithmus zu integrieren, ist obendrein nur nutzbringend, wenn mehrere, durch die Redundanz gebotene Wege zur Auswahl stehen. Ebenso ist die Disponibilität von mehr als einer Pumpe eine essentielle Bedingung. Dadurch kann die Anlage, bei der Eventualität eines Ausfalls einer Pumpe, diese vollständig kompensieren. Die Ansteuerung jeder einzelnen Funktion muss somit stets von geringstenfalls einer anderen Pumpe durchführbar sein. Zudem ist es vorgesehen, auf ausgewählten Routen die Steuerung mit Hilfe der Schwerkraft durchzuführen.\\
 
-\todo{Gefällt mir noch nicht}
-Ein Ziel der Anlage muss sein, eine möglichst hohe Effizienz mit der modellbasierten Entwicklung zu erreichen.\\
+\todo{Visio ohne Hintergrund exportieren}
+%Ein Ziel der Anlage muss sein, eine möglichst hohe Effizienz mit der modellbasierten Entwicklung zu erreichen.\\
+
 
 \begin{figure}[h!]
 		\centering
@@ -35,7 +36,8 @@ Eine Ontologie, die eine Produktionsanlage abbildet, kann folgendermaßen ausseh
   \includegraphics[width=0.6\textwidth]{graphics/stateoftheart/Ontology_Aufbau}
   \caption{Aufbau einer Ontologie}
 \end{figure}\\
-%Die Verbindungen zwischen den Klassen (In Abbildung 3.2. die Vierecke) 
+%Die Verbindungen zwischen den Klassen (In Abbildung 3.2. die Vierecke)
+\todo{Referenz rausnehmen?}
 Damit bei der Codegenerierung ein hoher Automatisierungsgrad  erreicht werden kann, müssen möglichst viele Daten abgespeichert werden. In einer Ontologie können unteranderem Klassen (Classes), Eigenschaften von Klassen (Object Properties) und Verbindungen zwischen Klassen (Data Properties) definiert werden. Für genauerer Erklärung einer Ontologie siehe Kapitel 2.3 \glqq Modellbasierte Entwicklung der Steuerung\grqq. Dies wird sich zu Nutze gemacht um die Produktionsanlagen sehr genau abzubilden. Damit die Codegenerierung best möglich umgesetzt werden kann, werden folgende Daten einer Chargenprozessanlage gebraucht:
 
 \begin{itemize}
@@ -68,9 +70,9 @@ Jede Prozedur wird durch einen Start- und Endpunkt definiert. Dazwischen werden 
 		\centering
 		\includegraphics[width=0.7\textwidth]{graphics/konzept/UML_Activity.png}
 		\caption{Abbildung der Wege mittels Aktivitätsdiagramm}
-		%\label{fig:MegaProxyProblem}
+		\label{fig:konz_UML_Activity}
 \end{figure}\\
-In Abbildung 3.3 ist das erste Element der „Prozedur 1“ ein Tank (T1), gefolgt von der Öffnung zweier Ventile (V1, V2) und der Betriebsnahme einer Pumpe (P1). Danach ist die Messung des Durchflusssensor (DS1) gefolgt von der Öffnung weiterer Ventile (V3, V4) mit dem Ziel im Reaktor (R1). 
+In Abbildung~\ref{fig:konz_UML_Activity} ist das erste Element der „Prozedur 1“ ein Tank (T1), gefolgt von der Öffnung zweier Ventile (V1, V2) und der Betriebsnahme einer Pumpe (P1). Danach ist die Messung des Durchflusssensor (DS1) gefolgt von der Öffnung weiterer Ventile (V3, V4) mit dem Ziel im Reaktor (R1). 
 Mithilfe einer solchen Folge kann der Ablauf einer Prozedur genau bestimmt werden, um bei der Codegenerierung diese erstellen zu können.
 \section{Codegenerierung}
 \subsection{Phasen}

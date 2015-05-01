@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.11)  22 APR 2015 13:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.11)  1 MAY 2015 14:50
 entering extended mode
 **chapter1.tex
 (chapter1.tex
@@ -1277,19 +1277,29 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no z in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no s in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
-Missing character: There is no √ in font nullfont!
-Missing character: There is no § in font nullfont!
-Missing character: There is no h in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no t in font nullfont!
 Missing character: There is no z in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no u in font nullfont!
@@ -1721,7 +1731,7 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no b in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
-l.47 \section
+l.46 \section
              {Hintergrund und Ausgangspunkt}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2894,7 +2904,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.51 \begin{figure}
+l.50 \begin{figure}
                    [h!]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2905,8 +2915,8 @@ Missing character: There is no h in font nullfont!
 Missing character: There is no ! in font nullfont!
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
-l.53 		\includegraphics
-                       [width=0.37\textwidth]{graphics/konzept/konzept.png}
+l.52 		\includegraphics
+                       [width=0.37\textwidth]{graphics/konzept/konzept.pdf}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2927,8 +2937,8 @@ Missing character: There is no 7 in font nullfont!
 ! Missing number, treated as zero.
 <to be read again> 
                    ]
-l.53 		\includegraphics[width=0.37\textwidth]
-                                             {graphics/konzept/konzept.png}
+l.52 		\includegraphics[width=0.37\textwidth]
+                                             {graphics/konzept/konzept.pdf}
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -2936,8 +2946,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
-l.53 		\includegraphics[width=0.37\textwidth]
-                                             {graphics/konzept/konzept.png}
+l.52 		\includegraphics[width=0.37\textwidth]
+                                             {graphics/konzept/konzept.pdf}
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -2972,8 +2982,8 @@ Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no p in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no g in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no f in font nullfont!
 
 ! LaTeX Error: \caption outside float.
 
@@ -2981,7 +2991,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.54 		\caption
+l.53 		\caption
                {Konzept f√ºr die modellbasierte Entwicklung der Steuerung}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3044,7 +3054,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.56 \end{figure}
+l.55 \end{figure}
                   \\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3064,9 +3074,20 @@ Missing character: There is no d in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no g in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 1 in font nullfont!
+! Undefined control sequence.
+<write> ...ference `fig:konzept' on page \thepage 
+                                                  \space undefined\on@line .
+l.56 In der Abbildung~\ref{fig:konzept}
+                                        ist zu sehen, dass die Produktionsan...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `fig:konzept' on page  undefined on input line 56.
+
 Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no t in font nullfont!
@@ -3251,22 +3272,27 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 42--59
+Overfull \hbox (20.0pt too wide) in paragraph at lines 42--58
 []
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 42--59
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 42--58
 [] 
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 42--59
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 42--58
+[]
+ []
+
+
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 42--58
 []
  []
 
 ! Undefined control sequence.
-l.62 \section
+l.61 \section
              {Aufgabenstellung}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3281,7 +3307,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.62 \section{A
+l.61 \section{A
                ufgabenstellung}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4084,12 +4110,12 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 62--64
+Overfull \hbox (20.0pt too wide) in paragraph at lines 61--63
 []
  []
 
 ! Undefined control sequence.
-l.65 \section
+l.64 \section
              {Leitfaden durch die Arbeit}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4104,7 +4130,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.65 \section{L
+l.64 \section{L
                eitfaden durch die Arbeit}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4144,10 +4170,10 @@ Missing character: There is no O in font nullfont!
 
  
 Here is how much of TeX's memory you used:
- 14 strings out of 493698
- 188 string characters out of 3141988
+ 15 strings out of 493698
+ 201 string characters out of 3141988
  54149 words of memory out of 3000000
- 3439 multiletter control sequences out of 15000+200000
+ 3440 multiletter control sequences out of 15000+200000
  3948 words of font info for 15 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  20i,2n,26p,1716b,93s stack positions out of 5000i,500n,10000p,200000b,50000s
