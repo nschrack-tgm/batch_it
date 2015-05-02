@@ -24,6 +24,32 @@ Jedes Ventil hat eine vorteilhafte Durchflussrichtung, die meistens mit einem Pf
 Um in der Anlage befindliche Flüssigkeiten zu entfernen muss ein eigens für den Auslass vorgesehenes Ventil installiert werden. Vorteilhafterweise handelt es sich bei der Position dieses Bauteils um den tiefsten Punkt der Apperatur. Alternativ dazu kann dieses auch direkt nach einer Pumpe montiert werden.
 
 \section{Aufbau der Anlage}
+Auf Basis des Rohr- \& Instrumentenfließschemas kristallisiert sich eine exakte Anzahl an benötigten Bauteilen heraus. Für den noch bevorstehenden Aufbau der Anlage ist zu beachten, dass beim Auswählen der Einzelteile alles kompatibel sein muss. Nicht vorhandene Vereinbarkeit kann vor allem für diesen speziellen Anwendungszweck zu katastrophalen Auswirkungen führen, da einerseits mit Flüssigkeiten gearbeitet wird, sowie gleichzeitig stromdurchflossene Leitungen existieren. Eine Verbindung dieser genannten Komponenten hätte irreparable Schäden zur Folge. Im Rahmen einer übergeordneten Forschungsarbeit wurde diesem Projekt ein Budget von 6000 \euro \space zugesprochen. Die Auswahl der benötigten Teile hat verständlicherweise im Rahmen dieser beschränkten Geldmittel zu geschehen.\\
+	
+	Für einige von uns verwendete Element gibt es spezifische Parameter, die auf jeden Fall einzuhalten sind:\\
+	
+	\textbf{Ventile:}\\
+	Ein ausschlaggebendes Kriterium der verwendeten Ventile ist, dass sie in stromlosem Zustand geschlossen sind. Im Falle eines Ausfalls der Energieversorgung kann somit sichergestellt werden, dass sich alle Verbindungen aus Schutz vor der Flüssigkeitsverlust schließen. Für die Funktion der Nutzung der Schwerkraft zum Umleiten von Flüssigkeiten ist auch relevant, Ventile zu haben, die keinerlei Vordruck benötigen, um den Durchfluss zu gewähren.\\
+
+	\textbf{Tanks:}\\
+	Abgesehen von einem für Testzwecke vernünftigen Füllvolumen ist es erforderlich einen Tank zu wählen, dessen Ausgang sich am niedrigsten Punkt befindet. Andernfalls kann man nur bedingt Nutzen aus der Schwerkraftsteuerung ziehen.\\
+	
+	\textbf{Pumpen:}\\
+	Mit Hilfe eines Gleichstrom - Wandlers muss es möglich sein, die Pumpen mit dem zur Verfügung stehenden Ausgangstrom der SPS von 0 - 10 Volt zu betreiben.\\
+	
+	\textbf{Rohre:}\\
+	Die Rohre müssen jedenfalls dem Druck der Pumpen standhalten können. Desweiteren ist das exakt abzustimmende Einpassen in die Ventile, um Dichte gewährleisten zu können, ein wichtiger Parameter.\\
+
+	Die bereits bei der Bestellung bekannten, tatsächlichen Maße der Bauteile, haben einen relevanten Einfluss auf den finalen Aufbau. Da es auch bei der Profilplatte physikalische Grenzen gibt, muss die endgültige Positionierung genauestens überlegt ausfallen. Der zukünftigen Vereinfachung des Aufbaus der Produktionsanlage halber, wurde daher projektintern beschlossen, ein kleines Modell der Apparatur zu erstellen. Da aus dem Rohr- \& Instrumentenfließschema keinerlei Information zur endgültigen Lokalisation der Bauteile ersichtlich ist, wird ein erster physikalischer Entwurf konstruiert. Mit Hilfe diesem können Abstände zueinander stehender Elemente deutlich gemacht werden. Realisiert wird der genannte Prototyp mit leicht zugänglichen Arbeitsmaterialien wie etwa Trinkhalme, Papier und Klebeband.\\
+	
+		\todo {Bild des Miniaturmodells}
+
+	Für den tatsächlichen Aufbau ergibt sich günstigerweise die Möglichkeit, mechanische Anforderungen mit Hilfe der technischen Werkstätte abzuwickeln. Profilschienen, die als stabilisierendes Gerüst dienen, werden penibelst mit der Aluminiumsäge auf das gewünschte Maß geschnitten. Im späteren Verlauf werden diese samt den Tanks zum ersten aufgebauten Teil der Anlage. Für die Verbindung der Tanks, Pumpen, Ventile und Reaktoren dienen undurchsichtige Kunststoffrohre. Um gewährleisten zu können, dass die Verbindung absolute dicht ist, müssen die Rohre unbedingt gerade geschnitten sein. Abermals dürfen dafür Maschinen der mechanischen Werkstatt verwendet werden. Erst mit einer Bandsäge grob vorgeschnittene Rohrstücke werden in eine konventionelle Drehmaschine eingespannt. Mit einem scharf angeschliffenen Drehstahl ist es möglich, den unsauberen Schnitt absolut plan zu gestalten. Nachdem abschließend einzelne Komponenten noch entgratet werden, ist die Arbeit an den Rohren zur Verbindung getan.\\
+	
+		\todo{Bild: Erster Aufbau (Tanks, Hauptpipes)}
+		
+		TODO ... weitermachen
+
 \section{Phasen und Rezepte}
 \section{HMI}
 Für dieses Projekt wurde als SCADA System die Software zenon vorgegeben, daher wurde das HMI in zenon Supervisor (zenons HMI Programm) umgesetzt.\\
