@@ -59,6 +59,48 @@ Auf Basis des Rohr- \& Instrumentenfließschemas kristallisiert sich eine exakte
 	Mit dem Einbau der Füllstandssensoren in den drei Tanks sind die letzten Arbeitsschritte des physikalischen Aufbaus der Anlage getan.
 
 \section{Phasen und Rezepte}
+	Der Begriff Prozedur beschreibt das Zusammenfassen mehrerer Grundfunktionen einer Anlage, um einen Ablauf zu automatisieren. Das Gegenspiel zwischen der Software zenon und der SPS kann als sogenannte \glqq State-Machine \grqq \space betrachtet werden. Da eine SPS dem zyklischen Abarbeiten programmierter Funktionen unterliegt, ist es ein ständiges Nachfragen ob ein jeweiliger Zustand schon erreicht wurde. Durch global gesetzte Status kann so ein automatischer Wechsel der ausgeführten Funktionen erfolgen. Als Rezept wird das Aneinanderreihen mehrerer Prozeduren bezeichnet, um einen weiteren Schritt der Automatisierung zu gehen.\\
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[height=0.6\textwidth]{graphics/implementation/Datentyp_Phase.jpg}
+  \caption{Aufbau der Strukturvariable \glqq \textit{phase}\grqq}
+\end{figure}
+	
+	Für die Kommunikation zwischen einer Prozedur bzw. eines Rezepts und der SPS stehen drei Variablen zur Verfügung
+	
+	\begin{itemize}
+		\item Kommando: Sendet Befehle an SPS-Grundfunktion
+		\item Status: Empfängt internen Status der SPS-Grundfunktion
+		\item Batchstatus: Sendet internen Status des Rezepts zur SPS
+	\end{itemize}
+
+	Kommando trägt der SPS auf, was getan werden muss. Mit dem Status wird der Software zenon mitgeteilt, in welchem Stadium sich die Prozedur gerade befindet. Die Variable Batchstatus teilt mit, wo im gesamt abzulaufenden Programmcode sich die SPS gerade befindet.\\
+	
+	Um eine Prozedur in zenon zu konfigurieren, benötigt es eine ganze Anzahl an zu erledigenden Arbeitsschritten, die da wären:\\
+
+	Initialisierend wird im Unterpunkt Batch Control ein neues Aggregat mit einer sich darin befindlichen neuen Grundfunktion (Prozedur) angelegt. Die Prozedur benötigt nun die zuvor erwähnten Kommunikationsvariablen Status, Command und BatchCommand. Zu beachten ist allerdings, dass es diese Strukturvariable bereits in der Form \glqq \textbf{name}.com.* \grqq \space gibt. Abermals untergeordnete Reaktionen werden mit den gewünschten Ereignissen befüllt, wobei wiederum zu beachten ist, dass diese den richtigen Variablen zugeordnet sein müssen.\\
+
+	Weitere Arbeitsschritte werden mit mittels Zenon Logic abgearbeitet. Ein Hauptprogramm, welches zum Ausführen aller anderen Funktionen dient, wird angelegt. Aufgerufene Unterprogramme sind get\_cmd(), get\_batchstat(), die auszuführende(n) Prozedure(n) und send\_state() und müssen vor dem ersten Durchlauf des Hauptprogramms angelegt sein.\\
+	
+	\textbf{get\_cmd()}\\
+	Null setzen (\glqq false\grqq \space setzen) aller Boolean-Werte, die einen Status repräsentieren, um alles zurückzusetzen, sowie durchgehen aller zur Auswahl stehenden Kommandos und setzen der Variable des zutreffenden Kommandos (\glqq true\grqq \space setzen).\\
+
+	\textbf{get\_batchstat()}\\
+		Zutreffender aktueller Status der Grundfunktion wird gesetzt.\\
+
+	\textbf{Prozedur}\\
+		Variablen bis zur Abbruchbedingung setzen\\
+
+	\textbf{send\_state()}\\
+		Globales Setzen des aktuellen Status
+		
+\begin{figure}[h!]
+  \centering
+  \includegraphics[height=0.95\textwidth]{graphics/implementation/StateMachine.jpg}
+  \caption{Kommunikationsmodell von zenon und SPS}
+\end{figure}
+
 \section{HMI}
 Für dieses Projekt wurde als SCADA System die Software zenon vorgegeben, daher wurde das HMI in zenon Supervisor (zenons HMI Programm) umgesetzt.\\
 \\
