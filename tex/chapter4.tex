@@ -151,38 +151,76 @@ Phase 3 Funktionale Elemente\\
 	Der nächste schritt war es die nicht funktionalen Grafikelemente durch Buttons in Form der gewünschten Elemente zu ersetzten.\\
 \\
 \textbf{Rezepterstellung}\\
+%todo Rezeperstellung
 
 \section{Ontology}
 Nachdem die Evaluierung der wichtigsten Aspekte im Kapitel Ontologie der Chargenprozessanlage in Hinsicht auf eine automatisierte Codegenerierung durchgeführt wurden, behandelt dieses Kapitel den Werdegang der Ontologie vom Ersten bis hin zum Finalem Design.\\
 \\
 Das Ziel der Ontologie ist es, die im laufe dieses Projekts aufgebaute Anlage in einer Art und Weise abbilden zu können, die es erlaubt daraus eine automatisierte Codegenerierung durchzuführen und dabei auf einem Abstraktionslevel zu bleiben um einen Großteil an in der Industrie vorkommenden Produktionsanlagen abbilden zu können.\\
 \\
-Da es den Rahmen dieser Arbeit sprengen würde, auf jeden einzelnen Gedankengang in der Erstellung der Ontologie einzugehen, werden nur die großen Revisionen der Ontologie genauer beschrieben.
+Da es den Rahmen dieser Arbeit sprengen würde, auf jeden einzelnen Gedankengang in der Erstellung der Ontologie einzugehen, werden nur die großen Revisionen der Ontologie genauer beschrieben.\\
+\\
+Zu aller erste werden alle Bauteile der Anlage in Kategorien eingeteilt.\\
+Tanks, Reaktoren und Pumpen sind die Hauptelemente dieser Anlage und werden deswegen auch in einer Gruppe zusammengefasst. Neben ihnen gibt es eine Gruppe an Bauteilen die etwas tun, hierzu gehören die Ventile, Sensoren, Heiz- und Rührstäbe. Die restlichen Elemente der Anlage sind Statische Objekte die einen Nutzen besitzen, jedoch keine Arbeit erledigen, daher fallen diese zusammen unter die Kategorie von Passiven Elementen. Zu diesem Zeitpunkt sind dies nur die Rohre.\\
+Eine Ausnahme dieser Gruppen ist die SPS welche etwas tut, daher an sich in Kategorie 2 Fallen würde, aber nicht direkt Teil der Anlage ist und daher auch als einzelstehendes Objekt einen Platz in der Ontologie findet.
+
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=0.6\textwidth]{graphics/implementation/Ontology_v1}
+  \caption{Erste Version der Ontologie}
+\end{figure}
+
+Verbindungen zwischen 2 Klassen werden normalerweise mit einer Objekt Eigenschaft dargestellt, da eine Verbindung zwischen 2 Bauteilen aber eine andere Information als die Verbindung zwischen einer SPS und einem Bauteil enthält, gibt es die Kategorie Connections mit den Klassen “Weg” und “IO”.
+
+Kurz zusammengefasst können die Kategorien wie folgt beschreiben werden\\
+Main\_Part:\\
+	Dies sind alle Elemente die subjektiv als Hauptelemente bezeichnet werden.\\
+Active\_Element:\\
+	Jene Bauteile die etwas tun - Aktuatoren, Sensoren\\
+Passive\_Elements:\\
+	In der Anlage verbaute teile die keine Arbeit verrichten.\\ 
+Connection:\\
+	Verbindungsarten zwischen den einzelnen Bauteilen\\
+\\
+Mit dieser Ontologie ist es grundsätzlich möglich die Anlage aus Kapitel 4.2 abzubilden, jedoch finden sich einige Inkonsistenzen die die automatisierte Codegenerierung erschweren wenn nicht sogar unmöglich machen würden.\\
+\\
+%Die nächste Version befasst sich damit die einzelnen Kategorien genauer zu bestimmen, um einen Konsistenten zustand in die Ontologie zu bringen, gleichzeitig aber auch eine Struktur zu bilden die eine automatische Codegenerierung erleichtert.
+Nun wird die erste Version der Ontologie, in Hinsicht einer automatisierten Codegenerierung, evaluiert und dementsprechend umgebaut.\\
+Die Kategorien werden im nächsten Schritt genauer definiert um eine Konsistenz in die Ontologie zu bringen.\\
+\\
+Die definition von \glqq Active\_Element\grqq\space ist in Grunde richtig, nur beinhaltet diese die SPS was nicht der Fall sein soll. Daher wird die Definition auf \glqq Elemente die mit einer SPS (I/O) verbunden sind\grqq\space geändert. In diese Kategorie fallen nun die Elemente der Ersten Version ohne SPS und auch die Pumpe hinein.\\
+\\
+Die nächste Kategorie die bearbeitet wird ist \glqq Main Part\grqq\space. Die Definition in dieser Gruppe ist noch sehr grob definiert und lässt eine Subjektive Gruppierung zu, daher muss die Definition von Grund auf geändert werden ohne Bauteile die zurzeit Enthalten sind auszuschließen. Die passende Interpretation ist \glqq Elemente mit mindestens 2 Ein bzw. Ausgängen\grqq\space. Durch diese Änderung fallen nun auch die Ventile in die Gruppe \glqq Main Part\grqq\space.\\
+\\
+Um Ein-/Ausgänge besser zu definieren wird die Gruppe \glqq Connection\grqq\space verändert. Die Klasse \glqq I/O\grqq\space wird heraus genommen da man diese genauer beschreiben muss. Dadurch enthält \glqq Connection\grqq\space nur noch Verbindungen zwischen Bauteilen, welche nur noch Ein-/Ausgänge sein können.\\
+\\
+Die Kategorie \glqq Passive Element\grqq\space wird komplett entfernt da sie keine Relevanten Information enthält.
 
 \begin{figure}[hbt!]
   \centering
   \includegraphics[width=0.6\textwidth]{graphics/implementation/Ontology_v2}
-  \caption{Erste Revision der Ontologie}
+  \caption{Erste Überarbeitung der Ontologie}
 \end{figure}
 
-In der Anlage gibt es verschiedene Arten von Bauteilen: Sensoren, Aktuatoren, Tanks, etc., daher haben wir diese in der Ontologie in folgende Kategorien unterteilt.\\
-
-Main\_Part: Dies sind alle Elemente die subjektiv als Hauptelemente bezeichnet sind.\\
-Active\_Element: Jene Bauteile die etwas tun - Aktuatoren, Sensoren\\
-Connection: Verbindungen zwischen den einzelnen Bauteilen\\
-Passive\_Elements: In der Anlage verbaute teile die keine Arbeit verrichten.\\ 
+\textbf{Object Properties}\\
 \\
-Mit dieser Ontologie ist es grundsätzlich möglich die Anlage aus Kapitel 4.2 abzubilden, jedoch finden sich einige Inkonsistenzen die die automatisierte Codegenerierung erschweren wenn nicht sogar unmöglich machen würden. 
-
-\begin{figure}[hbt!]
-  \centering
-  \includegraphics[width=0.6\textwidth]{graphics/implementation/Ontology_v4}
-  \caption{Dritte Revision der Ontologie}
-\end{figure}
-
-
-
+Nachdem die Klassenstruktur feststeht, müssen als nächstes die Relationen bestimmt werden.
+\begin{table}[h]
+\centering
+\begin{tabular}{l|l|l}
+\textbf{Name} & \textbf{Domain} & \textbf{Range} \\ \hline
+hasActiveE    & Input, Output   & Active\_Element \\ \hline
+hasConnection & MainPart        & Connection      \\ \hline
+hasIO         & Thing           & Input, Output   \\ \hline
+includes      & Tank            & Active\_Element \\ \hline
+isConnectedTo & Connection      & Connection                            
+\end{tabular}
+\end{table}
+\\
+\textbf{Data Properties}\\
+TODO
 \section{Aktivitätsdiagramm}
+TODO
 \section{Codegenerierung}
 
 TODO
