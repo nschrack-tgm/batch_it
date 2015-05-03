@@ -26,27 +26,17 @@ Um in der Anlage befindliche Flüssigkeiten zu entfernen muss ein eigens für de
 \section{Aufbau der Anlage}
 \section{Phasen und Rezepte}
 \section{HMI}
-Für dieses Projekt wurde als SCADA System die Software zenon vorgegeben, daher wurde das HMI in zenon Supervisor (zenons HMI Programm) umgesetzt.\\
+Für dieses Projekt wurde als SCADA System die Software zenon vorgegeben, daher wird das HMI in zenon Supervisor (zenons HMI Programm) umgesetzt.\\
 \\
 \textbf{Visualisierung}\\
-In zenon wird eine Visualisierung  \glqq Bild\grqq\space  gennant. Dieses kann man mit vorgefertigten Elementen erweitert werden. 
+In zenon wird eine Visualisierung \glqq Bild\grqq\space  gennant. Dieses kann mit vorgefertigten Elementen erweitert werden. 
 
-Als Ausgangspunkt für die Visualisierung wurde das RI-Fließeschema zur Hand genommen. Von diesem wurde die Anzahl der Elemente und die Grundstruktur übernommen. Als nächsten Schritt musste evaluiert werden, welche Inhalte des RI-Fließschemas für die Visualisierung relevant und welche Informationen nicht vorhanden waren.
-%\begin{description}
-%\item[Wichtige Elemente]~\par
-%	\begin{itemize}
-%		\item Rohre in Verwendung kennzeichnen
-%		\item Sensorwerte anzeigen
-%		\item ....ADD MORE
-%	\end{itemize}
-%\end{description}
-%todo add image
-%ABBILDUNG\\
-
-\textbf{Feldbuskonfiguration}\\
-Um eine Visualisierung mit aktuellen Sensorwerten zu befüllen, wird eine Verbindung zur SPS benötigt. In zenon wird eine Verbindung über zenon Logic (im weiteren nur noch Logic genannt) hergestellt.\\
+Als Ausgangspunkt für die Visualisierung wurde das RI-Fließeschema zur Hand genommen. Aus diesem wurde die Anzahl der Elemente und die Grundstruktur übernommen. Als nächsten Schritt musste evaluiert werden, welche Inhalte des RI-Fließschemas für die Visualisierung relevant und welche Informationen nicht vorhanden waren.\\
 \\
-Als ersten Schritt, um in Logic eine SPS hinzuzufügen, musste im Unterpunkt \glqq Feldbuskonfiguration\grqq\space die Treibersoftware für die ADAM5550 SPS hinzugefügt werden. Darauf hin wurden alle Module, die an der SPS angebracht wurden, in dieser Konfiguration hinzugefügt.\\%todo Position
+\textbf{Feldbuskonfiguration}\\
+Um eine Visualisierung mit aktuellen Sensorwerten zu befüllen, wird eine Verbindung zur SPS benötigt. Diese Verbindung wird über das Teilprogramm zenon Logic (im weiteren nur noch Logic genannt) hergestellt.\\
+\\
+Als ersten Schritt, um in Logic eine SPS hinzuzufügen, muss im Unterpunkt \glqq Feldbuskonfiguration\grqq\space die Treibersoftware für die ADAM5550 SPS hinzugefügt werden. Daraufhin müssen alle Module, die an der SPS angebracht sind, in die Konfiguration hinzugefügt werden.\\%todo Position
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.7\textwidth]{graphics/implementation/Feldbuskonfiguration}
@@ -54,14 +44,14 @@ Als ersten Schritt, um in Logic eine SPS hinzuzufügen, musste im Unterpunkt \gl
 \end{figure}
 \\
 \textbf{Variablen}\\
-In zenon können auf mehrere Arten Variablen erstellt werden, damit diese jedoch für die Visualisierung und von Logic sichtbar sind, müssen sie als Globale Variable definiert werden. Der einfachste Weg dafür ist es, im Logic Variablenfenster über den Reiter  \glqq Globale Variablen\grqq\space  die Funktion  \glqq Variable hinzufügen\grqq\space  aufzurufen.\\%todo Position
+In zenon können auf mehrere Arten Variablen erstellt werden. Damit diese für die Visualisierung und von Logic sichtbar sind, müssen sie als Globale Variable definiert werden. Der einfachste Weg dafür ist es, im Logic Variablenfenster, über den Reiter  \glqq Globale Variablen\grqq, die Funktion \glqq Variable hinzufügen\grqq\space aufzurufen.\\%todo Position
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.7\textwidth]{graphics/implementation/Variablen}
   \caption{Variablen}%todo Grafik name
 \end{figure}\\
-Nachdem alle Variablen erstellt wurden, müssen diese mit der Feldbuskonfiguration verknüpft werden. Durch diesen Schritt erhält man Zugang zu den an der SPS angeschlossenen Elementen.\\
-Die erstellten Variablen mussten als nächstes in der Visualisierung eingetragen werden um in dieser im nächsten Schritt eine Steuerung zu erzeugen.\\
+Sobald alle Variablen erstellt sind, werden diese mit der Feldbuskonfiguration verknüpft. Durch diesen Schritt erhält man Zugang zu den an der SPS angeschlossenen Bauteilen.\\
+%Die erstellten Variablen mussten als nächstes in der Visualisierung eingetragen werden um in dieser im nächsten Schritt eine Steuerung zu erzeugen.\\
 \\
 %Feldbuskonfiguration -> Konfiguration einfügen (Advantech ADAM 5550) -> Master/Port hinzufügen (ADAM 5550) -> Slave/Datenblock einfügen (Slot:Steckplatz an SPS; Module: Analog/Digital|In/Out|4/8/16 Channels...) -> Variable hinzufügen (Channel; Variablenname)
 %Variable -> Globale Variable hinzufügen (erzeugt Variable in logic und auch im supervisor zugänglich für die Visualisierung) -> In Visualisierung zu den Elemente die richtigen Variablen hinzufügen -> Bei Feldbbuskonfiguration bei richtiger I/O auf richtigem Channel hinzufügen
@@ -72,6 +62,7 @@ Die erstellten Variablen mussten als nächstes in der Visualisierung eingetragen
 %Füllstandsensor 4-20mA -> 4=voll, 20=leer -> Variablen/Tank Konfiguration -> Umrechnung 4=100, 20=0
 %Ventilstatus 0/1 -> Variablen Konfiguration -> Extremwerte farblich markieren -> Ventil Elementfarbe nach Variablen Farbe
 \textbf{Steuerung}\\
+\\
 Phase 1 Steuerung mittels Buttons\\
 	Der erste Versuch war es die Steuerung mittels einfachen Buttons umzusetzen. Diese haben meist die in zenon vorhandene Funktion  \glqq Sollwert absetzen\grqq\space  verwendet, welche den Wert einer Variable ändert.\\
 	So konnten alle Funktionen umgesetzt werden, dadurch erhielt das  \glqq Bild\grqq\space  jedoch viele Elemente die von der Eigentlichen Visualisierung ablenkten.\\
@@ -86,6 +77,35 @@ Phase 3 Funktionale Elemente\\
 \textbf{Rezepterstellung}\\
 
 \section{Ontology}
+Nachdem die Evaluierung der wichtigsten Aspekte im Kapitel Ontologie der Chargenprozessanlage in Hinsicht auf eine automatisierte Codegenerierung durchgeführt wurden, behandelt dieses Kapitel den Werdegang der Ontologie vom Ersten bis hin zum Finalem Design.\\
+\\
+Das Ziel der Ontologie ist es, die im laufe dieses Projekts aufgebaute Anlage in einer Art und Weise abbilden zu können, die es erlaubt daraus eine automatisierte Codegenerierung durchzuführen und dabei auf einem Abstraktionslevel zu bleiben um einen Großteil an in der Industrie vorkommenden Produktionsanlagen abbilden zu können.\\
+\\
+Da es den Rahmen dieser Arbeit sprengen würde, auf jeden einzelnen Gedankengang in der Erstellung der Ontologie einzugehen, werden nur die großen Revisionen der Ontologie genauer beschrieben.
+
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=0.6\textwidth]{graphics/implementation/Ontology_v2}
+  \caption{Erste Revision der Ontologie}
+\end{figure}
+
+In der Anlage gibt es verschiedene Arten von Bauteilen: Sensoren, Aktuatoren, Tanks, etc., daher haben wir diese in der Ontologie in folgende Kategorien unterteilt.\\
+
+Main\_Part: Dies sind alle Elemente die subjektiv als Hauptelemente bezeichnet sind.\\
+Active\_Element: Jene Bauteile die etwas tun - Aktuatoren, Sensoren\\
+Connection: Verbindungen zwischen den einzelnen Bauteilen\\
+Passive\_Elements: In der Anlage verbaute teile die keine Arbeit verrichten.\\ 
+\\
+Mit dieser Ontologie ist es grundsätzlich möglich die Anlage aus Kapitel 4.2 abzubilden, jedoch finden sich einige Inkonsistenzen die die automatisierte Codegenerierung erschweren wenn nicht sogar unmöglich machen würden. 
+
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=0.6\textwidth]{graphics/implementation/Ontology_v4}
+  \caption{Dritte Revision der Ontologie}
+\end{figure}
+
+
+
 \section{Aktivitätsdiagramm}
 \section{Codegenerierung}
 

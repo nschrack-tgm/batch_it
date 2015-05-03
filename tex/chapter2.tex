@@ -361,6 +361,7 @@ Ein Editor für VBA ist in Zenon integriert.
 (Supervisory Control And Data Acquisition)\\
 Ein SCADA System ist im Allgemeinen eine Sammelstelle für alle aus der Anlagen generierten Werte. Diese Daten müssen dann weiterverarbeitet werden um aus ihnen Analysen zu erstellen.\\
 Zu den Elemente eines SCADA Systems gehören:\\
+Ein SCADA System besteh aus den folgenden 3 Teilen:
 \\
 %todo Quelle Scada
 %http://www.engineersgarage.com/articles/scada-systems?page=1
@@ -368,11 +369,11 @@ Zu den Elemente eines SCADA Systems gehören:\\
 \textbf{SCADA Master Station Computer Systems}\\
 Sammelstelle für Echtzeitdaten die von RTUs generiert werden. Meist herkömmliche Computer Hardware.\\
 \\
-\textbf{Human-Machine Interface}\\
-Aus den gesammelten Daten Analysen (Prognosen, Diagnosen) so aufbereiten das sie für den Menschen leicht verständlich dargestellt werden.\\
-\\
 \textbf{Remote Terminal Units (RTUs)}\\
 Sensoren die Physikalische Änderungen in der Anlage mit einem Signalumformer in Elektrische Werte umwandelt. Je nachdem was gemessen werden soll, entstehen Analoge (Füllstand, Helligkeit, Druck, ...) oder Digitale (z.B. Status eines Geräts) Werte.
+\\
+\textbf{Human-Machine Interface}\\
+Aus den gesammelten Daten Analysen (Prognosen, Diagnosen) so aufbereiten das sie für den Menschen leicht verständlich dargestellt werden.\\
 
 \subsection{HMI}
 Die Visualisierung einer Produktionsanlage ist ein wesentlicher Punkt der Datenverarbeitung und wird oft als Benachrichtigungszentrale benutzt. Meist werden in diesen in Echzeit aktualisierte Statuswerte sowie Benachrichtigungen zu unerwarteten Ereignissen angezeigt. Die hierfür benötigten Daten müssen von der SPS in die Visualisierungssoftware übermittelt werden. Da dies ein sehr aufwendiger Prozess ist, gibt es SCADA-Systeme die all diese Funktionen vereinen.\\
@@ -403,8 +404,8 @@ Auf die gängigsten Methoden (XML, Ontologie, UML) wird in den nächsten Punkten
 XML ist ein Textbasiertes Dateiformat das, obwohl es für Dokumente gedacht ist, oft für das Abbilden von Daten Strukturen verwendet wird.
 \\
 Ähnlich wie in HTML verwendet auch XML Tags, der unterschied besteht darin das XML keine vorgefertigten Tags besitzt und der Benutzer diese erstellt. Genau diese Benutzerdefinierten Tags ergeben die XML Struktur welche, was essentiell ist, von alleine nur ein Textfile ist und keine Funktionen besitzt.
-\\
-\lstinputlisting[language=XML,belowcaptionskip=5pt,caption=XML Sample Code]{extra/sample.xml}
+\newpage
+\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Sample Code]{extra/sample.xml}
 Der Aufbau einer XML Datei ist leicht zu erklären: Es gibt 1 rootElement das den Anfang und das Ende des Inhaltes markiert, zwischen dem Start- und Endtag befinden sich weitere Tags die das Dokument oder die Struktur genauer beschreiben. Jeder Tag kann Attribute besitzen die es weiter definieren. Zwischen einem Start- und Endtag können sich entweder weitere Tags oder einfacher Text befinden.
 \\
 Einsatz findet XML meist in Programmen oder Webseiten die größere Mengen an Daten bzw. Befehle Systemunabhängig übertragen sollen. Grund dafür ist unter anderem die Tatsache dass Mensch und Maschine die Datei ohne Übersetzung/Kompilieren lesen und verstehen kann.\\
@@ -461,11 +462,13 @@ Ein Aktivitätsdiagramm beschreibt das Verhalten von Systemen auf Grundlage von 
   \caption{Basis Elemente eines Aktivitätsdiagramm}
 \end{figure}
 %Quelle OMG Unified Modeling LanguageTM (OMG UML), Version 2.5
-%Als Zitat lassen und das Beispiel auf Deutsch dann erklären (Eng. Begriffe verwenden)An Activity is a kind of Behavior that is specified as a graph of nodes interconnected by edges. A subset of the nodes are executable nodes that embody lower-level steps in the overall Activity. Object nodes hold data that is input to and output from executable nodes, and moves across object flow edges. Control nodes specify sequencing of executable nodes via control flow edges. Activities are essentially what are commonly called “control and data flow” models. Such models of computation are inherently concurrent, as any sequencing of activity node execution is modeled explicitly by activity edges, and no ordering is mandated for any computation not explicitly sequenced.\\Activities may describe procedural computation, forming hierarchies of Activities invoking other Activities, or, in an object- oriented model, they may be invoked indirectly as methods bound to Operations that are directly invoked. Activities may be applied to organizational modeling for business process engineering and workflow. In this context, events often originate from inside the system, such as the finishing of a task, but also from outside the system, such as a customer call. Activities can also be used for information system modeling to specify system level processes.\\
+%Als Zitat lassen und das Beispiel auf Deutsch dann erklären (Eng. Begriffe verwenden)
+\begin{displayquote}An Activity is a kind of Behavior that is specified as a graph of nodes interconnected by edges. A subset of the nodes are executable nodes that embody lower-level steps in the overall Activity. Object nodes hold data that is input to and output from executable nodes, and moves across object flow edges. Control nodes specify sequencing of executable nodes via control flow edges. Activities are essentially what are commonly called “control and data flow” models. Such models of computation are inherently concurrent, as any sequencing of activity node execution is modeled explicitly by activity edges, and no ordering is mandated for any computation not explicitly sequenced.\\Activities may describe procedural computation, forming hierarchies of Activities invoking other Activities, or, in an object- oriented model, they may be invoked indirectly as methods bound to Operations that are directly invoked. Activities may be applied to organizational modeling for business process engineering and workflow. In this context, events often originate from inside the system, such as the finishing of a task, but also from outside the system, such as a customer call. Activities can also be used for information system modeling to specify system level processes.\\
 \\
 Activity Nodes\\ActivityNodes are used to model the individual steps in the behavior specified by an Activity.\\
 \\
 Activity Edges\\An ActivityEdge is a directed connection between two ActivityNodes along which tokens may flow, from the source ActivityNode to the target ActivityNod.\\
+\end{displayquote}
 
 %Quelle http://www.uml-diagrams.org/shopping-process-order-uml-activity-diagram-example.html?context=activity-examples
 \begin{figure}[hbt!]
