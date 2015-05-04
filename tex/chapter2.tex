@@ -31,12 +31,14 @@
 	\end{figure}
 	
 	Laut der Norm DIN IEC 60050-351 ist ein Prozess wie folgt definiert \cite{mpolke_proc}:\\
-		
-	\textit{Ein Prozess repräsentiert einen Ablauf von sequentiell ausgeführten Aktivitäten innerhalb eines Systems zum Umwandeln, Lagern und Transportieren von Material, Energie oder Informationen.}\todo{Zitat}\\
+	
+	\todo[inline]{Lepu fragen ob diese Zitierungsart ok ist}
+	
+	\textit{Ein Prozess repräsentiert einen Ablauf von sequentiell ausgeführten Aktivitäten innerhalb eines Systems zum Umwandeln, Lagern und Transportieren von Material, Energie oder Informationen.}\\
 
 	Dabei ist wiederum tiefer ins Detail zu gehen, da es für technische Prozesse eine eigens entworfene, genauer spezifizierende Definition gibt.\\
 	
-	\textit{Ein technischer Prozess ist ein Prozess, dessen physikalische Werte gemessen, sowie mit technischen Mitteln beeinflusst werden.}\todo{Zitat}\\
+	\textit{Ein technischer Prozess ist ein Prozess, dessen physikalische Werte gemessen, sowie mit technischen Mitteln beeinflusst werden.}\\
 	
 	Zu unterscheiden ist zwischen folgenden Prozessen:
 	
@@ -64,7 +66,7 @@
 	
 	Um die im späteren Verlauf aufbauende Hardware genauer beschreiben zu können, muss zu Beginn ein wenig thematisch ausgeholt werden. So hat der Begriff der Steuerung einen undenkbar hohen Stellenwert, welcher ebenso geklärt gehört.\\
 
-	Unter einer Prozess- Steuerung versteht man nach der Norm DIN 19226 einen Vorgang, bei dem durch Rückführen gemessener Prozesszustände, verglichen mit von der speicherprogrammierbaren Steuerung formulierten Parametern, Sollwerte zur Beeinflussung des gesamten Prozesses erzeugt werden. Im Gegensatz zu einer Regelung muss der von einem Sensor ausgelesene Ist-Wert jedoch nicht zwanghaft rückgeführt werden. Dies ist in Abbildung~\ref{fig:Aufbau_Steuerkreis_Selfmade} ersichtlich.\todo{Zitat}\\
+	Unter einer Prozess- Steuerung versteht man nach der Norm DIN 19226 einen Vorgang, bei dem durch Rückführen gemessener Prozesszustände, verglichen mit von der speicherprogrammierbaren Steuerung formulierten Parametern, Sollwerte zur Beeinflussung des gesamten Prozesses erzeugt werden. Im Gegensatz zu einer Regelung muss der von einem Sensor ausgelesene Ist-Wert jedoch nicht zwanghaft rückgeführt werden. Dies ist in Abbildung~\ref{fig:Aufbau_Steuerkreis_Selfmade} ersichtlich.\cite{mseitz_sps}\\
 	
 	Der Steuerkreis besteht aus Sensoren, einem Steuerungsrechner, welcher meistens mittels einer SPS realisiert wird, sowie Aktoren. Die Steuerungseinheit selbst ist ein Rechner mit dem Hauptaufgabenbereich, die programmierten, im Speicher abgelegten Anweisungen zyklisch auszuführen und über einfach anzusprechende Schnittstellen Daten einzulesen oder auszugeben. \cite{mseitz_sps} \\
 	
@@ -418,10 +420,9 @@ Dafür gibt es andere Werkzeuge, die auf XML basieren, aber eine grafische Darst
 %http://plato.stanford.edu/entries/logic-ontology/
 Eine Ontologie ist ein auf XML basierendes Konstrukt, dass einem das Abbilden von Dingen und deren Relationen ermöglicht. Um solch komplexe Zustände darzustellen, stehen neben einfachen Entitäten (Dinge) auch Eigenschaften zur Verfügung.
 
-\begin{displayquote}... we have at least two parts to the overall philosophical project of ontology: first, say what there is, what exists, what the stuff is reality is made out off, secondly, say what the most general features and relations of these things are. 
+\begin{displayquote}... we have at least two parts to the overall philosophical project of ontology: first, say what there is, what exists, what the stuff is reality is made out off, secondly, say what the most general features and relations of these things are.
 \end{displayquot}
 
-\todo{Zitat}
 \textbf{Allgemeiner Aufbau einer Ontologie}\\
 Das Modell an sich ohne zusätzliche Attribute oder Eigenschaften ist vom Aufbau her so zu erklären: Es gibt ein 'Thing', von dem alles aus geht \todo{keine Klammer} (das root Element bei XML). Von diesem Punkt aus können weitere Entitäten abgeleitet werden \todo{keine Klammer} (Eine Vererbung, vergleichbar mit einem Stammbaum). Die neu erstellte Entität ist immer noch ein Thing, jedoch genauer definiert. Es gibt keine Grenzen oder Vorschriften, in welche Tiefe diese Definition gehen muss. Daher kann dies für sehr komplexe aber auch simple Modelle eingesetzt werden.\\
 
