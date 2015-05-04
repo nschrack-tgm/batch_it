@@ -30,7 +30,7 @@
 		\caption{Definition eines Prozess}
 	\end{figure}
 	
-	Laut der Norm DIN IEC 60050-351 ist ein Prozess wie folgt definiert:\\
+	Laut der Norm DIN IEC 60050-351 ist ein Prozess wie folgt definiert \cite{mpolke_proc}:\\
 		
 	\textit{Ein Prozess repräsentiert einen Ablauf von sequentiell ausgeführten Aktivitäten innerhalb eines Systems zum Umwandeln, Lagern und Transportieren von Material, Energie oder Informationen.}\todo{Zitat}\\
 
@@ -84,19 +84,19 @@
 	
 	Man unterscheidet drei verschiedene Aufbauarten bei SPSen
 	
-	\begin{enumerate}
+	\begin{itemize}
   		\item Hardware - SPS
   		\item Slot - SPS
   		\item Soft - SPS
-	\end{enumerate}
-\todo{Nummerierung weiterführen}
-	\textbf{1. Hardware - SPS}\\\\
+	\end{itemize}
+
+	\textbf{Hardware - SPS}\\\\
 	Der im vorigen Abschnitt beschriebene Aufbau einer SPS bezieht sich auf die klassische Aufbauform einer \textit{Hardware - SPS}. Ihre Komponenten sind als gewöhnliche Einsteckkarten in einem Gehäuse oder Schaltschrank angeordnet und sind über einen Rückwandbus miteinander verbunden. Die Hardware - SPS benötigt einen externen PC als Programmiergerät.\\
 	
-	\textbf{2. Slot - SPS}\\\\
+	\textbf{Slot - SPS}\\\\
 	Eine Slot - SPS ist eine Einsteckkarte für den PC, welche alle Module einer SPS enthält. Anstatt einer CPU befindet sich ein Co-Prozessor in ihr, auf dem ein eigenes multitaskingfähiges Betriebssystem läuft. Zusätzlich verfügt sie über einen sogenannten multi-ported RAM (ein geteilter Speicher, der sowohl für SPS, als auch für PC zugreifbar ist).\\
 	
-	\textbf{3. Soft - SPS}\\\\
+	\textbf{Soft - SPS}\\\\
 	Zu guter Letzt gibt es die Soft - SPS, welche im Gegensatz zu den anderen Steuerungseinheiten eine reine Softwarelösung ist, die komplett auf der CPU des Host-PCs läuft und auch deren Hardware nutzt. Zur Ankopplung der Sensoren und Aktoren ist eine Einsteckkarte zur Feldbuskopplung notwendig, die mit einem Prozessor zur Buskommunikation und einem dual-ported Ram ausgestattet ist.\\
 	
 	Die Vorteile der SPS im PC ergeben sich hauptsächlich dadurch, dass die rasante Entwicklung der PC-Leistungen für SPSen genau dafür genutzt werden kann.\\
