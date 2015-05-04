@@ -366,17 +366,14 @@ Ein SCADA System, Supervisory Control And Data Acquisition, ist im Allgemeinen e
 Zu den Elemente eines SCADA Systems gehören:\\
 Ein SCADA System besteht aus den folgenden 3 Teilen:
 \\
-%todo Quelle Scada
-%http://www.engineersgarage.com/articles/scada-systems?page=1
-%10 März 2015
 \textbf{SCADA Master Station Computer Systems}\\
-Sammelstelle für Echtzeitdaten, die von RTUs generiert werden. Meist herkömmliche Computer Hardware.\\ \todo{kein Satz}
+Dies ist die Sammelstelle für Echtzeitdaten, die von RTUs generiert werden. Meist sind diese Station herkömmliche Computer.\cite{scada_system} \\ 
 \\
 \textbf{Remote Terminal Units (RTUs)}\\
-Sensoren, die physikalische Änderungen in der Anlage mit einem Signalumformer in elektrische Werte umwandelt. Je nachdem was gemessen werden soll, entstehen analoge (Füllstand, Helligkeit, Druck, ...) oder digitale (z.B. Status eines Geräts) Werte.
+Sensoren, die physikalische Änderungen in der Anlage mit einem Signalumformer in elektrische Werte umwandelt. Je nachdem was gemessen werden soll, entstehen analoge (Füllstand, Helligkeit, Druck, ...) oder digitale (z.B. Status eines Geräts) Werte.\cite{scada_system} \\
 \\
 \textbf{Human-Machine Interface}\\
-Aus den gesammelten Daten Analysen (Prognosen, Diagnosen) so aufbereiten, dass sie für den Anwender leicht verständlich dargestellt werden.\\ \todo{umformen}
+Im HMI werden die gesammelten Daten der RTUs analysiert und daraus Prognosen bzw. Diagnosen Visuell aufbereitet, um den Anwender eine schnell erkennbare Anzeige zu bieten.\cite{scada_system}
 
 \subsection{HMI}
 Die Visualisierung einer Produktionsanlage ist ein wesentlicher Punkt der Datenverarbeitung und wird oft als Benachrichtigungszentrale benutzt. Meist werden in dieser in Echzeit aktualisierte Statuswerte sowie Benachrichtigungen zu unerwarteten Ereignissen angezeigt. Die hierfür benötigten Daten müssen von der SPS in die Visualisierungssoftware übermittelt werden. Da dies ein sehr aufwendiger Prozess ist, gibt es SCADA-Systeme die all diese Funktionen vereinen.\\
@@ -384,46 +381,34 @@ Die Visualisierung einer Produktionsanlage ist ein wesentlicher Punkt der Datenv
 Für dieses Projekt wurde eine Umsetzung in der SCADA Software zenon verlangt, daher wird im weiteren nur noch über die Visualisierung in zenon's HMI System, dem zenon Supervisor, gesprochen.\\
 \\
 
-%Quelle http://www.protec.at/dienstleistungen/visualisierung
-%Quelle http://www.protec.at/tl_files/protec/uploads/Bilder_Logos/Visualisierung/visualisierung2.jpg
-\begin{figure}[hbt!]
- \centering
-	\caption{Beispiel Visualisierung in Zenon Supervisor}
-\end{figure}
-
-
 \newpage
 
 \section{Modellbasierte Entwicklung der Steuerung} \label{modellbasierte_entwicklung}
-Das Gebiet der modellbasierten Entwicklung bzw. der automatisierten Codegenerierung aus einem Modell als ganzes kann man nicht wirklich als State of the Art erklären.\\
-Wenn man sich jedoch die Gebiete als einzelnes anschaut, erkennt man, dass diese im heutigem Betrieb eingesetzt werden. \todo{kann man nicht so schreiben}
+Das Gebiet der modellbasierten Entwicklung bzw. der automatisierten Codegenerierung aus einem Modell als ganzes kann nicht als State of the Art erklärt werden, da sich dieser Ansatz zurzeit noch in der Forschung befindet.\\
+Allerdings können die einzelnen Gebiete dieser Entwicklung im heutigen Betrieb schon gefunden werden.
 \subsection{Modell}
 Ein Modell der gesamten Anlage wird schon im frühen Stadium der Entwicklung in Form eines RI-Fließschemas hergestellt, um klar zu definieren, welche Bauteile benötigt werden und welches mit welchem Bauteil verbunden ist. Dies ist nur das erste Modell das in der Industrie eingesetzt wird.\\
 \\
 Oft werden aber mehr Informationen benötigt als im RI-Fließschema ersichtlich sind, weswegen man auf eine andere Methode umsteigen muss ein Modell abzubilden.\\
 Auf die gängigsten Methoden (XML, Ontologie, UML) wird in den nächsten Punkten genauer eingegangen.
 \subsection{XML}
-XML ist ein textbasiertes Dateiformat, dass obwohl es für Dokumente gedacht ist, oft für das Abbilden von Daten Strukturen verwendet wird.
-\\
-Ähnlich wie in HTML verwendet auch XML Tags, der Unterschied besteht darin, dass XML keine vorgefertigten Tags besitzt und der Benutzer diese erstellt. Genau diese Benutzerdefinierten Tags ergeben die XML Struktur, welche, was essentiell ist, von alleine nur ein Textfile ist und keine Funktionen besitzt. \todo{Satz kann nicht so bleiblen}
+XML ist eine textbasierte Modellierungssprache bzw. Dateiformat, dass obwohl es für Dokumente gedacht ist, oft für das Abbilden von Daten Strukturen verwendet wird. XML ist wie viele andere \glqq Markup-Languages\grqq\space tag basiert, jedoch mit dem großen Unterschied das die Tags nicht vordefiniert werden, sonder die Benutzer diese erstellen. Ein wichtiger Aspekt der erwähnt werden muss ist der, das die erstellten XML Dateien keine eigene Funktion besitzen.\\
+
 \newpage
 \lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Sample Code]{extra/sample.xml}
 Der Aufbau einer XML Datei ist leicht zu erklären: Es gibt 1 rootElement, dass den Anfang und das Ende des Inhaltes markiert. Zwischen dem Start- und Endtag befinden sich weitere Tags, die das Dokument oder die Struktur genauer beschreiben. Jeder Tag kann Attribute besitzen die es weiter definieren. Zwischen einem Start- und Endtag können sich entweder weitere Tags oder einfacher Text befinden.
 \\
 Einsatz findet XML meist in Programmen oder Webseiten, die größere Mengen an Daten bzw. Befehle Systemunabhängig übertragen sollen. Grund dafür ist unter anderem die Tatsache, dass Mensch und Maschine die Datei ohne Übersetzung bzw. Kompilieren lesen und verstehen kann.\\
-Doch auch wenn ein Mensch XML-Dateien lesen kann, dauert es länger die Struktur eines Textes, im Vergleich zu einer grafischen Darstellung, zu verstehen.\\  \todo{Mensch?}
+Doch auch wenn eine Person XML-Dateien lesen kann, dauert es länger die Struktur eines Textes, im Vergleich zu einer grafischen Darstellung, zu verstehen.\\  
 Dafür gibt es andere Werkzeuge, die auf XML basieren, aber eine grafische Darstellung erzeugen.
 \subsection{Ontologie}
-%todo Quelle Ontologie
-%http://plato.stanford.edu/entries/logic-ontology/
 Eine Ontologie ist ein auf XML basierendes Konstrukt, dass einem das Abbilden von Dingen und deren Relationen ermöglicht. Um solch komplexe Zustände darzustellen, stehen neben einfachen Entitäten (Dinge) auch Eigenschaften zur Verfügung.
 
-\begin{displayquote}... we have at least two parts to the overall philosophical project of ontology: first, say what there is, what exists, what the stuff is reality is made out off, secondly, say what the most general features and relations of these things are. 
-\end{displayquot}
+\glqq ... we have at least two parts to the overall philosophical project of ontology: first, say what there is, what exists, what the stuff is reality is made out off, secondly, say what the most general features and relations of these things are. \grqq \cite{ontology_stanford} \\
+\\
 
-\todo{Zitat}
 \textbf{Allgemeiner Aufbau einer Ontologie}\\
-Das Modell an sich ohne zusätzliche Attribute oder Eigenschaften ist vom Aufbau her so zu erklären: Es gibt ein 'Thing', von dem alles aus geht \todo{keine Klammer} (das root Element bei XML). Von diesem Punkt aus können weitere Entitäten abgeleitet werden \todo{keine Klammer} (Eine Vererbung, vergleichbar mit einem Stammbaum). Die neu erstellte Entität ist immer noch ein Thing, jedoch genauer definiert. Es gibt keine Grenzen oder Vorschriften, in welche Tiefe diese Definition gehen muss. Daher kann dies für sehr komplexe aber auch simple Modelle eingesetzt werden.\\
+Das Modell an sich ohne zusätzliche Attribute oder Eigenschaften ist vom Aufbau her so zu erklären: Es gibt ein 'Thing', von dem alles aus geht, sozusagen ist das das root-Element bei XML. Von diesem Punkt aus können weitere Entitäten abgeleitet werden, diesen Schritt kann als eine Vererbung gesehen werden. Die neu erstellte Entität ist immer noch ein Thing, jedoch genauer definiert. Es gibt keine Grenzen oder Vorschriften, in welche Tiefe diese Definition gehen muss. Daher kann dies für sehr komplexe aber auch simple Modelle eingesetzt werden.\\
 
 \begin{figure}[hbt!]
  \centering
@@ -442,7 +427,7 @@ Allgemeine Definition:\\
 \textbf{Domain} -> \textbf{Name} -> \textbf{Range}\\
 KlasseA -> Eigenschaft -> KlasseB\\
 \\
-Wie kann man einen Tank mit einer Pumpe verbinden? \todo{Frage geht nicht} Genau dafür gibt es Objekt Eigenschaften. Für diesen Zweck kann man eine Eigenschaft mit dem Namen 'verbunden\_mit' erstellen, und diese dann dem Tank beifügen. So ergibt sich die Relation:\\
+Ein Beispiel wäre die Verknüpfung zwischen einem Tank und einer Pumpe und genau dafür gibt es Objekt Eigenschaften. Für diesen Zweck kann man eine Eigenschaft mit dem Namen 'verbunden\_mit' erstellen, und diese dann dem Tank beifügen. So ergibt sich die Relation:\\
 Tank -> verbunden\_mit -> Pumpe\\
 \\
 \textbf{Daten Eigenschaften}\\
@@ -452,40 +437,33 @@ Beispiel für ein Modell einer Produktionsanlage ist es etwaige Sensoren im Mode
 
 \subsection{UML}
 UML ist, wie eine Ontologie, eine auf XML basierte Modellierungssprache.
-%TODO Quelle UML
-%Quelle OMG Unified Modeling LanguageTM (OMG UML), Infrastructure
 Das Ziel von UML ist es, System Architekten, Software Ingenieuren und Software Entwicklern ein Werkzeug zur Analyse, Design, Implementation von Softwarebasierenden Systemen, sowie für Modell Entwicklung und ähnliche Prozesse zu bieten.\\
 \\
-Mit Hilfe von UML können viele verschiedene Arten von Diagrammen erstellt werden, für dieses Projekt relevant ist jedoch nur das Klassendiagramm und das Aktivitätsdiagramm, daher wird im weiteren nur auf diese 2 Arten genauer eingegangen.\\
+Mit Hilfe von UML können viele verschiedene Arten von Diagrammen erstellt werden, für dieses Projekt relevant ist jedoch nur das Aktivitätsdiagramm, daher wird im weiteren nur auf dieses genauer eingegangen.\\
 \\
-\textbf{Klassendiagramm}\\
-\\
-Neben einer einfachen Abbildung der Anlage kann man ein Activity Diagram verwenden um beispielsweise einzelne Phasen oder ganze Rezepte abzubilden.\\
-\\
+%\textbf{Klassendiagramm}\\
+%\\
+%Neben einer einfachen Abbildung der Anlage kann man ein Activity Diagram verwenden um beispielsweise einzelne Phasen oder ganze Rezepte abzubilden.\\
+%\\
 \textbf{Aktivität}\\
-%TODO Quelle Activity
-%Quelle http://timpt.de/topic35.html
-Ein Aktivitätsdiagramm beschreibt das Verhalten von Systemen auf Grundlage von vorgegebenen Regeln. 
+Ein Aktivitätsdiagramm beschreibt das Verhalten von Systemen auf Grundlage von vorgegebenen Regeln. \\
 
 \begin{figure}[hbt!]
  \centering
   \includegraphics[width=1\textwidth]{graphics/stateoftheart/Activity_Elemente}
-  \caption{Basis Elemente eines Aktivitätsdiagramm}
+  \caption{Basis Elemente eines Aktivitätsdiagramm \cite{activity_list}}
 \end{figure}
-%Quelle OMG Unified Modeling LanguageTM (OMG UML), Version 2.5
-%Als Zitat lassen und das Beispiel auf Deutsch dann erklären (Eng. Begriffe verwenden)
-\begin{displayquote}An Activity is a kind of Behavior that is specified as a graph of nodes interconnected by edges. A subset of the nodes are executable nodes that embody lower-level steps in the overall Activity. Object nodes hold data that is input to and output from executable nodes, and moves across object flow edges. Control nodes specify sequencing of executable nodes via control flow edges. Activities are essentially what are commonly called “control and data flow” models. Such models of computation are inherently concurrent, as any sequencing of activity node execution is modeled explicitly by activity edges, and no ordering is mandated for any computation not explicitly sequenced.\\Activities may describe procedural computation, forming hierarchies of Activities invoking other Activities, or, in an object- oriented model, they may be invoked indirectly as methods bound to Operations that are directly invoked. Activities may be applied to organizational modeling for business process engineering and workflow. In this context, events often originate from inside the system, such as the finishing of a task, but also from outside the system, such as a customer call. Activities can also be used for information system modeling to specify system level processes.\\
+
+\glqq An Activity is a kind of Behavior that is specified as a graph of nodes interconnected by edges. A subset of the nodes are executable nodes that embody lower-level steps in the overall Activity. Object nodes hold data that is input to and output from executable nodes, and moves across object flow edges. Control nodes specify sequencing of executable nodes via control flow edges. Activities are essentially what are commonly called “control and data flow” models. Such models of computation are inherently concurrent, as any sequencing of activity node execution is modeled explicitly by activity edges, and no ordering is mandated for any computation not explicitly sequenced.\\Activities may describe procedural computation, forming hierarchies of Activities invoking other Activities, or, in an object- oriented model, they may be invoked indirectly as methods bound to Operations that are directly invoked. Activities may be applied to organizational modeling for business process engineering and workflow. In this context, events often originate from inside the system, such as the finishing of a task, but also from outside the system, such as a customer call. Activities can also be used for information system modeling to specify system level processes.\\
 \\
 Activity Nodes\\ActivityNodes are used to model the individual steps in the behavior specified by an Activity.\\
 \\
-Activity Edges\\An ActivityEdge is a directed connection between two ActivityNodes along which tokens may flow, from the source ActivityNode to the target ActivityNod.\\
-\end{displayquote}
+Activity Edges\\An ActivityEdge is a directed connection between two ActivityNodes along which tokens may flow, from the source ActivityNode to the target ActivityNod.\grqq \cite{uml_def} \\
 
-%Quelle http://www.uml-diagrams.org/shopping-process-order-uml-activity-diagram-example.html?context=activity-examples
 \begin{figure}[hbt!]
  \centering
   \includegraphics[width=1\textwidth]{graphics/stateoftheart/Activity_bsp}
-  \caption{Beispiel für ein Aktivitätsdiagramm}
+  \caption{Beispiel für ein Aktivitätsdiagramm \cite{activity_example}}
 \end{figure}
 %
 \subsection{OPC}
