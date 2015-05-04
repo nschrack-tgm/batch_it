@@ -9,10 +9,10 @@ Die Abfolge der Arbeitsschritte für die modellbasierte Entwicklung der Steuerun
 		\label{fig:konz_konzept_new}
 \end{figure} \\
 \todo{modellbasierte entwicklung bei austausch/erweiterung}
-Es beginnt mit einer Produktionsanlage, wobei es sich um eine Chargenprozessanlage handelt, die in einer Ontologie abgebildet wird. Die Ontologie und das Diagramm der Prozeduren beinhaltet die nötigen Daten, die gebraucht werden, um im weiteren Schritt den Code für die SPS zu generieren. Dieser Code ist nach dem IEC 61512 Standard genormt. Nachdem der Code in die SPS eingespielt wird, kann die Chargenprozessanlage gesteuert werden. 
+Es beginnt mit einer Produktionsanlage, wobei es sich um eine Chargenprozessanlage handelt, die in einer Ontologie abgebildet wird. Die Ontologie und das Diagramm der Prozeduren beinhalten die nötigen Daten, die gebraucht werden, um im weiteren Schritt den Code für die SPS zu generieren. Dieser Code ist nach dem IEC 61512 Standard genormt. Nachdem der Code in die SPS eingespielt wird, kann die Chargenprozessanlage gesteuert werden. 
 In diesem Kapitel wird jeder Schritt, der im Kreislauf von Abbildung~\ref{fig:konz_konzept_new} enthalten ist, genauer elaboriert und in Perspektive zu dem entwickelten Konzept gebracht.
 \section{Produktionsanlage}
-Für eine Anlage gibt es gewisse Parameter, die beim konzeptionellen Entwurf beachtet werden müssen. Für die gestellten Anforderungen, sowie für die zukünftig darauf aufbauenden Projekte, ist es unentbehrlich, dass diverse Redundanzen vorhanden sind. Eine Voraussetzung ist jedenfalls eine Vielzahl an Hauptleitungen. Durch diese kann erst ermöglicht werden, zwei Arbeitsschritte parallel auszuführen. Das noch folgende Vorhaben, einen Wegfindungsalgorithmus zu integrieren, ist obendrein nur nutzbringend, wenn mehrere, durch die Redundanz gebotene Wege zur Auswahl stehen. Ebenso ist die Disponibilität von mehr als einer Pumpe eine essentielle Bedingung. Dadurch kann die Anlage, bei der Eventualität eines Ausfalls einer Pumpe, diese vollständig kompensieren. Die Ansteuerung jeder einzelnen Funktion muss somit stets von geringstenfalls einer anderen Pumpe durchführbar sein. Zudem ist es vorgesehen, auf ausgewählten Routen die Steuerung mit Hilfe der Schwerkraft durchzuführen.\\
+Für eine Anlage gibt es gewisse Parameter, die beim konzeptionellen Entwurf beachtet werden müssen. Für die gestellten Anforderungen sowie für die zukünftig darauf aufbauenden Projekte ist es unentbehrlich, dass diverse Redundanzen vorhanden sind. Eine Voraussetzung ist jedenfalls eine Vielzahl an Hauptleitungen. Durch diese kann erst ermöglicht werden, zwei Arbeitsschritte parallel auszuführen. Das noch folgende Vorhaben, einen Wegfindungsalgorithmus zu integrieren, ist obendrein nur nutzbringend, wenn mehrere, durch die Redundanz gebotene Wege zur Auswahl stehen. Ebenso ist die Disponibilität von mehr als einer Pumpe eine essentielle Bedingung. Dadurch kann die Anlage bei der Eventualität eines Ausfalls einer Pumpe diese vollständig kompensieren. Die Ansteuerung jeder einzelnen Funktion muss somit stets von geringstenfalls einer anderen Pumpe durchführbar sein. Zudem ist es vorgesehen, auf ausgewählten Routen die Steuerung mit Hilfe der Schwerkraft durchzuführen.\\
 
 %Ein Ziel der Anlage muss sein, eine möglichst hohe Effizienz mit der modellbasierten Entwicklung zu erreichen.\\
 
@@ -24,7 +24,7 @@ Für eine Anlage gibt es gewisse Parameter, die beim konzeptionellen Entwurf bea
 \end{figure}
 \section{Informationskonzept}
 Die Informationen für die Codegenerierung benötigen einerseits einen Ontologie, zur Speicherung der Informationen der Produktionsanlagen, und andererseits ein Aktivitätsdiagramm. In diesem werden die gewünschten Prozeduren dargestellt, die später generiert werden sollen.
-Die beiden sind von einander Abhängig, denn die Namen, der von in der Ontologie erstellen Identitäten (Datensätze), werden den Namen des Aktivitätsdiagramms zugeordnet.
+Die beiden sind von einander abhängig, denn die Namen, der von in der Ontologie erstellen Identitäten (Datensätze), werden den Namen des Aktivitätsdiagramms zugeordnet.
 Mithilfe der Ontologie und des Aktivitätsdiagramms können die Informationen bereitgestellt werden, die für die Codegenerierung nötige sind.  
 
 \subsection{Ontologie der Chargenprozessanlage}
@@ -37,7 +37,7 @@ Eine Ontologie, die eine Chargenprozessanlage abbildet, kann folgendermaßen aus
 \end{figure}\\
 %Die Verbindungen zwischen den Klassen (In Abbildung 3.2. die Vierecke)
 \todo{Referenz rausnehmen?}
-Damit bei der Codegenerierung ein hoher Automatisierungsgrad  erreicht werden kann, müssen möglichst viele Daten abgespeichert werden. In einer Ontologie können unteranderem Klassen (Classes), Eigenschaften von Klassen (Object Properties) und Verbindungen zwischen Klassen (Data Properties) definiert werden. Für genauerer Erklärung einer Ontologie siehe Kapitel 2.3 \glqq Modellbasierte Entwicklung der Steuerung\grqq. Dies wird sich zu Nutze gemacht um die Produktionsanlagen sehr genau abzubilden. Damit die Codegenerierung best möglich umgesetzt werden kann, werden folgende Daten einer Chargenprozessanlage gebraucht:
+Damit bei der Codegenerierung ein hoher Automatisierungsgrad  erreicht werden kann, müssen möglichst viele Daten abgespeichert werden. In einer Ontologie können unteranderem Klassen (Classes), Eigenschaften von Klassen (Object Properties) und Verbindungen zwischen Klassen (Data Properties) definiert werden. Für genauere Erklärung einer Ontologie siehe Kapitel 2.3 \glqq Modellbasierte Entwicklung der Steuerung\grqq. Dies wird sich zu Nutze gemacht um die Produktionsanlagen sehr genau abzubilden. Damit die Codegenerierung best möglich umgesetzt werden kann, werden folgende Daten einer Chargenprozessanlage gebraucht:
 
 \begin{itemize}
   \item Elektrische Elemente (Pumpe, Ventil, SPS)
@@ -49,10 +49,10 @@ Damit bei der Codegenerierung ein hoher Automatisierungsgrad  erreicht werden ka
 \textbf{Elektrische Elemente}\\
 Diese Kategorie beinhaltet alle Elemente die einen I/O Port in einer SPS brauchen, um mit Strom versorgt und angesprochen zu werden. Darunter können zum Beispiel eine Pumpe, ein Ventil, jegliche Art von Sensor aber auch ein Rührstab oder ein Heizelement fallen. \\\\
 \textbf{Nicht- Elektrische Elemente}\\
-Hierbei werden alle Elemente beschrieben die keinen I/0 Port in der SPS haben, aber wichtig für die Chargenprozessanlage sind. Somit fällt zum Beispiel ein Tank und Reaktor in diese Gruppe. Zusätzlich könnten auch die Rohrleitung abgebildet werden.\\\\
+Hierbei werden alle Elemente beschrieben, die keinen I/0 Port in der SPS haben, aber wichtig für die Chargenprozessanlage sind. Somit fällt zum Beispiel ein Tank und Reaktor in diese Gruppe. Zusätzlich könnten auch die Rohrleitung abgebildet werden.\\\\
 \textbf{Eigenschaften der Elemente}  \\
 Diese Kategorie kann beliebig genau behandelt werden, wobei ein gutes Mittelmaß gefunden werden sollte. Grundsätzlich ist jede zusätzliche Information eines Elements wertvoll für die Codegenerierung, allerdings kann eine zu detailreiche Beschreibung umständlich bzw. aufwändig auszuwerten sein und keinen wirklichen Nutzen bringen.
-So sind zum Beispiel Maximal- und Minimalwerte sehr sinnvoll, aber die Abmessung der jeweiligen Elemente überflüssig. Weitere wertvolle Eigenschaften sind die Übertragungsarten (Analog oder Digital) und der Standard Zustand, ob z.B. das Ventil offen oder zu ist wenn kein Strom fließt, von elektronische Elementen.   \\\\
+So sind zum Beispiel Maximal- und Minimalwerte sehr sinnvoll, aber die Abmessung der jeweiligen Elemente überflüssig. Weitere wertvolle Eigenschaften sind die Übertragungsarten (Analog oder Digital) und der Standard Zustand von elektronische Elementen, ob z.B. das Ventil offen oder zu ist wenn kein Strom fließt.   \\\\
 \textbf{Verbindung zwischen den Elementen}  \\
 Dabei werden die Verbindungen (z.B. mit Rohren) der Chargenprozessanlage zwischen den Elementen beschrieben. 
 %Es kann sich entweder um eine Element zu Element (Eins-zu-eins) Verbindung handeln oder einen Kreuzung, also mehr als zwei Elemente miteinander.
