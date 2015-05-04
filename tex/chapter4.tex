@@ -127,11 +127,7 @@ In zenon können auf mehrere Arten Variablen erstellt werden. Damit diese für d
   \caption{Variablen}%todo Grafik name
 \end{figure}\\
 Sobald alle Variablen erstellt sind, werden diese mit der Feldbuskonfiguration verknüpft. Durch diesen Schritt erhält man Zugang zu den an der SPS angeschlossenen Bauteilen.\\
-%Die erstellten Variablen mussten als nächstes in der Visualisierung eingetragen werden um in dieser im nächsten Schritt eine Steuerung zu erzeugen.\\
 \\
-%Feldbuskonfiguration -> Konfiguration einfügen (Advantech ADAM 5550) -> Master/Port hinzufügen (ADAM 5550) -> Slave/Datenblock einfügen (Slot:Steckplatz an SPS; Module: Analog/Digital|In/Out|4/8/16 Channels...) -> Variable hinzufügen (Channel; Variablenname)
-%Variable -> Globale Variable hinzufügen (erzeugt Variable in logic und auch im supervisor zugänglich für die Visualisierung) -> In Visualisierung zu den Elemente die richtigen Variablen hinzufügen -> Bei Feldbbuskonfiguration bei richtiger I/O auf richtigem Channel hinzufügen
-%TEST -> logic Programm hochladen -> Variablen in logic zeigen aktuelle werte an -> check mit werten direkt von der SPS
 
 %Umrechnen von Sensorwerten: 
 %Durchflusssensor Digital -> etwa 900 ticks pro Liter -> Timer bid 900 ticks -> Liter/min
@@ -184,7 +180,6 @@ Connection:\\
 \\
 Mit dieser Ontologie ist es grundsätzlich möglich die Anlage aus Kapitel 4.2 abzubilden, jedoch finden sich einige Inkonsistenzen die die automatisierte Codegenerierung erschweren wenn nicht sogar unmöglich machen würden.\\
 \\
-%Die nächste Version befasst sich damit die einzelnen Kategorien genauer zu bestimmen, um einen Konsistenten zustand in die Ontologie zu bringen, gleichzeitig aber auch eine Struktur zu bilden die eine automatische Codegenerierung erleichtert.
 Nun wird die erste Version der Ontologie, in Hinsicht einer automatisierten Codegenerierung, evaluiert und dementsprechend umgebaut.\\
 Die Kategorien werden im nächsten Schritt genauer definiert um eine Konsistenz in die Ontologie zu bringen.\\
 \\
@@ -202,6 +197,15 @@ Die Kategorie \glqq Passive Element\grqq\space wird komplett entfernt da sie kei
   \caption{Erste Überarbeitung der Ontologie}
 \end{figure}
 
+Von diesem Punkt aus wird die Ontologie nur noch verfeinert und nicht mehr großartig an der Struktur gearbeitet.\\
+Die Klasse SPS wird, um Konsistenz in die Namen zu bringen, in die Englische Bezeichnung PCL umbenannt. 
+
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=0.6\textwidth]{graphics/implementation/Ontology_final}
+  \caption{Finale Version der Ontologie}
+\end{figure}
+
 \textbf{Object Properties}\\
 \\
 Nachdem die Klassenstruktur feststeht, müssen als nächstes die Relationen bestimmt werden.
@@ -211,8 +215,9 @@ Nachdem die Klassenstruktur feststeht, müssen als nächstes die Relationen best
 \textbf{Name} & \textbf{Domain} & \textbf{Range} \\ \hline
 hasActiveE    & Input, Output   & Active\_Element \\ \hline
 hasConnection & MainPart        & Connection      \\ \hline
-hasIO         & Thing           & Input, Output   \\ \hline
-includes      & Tank            & Active\_Element \\ \hline
+hasIO         & Module          & Input, Output   \\ \hline
+hasModule     & PLC             & Module          \\ \hline
+isIncludedTo  & Tank            & Active\_Element \\ \hline
 isConnectedTo & Connection      & Connection                            
 \end{tabular}
 \end{table}
