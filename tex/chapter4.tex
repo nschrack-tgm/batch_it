@@ -13,18 +13,17 @@ Die zwei Pumpen sind so platziert, dass bei einem eventuell auftretenden Defekt 
 
 Jedes Ventil hat eine vorteilhafte Durchflussrichtung, die meistens mit einem Pfeil direkt auf dem Bauteil gekennzeichnet ist. Ganz abgesehen davon, ob es sich um ein Ventil handelt, welches im stromlosen Zustand geschlossen ist oder ob es ein schließendes Ventil ist, diese Vorgabe sollte stets eingehalten werden. Aspekte wie dieser haben in die Modellierung der Anlage selbstverständlich eingebaut zu werden.\\
 
-\todo[inline]{BILD EINFÜGEN}
-
+\todo{Mit Photoshop gerade machen}
 \begin{figure}[h!]
   \centering
-  %\includegraphics[width=0.7\textwidth]{graphics/implementation/BILD}
+  \includegraphics[width=0.7\textwidth]{graphics/implementation/Fliessrichtung.jpg}
   \caption{Ventil mit vorteilhafter Fließrichtung}
 \end{figure}
 
 Um in der Anlage befindliche Flüssigkeiten zu entfernen, muss ein eigens für den Auslass vorgesehenes Ventil installiert werden. Vorteilhafterweise handelt es sich bei der Position dieses Bauteils um den tiefsten Punkt der Apperetur. Alternativ dazu kann dieses auch direkt nach einer Pumpe montiert werden.
 
 \section{Aufbau der Anlage}
-Auf Basis des Rohr- und Instrumentenfließschemas kristallisiert sich eine exakte Anzahl an benötigten Bauteilen heraus. Für den noch bevorstehenden Aufbau der Anlage ist zu beachten, dass beim Auswählen der Einzelteile alles kompatibel sein muss. Nicht vorhandene Vereinbarkeit kann vor allem für diesen speziellen Anwendungszweck zu katastrophalen Auswirkungen führen, da einerseits mit Flüssigkeiten gearbeitet wird, sowie gleichzeitig stromdurchflossene Leitungen existieren. Eine Verbindung dieser genannten Komponenten hätte irreparable Schäden zur Folge. Im Rahmen einer übergeordneten Forschungsarbeit wurde diesem Projekt ein Budget von 6000 \todo{Euro} \euro \space zugesprochen. Die Auswahl der benötigten Teile hat verständlicherweise im Rahmen dieser beschränkten Geldmittel zu geschehen.\\
+Auf Basis des Rohr- und Instrumentenfließschemas kristallisiert sich eine exakte Anzahl an benötigten Bauteilen heraus. Für den noch bevorstehenden Aufbau der Anlage ist zu beachten, dass beim Auswählen der Einzelteile alles kompatibel sein muss. Nicht vorhandene Vereinbarkeit kann vor allem für diesen speziellen Anwendungszweck zu katastrophalen Auswirkungen führen, da einerseits mit Flüssigkeiten gearbeitet wird, sowie gleichzeitig stromdurchflossene Leitungen existieren. Eine Verbindung dieser genannten Komponenten hätte irreparable Schäden zur Folge. Im Rahmen einer übergeordneten Forschungsarbeit wurde diesem Projekt ein Budget von 6000 \euro \space \todo{Euro} zugesprochen. Die Auswahl der benötigten Teile hat verständlicherweise im Rahmen dieser beschränkten Geldmittel zu geschehen.\\
 	
 	Für einige verwendete Element gibt es spezifische Parameter, die auf jeden Fall einzuhalten sind:\\
 	
@@ -58,16 +57,17 @@ Auf Basis des Rohr- und Instrumentenfließschemas kristallisiert sich eine exakt
 	
 	Mit dem Einbau der Füllstandssensoren in den drei Tanks sind die letzten Arbeitsschritte des physikalischen Aufbaus der Anlage getan.
 
-\section{Phasen und Rezepte}
-	Der Begriff Prozedur beschreibt das Zusammenfassen mehrerer Grundfunktionen einer Anlage, um einen Ablauf zu automatisieren. Das Gegenspiel zwischen der Software zenon und der SPS kann als sogenannte \glqq State-Machine \grqq \space betrachtet werden. Da eine SPS dem zyklischen Abarbeiten programmierter Funktionen unterliegt, ist es ein ständiges Nachfragen ob ein jeweiliger Zustand schon erreicht wurde. Durch global gesetzte Status kann so ein automatischer Wechsel der ausgeführten Funktionen erfolgen. Als Rezept wird das Aneinanderreihen mehrerer Prozeduren bezeichnet, um einen weiteren Schritt der Automatisierung zu gehen.\\
+\section{Prozeduren und Rezepte}
+	Der Begriff Prozedur beschreibt das Zusammenfassen mehrerer Grundfunktionen einer Anlage, um einen Ablauf zu automatisieren. Zenon Batchcontrol, ein Unterprogramm der gewählten Softwarelösung, folgt der in IEC 61512 definierten Statemachine. Da eine SPS dem zyklischen Abarbeiten programmierter Funktionen unterliegt, werden diese Zustände regelmäßig von Batch-Control an die Soft-SPS Zenon Logic gesendet, die dann eine weitere Verarbeitung vornimmt und die angeforderte Statusänderung bestätigt. Durch global gesetzte Status kann so ein automatischer Wechsel der ausgeführten Funktionen erfolgen. Als Rezept wird das sequentielle Ausführen mehrerer Prozeduren bezeichnet, um einen weiteren Schritt der Automatisierung zu gehen.\\
 
 \begin{figure}[h!]
   \centering
   \includegraphics[height=0.6\textwidth]{graphics/implementation/Datentyp_Phase.jpg}
   \caption{Aufbau der Strukturvariable \glqq \textit{phase}\grqq}
+  \label{fig:var_phase}
 \end{figure}
 	
-	Für die Kommunikation zwischen einer Prozedur bzw. eines Rezepts und der SPS stehen drei Variablen zur Verfügung
+	Für die Kommunikation zwischen einer Prozedur bzw. eines Rezepts und der SPS stehen drei Kommunikationsvariablen (cmd, stat, batchstat) sowie eine weitere Strukturvariable (com) zur Verfügung (siehe Abbildung~\ref{fig:var_phase})
 	
 	\begin{itemize}
 		\item Kommando: Sendet Befehle an SPS-Grundfunktion
@@ -75,25 +75,25 @@ Auf Basis des Rohr- und Instrumentenfließschemas kristallisiert sich eine exakt
 		\item Batchstatus: Sendet internen Status des Rezepts zur SPS
 	\end{itemize}
 
-	Kommando trägt der SPS auf, was getan werden muss. Mit dem Status wird der Software zenon mitgeteilt, in welchem Stadium sich die Prozedur gerade befindet. Die Variable Batchstatus teilt mit, wo im gesamt abzulaufenden Programmcode sich die SPS gerade befindet.\\
+	\textit{Kommando} trägt der SPS auf, welcher Arbeitsschritte ausgeführt werden müssen. Mit dem \textit{Status} wird der Software zenon mitgeteilt, in welchem Stadium sich die Prozedur zum aktuellen Zeitpunkt befindet. Die Variable \textit{Batchstat} repräsentiert eine qualitätssichernde Redundanz, da der Status der SPS teilweise in den Zustand 'running' wechselt, jedoch der interne Zustand von Batch Control diesen noch nicht erreicht hat. Zusätzlich erreicht in wenigen Fällen die SPS den Status 'done', während Batch Control unterdessen noch nicht einmal den internen Zustand auf 'running' gesetzt hat. Mit Hilfe dieser zusätzlichen Variable kann die Prozedur nur dann auf 'done' schalten, wenn die SPS \textbf{und} Batch Control den Zustand 'running' besitzen.\todo{Absatz schöner schreiben}\\
 	
 	Um eine Prozedur in zenon zu konfigurieren, benötigt es eine ganze Anzahl an zu erledigenden Arbeitsschritten, die da wären:\\
 
-	Initialisierend wird im Unterpunkt Batch Control ein neues Aggregat mit einer sich darin befindlichen neuen Grundfunktion (Prozedur) angelegt. Die Prozedur benötigt nun die zuvor erwähnten Kommunikationsvariablen Status, Command und BatchCommand. Zu beachten ist allerdings, dass es diese Strukturvariable bereits in der Form \glqq \textbf{name}.com.* \grqq \space gibt. Abermals untergeordnete Reaktionen werden mit den gewünschten Ereignissen befüllt, wobei wiederum zu beachten ist, dass diese den richtigen Variablen zugeordnet sein müssen.\\
+	Initialisierend wird im Unterpunkt Batch Control ein neues Aggregat mit einer sich darin befindlichen neuen Grundfunktion (Prozedur) angelegt. Die Prozedur benötigt nun die zuvor erwähnten Kommunikationsvariablen Command, Status und Batchstatus. Zu beachten ist allerdings, dass es diese Strukturvariable bereits in der Form \glqq \textbf{name}.com.*\grqq \space geben muss. Abermals untergeordnete Reaktionen werden mit den gewünschten Ereignissen befüllt, wobei wiederum zu beachten ist, dass diese den richtigen Variablen zugeordnet sind.\\
 
-	Weitere Arbeitsschritte werden mit mittels Zenon Logic abgearbeitet. Ein Hauptprogramm, welches zum Ausführen aller anderen Funktionen dient, wird angelegt. Aufgerufene Unterprogramme sind get\_cmd(), get\_batchstat(), die auszuführende(n) Prozedure(n) und send\_state() und müssen vor dem ersten Durchlauf des Hauptprogramms angelegt sein.\\
+	Weitere Arbeitsschritte werden mittels Zenon Logic abgearbeitet. Ein Hauptprogramm, welches zum Ausführen aller anderen Funktionen dient, wird angelegt. Aufgerufene Unterprogramme sind \textit{get\_cmd()}, \textit{get\_batchstat()}, die auszuführende(n) Prozedure(n) und \textit{send\_state()}. Diese müssen vor dem ersten Durchlauf des Hauptprogramms angelegt sein.\\
 	
 	\textbf{get\_cmd()}\\
-	Null setzen (\glqq false\grqq \space setzen) aller Boolean-Werte, die einen Status repräsentieren, um alles zurückzusetzen, sowie durchgehen aller zur Auswahl stehenden Kommandos und setzen der Variable des zutreffenden Kommandos (\glqq true\grqq \space setzen).\\
+	Das Unterprogramm dient zum Null setzen (\glqq false\grqq \space setzen) aller Boolean-Werte die einen Status repräsentieren um alle gesetzten Werte zurückzusetzen. Desweiteren werden alle zur Auswahl stehenden Kommandos iteriert und nur die Variable des zutreffenden Kommandos gesetzt (\glqq true\grqq \space gesetzt).\\
 
 	\textbf{get\_batchstat()}\\
-		Zutreffender aktueller Status der Grundfunktion wird gesetzt.\\
+	Dieses Unterprogramm setzt den zutreffenden aktuellen Status der Grundfunktion.\\
 
 	\textbf{Prozedur}\\
-		Variablen bis zur Abbruchbedingung setzen\\
+	Innerhalb dieses Unterprogramms werden die Variablen bis zur Abbruchbedingung gesetzt.\\
 
 	\textbf{send\_state()}\\
-		Globales Setzen des aktuellen Status
+	Dieses Unterprogramm dient zum globalen Setzen des aktuellen Status.
 		
 \begin{figure}[h!]
   \centering
