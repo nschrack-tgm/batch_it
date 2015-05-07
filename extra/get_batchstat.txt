@@ -1,0 +1,5 @@
+ // convert batchstat tag to single bool commands
+ CASE phase.com.batchstat of
+  1:phase.batchstat.running := 1;
+  ...
+ END_CASE;

@@ -1,0 +1,26 @@
+// Reset single commands 
+reset_cmd(phase);
+
+CASE phase_com.cmd of
+// convert command tag to single bool commands 
+	1:phase.cmd.Start := 1;
+	2:phase.cmd.Values_dropped := 1;
+	3:phase.cmd.Complete :=1;
+	4:phase.cmd.Finish :=1;
+	...
+END_CASE;
+
+// Changes the state of the phase to the demanded transient state
+IF phase.cmd.Start THEN 
+	reset_stat(phase);
+ELSIF phase.cmd.Values_dropped THEN
+	reset_stat(phase);
+	phase.stat.starting := 1;
+ELSIF phase.cmd.complete THEN 
+	reset_stat(phase);
+	phase.stat.completing := 1;
+ELSIF phase.cmd.finish THEN
+	reset_stat(phase);
+	phase.stat.finishing := 1;
+	...
+END_IF;

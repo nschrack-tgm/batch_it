@@ -13,7 +13,6 @@ Die zwei Pumpen sind so platziert, dass bei einem eventuell auftretenden Defekt 
 
 Jedes Ventil hat eine vorteilhafte Durchflussrichtung, die meistens mit einem Pfeil direkt auf dem Bauteil gekennzeichnet ist. Ganz abgesehen davon, ob es sich um ein Ventil handelt, welches im stromlosen Zustand geschlossen ist oder ob es ein schließendes Ventil ist, diese Vorgabe sollte stets eingehalten werden. Aspekte wie dieser haben in die Modellierung der Anlage selbstverständlich eingebaut zu werden.\\
 
-\todo{Mit Photoshop gerade machen}
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.7\textwidth]{graphics/implementation/Fliessrichtung.jpg}
@@ -58,7 +57,7 @@ Auf Basis des Rohr- und Instrumentenfließschemas kristallisiert sich eine exakt
 	Mit dem Einbau der Füllstandssensoren in den drei Tanks sind die letzten Arbeitsschritte des physikalischen Aufbaus der Anlage getan.
 
 \section{Prozeduren und Rezepte}
-	Der Begriff Prozedur beschreibt das Zusammenfassen mehrerer Grundfunktionen einer Anlage, um einen Ablauf zu automatisieren. Zenon Batchcontrol, ein Unterprogramm der gewählten Softwarelösung, folgt der in IEC 61512 definierten Statemachine. Da eine SPS dem zyklischen Abarbeiten programmierter Funktionen unterliegt, werden diese Zustände regelmäßig von Batch-Control an die Soft-SPS Zenon Logic gesendet, die dann eine weitere Verarbeitung vornimmt und die angeforderte Statusänderung bestätigt. Durch global gesetzte Status kann so ein automatischer Wechsel der ausgeführten Funktionen erfolgen. Als Rezept wird das sequentielle Ausführen mehrerer Prozeduren bezeichnet, um einen weiteren Schritt der Automatisierung zu gehen.\\
+	Der Begriff Prozedur beschreibt das Zusammenfassen mehrerer Grundfunktionen einer Anlage, um einen Ablauf zu automatisieren. Zenon Batchcontrol, ein Unterprogramm der gewählten Softwarelösung, folgt der in IEC 61512 definierten Statemachine (siehe Abbildung~\ref{fig:statemachine}). Da eine SPS dem zyklischen Abarbeiten programmierter Funktionen unterliegt, werden diese Zustände regelmäßig von Batch-Control an die Soft-SPS Zenon Logic gesendet, die dann eine weitere Verarbeitung vornimmt und die angeforderte Statusänderung bestätigt. Durch global gesetzte Status kann so ein automatischer Wechsel der ausgeführten Funktionen erfolgen. Als Rezept wird das sequentielle Ausführen mehrerer Prozeduren bezeichnet, um einen weiteren Schritt der Automatisierung zu gehen.\\
 
 \begin{figure}[h!]
   \centering
@@ -83,24 +82,66 @@ Auf Basis des Rohr- und Instrumentenfließschemas kristallisiert sich eine exakt
 
 	Weitere Arbeitsschritte werden mittels Zenon Logic abgearbeitet. Ein Hauptprogramm, welches zum Ausführen aller anderen Funktionen dient, wird angelegt. Aufgerufene Unterprogramme sind \textit{get\_cmd()}, \textit{get\_batchstat()}, die auszuführende(n) Prozedure(n) und \textit{send\_state()}. Diese müssen vor dem ersten Durchlauf des Hauptprogramms angelegt sein.\\
 	
-	\textbf{get\_cmd()}\\
-	Das Unterprogramm dient zum Null setzen (\glqq false\grqq \space setzen) aller Boolean-Werte die einen Status repräsentieren um alle gesetzten Werte zurückzusetzen. Desweiteren werden alle zur Auswahl stehenden Kommandos iteriert und nur die Variable des zutreffenden Kommandos gesetzt (\glqq true\grqq \space gesetzt).\\
+	\subsection{get\_cmd()}
+	Das Unterprogramm dient zum Null setzen (\glqq false\grqq \space setzen) aller Boolean-Werte die einen Status repräsentieren um alle gesetzten Werte zurückzusetzen. Desweiteren werden alle zur Auswahl stehenden Kommandos iteriert und nur die Variable des zutreffenden Kommandos gesetzt (\glqq true\grqq \space gesetzt).
 
-	\textbf{get\_batchstat()}\\
-	Dieses Unterprogramm setzt den zutreffenden aktuellen Status der Grundfunktion.\\
+	\lstinputlisting[language=c,belowcaptionskip=5pt,frame=bt,caption=get\_cmd()]{extra/get_cmd.txt}
 
-	\textbf{Prozedur}\\
-	Innerhalb dieses Unterprogramms werden die Variablen bis zur Abbruchbedingung gesetzt.\\
+	\subsection{get\_batchstat()}
+	Dieses Unterprogramm setzt den zutreffenden aktuellen Status der Grundfunktion.
+	
+	\lstinputlisting[language=c,frame=bt,caption=get\_batchstat()]{extra/get_batchstat.txt}
 
-	\textbf{send\_state()}\\
+	\subsection{Prozedur}
+	Innerhalb dieses Unterprogramms werden die Variablen bis zur Abbruchbedingung gesetzt.
+	
+	\lstinputlisting[language=c,belowcaptionskip=5pt,frame=bt,caption=Prozedur]{extra/prozedur.txt}
+
+	\subsection{send\_state()}
 	Dieses Unterprogramm dient zum globalen Setzen des aktuellen Status.
+	
+	\lstinputlisting[language=c,belowcaptionskip=5pt,frame=bt,caption=Prozedur]{extra/send_status.txt}
 		
 \begin{figure}[h!]
   \centering
-  \includegraphics[height=0.95\textwidth]{graphics/implementation/StateMachine.jpg}
+  \includegraphics[width=1\textwidth]{graphics/implementation/StateMachine.jpg}
   \caption{Kommunikationsmodell von zenon und SPS}
+  \label{fig:statemachine}
 \end{figure}
 
+	Die Prozedur benötigt als zu setzenden Eingangsparameter die vorhandene Strukturvariable \glqq phase\grqq \space vom Typ \textit{phase}. Abschließend, vor Inbetriebnahme der Prozedur muss eine Weiterschaltbedingung definiert werden. Dazu wird im Unterpunkt Batch Control in den Eigenschaften der Grundfunktion der Menüpunkt Allgemein ausgewählt und die Weiterschaltbedingung eingefügt. Diese gilt für alle angelegten Grundfunktionen, da es sich dabei lediglich um das vergleichen der Status der Software zenon und SPS handelt.
+	
+	\begin{framed}
+		(X01.Wert=2) AND ((X02.Wert=2) OR (X02.Wert=11) OR (X02.Wert=13))
+	\end{framed}
+	
+	Zusätzlich werden wiederum zwei weitere Parameter (Status, Command) zum Weiterschalten benötigt.\\\\
+	
+\begin{figure}[h!]
+  \centering
+  \includegraphics[height=0.8\textwidth]{graphics/implementation/weiterschaltbedingung}
+  \caption{Weiterschaltbedingung einer Prozedur}
+  \label{fig:weiterschaltbedingung}
+\end{figure}
+
+Die Prozedur ist somit fertig erstellt worden. In der Oberfläche wird anschließend angeboten, eine Rezeptur aus einer oder mehreren Grundfunktionen zu erstellen.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[height=0.6\textwidth]{graphics/implementation/rezept}
+  \caption{Einfaches Rezept}
+  \label{fig:rezept}
+\end{figure}
+
+Zusammengefasste Grundfunktionen (Rezepte) können weiteres in der erstellten Form inklusive zusätzlicher Informationen abgespeichert werden.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=1\textwidth]{graphics/implementation/rezepte_liste}
+  \caption{Liste der gespeicherten Rezepte}
+  \label{fig:rezepte_list}
+\end{figure}
+	
 \section{HMI}
 Für dieses Projekt wurde als SCADA System die Software zenon vorgegeben, daher wird das HMI in zenon Supervisor (zenons HMI Programm) umgesetzt.\\
 \\

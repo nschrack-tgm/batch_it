@@ -1,0 +1,7 @@
+IF phase.stat.Running THEN
+    phase.com.stat :=1;
+
+ELSIF phase.stat.finished THEN
+    phase.com.stat := 4;
+...
+END_IF;

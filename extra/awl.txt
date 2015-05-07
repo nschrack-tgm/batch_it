@@ -1,0 +1,11 @@
+VAR
+  s1: BOOL; 	// [input] Sensor Deklaration
+  s2: BOOL; 	// [input] Sensor Deklaration
+  s3: BOOL; 	// [input] Sensor Deklaration
+  M: BOOL := 0; // [output] Motor Deklaration
+END_VAR 
+
+LD s1;		// Booleanwert ins Register laden
+OR s2;		// Oder-Verknuepfung mit s1
+ANDN s3;	// ANDN mit invertiertem Eingang
+ST 		// Ergebnis wird in Motor geschrieben

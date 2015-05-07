@@ -147,31 +147,13 @@
 	
 	Diese textbasierte Programmiersprache nach der Norm IEC DIN EN 61131-3 ist sehr maschinennahe. Vergleicht man die Anweisungsliste aus Abbildung~\ref{fig:Anweisungsliste} mit höheren Programmiersprachen der Informatik, so ist es eine Art Assemblersprache, die normalerweise 1:1 den jeweiligen Maschinencode übersetzt. Es werden die einzelnen Anweisungen in der Reihenfolge geschrieben, wie sie die Maschine (CPU) abarbeiten soll (auch \glqq Stackorientierte Abarbeitung\grqq \space genannt). Ein großer Vorteil gegenüber allen graphischen Programmiersprachen ist die Tatsache, das AWL funktionell über diese hinausgeht, weil beispielsweise ein komplexer Zählvorgang mittels eines Kontaktplans nicht realisierbar sein könnte.	\cite{spslehrgang_struktur, egroetsch_sps}\\
 
-	\begin{figure}[h!]
-		\begin{framed}
-			VAR\\			s1: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}			s2: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}			s3: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}			M: BOOL := 0; \color{gray}//[output] Motor Deklaration (muss initialisiert werden)\\ \color{black}			END\_VAR\\\\
-			LD s1; \color{gray}//[load] Lade den boolean-Wert ins Register\\ \color{black}			OR s2; \color{gray}//Oder-Verknüpfung mit s1\\ \color{black}			ANDN s3; \color{gray}//Und-Verknüpfung mit invertiertem Eingang\\ \color{black}			ST \color{gray}//[store] Ergebnis wird in die Variable Motor geschrieben\\
-		\end{framed}
-		\caption{Beispiel einer Anweisungsliste}
-		\label{fig:Anweisungsliste}
-	\end{figure}
-	
-	\color{black}
-	\textbf{b) Strukturierter Text}\\
-	
+	\lstinputlisting[language=c,belowcaptionskip=5pt,frame=bt,caption=Beispiel einer Anweisungsliste]{extra/awl.txt}
+
+	\textbf{b) Strukturierter Text}\\	
 	Diese in Abbildung~\ref{fig:StructuredText} angeführte Programmiersprache der Automatisierungstechnik orientiert sich an der Sprache Pascal, enthält aber neben dieser Sprache zugehörigen spezifischen Elementen aber auch noch SPS-typische Elemente. Geeignet ist ST am vorteilhaftesten für Aufgaben mit mathematischem Hintergrund sowie zum Beschreiben komplexer Algorithmen. Auch für Rezept- und Datenverwaltung hebt sich diese Art der Programmierung durch enorme Vereinfachung vor. Typische Anweisungen für ST sind solche, die in höheren Sprachen durch Bedingungen oder Schleifen ausgeführt werden können \cite{grundlagen_automatisierungstechnik}
-	\todo[inline]{Schauen ob die Figur \glqq Strukturierter Text\grqq \space an der richtigen Position ist.}
 	
-	\begin{figure}[h]
-		\begin{framed}
-		\color{black}
-		VAR\\		s1: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}		s2: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}		s3: BOOL; \color{gray}//[input] Sensor Deklaration\\ \color{black}		M: BOOL := 0; \color{gray}//[output] Motor Deklaration ( muss initialisiert werden)\\ \color{black}		END\_VAR\\		M := (s1 OR s2) AND ( NOT (s3)); \color{gray}//ODER-Verknüpfung von s1 und s2, anschließendes UND-Verknüpfung von Ergebnis mit negiertem s3.\
-		\end{framed}
-		\caption{Beispiel eines strukturierten Textes}
-		\label{fig:StructuredText}
-	\end{figure}
+	\lstinputlisting[language=c,belowcaptionskip=5pt,frame=bt,caption=Beispiel eines Strukturierten Texts]{extra/st.txt}
 	
-	\color{black}
 	\textbf{c, e) Ablaufsprache}\\
 	
 	Eine Sonderstellung unter den Sprachen zur Programmierung einer SPS nimmt die Ablaufsprache ein.

@@ -1,0 +1,29 @@
+IF phase.stat.starting THEN
+
+   reset_stat(phase);
+   phase.stat.running := 1;
+
+ELSIF ...
+
+//*****FINISHING*****
+ELSIF phase.stat.finishing THEN
+  v131 := 0; //close valve
+  v211 := 0; //close valve
+  p210 := 0; //turn off the pump
+ 
+ reset_batchstat(phase);
+ reset_stat(phase);
+ phase.stat.finished := 1;
+//##### Batch-states    #####
+ELSIF phase.batchstat.running and ( phase.stat.running or 
+phase.stat.restarted or phase.stat.continued) THEN
+  v131 := 1; //open valve
+  v211 := 1; //open valve
+  p210 := 8; //turn on the pump
+
+  IF (S413 > 19.0) THEN // Done condition
+    reset_batchstat(phase);
+    reset_stat(phase);
+    phase.stat.done := 1;
+  END_IF;
+END_IF; // Batch Status
