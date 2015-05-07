@@ -10,7 +10,8 @@ CASE phase_com.cmd of
 	...
 END_CASE;
 
-// Changes the state of the phase to the demanded transient state
+/*Changes the state of the phase to the 
+demanded transient state*/
 IF phase.cmd.Start THEN 
 	reset_stat(phase);
 ELSIF phase.cmd.Values_dropped THEN
