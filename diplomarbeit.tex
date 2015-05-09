@@ -34,6 +34,8 @@
 \usepackage{placeins}
 \usepackage{afterpage}
 \usepackage{eurosym}
+\usepackage{acronym}
+
 
 \input{tex/acronyms}
 %%-----------------------------------------------------------------------
@@ -51,7 +53,8 @@
   colorlinks,
   citecolor=black,
   linkcolor=black,
-  breaklinks%
+  breaklinks,
+  urlcolor=black
 ]{hyperref}%
 \fi
 
@@ -169,6 +172,7 @@
              manage-ment
              manu-facturing
              not-wendigen
+             Steu-er-ung
              }
 
 
@@ -237,6 +241,12 @@
 \clearpage
 \lstlistoflistings %\listoftables
 \clearpage 
+\chapter{Acronyms}
+
+\begin{acronym}
+  \acro{SPS}{Speicherprogrammierbare Steuerung}
+\end{acronym}
+\clearpage
 \markboth{Contents}{Contents}
 
 
