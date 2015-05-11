@@ -1,0 +1,6 @@
+<!-- http://www.w3.org/2002/7/Facility#Valve -->
+
+<owl:Class rdf:about="&Facility;Valve">
+	<rdfs:subClassOf rdf:resource="&Facility;Active_Element"/>
+	<rdfs:subClassOf rdf:resource="&Facility;Main_Part"/>
+</owl:Class>

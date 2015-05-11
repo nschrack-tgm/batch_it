@@ -177,75 +177,61 @@
     	\includegraphics[width=0.8\textwidth]{graphics/stateoftheart/funktionsbausteinplan_Selfmade.png}
   		\caption{Beispiel eines Funktionsbausteinplans \cite{funktionsbausteinplan}}
 	\end{figure}
-
-\section{Prozeduren und Rezepte}
-\subsection{Prozedur}
-Die Prozedursteuerung bestimmt, dass einrichtungsorientierte Aktionen in einer geordneten Folge stattfinden, damit eine prozessorientierte Aufgabe ausgeführt wird. Prozedursteuerungen sind charakteristisch für chargenorientierte Prozesse. Sie sind die Art von Steuerung, die Einrichtungen in die Lage versetzt, einen Chargenprozess auszuführen.\\
+\newpage
+\section{Prozedur}
+Die Prozedursteuerung bestimmt, dass einrichtungsorientierte Aktionen in einer geordneten Folge stattfinden, damit eine prozessorientierte Aufgabe ausgeführt wird. Prozedursteuerungen sind charakteristisch für chargenorientierte Prozesse.\\
 
 %Quelle EN 61522
 \begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.4\textwidth]{graphics/stateoftheart/prozedursteuerung.png}
-		\caption{Aufbau einer Prozedur}
-\end{figure} \todo{Zitat}
+		\includegraphics[width=0.3\textwidth]{graphics/stateoftheart/prozedursteuerung.png}
+		\caption{Aufbau einer Prozedur \cite{en61512}}
+\end{figure}
 \newpage
 \textbf{Prozedur}\\
-Die Prozedur ist die höchste Stufe in der Hierarchie und legt die Strategie für die Ausführung einer umfassenden Verarbeitungsaktion, wie zum Beispiel der Herstellung einer Charge, fest. Sie wird durch eine geordnete Menge von Teilprozeduren bestimmt. Ein Beispiel für eine Prozedur ist „Produziere PVC“.\\
+Die Prozedur ist die höchste Stufe in der Hierarchie und legt die Strategie für die Ausführung einer umfassenden Verarbeitungsaktion, wie zum Beispiel der Herstellung einer Charge, fest. Sie wird durch eine geordnete Menge von Teilprozeduren bestimmt.\\
 
 \textbf{Teilprozedur}\\
-Eine Teilprozedur besteht aus einer geordneten Menge von Operationen, die bewirken, dass eine zusammenhängende Produktionssequenz in einer Teilanlage stattfindet. Es wird angenommen, dass zu jeder Zeit immer nur eine Operation in einer Teilanlage aktiv ist. Eine Operation wird in einer einzelnen Teilanlage vollständig ausgeführt. Gleichwohl können mehrere Teilprozeduren einer Prozedur konkurrierend ablaufen, jede in einer anderen Teilanlage.\\ \todo{Zitat}
-Beispiele für Teilprozeduren sind:
-\begin{itemize}
-	\item Polymerisiere Vinylchlorid-Monomer.
-	\item Gewinne Vinylchlorid-Rest zurück.
-	\item Trockne PVC.
-\end{itemize}
+Eine Teilprozedur besteht aus einer geordneten Menge von Operationen, die bewirken, dass eine zusammenhängende Produktionssequenz in einer Teilanlage stattfindet. Es wird angenommen, dass zu jeder Zeit immer nur eine Operation in einer Teilanlage aktiv ist. Eine Operation wird in einer einzelnen Teilanlage vollständig ausgeführt. Gleichwohl können mehrere Teilprozeduren einer Prozedur konkurrierend ablaufen, jede in einer anderen Teilanlage.\\
+
 \textbf{Operation}\\
-Eine Operation ist eine geordnete Menge von Funktionen, die eine größere Verarbeitungssequenz festlegt und die bewirkt, dass die verarbeiteten Stoffe von einem Zustand in einen anderen überführt werden, womit gewöhnlich eine chemische oder physikalische Umwandlung verbunden ist. Häufig ist es erwünscht, die Grenzen einer Operation auf Punkte in der Prozedur zu legen, wo die normale Verarbeitung sicher ausgesetzt werden kann.\\ \todo{ausgesetzt?}
-Beispiele für Operationen sind: \todo{Beispiele anhand einer?}
+Eine Operation ist eine geordnete Menge von Funktionen, die eine größere Verarbeitungssequenz festlegt und die bewirkt, dass die verarbeiteten Stoffe von einem Zustand in einen anderen überführt werden, womit gewöhnlich eine chemische oder physikalische Umwandlung verbunden ist. Häufig ist es erwünscht, die Grenzen einer Operation auf Punkte in der Prozedur zu legen, wo die normale Verarbeitung sicher ausgesetzt werden kann.\\
+Beispiele für Operationen sind:
 \begin{itemize}
-	\item Vorbereitung: Reaktor evakuieren und Reaktorwände mit Antifouling beschichten.
-	\item Füllen: Destilliertes Wasser und Lösemittel hinzugeben.
-	\item Reaktion: Vinylchlorid-Monomer und Katalysator zugeben, heizen und Absinken des Reaktordrucks abwarten.
+	\item Füllen: Destilliertes Wasser hinzugeben.
+	\item Reaktion: Zwei Komponenten mischen, heizen und auf das Absinken des Reaktordrucks abwarten.
 \end{itemize}
+
 \textbf{Funktion}\\
-Das kleinste Element einer Prozedursteuerung, das eine prozessorientierte Aufgabe ausführen kann, ist eine Funktion. Eine Funktion kann in kleinere Teile unterteilt werden. Die Schritte und Übergänge, wie sie in der IEC 60848 beschrieben sind, dokumentieren eine Methode, um Unterteilungen einer Funktion zu definieren.\\
-Ein Schritt kann eine oder mehrere Anweisungen ausgeben oder eine oder mehrere Maßnahmen bewirken, zum Beispiel:\todo{aufzählung..}
+Die Funktion einer Prozedursteuerung ist das kleinste Element, das eine prozessorientierte Abfolge realisieren kann. Eine Funktion kann in Subteile unterteilt werden. Der IEC 60848 Standard definiert die Art, wie Funktionen durch Schritte und Übergenge unterteilt werden können. \\
+Ein Schritt kann eine oder mehrere Anweisungen ausgeben oder eine oder mehrere Maßnahmen bewirken, zum Beispiel:
 \begin{itemize}
-	\item Ein- und Ausschalten von Regelungen und zustandsorientierten Arten der Basisautomatisierung und Vorgeben ihrer Sollwerte und ihrer anfänglichen Ausgangswerte.
 	\item Setzen, Löschen und Ändern von Alarmgrenzen und anderen Grenzwerten.
-	\item Setzen und Ändern von Reglerkonstanten, Betriebsarten von Regelungen und Typen von Algorithmen.
-	\item Lesen von Prozessvariablen, wie z. B. Gasdichte, Gastemperatur und Volumendurchfluß von einem Durchflussmesser, und Errechnen des Massendurchflusses durch den Durchflussmesser.
-	\item Durchführen der Überprüfung der Bedienberechtigung.
+	\item Lesen von Prozessvariablen, wie z.B. Volumendurchfluß von einem Durchflussmesser.
 \end{itemize}
-Die Ausführung einer Funktion kann resultieren in:
-\begin{itemize}
-	\item Befehlen an die Basisautomatisierung.
-	\item Befehlen an andere Funktionen (entweder in dem gleichen oder einem anderen Einrichtungsobjekt).
-	\item der Erfassung von Daten.
-\end{itemize}
+
 Das Ziel einer Funktion ist es, eine prozessorientierte Aktion zu bewirken oder zu definieren, wogegen die Logik oder die Folge von Schritten, die die Funktion ausmachen, einrichtungsspezifisch ist.\\
-Folgende Beispiele für Funktionen seien genannt:
+Beispiele für eine Funktion wären:
 \begin{itemize}
-	\item Vinylchlorid-Monomer zugeben.
-	\item Katalysator zugeben.
+	\item Rühren.
 	\item Heizen.
 \end{itemize}
+\cite{en61512}
 
-\subsection{Rezept}\todo{Zitat für die Norm}
+\section{Rezept}
 Rezepte sind Teil der Europäischen Norm EN 61512, welche den Aufbau bei der Chargenorientierten Fahrweise definiert.\\\\
-\textit{„Ein Rezept ist eine Gesamtheit, die die Minimalmenge von Informationen enthält, die eindeutig die Herstellungsanforderungen für ein bestimmtes Produkt beschreibt. Rezepte bieten eine Methode, Produkte und die Art, wie diese Produkte hergestellt werden, zu beschreiben“.}\\\\
+\textit{„Ein Rezept ist eine Gesamtheit, die die Minimalmenge von Informationen enthält, die eindeutig die Herstellungsanforderungen für ein bestimmtes Produkt beschreibt. Rezepte bieten eine Methode, Produkte und die Art, wie diese Produkte hergestellt werden, zu beschreiben“.} \cite{en61512}\\\\
 In der Norm werden die vier Typen von Rezepten, die fünf Kategorien von Informationen, die ein Rezept enthält und wie sich diese Information bei den verschiedenen Rezepttypen verändert, behandelt.\\\\
-Es können unternehmensintern noch eigene Rezepttypen verwendet werden, falls die Definierten nicht alle benötigten Anforderungen abdecken, außerdem kann es sein, dass für ein Produkt mehrere Rezepte bestehen, wenn dieses zum Beispiel in verschiedenen Werken produziert wird und dadurch unterschiedliche Abläufe beinhaltet.\\
+Es können unternehmensintern noch eigene Rezepttypen verwendet werden, falls die Definierten nicht alle benötigten Anforderungen abdecken, außerdem kann es sein, dass für ein Produkt mehrere Rezepte bestehen, wenn dieses zum Beispiel in verschiedenen Werken produziert wird und dadurch unterschiedliche Abläufe beinhaltet. \cite{en61512}\\
 
-\subsubsection{Rezepttypen}
+\subsection{Rezepttypen}
 %Quelle EN 61522
 \begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.6\textwidth]{graphics/stateoftheart/rezepttypen.png}
-		\caption{Zusammenhang der Rezepttypen}
+		\caption{Zusammenhang der Rezepttypen \cite{en61512}}
 \end{figure}
-\textit{„Verfahrens- und Werksrezept beschreiben die Vorgehensweise, also wie im Prinzip produziert wird. Grund- und Steuerrezept beschreiben die Aufgabe, also wie mit den tatsächlichen Betriebsmitteln zu produzieren ist.“} \todo{Zitat}
+\textit{„Verfahrens- und Werksrezept beschreiben die Vorgehensweise, also wie im Prinzip produziert wird. Grund- und Steuerrezept beschreiben die Aufgabe, also wie mit den tatsächlichen Betriebsmitteln zu produzieren ist.“} \cite{en61512}
 \\\\
 \textbf{Verfahrensrezept}\\
 Das Verfahrensrezept ist ein Rezept auf Unternehmensebene, das als Grundlage für Rezepte auf niedrigeren Ebenen dient. Das Verfahrensrezept wird ohne spezifische Kenntnis der Anlagenausrüstung erstellt, die zur Herstellung des Produktes benutzt werden wird. Es bestimmt die Rohstoffe, ihre relativen Mengen und die erforderliche Verarbeitung, allerdings ohne Bezug zu einem bestimmten Werk oder der in diesem Werk verfügbaren Ausrüstung. Es wird von Personen mit Kenntnissen der Chemie und den Verarbeitungsanforderungen erstellt, die für das betreffende Produkt typisch sind, und gibt deren Interessen und Überlegungen wieder.\\\\
@@ -259,8 +245,10 @@ Das Grundrezept ist die Rezeptstufe, die auf eine Anlage oder eine Gruppe von Ei
 Das Grundrezept ist eine unverzichtbare Rezeptstufe, da ohne es keine Steuerrezepte erzeugt und daher keine Chargen produziert werden können.
 \\\\
 \textbf{Steuerrezept}\\
-Das Steuerrezept entsteht als eine Kopie einer bestimmten Version des Grundrezeptes und wird anschließend wie erforderlich durch Informationen für Dispositionsplanung und Ausführung verändert, um spezifisch für eine einzelne Charge zu sein. Es enthält produktspezifische Prozessinformationen, wie sie zur Produktion einer bestimmten Charge erforderlich sind. Es bietet den Detaillierungsgrad, wie er zum Start und zur Überwachung der Einrichtungsprozedurobjekte einer Anlage erforderlich ist. Es kann verändert worden sein, um die tatsächlichen RohstoffQualitäten und die tatsächlich eingesetzte Ausrüstung zu berücksichtigen. Die Auswahl von Teilanlagen und entsprechende Skalierung kann jederzeit durchgeführt werden, bevor diese Information benötigt wird.
-\subsubsection{Bestandteile des Rezeptes}
+Das Steuerrezept entsteht als eine Kopie einer bestimmten Version des Grundrezeptes und wird anschließend wie erforderlich durch Informationen für Dispositionsplanung und Ausführung verändert, um spezifisch für eine einzelne Charge zu sein. Es enthält produktspezifische Prozessinformationen, wie sie zur Produktion einer bestimmten Charge erforderlich sind. Es bietet den Detaillierungsgrad, wie er zum Start und zur Überwachung der Einrichtungsprozedurobjekte einer Anlage erforderlich ist. Es kann verändert worden sein, um die tatsächlichen RohstoffQualitäten und die tatsächlich eingesetzte Ausrüstung zu berücksichtigen. Die Auswahl von Teilanlagen und entsprechende Skalierung kann jederzeit durchgeführt werden, bevor diese Information benötigt wird.\\
+\cite{en61512}
+
+\subsection{Bestandteile des Rezeptes}
 
 \textbf{Rezeptkopf}\\
 Die organisatorische Information im Rezept wird als Rezeptkopf bezeichnet. Typische Informationen im Rezeptkopf kann die Rezept- und Produktidentifikation, die Versionsnummer, den Rezeptersteller, das Ausgabedatum, Freigaben, Status und andere organisatorische Angaben enthalten.
@@ -275,31 +263,32 @@ Ein Prozessausstoß besteht aus Bezeichnung und Menge eines Stoffs, die als Erge
 Anforderungen an die Einrichtung schränken die Auswahl der Einrichtungen ein, die schließlich eingesetzt werden, um einen bestimmten Teil der Prozedur durchzuführen. Im Verfahrens- und im Werksrezept werden die Anforderungen an die Einrichtung typischerweise in allgemeiner Weise, wie zum Beispiel zulässigen Werkstoffen und erforderlichen Verarbeitungscharakteristika angegeben.
 \\\\
 \textbf{Rezeptprozedur}\\
-Die Rezeptprozedur beschreibt die Strategie, um einen Prozess durchzuführen. Verfahrensrezeptprozeduren und Werksrezeptprozeduren sind unter Benutzung der im Prozessmodell beschriebenen Ebenen strukturiert, da diese Ebenen es gestatten, den Prozess in einrichtungsunabhängiger Art zu beschreiben. Grundrezeptprozeduren und Steuerrezeptprozeduren werden unter Benutzung der Prozedurelemente des Prozedurmodells beschrieben, da diese Prozedurelemente einrichtungsbezogen sind.
+Die Rezeptprozedur beschreibt die Strategie, um einen Prozess durchzuführen. Verfahrensrezeptprozeduren und Werksrezeptprozeduren sind unter Benutzung der im Prozessmodell beschriebenen Ebenen strukturiert, da diese Ebenen es gestatten, den Prozess in einrichtungsunabhängiger Art zu beschreiben. Grundrezeptprozeduren und Steuerrezeptprozeduren werden unter Benutzung der Prozedurelemente des Prozedurmodells beschrieben, da diese Prozedurelemente einrichtungsbezogen sind.\\
+\cite{en61512}
 
-\subsubsection{Einrichtungssteuerung}
+\subsection{Einrichtungssteuerung}
 Das Steuerrezept selbst enthält nicht genügend Information, um die Anlage zu betreiben. Daher wird es mit der Einrichtungssteuerung, die tatsächlich die Einrichtungen zum Betrieb und zur Produktion von Chargen veranlasst, verknüpft. Die Einrichtungssteuerung wird nicht als Teil des Rezeptes angesehen.
 \todo{Quellen haben bei den vorherigen gefehlt}
 %Quelle EN 61522
 \begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.8\textwidth]{graphics/stateoftheart/steuerrezeptprozedur_einrichtungssteuerung.png}
-		\caption{Abgrenzung von Steuerrezeptprozedur und Einrichtungssteuerung}
+		\caption{Abgrenzung von Steuerrezeptprozedur und Einrichtungssteuerung \cite{en61512}}
 \end{figure}
 
 
 \section{Zenon Wizard}
 Ein Zenon Wizard ist ein Programm, das verwendet wird um projektspezifische Daten zu manipulieren, löschen oder erstellen. Dies kann mit oder ohne Benutzeroberfläche geschehen.\\
 Der zenon Supervisor enthält schon bei der Installation Wizards zum Importieren sowie auch Exportieren von in XML gespeicherten Daten und zum Erzeugen von Variablen.\\
-Der Quellcode der mitgelieferten Wizards kann geöffnet und auch editiert werden. Zenon Wizards können mittels VSTA oder VBA erstellt werden.
+Der Quellcode der mitgelieferten Wizards kann geöffnet und auch editiert werden. Zenon Wizards können mittels VSTA oder VBA erstellt werden. \cite{zenprog}
 
 \begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.8\textwidth]{graphics/stateoftheart/demowizard.png}
-		\caption{Beispiel eines VSTA Wizards}
+		\caption{Beispiel eines VSTA Wizards \cite{zenprog}}
 \end{figure}
 
-\subsubsection{VSTA}
+\subsection{VSTA}
 VSTA steht für \textit{Visual Studio Tools for Applications}, es ist eine Ansammlung von Werkzeugen zum erstellen von Programmen. VSTA unterstützt die Programmiersprachen Visual Basic .Net und C\#.
 VSTA ist in Zenon als Editor integriert.
 
@@ -321,7 +310,7 @@ VSTA ist in Zenon als Editor integriert.
 	\caption{Anlegen einer Variable in C\#}
 \end{figure}
 
-\subsubsection{VBA}
+\subsection{VBA}
 VBA steht für \textit{Visual Basic for Applications} und ist eine Skriptsprache, die hauptsächlich für die Steuerung in Microsoft Office Produkten verwendet wird.
 Ein Editor für VBA ist in Zenon integriert.
 

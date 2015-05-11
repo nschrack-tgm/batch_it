@@ -260,4 +260,100 @@ TODO
 TODO
 \section{Codegenerierung}
 
-TODO
+Die Codegenerierung könnte in unterschiedlichsten Sprachen erfolgen, jedoch können nur über Zenon Wizards auch direkte eingriffe auf ein Zenon Projekt vorgenommen werden. Es gibt zwei Arten von Zenon Wizards: VSTA und VBA. Es wird VSTA verwendet, da hier die grafische Benutzeroberfläche ansprechender ist. Die Funktionalität mit VBA deckt sich größtenteils.\\\\
+Der erste wichtige Punkt ist es herauszufinden, wie weit die Prozeduren und Rezepte automatisiert werden können. Hierfür wird  die zenOn Library in VSTA verwendet, die schon integriert ist. VSTA unterstützt mehrere Programmiersprachen, der Wizard wird jedoch in C\# geschrieben, da in C\# eine gute Unterstützung für XML gegeben ist.\\
+
+\subsection{Datentyp anlegen}
+Um ein Element der Anlage im Programm abzubilden, werden einige Attribute benötigt, weshalb hier ein Strukturdatentyp erstellt wird. Dieser wird den Namen des Elements erhalten und alle in der Ontologie abgebildeten Attribute beinhalten.
+
+\lstinputlisting[language=csh,belowcaptionskip=5pt,frame=bt,caption=Anlegen eines Datentyps in zenon]{extra/createdatatype.txt}
+
+\subsection{Variable anlegen}
+Damit der aktuelle Zustand, sowie die weiteren Attribute jedes eingebauten Elements der Anlage, abgespeichert werden können, muss für eben jedes dieser eine eigene Variable angelegt werden. Eine Variable muss an einen Treiber angebunden werden, wobei die Auswahl durch den Benutzer über die Benutzerschnittstelle erfolgt. Damit die Variable global, also auch in Zenon Logic, erreichbar ist, muss sie in einem Namespace sein. Dies wird dadurch erreicht, dass vor dem Namen der Variable ein „Logic/Global/“ hinzugefügt wird, wobei Logic hier der Name des Zenon Logic Projekts ist. Da alle durch die Codegenerierung angelegten Variablen verwendet werden um Teile unserer SPS anzusprechen, muss als Kanal der „SPSMerker“ angeben werden.
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=0.4\textwidth]{graphics/implementation/treiberauswahl}
+  \caption{Auswahl des zenon Logic Treibers}
+\end{figure}
+
+\lstinputlisting[language=csh,belowcaptionskip=5pt,frame=bt,caption=Anlegen einer Variable in zenon]{extra/createvar.txt}
+
+\subsection{Ontologie als XML}
+Die Ontologie wird als XML exportiert. Diese XML Datei ist auf den Standards OWL und RDF aufgebaut, welche die Struktur und Aufteilung der abgebildeten Elemente vorgeben.\\
+
+\textbf{owl:}, \textbf{rdf:}, \textbf{rdfs:} sowie \textbf{Facility:} und \textbf{\&Facility;} sind Namespaces, also für den Namen selber nicht relevant, sie grenzen nur den Gültigkeitsbereich der Namen ab.\\
+
+Wichtig für die Codegenerierung sind folgende Tags:\\
+
+\textbf{DatatypeProperty}\\
+Dieser Tag enthält Informationen über ein Attribut. Die Informationen, die man entnehmen kann beinhalten den Namen und Datentyp des Attributs, sowie für welche Elemente sie anwendbar sind.\\
+
+\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Struktur des DatatypeProperty Tags,label=lst:dtprop]{extra/datatypeproperty.xml}
+
+\textbf{Class}\\
+Eine „Class“ entspricht einem Element, das in der Ontologie abgebildet ist. Es wird der Name angegeben und die Klassen, von welchen es erbt, also die Klassen deren Attribute es übernimmt.\\
+
+\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Struktur des Class Tags,label=lst:class]{extra/class.xml}
+
+\textbf{NamedIndividual}\\
+Das „NamedIndividual“ ist ein konkretes eingebautes Element der Anlage. Dieses hat einen Namen und Attribute mit zugewiesenen Werten.\\
+
+\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Struktur des NamedIndividual Tags,label=lst:indiv]{extra/namedindividual.xml}
+
+\subsection{Generierung der Datentypen}
+Die Datentypen entsprechen den Klassen in OWL, sie bilden eine Objektstruktur durch die eine Variable dieses Typs angelegt werden kann. Zusätzlich zu den Klassen werden auch die in OWL Datatype Properties genannten Ressourcen eingebracht werden, da diese die erforderliche Objektstruktur mit Subtypen genauer definieren.\\
+
+Um dies zu erreichen, werden erst alle Datatype Properties aus der Ontologie ausgelesen und dessen Name, wie auch Datentyp, mit der zugehörigen Klasse verbunden. Als Beispiel in Listing \ref{lst:dtprop} ersichtlich ist das Attribut \textbf{offstate} mit dem Datentyp \textbf{int} (für ganzzahlige Werte) für alle Elemente der Klasse \textbf{Active\_Element}.\\
+
+Da nach diesem Schritt alle Attribute verfügbar sind, können nun die Klassen angelegt werden. Um dies zu erreichen liest man alle Klassen aus der Ontologie aus und legt einen Datentyp für diese an. Listing \ref{lst:class} zeigt, dass das Element \textbf{Valve} eine Subklasse von \textbf{Active\_Element} ist, daher übernimmt es das Attribut \textbf{offstate} jedoch auch alle Attribute, die für \textbf{Valve} und \textbf{Main\_Part} registriert sind. Außerdem muss überprüft werden, ob das Element ein Main\_Part oder Active\_Element ist, da diese in der Ontologie als jene definiert sind, die über die Steuerung angesprochen werden können. Jedes Element bekommt zusätzlich noch das Attribut \textbf{value}, welches den aktuellen Wert anzeigen soll oder mit dem man den gewünschten Wert setzen kann.
+
+\subsection{Generierung der Variablen}
+Die für die Variablen wichtigen Elemente werden in OWL als Named Individual abgebildet, welche also ausgelesen werden müssen um die Variablen anlegen zu können. Eine Voraussetzung um die Variablen anlegen zu können ist auch, dass die Datentypen bereits generiert wurden. In Listing \ref{lst:indiv} erkennt man, dass die Variable \textbf{V123} in mit drei Klassen in Verbindung steht: Valve, Main\_Part und Active\_Element). Also muss man um den Datentyp herauszufinden die Vererbungsstruktur dieser untersuchen, um das spezifischste zu finden. Durch die in Listing Y ersichtliche Struktur der Klasse Valve kann man darauf schließen, dass Valve von Main\_Part und Active\_Element erbt, also ist dies die spezifischste Klasse. Das Named Individual enthält zusätzlich noch gesetzte Werte zu den Attributen, welche hier ausgelesen werden.\\
+
+Parallel zum Vorgang bei dem die Variablen an gelegt werden, wird auch ein \textbf{Init} und \textbf{Reset} Programm angelegt, das in \textbf{Structured Text} verfasst ist. Das Init-Programm wird einmal ausgeführt und initialisiert alle Attributwerte jeder Variable, es weist also alle in der Ontologie zugewiesenen Werte zu, damit das Programm diese dann zur Unterstützung des Ablaufs abfragen kann. Das Reset-Programm dient als eine Art Software gesteuertem Notausschalter, es werden alle aktiven Elemente in ihren passiven Zustand versetzt, sodass die Anlage ihre Arbeit beendet.
+
+\subsection{Aktivitätsdiagramm als XML}
+Das Aktivitätsdiagramm wird als XML exportiert. Diese XML Datei ist auf dem Standard XMI aufgebaut, in welchem der UML Standard integriert ist.\\
+
+\textbf{UML:} ist ein Namespace, also für den Namen selber nicht relevant, er grenzt nur den Gültigkeitsbereich der Namen ab.\\
+
+Wichtig für die Codegenerierung sind folgende Tags:\\
+
+\textbf{Pseudostate}\\
+Der Pseudostate ist der Startknoten der Aktivität, hier wird ausserdem als Attribut die Abbruchbedingung gespeichert. Jede Aktivität steht für eine Prozedur.\\
+\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Struktur des Pseudostate,label=lst:pseudo]{extra/pseudostate.xml}
+
+\textbf{ActionState}\\
+Ein ActionState bildet ein Bauteil ab, das in der Prozedur verwendet wird. Es können beliebig viele ActionStates verwendet werden. Weiters muss bei jedem ActionState der Wert angegeben werden, auf den der IO des Bauteils gesetzt werden soll.\\
+\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Struktur des ActionState,label=lst:action]{extra/actionstate.xml}
+
+\textbf{FinalState}\\
+Der FinalState ist der Endknoten, er schließt die Aktivität ab. Falls nach dem FinalState ein weiterer Pseudostate folgt, bedeutet dies, dass eine weitere Aktivität beginnt.\\
+\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Struktur des Pseudostate,label=lst:final]{extra/finalstate.xml}
+
+\subsection{Generierung der Prozeduren}
+Um eine Grundlage für die Generierung der Prozeduren zu bilden, wird erst eine Prozedur angelegt und getestet. Diese wird dann von zenon Logic exportiert, um ein Template für den Import zu erhalten. Nachdem alle irrelevanten Informationen entfernt wurden, werden Platzhalter definiert, die bei der Generierung ersetzt werden.\\
+
+Der Name der Prozedur und die Abbruchbedingung wird dem PseudoState entnommen (siehe Listing \ref{lst:pseudo}). Listing \ref{lst:action} zeigt, wie ein Bauteil in der Aktivität abgebildet ist, für jeden ActionState werden die in der Prozedur benötigten Befehle zusammengestellt, sodass bei Ausführung der Prozedur das entsprechende Signal an das Bauteil gesendet wird. Sobald der FinalState erreicht wird, ist eine Prozedur abgeschlossen (Listing \ref{lst:final}).\\
+
+Die Prozeduren werden als XML Datei abgespeichert und können in zenon Logic importiert werden.
+
+\subsection{zenon Wizard}
+Die zenon Supervisor Software besteht aus einem integrierten Editor für C\#, der sich VSTA nennt. In diesem ist außerdem das sogenannte WorkspaceAddin integriert, welches das eigentliche Programm ist, das die VSTA Wizards startet.\\\\
+Der erste Schritt um einen zenon Wizard zu erstellen ist gewisse Methoden, die zenon benötigt um Informationen über den Wizard abzufragen, zu implementieren.
+\lstinputlisting[language=csh,belowcaptionskip=5pt,frame=bt,caption=Methoden um den Wizard zu beschreiben]{extra/wizard.txt}
+
+Nachdem diese Werte gesetzt sind, kann der Wizard in zenon angezeigt werden.
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=0.7\textwidth]{graphics/implementation/wizards}
+  \caption{Auswahl des zenon Wizards}
+\end{figure}
+
+VSTA verfügt über ein Modul zum aufbauen und ändern von Benutzeroberflächen, welches ermöglicht mit recht geringem Aufwand eine vielzahl an Interaktionselementen zu positionieren und falls benötigt auch Templates der Methoden zur Bearbeitung der vom Benutzer eingegebenen Daten generiert.
+
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=0.9\textwidth]{graphics/implementation/wizard_final}
+  \caption{Benutzeroberfläche für den Wizard}
+\end{figure}

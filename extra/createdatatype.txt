@@ -1,0 +1,4 @@
+// Anlegen des Strukturdatentyps "Ventil"
+zenOn.IVarType t = proj.VarTypes().CreateComplexType("Ventil");
+// Einfuegen des Attributs "Zustand"
+t.NewSubItem("Zustand", proj.VarTypes().Item("BOOL"), true, 1, 0, 0, 0);

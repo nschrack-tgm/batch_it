@@ -1,0 +1,5 @@
+proj.Variables().CreateVar(
+"BATCH_IT/Global/Ventil1",			// Name
+proj.Drivers().Item("zenon Logic: BATCH_IT"),	// Treiber
+zenOn.tpKanaltypes.tpSPSMerker,			// Kanal
+proj.VarTypes().Item("Ventil"))			// Datentyp

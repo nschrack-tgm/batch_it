@@ -1,0 +1,35 @@
+// Definiert den Namen
+static public string GetWizardName()
+{
+    return "CodeGen";
+}
+
+// Definiert die Beschreibung
+static public string GetWizardInfo()
+{
+    return "Codegenerierung durch Ontologie und Aktivitaetsdiagramm.";
+}
+
+// Definiert die Kategorie
+static public string GetWizardCategory()
+{
+    return "Batch_it";
+}
+
+// Gibt an, dass es ein zenon Wizard ist
+static public bool IsZenOnWizard()
+{
+    return true;
+}
+
+// Definiert die Version
+static public int GetWizardVersion()
+{
+    return 1;
+}
+
+// Gibt an, was der Wizard beim Start ausfuehren soll
+public void StartWizard()
+{
+    this.Show();
+}

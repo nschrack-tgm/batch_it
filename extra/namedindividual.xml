@@ -1,0 +1,8 @@
+<!-- http://www.w3.org/2002/7/Facility#V123 -->
+
+<owl:NamedIndividual rdf:about="&Facility;V123">
+	<rdf:type rdf:resource="&Facility;Active_Element"/>
+	<rdf:type rdf:resource="&Facility;Main_Part"/>
+	<rdf:type rdf:resource="&Facility;Valve"/>
+	<Facility:offstate rdf:datatype="&xdf;int">0</Facility:offstate>
+</owl:NamedIndividual>

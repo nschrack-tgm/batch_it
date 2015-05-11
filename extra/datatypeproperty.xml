@@ -1,0 +1,7 @@
+<!-- http://www.w3.org/2002/7/Facility#offstate -->
+
+<owl:DatatypeProperty rdf:about="&Facility;offstate">
+	<rdf:type rdf:resource="&owl;FunctionalProperty"/>
+	<rdfs:range rdf:resource="&xsd;int"/>
+	<rdfs:domain rdf:resource="&Facility;Active_Element"/>
+</owl:DatatypeProperty>

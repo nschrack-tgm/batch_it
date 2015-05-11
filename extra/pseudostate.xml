@@ -1,0 +1,5 @@
+<UML:Pseudostate name="T1_R2" kind="initial">
+  <UML:ModelElement.taggedValue>
+    <UML:TaggedValue tag="value" value="S411+gt+19"/>
+  </UML:ModelElement.taggedValue>
+</UML:Pseudostate>

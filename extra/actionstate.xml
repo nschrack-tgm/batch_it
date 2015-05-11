@@ -1,0 +1,5 @@
+<UML:ActionState name="V1">
+  <UML:ModelElement.taggedValue>
+    <UML:TaggedValue tag="value" value="1"/>
+  </UML:ModelElement.taggedValue>
+</UML:ActionState>
