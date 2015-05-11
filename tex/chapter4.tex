@@ -287,18 +287,15 @@ Wichtig für die Codegenerierung sind folgende Tags:\\
 
 \textbf{DatatypeProperty}\\
 Dieser Tag enthält Informationen über ein Attribut. Die Informationen, die man entnehmen kann beinhalten den Namen und Datentyp des Attributs, sowie für welche Elemente sie anwendbar sind.\\
-
-\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Struktur des DatatypeProperty Tags,label=lst:dtprop]{extra/datatypeproperty.xml}
+\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Struktur des DatatypeProperty Tags,label=lst:dtprop,style=XML]{extra/datatypeproperty.xml}
 
 \textbf{Class}\\
 Eine „Class“ entspricht einem Element, das in der Ontologie abgebildet ist. Es wird der Name angegeben und die Klassen, von welchen es erbt, also die Klassen deren Attribute es übernimmt.\\
-
-\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Struktur des Class Tags,label=lst:class]{extra/class.xml}
+\lstinputlisting[caption=XML Struktur des Class Tags,label=lst:class,style=XML]{extra/class.xml}
 
 \textbf{NamedIndividual}\\
 Das „NamedIndividual“ ist ein konkretes eingebautes Element der Anlage. Dieses hat einen Namen und Attribute mit zugewiesenen Werten.\\
-
-\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Struktur des NamedIndividual Tags,label=lst:indiv]{extra/namedindividual.xml}
+\lstinputlisting[caption=XML Struktur des NamedIndividual Tags,label=lst:indiv,style=XML]{extra/namedindividual.xml}
 
 \subsection{Generierung der Datentypen}
 Die Datentypen entsprechen den Klassen in OWL, sie bilden eine Objektstruktur durch die eine Variable dieses Typs angelegt werden kann. Zusätzlich zu den Klassen werden auch die in OWL Datatype Properties genannten Ressourcen eingebracht werden, da diese die erforderliche Objektstruktur mit Subtypen genauer definieren.\\
@@ -308,7 +305,7 @@ Um dies zu erreichen, werden erst alle Datatype Properties aus der Ontologie aus
 Da nach diesem Schritt alle Attribute verfügbar sind, können nun die Klassen angelegt werden. Um dies zu erreichen liest man alle Klassen aus der Ontologie aus und legt einen Datentyp für diese an. Listing \ref{lst:class} zeigt, dass das Element \textbf{Valve} eine Subklasse von \textbf{Active\_Element} ist, daher übernimmt es das Attribut \textbf{offstate} jedoch auch alle Attribute, die für \textbf{Valve} und \textbf{Main\_Part} registriert sind. Außerdem muss überprüft werden, ob das Element ein Main\_Part oder Active\_Element ist, da diese in der Ontologie als jene definiert sind, die über die Steuerung angesprochen werden können. Jedes Element bekommt zusätzlich noch das Attribut \textbf{value}, welches den aktuellen Wert anzeigen soll oder mit dem man den gewünschten Wert setzen kann.
 
 \subsection{Generierung der Variablen}
-Die für die Variablen wichtigen Elemente werden in OWL als Named Individual abgebildet, welche also ausgelesen werden müssen um die Variablen anlegen zu können. Eine Voraussetzung um die Variablen anlegen zu können ist auch, dass die Datentypen bereits generiert wurden. In Listing \ref{lst:indiv} erkennt man, dass die Variable \textbf{V123} in mit drei Klassen in Verbindung steht: Valve, Main\_Part und Active\_Element). Also muss man um den Datentyp herauszufinden die Vererbungsstruktur dieser untersuchen, um das spezifischste zu finden. Durch die in Listing Y ersichtliche Struktur der Klasse Valve kann man darauf schließen, dass Valve von Main\_Part und Active\_Element erbt, also ist dies die spezifischste Klasse. Das Named Individual enthält zusätzlich noch gesetzte Werte zu den Attributen, welche hier ausgelesen werden.\\
+Die für die Variablen wichtigen Elemente werden in OWL als Named Individual abgebildet, welche also ausgelesen werden müssen um die Variablen anlegen zu können. Eine Voraussetzung um die Variablen anlegen zu können ist auch, dass die Datentypen bereits generiert wurden. In Listing \ref{lst:indiv} erkennt man, dass die Variable \textbf{V123} in mit drei Klassen in Verbindung steht: Valve, Main\_Part und Active\_Element). Also muss man um den Datentyp herauszufinden die Vererbungsstruktur dieser untersuchen, um das spezifischste zu finden. Durch die in Listing \ref{lst:class} ersichtliche Struktur der Klasse Valve kann man darauf schließen, dass Valve von Main\_Part und Active\_Element erbt, also ist dies die spezifischste Klasse. Das Named Individual enthält zusätzlich noch gesetzte Werte zu den Attributen, welche hier ausgelesen werden.\\
 
 Parallel zum Vorgang bei dem die Variablen an gelegt werden, wird auch ein \textbf{Init} und \textbf{Reset} Programm angelegt, das in \textbf{Structured Text} verfasst ist. Das Init-Programm wird einmal ausgeführt und initialisiert alle Attributwerte jeder Variable, es weist also alle in der Ontologie zugewiesenen Werte zu, damit das Programm diese dann zur Unterstützung des Ablaufs abfragen kann. Das Reset-Programm dient als eine Art Software gesteuertem Notausschalter, es werden alle aktiven Elemente in ihren passiven Zustand versetzt, sodass die Anlage ihre Arbeit beendet.
 
@@ -321,15 +318,15 @@ Wichtig für die Codegenerierung sind folgende Tags:\\
 
 \textbf{Pseudostate}\\
 Der Pseudostate ist der Startknoten der Aktivität, hier wird ausserdem als Attribut die Abbruchbedingung gespeichert. Jede Aktivität steht für eine Prozedur.\\
-\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Struktur des Pseudostate,label=lst:pseudo]{extra/pseudostate.xml}
+\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Struktur des Pseudostate,label=lst:pseudo,style=XML]{extra/pseudostate.xml}
 
 \textbf{ActionState}\\
 Ein ActionState bildet ein Bauteil ab, das in der Prozedur verwendet wird. Es können beliebig viele ActionStates verwendet werden. Weiters muss bei jedem ActionState der Wert angegeben werden, auf den der IO des Bauteils gesetzt werden soll.\\
-\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Struktur des ActionState,label=lst:action]{extra/actionstate.xml}
+\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Struktur des ActionState,label=lst:action,style=XML]{extra/actionstate.xml}
 
 \textbf{FinalState}\\
 Der FinalState ist der Endknoten, er schließt die Aktivität ab. Falls nach dem FinalState ein weiterer Pseudostate folgt, bedeutet dies, dass eine weitere Aktivität beginnt.\\
-\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Struktur des Pseudostate,label=lst:final]{extra/finalstate.xml}
+\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Struktur des Pseudostate,label=lst:final,style=XML]{extra/finalstate.xml}
 
 \subsection{Generierung der Prozeduren}
 Um eine Grundlage für die Generierung der Prozeduren zu bilden, wird erst eine Prozedur angelegt und getestet. Diese wird dann von zenon Logic exportiert, um ein Template für den Import zu erhalten. Nachdem alle irrelevanten Informationen entfernt wurden, werden Platzhalter definiert, die bei der Generierung ersetzt werden.\\

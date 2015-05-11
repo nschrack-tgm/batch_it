@@ -194,6 +194,27 @@
 
 \def\addnotes{0}
 
+%%-----------------------------------------------------------------------
+% Listing styles
+%%-----------------------------------------------------------------------
+
+
+\definecolor{Maroon}{rgb}{0.5,0,0}
+\lstdefinestyle{XML}
+{
+	language=xml,
+	frame=trbl,
+	tabsize=2,
+  basicstyle=\ttfamily\footnotesize,
+  morestring=[s]{"}{"},
+  morecomment=[s]{<!--}{-->},
+  commentstyle=\color{ForestGreen},
+  moredelim=[s][\color{Red}]{\ }{=},
+  stringstyle=\color{Blue},
+	tagstyle=\color{Maroon},
+	backgroundcolor=\color{Yellow!10}
+}
+
 
 %%-----------------------------------------------------------------------
 % Define month
