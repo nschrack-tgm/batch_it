@@ -1,0 +1,10 @@
+String strName;
+zenOn.IDriver Driver;
+zenOn.tpKanaltypes ChannelType;
+zenOn.IVarType Type;
+
+strName = "Variable";
+Driver = proj.Drivers().Item("Treiber");
+ChannelType = zenOn.tpKanaltypes.tpSPSMerker;
+Type = proj.VarTypes().Item("Typ");
+MyWorkspace.ActiveDocument.Variables().CreateVar(strName, Driver, ChannelType, Type);

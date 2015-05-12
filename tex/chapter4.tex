@@ -266,7 +266,7 @@ Der erste wichtige Punkt ist es herauszufinden, wie weit die Prozeduren und Reze
 \subsection{Datentyp anlegen}
 Um ein Element der Anlage im Programm abzubilden, werden einige Attribute benötigt, weshalb hier ein Strukturdatentyp erstellt wird. Dieser wird den Namen des Elements erhalten und alle in der Ontologie abgebildeten Attribute beinhalten.
 
-\lstinputlisting[language=csh,belowcaptionskip=5pt,frame=bt,caption=Anlegen eines Datentyps in zenon]{extra/createdatatype.txt}
+\lstinputlisting[caption=Anlegen eines Datentyps in zenon,style=csharp]{extra/createdatatype.txt}
 
 \subsection{Variable anlegen}
 Damit der aktuelle Zustand, sowie die weiteren Attribute jedes eingebauten Elements der Anlage, abgespeichert werden können, muss für eben jedes dieser eine eigene Variable angelegt werden. Eine Variable muss an einen Treiber angebunden werden, wobei die Auswahl durch den Benutzer über die Benutzerschnittstelle erfolgt. Damit die Variable global, also auch in Zenon Logic, erreichbar ist, muss sie in einem Namespace sein. Dies wird dadurch erreicht, dass vor dem Namen der Variable ein „Logic/Global/“ hinzugefügt wird, wobei Logic hier der Name des Zenon Logic Projekts ist. Da alle durch die Codegenerierung angelegten Variablen verwendet werden um Teile unserer SPS anzusprechen, muss als Kanal der „SPSMerker“ angeben werden.
@@ -276,7 +276,7 @@ Damit der aktuelle Zustand, sowie die weiteren Attribute jedes eingebauten Eleme
   \caption{Auswahl des zenon Logic Treibers}
 \end{figure}
 
-\lstinputlisting[language=csh,belowcaptionskip=5pt,frame=bt,caption=Anlegen einer Variable in zenon]{extra/createvar.txt}
+\lstinputlisting[caption=Anlegen einer Variable in zenon,style=csharp]{extra/createvar.txt}
 
 \subsection{Ontologie als XML}
 Die Ontologie wird als XML exportiert. Diese XML Datei ist auf den Standards OWL und RDF aufgebaut, welche die Struktur und Aufteilung der abgebildeten Elemente vorgeben.\\
@@ -287,7 +287,7 @@ Wichtig für die Codegenerierung sind folgende Tags:\\
 
 \textbf{DatatypeProperty}\\
 Dieser Tag enthält Informationen über ein Attribut. Die Informationen, die man entnehmen kann beinhalten den Namen und Datentyp des Attributs, sowie für welche Elemente sie anwendbar sind.\\
-\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Struktur des DatatypeProperty Tags,label=lst:dtprop,style=XML]{extra/datatypeproperty.xml}
+\lstinputlisting[caption=XML Struktur des DatatypeProperty Tags,label=lst:dtprop,style=XML]{extra/datatypeproperty.xml}
 
 \textbf{Class}\\
 Eine „Class“ entspricht einem Element, das in der Ontologie abgebildet ist. Es wird der Name angegeben und die Klassen, von welchen es erbt, also die Klassen deren Attribute es übernimmt.\\
@@ -318,15 +318,15 @@ Wichtig für die Codegenerierung sind folgende Tags:\\
 
 \textbf{Pseudostate}\\
 Der Pseudostate ist der Startknoten der Aktivität, hier wird ausserdem als Attribut die Abbruchbedingung gespeichert. Jede Aktivität steht für eine Prozedur.\\
-\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Struktur des Pseudostate,label=lst:pseudo,style=XML]{extra/pseudostate.xml}
+\lstinputlisting[caption=XML Struktur des Pseudostate Tags,label=lst:pseudo,style=XML]{extra/pseudostate.xml}
 
 \textbf{ActionState}\\
 Ein ActionState bildet ein Bauteil ab, das in der Prozedur verwendet wird. Es können beliebig viele ActionStates verwendet werden. Weiters muss bei jedem ActionState der Wert angegeben werden, auf den der IO des Bauteils gesetzt werden soll.\\
-\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Struktur des ActionState,label=lst:action,style=XML]{extra/actionstate.xml}
+\lstinputlisting[caption=XML Struktur des ActionState Tags,label=lst:action,style=XML]{extra/actionstate.xml}
 
 \textbf{FinalState}\\
 Der FinalState ist der Endknoten, er schließt die Aktivität ab. Falls nach dem FinalState ein weiterer Pseudostate folgt, bedeutet dies, dass eine weitere Aktivität beginnt.\\
-\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Struktur des Pseudostate,label=lst:final,style=XML]{extra/finalstate.xml}
+\lstinputlisting[caption=XML Struktur des FinalState Tags,label=lst:final,style=XML]{extra/finalstate.xml}
 
 \subsection{Generierung der Prozeduren}
 Um eine Grundlage für die Generierung der Prozeduren zu bilden, wird erst eine Prozedur angelegt und getestet. Diese wird dann von zenon Logic exportiert, um ein Template für den Import zu erhalten. Nachdem alle irrelevanten Informationen entfernt wurden, werden Platzhalter definiert, die bei der Generierung ersetzt werden.\\

@@ -292,46 +292,13 @@ Der Quellcode der mitgelieferten Wizards kann geöffnet und auch editiert werden
 VSTA steht für \textit{Visual Studio Tools for Applications}, es ist eine Ansammlung von Werkzeugen zum erstellen von Programmen. VSTA unterstützt die Programmiersprachen Visual Basic .Net und C\#.
 VSTA ist in Zenon als Editor integriert.
 
-\begin{figure}[h!]
-	\begin{framed}
-	\color{black}
-		String strName;\\
-		zenOn.IDriver Driver;\\
-		zenOn.tpKanaltypes ChannelType;\\
-		zenOn.IVarType VarType;\\
-		zenOn.IVariable Var;\\
-		\\
-		strName = "Variable";\\
-		Driver = proj.Drivers().Item("Treiber");\\
-		ChannelType = zenOn.tpKanaltypes.tpSPSMerker;\\
-		VarType = proj.VarTypes().Item("Typ");\\
-		Var = MyWorkspace.ActiveDocument.Variables().CreateVar(strName, Driver, ChannelType, VarType);
-	\end{framed}
-	\caption{Anlegen einer Variable in C\#}
-\end{figure}
+\lstinputlisting[caption=Anlegen einer Variable in C\#,style=csharp]{extra/sota_var_csharp.txt}
 
 \subsection{VBA}
 VBA steht für \textit{Visual Basic for Applications} und ist eine Skriptsprache, die hauptsächlich für die Steuerung in Microsoft Office Produkten verwendet wird.
 Ein Editor für VBA ist in Zenon integriert.
 
-\begin{figure}[h!]
-	\begin{framed}
-		\color{black}
-		Dim strName As String\\
-		Dim Driver As Driver\\
-		Dim ChannelType As Integer\\
-		Dim VarType As VarType\\
-		Dim Var As Variable\\
-		\\
-		strName = "Variable"\\
-		Driver = MyWorkspace.ActiveDocument.Drivers.Item("Treiber")\\
-		ChannelType = GetChannelType("SPSMerker")\\
-		VarType = MyWorkspace.ActiveDocument.VarTypes.Item("Typ")\\
-		Var = MyWorkspace.ActiveDocument.Variables.CreateVar(strName, Driver, ChannelType, VarType)
-	\end{framed}
-	\caption{Anlegen einer Variable in VBA}
-\end{figure}
-
+\lstinputlisting[caption=Anlegen einer Variable in VBA,style=VBA]{extra/sota_var_vba.txt}
 
 \section{Visualisierung von Produktionsanlagen}
 \subsection{SCADA}

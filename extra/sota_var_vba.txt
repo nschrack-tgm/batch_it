@@ -1,0 +1,10 @@
+Dim strName As String
+Dim Driver As Driver
+Dim ChannelType As Integer
+Dim Type As VarType
+
+strName = "Variable"
+Driver = MyWorkspace.ActiveDocument.Drivers.Item("Treiber")
+ChannelType = GetChannelType("SPSMerker")
+VarType = MyWorkspace.ActiveDocument.VarTypes.Item("Typ")
+MyWorkspace.ActiveDocument.Variables.CreateVar(strName, Driver, ChannelType, Type)
