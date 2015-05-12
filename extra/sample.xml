@@ -3,8 +3,9 @@
 		<subsubElement>Info</subsubElement>
 	</subElement1>
 	<subElement2>
-		<titel>Dr. Dipl.</titel>
-		<name>Max Muster</name>
+		<titel>Dr</titel>
+		<vorname>Max</vorname>
+		<nachname>Muster</nachname>
 	</subElement2>
 	<subElement3>
 		<subsubElement>Text</subsubElement>
