@@ -133,6 +133,7 @@ Zum jetzigen Zeitpunkt sind alle relevanten Komponenten einer Prozedur erstellt 
   \label{fig:rezepte_list}
 \end{figure}
 	
+\newpage
 \section{HMI}
 Für dieses Projekt wurde als SCADA System die Software zenon vorgegeben, daher wird das HMI in zenon Supervisor (zenons HMI Programm) umgesetzt.\\
 \\
@@ -140,31 +141,35 @@ Für dieses Projekt wurde als SCADA System die Software zenon vorgegeben, daher 
 In zenon wird eine Visualisierung \glqq Bild\grqq\space  gennant. Dieses kann mit vorgefertigten Elementen erweitert werden. 
 
 Als Ausgangspunkt für die Visualisierung wurde das RI-Fließeschema zur Hand genommen. Aus diesem wurde die Anzahl der Elemente und die Grundstruktur übernommen. Als nächsten Schritt musste evaluiert werden, welche Inhalte des RI-Fließschemas für die Visualisierung relevant und welche Informationen nicht vorhanden waren.\\
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=1\textwidth]{graphics/implementation/Visualisierung}
+  \caption{Umsetzung der Visualisierung in zenon}
+\end{figure}
 \\
+\newpage
 \textbf{Feldbuskonfiguration}\\
 Um eine Visualisierung mit aktuellen Sensorwerten zu befüllen, wird eine Verbindung zur SPS benötigt. Diese Verbindung wird über das Teilprogramm zenon Logic (im weiteren nur noch Logic genannt) hergestellt.\\
 \\
-Als ersten Schritt, um in Logic eine SPS hinzuzufügen, muss im Unterpunkt \glqq Feldbuskonfiguration\grqq\space die Treibersoftware für die ADAM5550 SPS hinzugefügt werden. Daraufhin müssen alle Module, die an der SPS angebracht sind, in die Konfiguration hinzugefügt werden.\\%todo Position
+Als ersten Schritt, um in Logic eine SPS hinzuzufügen, muss im Unterpunkt \glqq Feldbuskonfiguration\grqq\space die Treibersoftware für die ADAM5550 SPS hinzugefügt werden. Daraufhin müssen alle Module, die an der SPS angebracht sind, in die Konfiguration hinzugefügt werden.\\
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.7\textwidth]{graphics/implementation/Feldbuskonfiguration}
-  \caption{Feldbuskonfiguration}%todo Grafik name
+  \caption{Feldbuskonfiguration für eine SPS in zenon}
 \end{figure}
 \\
 \textbf{Variablen}\\
-In zenon können auf mehrere Arten Variablen erstellt werden. Damit diese für die Visualisierung und von Logic sichtbar sind, müssen sie als Globale Variable definiert werden. Der einfachste Weg dafür ist es, im Logic Variablenfenster, über den Reiter  \glqq Globale Variablen\grqq, die Funktion \glqq Variable hinzufügen\grqq\space aufzurufen.\\%todo Position
+In zenon können auf mehrere Arten Variablen erstellt werden. Damit diese für die Visualisierung und von Logic sichtbar sind, müssen sie als Globale Variable definiert werden. Der einfachste Weg dafür ist es, im Logic Variablenfenster, über den Reiter  \glqq Globale Variablen\grqq, die Funktion \glqq Variable hinzufügen\grqq\space aufzurufen.\\
+\\
+Sobald alle Variablen erstellt sind, werden diese mit der Feldbuskonfiguration verknüpft. Durch diesen Schritt erhält man Zugang zu den an der SPS angeschlossenen Bauteilen.
+
+\newpage
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.7\textwidth]{graphics/implementation/Variablen}
-  \caption{Variablen}%todo Grafik name
-\end{figure}\\
-Sobald alle Variablen erstellt sind, werden diese mit der Feldbuskonfiguration verknüpft. Durch diesen Schritt erhält man Zugang zu den an der SPS angeschlossenen Bauteilen.\\
-\\
+  \caption{Variablen erstellen in zenon Logic}
+\end{figure}
 
-%Umrechnen von Sensorwerten: 
-%Durchflusssensor Digital -> etwa 900 ticks pro Liter -> Timer bid 900 ticks -> Liter/min
-%Füllstandsensor 4-20mA -> 4=voll, 20=leer -> Variablen/Tank Konfiguration -> Umrechnung 4=100, 20=0
-%Ventilstatus 0/1 -> Variablen Konfiguration -> Extremwerte farblich markieren -> Ventil Elementfarbe nach Variablen Farbe
 \textbf{Steuerung}\\
 \\
 Phase 1 Steuerung mittels Buttons\\
@@ -178,8 +183,6 @@ Phase 2 Versteckte Buttons\\
 Phase 3 Funktionale Elemente\\
 	Der nächste schritt war es die nicht funktionalen Grafikelemente durch Buttons in Form der gewünschten Elemente zu ersetzten.\\
 \\
-\textbf{Rezepterstellung}\\
-%todo Rezeperstellung
 
 \section{Ontology}
 Nachdem die Evaluierung der wichtigsten Aspekte im Kapitel Ontologie der Chargenprozessanlage in Hinsicht auf eine automatisierte Codegenerierung durchgeführt wurden, behandelt dieses Kapitel den Werdegang der Ontologie vom Ersten bis hin zum Finalem Design.\\
@@ -192,15 +195,17 @@ Zu aller erste werden alle Bauteile der Anlage in Kategorien eingeteilt.\\
 Tanks, Reaktoren und Pumpen sind die Hauptelemente dieser Anlage und werden deswegen auch in einer Gruppe zusammengefasst. Neben ihnen gibt es eine Gruppe an Bauteilen die etwas tun, hierzu gehören die Ventile, Sensoren, Heiz- und Rührstäbe. Die restlichen Elemente der Anlage sind Statische Objekte die einen Nutzen besitzen, jedoch keine Arbeit erledigen, daher fallen diese zusammen unter die Kategorie von Passiven Elementen. Zu diesem Zeitpunkt sind dies nur die Rohre.\\
 Eine Ausnahme dieser Gruppen ist die SPS welche etwas tut, daher an sich in Kategorie 2 Fallen würde, aber nicht direkt Teil der Anlage ist und daher auch als einzelstehendes Objekt einen Platz in der Ontologie findet.
 
+\newpage
 \begin{figure}[hbt!]
   \centering
-  \includegraphics[width=0.6\textwidth]{graphics/implementation/Ontology_v1}
+  \includegraphics[width=0.7\textwidth]{graphics/implementation/Ontology_v1}
   \caption{Erste Version der Ontologie}
 \end{figure}
 
 Verbindungen zwischen 2 Klassen werden normalerweise mit einer Objekt Eigenschaft dargestellt, da eine Verbindung zwischen 2 Bauteilen aber eine andere Information als die Verbindung zwischen einer SPS und einem Bauteil enthält, gibt es die Kategorie Connections mit den Klassen “Weg” und “IO”.
 
 Kurz zusammengefasst können die Kategorien wie folgt beschreiben werden\\
+\\
 Main\_Part:\\
 	Dies sind alle Elemente die subjektiv als Hauptelemente bezeichnet werden.\\
 Active\_Element:\\
@@ -225,8 +230,9 @@ Die Kategorie \glqq Passive Element\grqq\space wird komplett entfernt da sie kei
 
 \begin{figure}[hbt!]
   \centering
-  \includegraphics[width=0.6\textwidth]{graphics/implementation/Ontology_v2}
+  \includegraphics[width=0.7\textwidth]{graphics/implementation/Ontology_v2}
   \caption{Erste Überarbeitung der Ontologie}
+  \label{fig:v2_ontology}
 \end{figure}
 
 Von diesem Punkt aus wird die Ontologie nur noch verfeinert und nicht mehr großartig an der Struktur gearbeitet.\\
@@ -234,12 +240,13 @@ Die Klasse SPS wird, um Konsistenz in die Namen zu bringen, in die Englische Bez
 
 \begin{figure}[hbt!]
   \centering
-  \includegraphics[width=0.6\textwidth]{graphics/implementation/Ontology_final}
+  \includegraphics[width=0.7\textwidth]{graphics/implementation/Ontology_final}
   \caption{Finale Version der Ontologie}
+  \label{fig:final_ontology}
 \end{figure}
-
-\textbf{Object Properties}\\
+Die Änderungen die von Abbildung \ref{fig:v2_ontology} hin zur Finalen Version der Ontologie Abbildung \ref{fig:final_ontology} begangen wurden sind Trivial. Dazu gehört das entfernen der Subklasse \glqq Sensoren \grqq\space, um den Aufwand für die Codegenerierung zu verringern.\\
 \\
+\textbf{Object Properties}\\
 Nachdem die Klassenstruktur feststeht, müssen als nächstes die Relationen bestimmt werden.
 \begin{table}[h]
 \centering
@@ -253,11 +260,37 @@ isIncludedTo  & Tank            & Active\_Element \\ \hline
 isConnectedTo & Connection      & Connection                            
 \end{tabular}
 \end{table}
+Mit Hilfe dieser Object Properties lassen sich alle Verbindungen zwischen den jeweiligen Elementen/Klassen abbilden.\\
 \\
 \textbf{Data Properties}\\
-TODO
+Die Ontologie besteht nun aus Klassen und deren Relationen, nun muss sie mit Eigenschaften erweitert werden um eine Codegenerierung zu ermöglichen.\\
+\\
+Dafür wurden die folgenden Data Properties erstellt:\\
+\textbf{capacity: }Volumen/Füllmenge eines Tanks; Datentyp: int\\
+\textbf{direction: }Gibt die Richtung einer Connection an.\\
+\textbf{maximum: }Maximaler Wert mit dem das Element angesprochen werden kann, bzw. maximal wert den das Element zurück liefert.\\
+\textbf{minimum: }Kleinster Wert mit dem das Element angesprochen werden kann, bzw. den das Element zurück liefert.\\
+\textbf{offstate: }Signal bei dem das Element stoppt bzw. schließt.\\
+\textbf{signal: }1-Signal des Elements ist Digital; 2-Signal des Elements ist Analog.\\
+
 \section{Aktivitätsdiagramm}
-TODO
+Im vorigem Kapitel wurde der Werdegang der für die Codegenerierung erstellten Ontologie genauer beschrieben. Um mit dieser nun auch Prozeduren automatisch generieren zu lassen, wird ein Diagram bzw. eine Aufzählung von den gewollten Prozeduren benötigt.\\
+Im Gegensatz zu der Erstellung der Ontologie ist das Design bzw. der Aufbau dieses Diagramms schon vor der Ersten Iteration klar definiert.\\
+\\
+In diesem Projekt wird eine sehr vereinfachte Form eines Aktivitätsdiagramms verwendet, da mit diesen Diagrammen die benötigten Informationen übermittelt werden können.\\
+
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=0.7\textwidth]{graphics/konzept/UML_Activity}
+  \caption{Diagram 2er Prozeduren}
+\end{figure}
+Die wirkliche Aufgabe, bei diesem Diagramm, ist es herauszufinden welche Daten man zu den jeweiligen Elementen hinzufügen muss, um eine Codegenerierung bestmöglich durchführen zu können.\\
+Dies ist ein langwieriger Prozess der bis zur Fertigstellung der Codegenerierung andauert, da erst beim automatischem erstellen der Prozeduren klar wird, welche Informationen weiters hinzugefügt werden können, um das Ergebnis der Codegenerierung zu verbessern.\\
+\\
+Um den generierten Prozeduren einen Namen geben zu können, befindet sich im Startknoten das Attribut \glqq name\grqq\space bei dem dieser definiert werden kann. Neben eben diesem befindet sich noch ein weiteres \glqq verstecktes Attribut\grqq\space , das die Abbruchbedingung der jeweiligen Prozedur angibt.\\
+In den einzelnen States, die jeweils ein Element der Anlage abbilden, befindet sich ein Attribut mit dem jeweiligem Wert der in der Prozedur für den jeweiligen Schritt benötigt wird. Beispielsweise bei den Ventilen (V1,V2,...) der Wert \glqq 1\grqq\space und bei der Pumpe ein Mittelwert der nach der Generierung vom Benutzer genauer definiert werden kann.\\
+Abgeschlossen werden alle Prozeduren in dem Diagramm mit einem Endknoten, wie es in einem Vollständigem Aktivitätsdiagramm auch der Fall ist.\\
+
 \section{Codegenerierung}
 
 Die Codegenerierung könnte in unterschiedlichsten Sprachen erfolgen, jedoch können nur über Zenon Wizards auch direkte eingriffe auf ein Zenon Projekt vorgenommen werden. Es gibt zwei Arten von Zenon Wizards: VSTA und VBA. Es wird VSTA verwendet, da hier die grafische Benutzeroberfläche ansprechender ist. Die Funktionalität mit VBA deckt sich größtenteils.\\\\
@@ -317,8 +350,7 @@ Das Aktivitätsdiagramm wird als XML exportiert. Diese XML Datei ist auf dem Sta
 Wichtig für die Codegenerierung sind folgende Tags:\\
 
 \textbf{Pseudostate}\\
-Der Pseudostate ist der Startknoten der Aktivität, hier wird auß
-  moredelim=[s][\color{Red}]{\ }{=},erdem als Attribut die Abbruchbedingung gespeichert. Jede Aktivität steht für eine Prozedur.\\
+Der Pseudostate ist der Startknoten der Aktivität, hier wird außerdem als Attribut die Abbruchbedingung gespeichert. Jede Aktivität steht für eine Prozedur.\\
 \lstinputlisting[caption=XML Struktur des Pseudostate Tags,label=lst:pseudo,style=XML]{extra/pseudostate.xml}
 
 \textbf{ActionState}\\

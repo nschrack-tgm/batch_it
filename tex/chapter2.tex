@@ -335,7 +335,8 @@ Auf die gängigsten Methoden (XML, Ontologie, UML) wird in den nächsten Punkten
 XML ist eine textbasierte Modellierungssprache bzw. Dateiformat, dass obwohl es für Dokumente gedacht ist, oft für das Abbilden von Daten Strukturen verwendet wird. XML ist wie viele andere \glqq Markup-Languages\grqq\space tag basiert, jedoch mit dem großen Unterschied das die Tags nicht vordefiniert werden, sonder die Benutzer diese erstellen. Ein wichtiger Aspekt der erwähnt werden muss ist der, das die erstellten XML Dateien keine eigene Funktion besitzen.\\
 
 \newpage
-\lstinputlisting[language=XML,belowcaptionskip=5pt,frame=bt,caption=XML Sample Code]{extra/sample.xml}
+\lstinputlisting[style=XML,caption=XML Sample Code]{extra/sample.xml}
+
 Der Aufbau einer XML Datei ist leicht zu erklären: Es gibt 1 rootElement, dass den Anfang und das Ende des Inhaltes markiert. Zwischen dem Start- und Endtag befinden sich weitere Tags, die das Dokument oder die Struktur genauer beschreiben. Jeder Tag kann Attribute besitzen die es weiter definieren. Zwischen einem Start- und Endtag können sich entweder weitere Tags oder einfacher Text befinden.
 \\
 Einsatz findet XML meist in Programmen oder Webseiten, die größere Mengen an Daten bzw. Befehle Systemunabhängig übertragen sollen. Grund dafür ist unter anderem die Tatsache, dass Mensch und Maschine die Datei ohne Übersetzung bzw. Kompilieren lesen und verstehen kann.\\
@@ -350,16 +351,14 @@ Eine Ontologie ist ein auf XML basierendes Konstrukt, dass einem das Abbilden vo
 \textbf{Allgemeiner Aufbau einer Ontologie}\\
 Das Modell an sich ohne zusätzliche Attribute oder Eigenschaften ist vom Aufbau her so zu erklären: Es gibt ein 'Thing', von dem alles aus geht, sozusagen ist das das root-Element bei XML. Von diesem Punkt aus können weitere Entitäten abgeleitet werden, diesen Schritt kann als eine Vererbung gesehen werden. Die neu erstellte Entität ist immer noch ein Thing, jedoch genauer definiert. Es gibt keine Grenzen oder Vorschriften, in welche Tiefe diese Definition gehen muss. Daher kann dies für sehr komplexe aber auch simple Modelle eingesetzt werden.\\
 
-  \todo{Einfachere Ontologie}
-
 \begin{figure}[hbt!]
   \centering
-  \includegraphics[width=1\textwidth]{graphics/stateoftheart/Ontology_Aufbau}
+  \includegraphics[width=1\textwidth]{graphics/stateoftheart/Ontology_example}
   \caption{Aufbau einer Ontologie}
 	\label{fig:Ontology_Aufbau}
 \end{figure}
 
-Wie in Abbildung~\ref{fig:Ontology_Aufbau} zu erkennen erhält man so die Struktur des Modells, jedoch werden oft weitere Informationen zu den einzelnen Objekten/Entitäten benötigt, welche als Eigenschaften abgespeichert werden.\\
+Wie in Abbildung~\ref{fig:Ontology_Aufbau} erkennbar ist, erhält man so die Struktur des Modells, jedoch werden oft weitere Informationen zu den einzelnen Objekten/Entitäten benötigt, welche als Eigenschaften abgespeichert werden.\\
 Dies ermöglicht ein Modell aufzubauen, dass nicht nur die Struktur abbilden, sondern komplexe Netzwerke konstruieren kann.\\
 \\
 \noindent \textbf{Objekt Eigenschaften}\\
@@ -369,8 +368,9 @@ Allgemeine Definition:\\
 \textbf{Domain} -> \textbf{Name} -> \textbf{Range}\\
 KlasseA -> Eigenschaft -> KlasseB\\
 \\
-Ein Beispiel wäre die Verknüpfung zwischen einem Tank und einer Pumpe und genau dafür gibt es Objekt Eigenschaften. Für diesen Zweck kann man eine Eigenschaft mit dem Namen 'verbunden\_mit' erstellen, und diese dann dem Tank beifügen. So ergibt sich die Relation:\\
-Tank -> verbunden\_mit -> Pumpe\\
+Ein Beispiel wäre eine Verknüpfung zwischen einem Tank und einer Pumpe und genau für diese Relationen gibt es Objekt Eigenschaften. Für diesen Zweck kann eine Eigenschaft mit dem Namen 'verbunden\_mit' erstellen und diese dann dem Tank beifügen. So ergibt sich die Relation:\\
+\textbf{Tank -> verbunden\_mit -> Pumpe}
+\\
 \\
 \textbf{Daten Eigenschaften}\\
 Daten Eigenschaften werden benötigt um Objekte genauer zu beschreiben. 
@@ -407,12 +407,6 @@ Activity Edges\\An ActivityEdge is a directed connection between two ActivityNo
   \includegraphics[width=1\textwidth]{graphics/stateoftheart/Activity_bsp}
   \caption{Beispiel für ein Aktivitätsdiagramm \cite{activity_example}}
 \end{figure}
-%
-%\subsection{OPC}
-%%TODO OPC
-%OLE for Process Control\\
-%Object Linking and Embedding for Process Control (OPC)\\
-%XML für Industrie.
  
 \clearpage
 \section{Zusammenfassung}
