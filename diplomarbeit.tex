@@ -201,6 +201,24 @@
 
 \definecolor{Maroon}{rgb}{0.5,0,0}
 
+\lstdefinestyle{ST}
+{
+	language=C,
+	frame=trbl,
+	%numbers=left, % Nummerierung
+	%numberstyle=\tiny, % kleine Zeilennummern
+	breaklines=true,
+	showstringspaces=false,
+	breakatwhitespace=true,
+	escapeinside={(*@}{@*)},
+	commentstyle=\color{ForestGreen},
+	morekeywords={BOOL, VAR, END_VAR, LD, CR, ANDN, ST, AND, NOT, OR, INITIAL_STEP, END_STEP, TRANSITION, FROM, END_TRANSITION, STEP, TO, IF, ELSIF, END_IF, THEN, CASE, END_CASE},
+	keywordstyle=\color{Blue},
+	stringstyle=\color{Maroon},
+  basicstyle=\ttfamily\footnotesize,
+	backgroundcolor=\color{Yellow!5}
+}
+
 \lstdefinestyle{XML}
 {
 	language=xml,

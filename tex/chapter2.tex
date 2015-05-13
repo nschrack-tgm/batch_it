@@ -142,12 +142,12 @@
 	\subsection{Anweisungsliste}
 	Diese textbasierte Programmiersprache nach der Norm \acs{IEC} \acs{DIN} \acs{EN} 61131-3 ist sehr maschinennahe. Vergleicht man die Anweisungsliste aus Abbildung~\ref{fig:Anweisungsliste} mit höheren Programmiersprachen der Informatik, so ist es eine Art Assemblersprache, die normalerweise 1:1 den jeweiligen Maschinencode übersetzt. Es werden die einzelnen Anweisungen in der Reihenfolge geschrieben, wie sie die Maschine (\ac{CPU}) abarbeiten soll (auch \glqq Stackorientierte Abarbeitung\grqq \space genannt). Ein großer Vorteil gegenüber allen grafischen Programmiersprachen ist die Tatsache, das AWL funktionell über diese hinausgeht, weil beispielsweise ein komplexer Zählvorgang mittels eines Kontaktplans nicht realisierbar sein könnte. \cite{spslehrgang_struktur, egroetsch_sps}
 
-	\lstinputlisting[language=c,belowcaptionskip=5pt,frame=bt,caption=Beispiel einer Anweisungsliste]{extra/awl.txt}
+	\lstinputlisting[caption=Beispiel einer Anweisungsliste,style=ST]{extra/awl.txt}
 
 	\subsection{Strukturierter Text}
 	Diese anschließend angeführte Programmiersprache der Automatisierungstechnik orientiert sich an der Sprache Pascal, enthält aber neben dieser Sprache zugehörigen spezifischen Elementen aber auch noch \ac{SPS}-typische Elemente. Geeignet ist ST am vorteilhaftesten für Aufgaben mit mathematischem Hintergrund sowie zum Beschreiben komplexer Algorithmen. Auch für Rezept- und Datenverwaltung hebt sich diese Art der Programmierung durch enorme Vereinfachung vor. Typische Anweisungen für ST sind solche, die in höheren Sprachen durch Bedingungen oder Schleifen ausgeführt werden können \cite{grundlagen_automatisierungstechnik}
 	
-	\lstinputlisting[language=c,belowcaptionskip=5pt,frame=bt,caption=Beispiel eines Strukturierten Texts]{extra/st.txt}
+	\lstinputlisting[caption=Beispiel eines Strukturierten Texts,style=ST]{extra/st.txt}
 	
 	\subsection{Ablaufsprache}
 	Eine Sonderstellung unter den Sprachen zur Programmierung einer \ac{SPS} nimmt die Ablaufsprache ein. Da die Inhalte dieser entweder grafisch oder textuell definiert werden, wird ein recht breit gefächertes Feld an Anwendern abgedeckt.\\
@@ -161,7 +161,7 @@
   		\label{fig:as}
 	\end{figure}
 	
-	\lstinputlisting[language=c,belowcaptionskip=5pt,frame=bt,caption=Textuelles Beispiel der Ablaufsprache]{extra/as.txt}
+	\lstinputlisting[caption=Textuelles Beispiel der Ablaufsprache,style=ST]{extra/as.txt}
 	
 	\subsection{Kontaktplan}
 	Die Darstellungsart des Kontaktplans (siehe Abbildung~\ref{fig:kontaktplan}) ermöglicht \ac{SPS}-Programmierern ein Programm auf grafischer Ebene zu erstellen und darzustellen. Ein \ac{KOP} ist einem Stromlaufplan sehr ähnlich, um Programmieranfängern, die beispielsweise nur in der Elektronik tätig sind/waren und noch nie zuvor analytisch hinterfragten Code entwickelt haben, den Einstieg zu erleichtern. Es werden Elemente wie Spulen, Öffner/Schließer, Eingänge/Ausgänge, usw... verwendet, die zu logischen Blöcken zusammengefasst werden können und so einen Teil des gesamten Programms ergeben. Ein Nachteil dieser standardisierten Programmiersprache ist jedoch, dass es nicht für alle möglichen Operationen auch ein einheitliches Symbol in einem Stromlaufplan gibt. Das wiederum bedeutet, dass bei komplexen Steuerungen oft eine Mischung aus |\ac{KOP} und der \ac{FBS} verwendet wird.\\
