@@ -30,15 +30,11 @@
 		\caption{Definition eines Prozess}
 	\end{figure}
 	
-	Laut der Norm DIN IEC 60050-351 ist ein Prozess wie folgt definiert \cite{mpolke_proc}:\\
-	
-	\todo[inline]{Lepu fragen ob diese Zitierungsart ok ist}
+	Laut der Norm DIN IEC 60050-351 ist ein Prozess wie folgt definiert:\\
 	
 	\textit{Ein Prozess repräsentiert einen Ablauf von sequentiell ausgeführten Aktivitäten innerhalb eines Systems zum Umwandeln, Lagern und Transportieren von Material, Energie oder Informationen.}\\
-
-	Dabei ist wiederum tiefer ins Detail zu gehen, da es für technische Prozesse eine eigens entworfene, genauer spezifizierende Definition gibt.\\
 	
-	\textit{Ein technischer Prozess ist ein Prozess, dessen physikalische Werte gemessen, sowie mit technischen Mitteln beeinflusst werden.}\\
+	\textit{Ein technischer Prozess ist ein Prozess, dessen physikalische Werte gemessen, sowie mit technischen Mitteln beeinflusst werden.}\cite{mpolke_proc}\\
 	
 	Zu unterscheiden ist zwischen folgenden Prozessen:
 	
@@ -62,17 +58,17 @@
 	% ##################################################################
 	% Warum welche Hardware (Kriterien für unsere Nutzung, Umsetzbarkeit
 	% ##################################################################
-	\section{Hardwareaufbau einer SPS}
+	\section{Hardwareaufbau einer \ac{SPS}}
 	
 	Um die im späteren Verlauf aufbauende Hardware genauer beschreiben zu können, muss zu Beginn ein wenig thematisch ausgeholt werden. So hat der Begriff der Steuerung einen undenkbar hohen Stellenwert, welcher ebenso geklärt gehört.\\
 
 	Unter einer Prozess- Steuerung versteht man nach der Norm DIN 19226 einen Vorgang, bei dem durch Rückführen gemessener Prozesszustände, verglichen mit von der speicherprogrammierbaren Steuerung formulierten Parametern, Sollwerte zur Beeinflussung des gesamten Prozesses erzeugt werden. Im Gegensatz zu einer Regelung muss der von einem Sensor ausgelesene Ist-Wert jedoch nicht zwanghaft rückgeführt werden. Dies ist in Abbildung~\ref{fig:Aufbau_Steuerkreis_Selfmade} ersichtlich.\cite{mseitz_sps}\\
 	
-	Der Steuerkreis besteht aus Sensoren, einem Steuerungsrechner, welcher meistens mittels einer SPS realisiert wird, sowie Aktoren. Die Steuerungseinheit selbst ist ein Rechner mit dem Hauptaufgabenbereich, die programmierten, im Speicher abgelegten Anweisungen zyklisch auszuführen und über einfach anzusprechende Schnittstellen Daten einzulesen oder auszugeben. \cite{mseitz_sps} \\
+	Der Steuerkreis besteht aus Sensoren, einem Steuerungsrechner, welcher meistens mittels einer \ac{SPS} realisiert wird, sowie Aktoren. Die Steuerungseinheit selbst ist ein Rechner mit dem Hauptaufgabenbereich, die programmierten, im Speicher abgelegten Anweisungen zyklisch auszuführen und über einfach anzusprechende Schnittstellen Daten einzulesen oder auszugeben. \cite{mseitz_sps} \\
 	
-	Der Begriff SPS wird in der Norm DIN EN 61131-1 (IEC 61131-1) wie folgt definiert:\\
+	Der Begriff \ac{SPS} wird in der Norm DIN EN 61131-1 (IEC 61131-1) wie folgt definiert:\\
 	
-	\glqq \textit{Ein digital arbeitendes elektronisches System für den Einsatz in industriellen Umgebungen mit einem programmierbaren Speicher zur internen Speicherung der anwenderorientierten Steuerungsanweisungen zur Implementierung spezifischer Funktionen wie z.B. Verknüpfungssteuerung, Ablaufsteuerung, Zeit-, Zähl- und arithmetische Funktionen, um durch digitale oder analoge Eingangs- und Ausgangssignale verschiedene Arten von Maschinen und Prozesse zu steuern. Die Speicherprogrammierbare Steuerung und die zugehörige Peripheriegerät (das SPS- System) sind so konzipiert, dass sie sich leicht in ein industrielles Steuerungssystem integrieren und in allen ihren beabsichtigten Funktionen einsetzen lassen.}\grqq \space \cite{sps_programmierung}\\
+	\glqq \textit{Ein digital arbeitendes elektronisches System für den Einsatz in industriellen Umgebungen mit einem programmierbaren Speicher zur internen Speicherung der anwenderorientierten Steuerungsanweisungen zur Implementierung spezifischer Funktionen wie z.B. Verknüpfungssteuerung, Ablaufsteuerung, Zeit-, Zähl- und arithmetische Funktionen, um durch digitale oder analoge Eingangs- und Ausgangssignale verschiedene Arten von Maschinen und Prozesse zu steuern. Die Speicherprogrammierbare Steuerung und die zugehörige Peripheriegerät (das \ac{SPS}- System) sind so konzipiert, dass sie sich leicht in ein industrielles Steuerungssystem integrieren und in allen ihren beabsichtigten Funktionen einsetzen lassen.}\grqq \space \cite{sps_programmierung}\\
  
  	\begin{figure}[h!]
   		\centering
@@ -82,102 +78,111 @@
 	\end{figure}	
  
  
- Im Detail gehört zum Aufbau einer SPS eine Stromversorgung, eine Verarbeitungseinheit (CPU), digitale sowie analoge I/O Anschlüsse, eine Feldbusschnittstelle und das Programmiergerät, wobei es sich dabei heutzutage eigentlich ausschließlich um einen externen Computer handelt. Die Stromversorgung PS (\textbf{P}ower \textbf{S}upply) wandelt gleichzeitig die Netzspannung in eine 24-V-Gleichspannung um, mit der die Elektronik der SPS versorgt wird.\\
+ Im Detail gehört zum Aufbau einer \ac{SPS} eine Stromversorgung, eine Verarbeitungseinheit (CPU), digitale sowie analoge I/O Anschlüsse, eine Feldbusschnittstelle und das Programmiergerät, wobei es sich dabei heutzutage eigentlich ausschließlich um einen externen Computer handelt. Die Stromversorgung PS (\textbf{P}ower \textbf{S}upply) wandelt gleichzeitig die Netzspannung in eine 24-V-Gleichspannung um, mit der die Elektronik der \ac{SPS} versorgt wird.\\
 	
-	Man unterscheidet drei verschiedene Aufbauarten bei SPSen
+	Man unterscheidet drei verschiedene Aufbauarten bei \ac{SPS}en
 	
 	\begin{itemize}
-  		\item Hardware - SPS
-  		\item Slot - SPS
-  		\item Soft - SPS
+  		\item Hardware - \ac{SPS}
+  		\item Slot - \ac{SPS}
+  		\item Soft - \ac{SPS}
 	\end{itemize}
 
-	\textbf{Hardware - SPS}\\\\
-	Der im vorigen Abschnitt beschriebene Aufbau einer SPS bezieht sich auf die klassische Aufbauform einer \textit{Hardware - SPS}. Ihre Komponenten sind als gewöhnliche Einsteckkarten in einem Gehäuse oder Schaltschrank angeordnet und sind über einen Rückwandbus miteinander verbunden. Die Hardware - SPS benötigt einen externen PC als Programmiergerät.\\
+	\textbf{Hardware - \ac{SPS}}\\\\
+	Der im vorigen Abschnitt beschriebene Aufbau einer \ac{SPS} bezieht sich auf die klassische Aufbauform einer \textit{Hardware - \ac{SPS}}. Ihre Komponenten sind als gewöhnliche Einsteckkarten in einem Gehäuse oder Schaltschrank angeordnet und sind über einen Rückwandbus miteinander verbunden. Die Hardware - \ac{SPS} benötigt einen externen PC als Programmiergerät.\\
 	
-	\textbf{Slot - SPS}\\\\
-	Eine Slot - SPS ist eine Einsteckkarte für den PC, welche alle Module einer SPS enthält. Anstatt einer CPU befindet sich ein Co-Prozessor in ihr, auf dem ein eigenes multitaskingfähiges Betriebssystem läuft. Zusätzlich verfügt sie über einen sogenannten multi-ported RAM (ein geteilter Speicher, der sowohl für SPS, als auch für PC zugreifbar ist).\\
+	\textbf{Slot - \ac{SPS}}\\\\
+	Eine Slot - \ac{SPS} ist eine Einsteckkarte für den PC, welche alle Module einer \ac{SPS} enthält. Anstatt einer CPU befindet sich ein Co-Prozessor in ihr, auf dem ein eigenes multitaskingfähiges Betriebssystem läuft. Zusätzlich verfügt sie über einen sogenannten multi-ported RAM (ein geteilter Speicher, der sowohl für \ac{SPS}, als auch für PC zugreifbar ist).\\
 	
-	\textbf{Soft - SPS}\\\\
-	Zu guter Letzt gibt es die Soft - SPS, welche im Gegensatz zu den anderen Steuerungseinheiten eine reine Softwarelösung ist, die komplett auf der CPU des Host-PCs läuft und auch deren Hardware nutzt. Zur Ankopplung der Sensoren und Aktoren ist eine Einsteckkarte zur Feldbuskopplung notwendig, die mit einem Prozessor zur Buskommunikation und einem dual-ported Ram ausgestattet ist.\\
+	\textbf{Soft - \ac{SPS}}\\\\
+	Zu guter Letzt gibt es die Soft - \ac{SPS}, welche im Gegensatz zu den anderen Steuerungseinheiten eine reine Softwarelösung ist, die komplett auf der CPU des Host-PCs läuft und auch deren Hardware nutzt. Zur Ankopplung der Sensoren und Aktoren ist eine Einsteckkarte zur Feldbuskopplung notwendig, die mit einem Prozessor zur Buskommunikation und einem dual-ported Ram ausgestattet ist.\\
 	
-	Die Vorteile der SPS im PC ergeben sich hauptsächlich dadurch, dass die rasante Entwicklung der PC-Leistungen für SPSen genau dafür genutzt werden kann.\\
+	Die Vorteile der \ac{SPS} im PC ergeben sich hauptsächlich dadurch, dass die rasante Entwicklung der PC-Leistungen für \ac{SPS}en genau dafür genutzt werden kann.\\
 	
-	Die Informationsverarbeitung in einer SPS verläuft zyklisch. Die Verarbeitungsschritte lassen sich vereinfacht mit dem EVA - Prinzip beschreiben.
+	Die Informationsverarbeitung in einer \ac{SPS} verläuft zyklisch. Die Verarbeitungsschritte lassen sich vereinfacht mit dem EVA - Prinzip beschreiben.
 	
 	\begin{itemize}
 		\item \textbf{E}inlesen der Sensordaten
-		\item \textbf{V}erarbeiten der Informationen im SPS-Programm
+		\item \textbf{V}erarbeiten der Informationen im \ac{SPS}-Programm
 		\item \textbf{A}usgeben der Soll-Werte an die Aktoren
 	\end{itemize}
 	
 	Die CPU fragt anfangs nacheinander alle Eingangskanäle ab und legt anschließend die Daten in den Arbeitsspeicher - es entsteht das sogenannte \glqq Eingangsabbild\grqq. Hierbei handelt es sich jedoch nicht um die aktuellen, sondern um die zum Abtastzeitpunkt ausgelesenen Werte. Die erstellten Programme werden ausschließlich von der CPU jeweils Schritt für Schritt abgearbeitet. Erst nach Abarbeitung \textbf{aller} Programme werden die im Ausgangsabbild abgelegten Sollwerte nacheinander an die Ausgangskanäle übertragen. \cite{mseitz_sps} \\ 
-		Kleinere SPS - Hersteller versuchen ihre eigene spezifische Hardware möglichst kompatibel für fremde Software zu produzieren, um mit ihrem Produkt eine möglichst große Zielgruppe anzusprechen. Große Hersteller hingegen möchten ihr System eher geschlossen für den Zugriff mittels fremder Software halten, um die Kundenbindung auf den verschiedensten Ebenen der Automatisierungspyramide zu erhöhen.
+		Kleinere \ac{SPS} - Hersteller versuchen ihre eigene spezifische Hardware möglichst kompatibel für fremde Software zu produzieren, um mit ihrem Produkt eine möglichst große Zielgruppe anzusprechen. Große Hersteller hingegen möchten ihr System eher geschlossen für den Zugriff mittels fremder Software halten, um die Kundenbindung auf den verschiedensten Ebenen der Automatisierungspyramide zu erhöhen.
 	
 	\begin{figure}[h!]
   		\centering
     	\includegraphics[width=1\textwidth]{graphics/stateoftheart/Signalverarbeitung_Selfmade.png}
-  		\caption{Signalverarbeitung und Arbeitsweise einer SPS \cite{mseitz_sps}}
+  		\caption{Signalverarbeitung und Arbeitsweise einer \ac{SPS} \cite{mseitz_sps}}
 	\end{figure}
 		
 	% ##############################################################
 	% Programmierung einer SPS - Wie funktioniert das grundsätzlich?
 	% ##############################################################
-	\section{Programmierung einer SPS}
+	\section{Programmierung einer \ac{SPS}}
 
 	In der Automatisierungs- und Regelungstechnik gibt es zum Erfüllen der gegebenen Anforderung mehrere Wege um diese zu lösen. Genauer gesagt handelt es sich hierbei um ganze sechs verschiedene Programmiersprachen, um auf jede möglich auftretende sowie spezifische Anforderung individuell eingehen zu können. Diese unterteilen sich wiederum in zwei differenzierbare Untergruppen. So gibt es zum einen die textbasierten Programmiersprachen
 	
 	\begin{itemize}
-		\item[a)] Anweisungsliste (engl. \textit{Instruction List})
-		\item[b)] Strukturierter Text (engl. \textit{Structured Text})
-		\item[c)] Ablaufsprache (engl. \textit{Sequential Function Chart})
+		\item[1)] Anweisungsliste (engl. \textit{Instruction List})
+		\item[2)] Strukturierter Text (engl. \textit{Structured Text})
+		\item[3)] Ablaufsprache (engl. \textit{Sequential Function Chart})
 	\end{itemize}
 
 	Im Gegensatz dazu gibt es noch die grafikbasierten Programmiersprachen
 	
 	\begin{itemize}
-		\item[d)] Kontaktplan (engl. \textit{Ladder Diagram})
-		\item[e)] Ablaufsprache (engl. \textit{Sequential Function Chart})
-		\item[f)] Funktionsbausteinsprache (engl. \textit{Function Block Diagram})
+		\item[4)] Kontaktplan (engl. \textit{Ladder Diagram})
+		\item[5)] Ablaufsprache (engl. \textit{Sequential Function Chart})
+		\item[6)] Funktionsbausteinsprache (engl. \textit{Function Block Diagram})
 	\end{itemize}
 	
-	Ziel dieser Vielfalt ist es, eine Vereinheitlichung der Programmierung von SPSen zu erreichen. Der Standard 61131 ist seit 1993 eingeführt und industriell etabliert. Mittlerweile schon in der dritten Edition verfügbar, und somit auch Objektorientierung unterstützend, sind die Programmiersprachen für zentrale und eng gekoppelte Systeme ausgelegt.\\
+	Ziel dieser Vielfalt ist es, eine Vereinheitlichung der Programmierung von \ac{SPS}en zu erreichen. Der Standard 61131 ist seit 1993 eingeführt und industriell etabliert. Mittlerweile schon in der dritten Edition verfügbar, und somit auch Objektorientierung unterstützend, sind die Programmiersprachen für zentrale und eng gekoppelte Systeme ausgelegt.
 	
-	\textbf{a) Anweisungsliste}\\
-	
-	Diese textbasierte Programmiersprache nach der Norm IEC DIN EN 61131-3 ist sehr maschinennahe. Vergleicht man die Anweisungsliste aus Abbildung~\ref{fig:Anweisungsliste} mit höheren Programmiersprachen der Informatik, so ist es eine Art Assemblersprache, die normalerweise 1:1 den jeweiligen Maschinencode übersetzt. Es werden die einzelnen Anweisungen in der Reihenfolge geschrieben, wie sie die Maschine (CPU) abarbeiten soll (auch \glqq Stackorientierte Abarbeitung\grqq \space genannt). Ein großer Vorteil gegenüber allen graphischen Programmiersprachen ist die Tatsache, das AWL funktionell über diese hinausgeht, weil beispielsweise ein komplexer Zählvorgang mittels eines Kontaktplans nicht realisierbar sein könnte.	\cite{spslehrgang_struktur, egroetsch_sps}\\
+	\subsection{Anweisungsliste}
+	Diese textbasierte Programmiersprache nach der Norm IEC DIN EN 61131-3 ist sehr maschinennahe. Vergleicht man die Anweisungsliste aus Abbildung~\ref{fig:Anweisungsliste} mit höheren Programmiersprachen der Informatik, so ist es eine Art Assemblersprache, die normalerweise 1:1 den jeweiligen Maschinencode übersetzt. Es werden die einzelnen Anweisungen in der Reihenfolge geschrieben, wie sie die Maschine (CPU) abarbeiten soll (auch \glqq Stackorientierte Abarbeitung\grqq \space genannt). Ein großer Vorteil gegenüber allen graphischen Programmiersprachen ist die Tatsache, das AWL funktionell über diese hinausgeht, weil beispielsweise ein komplexer Zählvorgang mittels eines Kontaktplans nicht realisierbar sein könnte. \cite{spslehrgang_struktur, egroetsch_sps}
 
 	\lstinputlisting[language=c,belowcaptionskip=5pt,frame=bt,caption=Beispiel einer Anweisungsliste]{extra/awl.txt}
 
-	\textbf{b) Strukturierter Text}\\	
-	Diese in Abbildung~\ref{fig:StructuredText} angeführte Programmiersprache der Automatisierungstechnik orientiert sich an der Sprache Pascal, enthält aber neben dieser Sprache zugehörigen spezifischen Elementen aber auch noch SPS-typische Elemente. Geeignet ist ST am vorteilhaftesten für Aufgaben mit mathematischem Hintergrund sowie zum Beschreiben komplexer Algorithmen. Auch für Rezept- und Datenverwaltung hebt sich diese Art der Programmierung durch enorme Vereinfachung vor. Typische Anweisungen für ST sind solche, die in höheren Sprachen durch Bedingungen oder Schleifen ausgeführt werden können \cite{grundlagen_automatisierungstechnik}
+	\subsection{Strukturierter Text}
+	Diese in Abbildung~\ref{fig:StructuredText} angeführte Programmiersprache der Automatisierungstechnik orientiert sich an der Sprache Pascal, enthält aber neben dieser Sprache zugehörigen spezifischen Elementen aber auch noch \ac{SPS}-typische Elemente. Geeignet ist ST am vorteilhaftesten für Aufgaben mit mathematischem Hintergrund sowie zum Beschreiben komplexer Algorithmen. Auch für Rezept- und Datenverwaltung hebt sich diese Art der Programmierung durch enorme Vereinfachung vor. Typische Anweisungen für ST sind solche, die in höheren Sprachen durch Bedingungen oder Schleifen ausgeführt werden können \cite{grundlagen_automatisierungstechnik}
 	
 	\lstinputlisting[language=c,belowcaptionskip=5pt,frame=bt,caption=Beispiel eines Strukturierten Texts]{extra/st.txt}
 	
-	\textbf{c, e) Ablaufsprache}\\
+	\subsection{Ablaufsprache}
+	Eine Sonderstellung unter den Sprachen zur Programmierung einer \ac{SPS} nimmt die Ablaufsprache ein. Da die Inhalte dieser entweder graphisch oder textuell definiert werden, wird ein recht breit gefächertes Feld an Anwendern abgedeckt.\\
+
+	Die eigentliche Programmierung verläuft mittels Schrittketten. Generell ist diese Art der Programmierung einer \ac{SPS} anderen Sprachen übergeordnet. Der oberste Programmablauf wird immer mittels Ablaufsprache beschrieben. Der eigentliche Programmaufbau erfolgt durch Schritte und Transitionen, die in einer gerichteten Ablaufkette zusammengefügt werden. Üblicherweise sind den Transitionen Schaltbedingungen, und den Schritten Aktionen zugeordnet. Voraussetzung für das Schalten in einen Schritt ist, dass der vorhergehende Schritt aktiv ist und die Transitionsbedingung erfüllt ist.\\
+
+	\begin{figure}[h!]
+  		\centering
+    	\includegraphics[width=1\textwidth]{graphics/stateoftheart/as.png}
+  		\caption{Graphisches Beispiel der Ablaufsprache \cite{indsteu}}
+  		\label{fig:as}
+	\end{figure}
 	
-	Eine Sonderstellung unter den Sprachen zur Programmierung einer SPS nimmt die Ablaufsprache ein.
-	\todo[inline]{Ablaufsprache noch genauer beschreiben!}
-	\textbf{d) Kontaktplan}\\
-	Die Darstellungsart des Kontaktplans ermöglicht SPS-Programmierern ein Programm auf graphischer Ebene zu erstellen und darzustellen. Ein KOP ist einem Stromlaufplan sehr ähnlich, um Programmieranfängern, die beispielsweise nur in der Elektronik tätig sind/waren und noch nie zuvor analytisch hinterfragten Code entwickelt haben, den Einstieg zu erleichtern. Es werden Elemente wie Spulen, Öffner/Schließer, Eingänge/Ausgänge, usw... verwendet, die zu logischen Blöcken zusammengefasst werden können und so einen Teil des gesamten Programms ergeben. Ein Nachteil dieser standardisierten Programmiersprache ist jedoch, dass es nicht für alle möglichen Operationen auch ein einheitliches Symbol in einem Stromlaufplan gibt. Das wiederum bedeutet, dass bei komplexen Steuerungen oft eine Mischung aus KOP und der Funktionsbausteinsprache (FBS) verwendet wird.
-	\todo[inline]{Schauen ob das Bild \glqq kop\_Selfmade\grqq \space an der richtigen Position ist.}
+	\lstinputlisting[language=c,belowcaptionskip=5pt,frame=bt,caption=Textuelles Beispiel der Ablaufsprache]{extra/as.txt}
+	
+	\subsection{Kontaktplan}
+	Die Darstellungsart des Kontaktplans (siehe Abbildung~\ref{fig:kontaktplan}) ermöglicht \ac{SPS}-Programmierern ein Programm auf graphischer Ebene zu erstellen und darzustellen. Ein KOP ist einem Stromlaufplan sehr ähnlich, um Programmieranfängern, die beispielsweise nur in der Elektronik tätig sind/waren und noch nie zuvor analytisch hinterfragten Code entwickelt haben, den Einstieg zu erleichtern. Es werden Elemente wie Spulen, Öffner/Schließer, Eingänge/Ausgänge, usw... verwendet, die zu logischen Blöcken zusammengefasst werden können und so einen Teil des gesamten Programms ergeben. Ein Nachteil dieser standardisierten Programmiersprache ist jedoch, dass es nicht für alle möglichen Operationen auch ein einheitliches Symbol in einem Stromlaufplan gibt. Das wiederum bedeutet, dass bei komplexen Steuerungen oft eine Mischung aus KOP und der Funktionsbausteinsprache (FBS) verwendet wird.\\
+
 	\begin{figure}[h!]
   		\centering
     	\includegraphics[width=0.8\textwidth]{graphics/stateoftheart/kop_Selfmade.png}
   		\caption{Beispiel eines Kontaktplans \cite{kontaktplan}}
+  		\label{fig:kontaktplan}
 	\end{figure}
 
-	\newpage
-	\textbf{f) Funktionsbausteinsprache}\\
-
-	Diese graphische Programmiersprache verwendet für ihre Anweisungen logische Symbole der Boolschen Algebra. Diese Sprache ist insbesondere für Verknüpfungssteuerungen geeignet und deswegen bei Anfängern oder Programmier - Laien beliebt. Durch den einfachen graphischen Aufbau ist die Programmlogik relativ schnell zu erkennen und nachzuvollziehen.
+	\subsection{Funktionsbausteinsprache}
+	Diese graphische Programmiersprache (siehe Abbildung~\ref{fig:fup}) verwendet für ihre Anweisungen logische Symbole der Boolschen Algebra. Diese Sprache ist insbesondere für Verknüpfungssteuerungen geeignet und deswegen bei Anfängern oder Programmier - Laien beliebt. Durch den einfachen graphischen Aufbau ist die Programmlogik relativ schnell zu erkennen und nachzuvollziehen.
 
 	\begin{figure}[h!]
   		\centering
     	\includegraphics[width=0.8\textwidth]{graphics/stateoftheart/funktionsbausteinplan_Selfmade.png}
   		\caption{Beispiel eines Funktionsbausteinplans \cite{funktionsbausteinplan}}
+  		\label{fig:fup}
 	\end{figure}
-\newpage
+
 \section{Prozedur}
 Die Prozedursteuerung bestimmt, dass einrichtungsorientierte Aktionen in einer geordneten Folge stattfinden, damit eine prozessorientierte Aufgabe ausgeführt wird. Prozedursteuerungen sind charakteristisch für chargenorientierte Prozesse.\\
 
@@ -316,7 +321,7 @@ Sensoren, die physikalische Änderungen in der Anlage mit einem Signalumformer i
 Im HMI werden die gesammelten Daten der RTUs analysiert und daraus Prognosen bzw. Diagnosen Visuell aufbereitet, um den Anwender eine schnell erkennbare Anzeige zu bieten.\cite{scada_system}
 
 \subsection{HMI}
-Die Visualisierung einer Produktionsanlage ist ein wesentlicher Punkt der Datenverarbeitung und wird oft als Benachrichtigungszentrale benutzt. Meist werden in dieser mit geringer verzögerung aktualisierte Statuswerte sowie Benachrichtigungen zu unerwarteten Ereignissen angezeigt. Die hierfür benötigten Daten müssen von der SPS in die Visualisierungssoftware übermittelt werden. Da dies ein sehr aufwendiger Prozess ist, gibt es SCADA-Systeme die all diese Funktionen vereinen.\\
+Die Visualisierung einer Produktionsanlage ist ein wesentlicher Punkt der Datenverarbeitung und wird oft als Benachrichtigungszentrale benutzt. Meist werden in dieser mit geringer Verzögerung aktualisierte Statuswerte sowie Benachrichtigungen zu unerwarteten Ereignissen angezeigt. Die hierfür benötigten Daten müssen von der \ac{SPS} in die Visualisierungssoftware übermittelt werden. Da dies ein sehr aufwendiger Prozess ist, gibt es SCADA-Systeme die all diese Funktionen vereinen.\\
 \\
 Für dieses Projekt wurde eine Umsetzung in der SCADA Software zenon verlangt, daher wird im weiteren nur noch über die Visualisierung in zenon's HMI System, \textbf{zenon Supervisor}, gesprochen.\\
 \\
@@ -412,14 +417,14 @@ Activity Edges\\An ActivityEdge is a directed connection between two ActivityNo
 \section{Zusammenfassung}
 
 Dieses Kapitel zeigt die Entwicklung und den aktuellen Stand der Technik bezüglich der Anlagen- und Verfahrenstechnik sowie der modellbasierten Entwicklung von Steuerungen für Produktionsanlagen. \\\\
-Wie sich herausgestellt hat, ist die Codegenerierung für SPSen in Produktionsanlagen heutzutage nicht State Of the Art. Bei Änderungen wie dem Hinzufügen oder Entfernen von Teilen muss ein Großteil des Programm-Codes neu implementiert werden. \\\\
-%Um eine Codegenerierung für SPSn in Produktionsanlagen  
+Wie sich herausgestellt hat, ist die Codegenerierung für \ac{SPS}en in Produktionsanlagen heutzutage nicht State Of the Art. Bei Änderungen wie dem Hinzufügen oder Entfernen von Teilen muss ein Großteil des Programm-Codes neu implementiert werden. \\\\
+%Um eine Codegenerierung für \ac{SPS}n in Produktionsanlagen  
 %„“
-Die Idee ist, diesen Implementierungsschritt auf einer Laboranlage zu automatisieren. Der SPS Code soll einerseits auf einem Ontologie-basierten Informationsmodell, um das Produktionssystem abzubilden, und andererseits auf einem Aktivitätsdiagramm, um die Prozeduren zu definieren, generiert werden.
+Die Idee ist, diesen Implementierungsschritt auf einer Laboranlage zu automatisieren. Der \ac{SPS} Code soll einerseits auf einem Ontologie-basierten Informationsmodell, um das Produktionssystem abzubilden, und andererseits auf einem Aktivitätsdiagramm, um die Prozeduren zu definieren, generiert werden.
 Wenn es nun zu Änderungen der Produktionsanlage kommt, können diese im Modell angepasst werden und durch eine Codegenerierung der nötige Implementierungsschritt automatisiert werden. Zusätzlich wird die Integrierbarkeit des Codes in eine Steuerungsapplikation mit Visualisierung mittels der Software zenon von COPA-DATA getestet werden.\\\\
 Im Rahmen des Projekts Batch\_it soll eine Laboranlage konzeptioniert und aufgebaut werden. Darüber hinaus wird eine Steuerungsapplikation mit Visualisierung mithilfe der Software zenon erstellt werden. Dies umfasst das Implementieren von Prozeduren und Rezepten nach dem IEC 61512 Standard. Hierbei handelt es sich um Funktionen wie z.B. das Pumpen von Flüssigkeiten von Tank zu Reaktor. Im letzten Schritt wird die modellbasierte Entwicklung der Steuerung umgesetzt. Dabei wird einen Ontologie erstellt, welche die Laboranlage abbildet und ein Aktivitätsdiagramm, welches die Prozeduren definiert. Anhand dieser wird einen Codegenerierung für die Steuerung der Anlage mittels des zenon Wizards implementiert.\\\\
 \textbf{Forschungsfragen}\\\\
-%Mit welchen Technologien ist die Implementierung von Code einer SPS einer Chargenprozessanlage automatisierbar? \\\\
+%Mit welchen Technologien ist die Implementierung von Code einer \ac{SPS} einer Chargenprozessanlage automatisierbar? \\\\
 Wie genau muss die Chargenprozessanlage abgebildet werden um eine Codegenerierung zu ermöglichen? \\\\
 Welche Funktionalitäten der Steuerung kann durch die modellbasierte Entwicklung der Steuerung abgedeckt werden?\\\\
 Wie ausführlich funktioniert die Integrierung der Codegenerierung in die Software zenon von COPA- DATA? 

@@ -33,7 +33,7 @@ Auf Basis des Rohr- und Instrumentenfließschemas kristallisiert sich eine exakt
 	Abgesehen von einem für Testzwecke vernünftigen Füllvolumen ist es erforderlich einen Tank zu wählen, dessen Ausgang sich am niedrigsten Punkt befindet. Andernfalls kann man nur bedingt Nutzen aus der Schwerkraftsteuerung ziehen.\\
 	
 	\textbf{Pumpen:}\\
-	Mit Hilfe eines Gleichstrom - Wandlers muss es möglich sein, die Pumpen mit dem zur Verfügung stehenden Ausgangstrom der SPS von 0 bis 10 Volt zu betreiben.\\
+	Mit Hilfe eines Gleichstrom - Wandlers muss es möglich sein, die Pumpen mit dem zur Verfügung stehenden Ausgangstrom der \ac{SPS} von 0 bis 10 Volt zu betreiben.\\
 	
 	\textbf{Rohre:}\\
 	Die Rohre müssen jedenfalls dem Druck der Pumpen standhalten können. Desweiteren ist das exakt abzustimmende Einpassen in die Ventile, um Dichte gewährleisten zu können, ein wichtiger Parameter.\\
@@ -53,11 +53,11 @@ Auf Basis des Rohr- und Instrumentenfließschemas kristallisiert sich eine exakt
 		
 	Das Einbauen der bestellten Pumpen gestaltet sich komplizierter als gedacht, da die ursprüngliche Bestellung einen Fehler beinhaltet. Nur eines der beiden gelieferten Modelle entspricht der gestellten Anforderung, was einschließlich der Rücksendung weitere wertvolle Zeit kostet. Unterdessen kann die zweite Pumpe verbaut werden. Funktionale Bauteile dieser Art sind bei der zeitgemäßen verfügbaren Leistung gut gedämpft. Angesichts der Tatsache, dass man mit dieser bis zu 30 Meter hoch pumpen könnte, befindet sich auf der Unterseite ein gummiertes Verbindungsstück, um bei Inbetriebnahme die stärksten Vibrationen abfangen zu können. Mit vom Profilschienen Schneiden übergebliebenen Reststücken wird eine Konstruktion gebaut, um die Höhe der Pumpe mit der der Rohre gleichzusetzen. Unmittelbar nach der Pumpe wird ein Durchflusssensor angebracht, der im späteren Verlauf des Projekts zur automatischen Steuerung beitragen soll.\\\\
 	Abermals in der Werkstatt genauest zugeschnittene Profilschienen ergeben eine Konstruktion zur Aufhängung der Reaktoren. Das beste Beispiel der Bauteil-Positionsuntreue eines Rohr- \& Instrumentenfließschemas ist anhand des aufkommenden Arbeitsschritts zu sehen. Ursprünglich sind die beiden Reaktoren seitlich der restlichen Anlage platziert. Da es die Profilplatte aber nicht zulässt, da sie nur eine gewisse Breite hat, müssen diese in den Vordergrund geholt werden. Bei der Bauart der Reaktoraufhängung ist zu beachten, dass das größt möglich aufkommende Gewicht ausschließlich dort zustande kommen kann, da Reaktoren zum Mischen mehrerer Tankinhalte verwendet werden können. Diese Überlegung muss jedenfalls dazu beitragen, ausreichend Stabilität und Belastungsfähigkeit zu erlangen.\\\\
-	Die bereits eingebauten Ventile besitzen jeweils zwei Phasen und eine Masse. Die Verkabelung selbst wird mit einem starren 3-Phasen-Kabel umgesetzt, da über eine flexibles Litzenverbindung nicht so viel Strom geleitet \todo{Stimmt das?}  werden sollte. Aus Gründen der Übersichtlichkeit wird jedes Kabel sowie Ventil beschriftet, um eventuell aufkommende Komplikationen zu unterbinden. In den Rillen der Profilschienen verlegt, werden alle mit Kabelbindern verbundene Leiter zur SPS zurückgeführt. Im späteren Verlauf eines Folgeprojekts soll eine Verlegung der SPS an die Unterseite des Tisches geschehen, weshalb es ausschlaggebend ist, alle Kabel mit einem deutlichen Übermaß zu schneiden. Die deutlich beschrifteten Kabel können anschließend der Funktionalität des jeweiligen Bauteils entsprechend in den dafür konzipierten SPS-Slot eingebaut werden.\\\\
+	Die bereits eingebauten Ventile besitzen jeweils zwei Phasen und eine Masse. Die Verkabelung selbst wird mit einem starren 3-Phasen-Kabel umgesetzt, da über eine flexibles Litzenverbindung nicht so viel Strom geleitet \todo{Stimmt das?}  werden sollte. Aus Gründen der Übersichtlichkeit wird jedes Kabel sowie Ventil beschriftet, um eventuell aufkommende Komplikationen zu unterbinden. In den Rillen der Profilschienen verlegt, werden alle mit Kabelbindern verbundene Leiter zur \ac{SPS} zurückgeführt. Im späteren Verlauf eines Folgeprojekts soll eine Verlegung der \ac{SPS} an die Unterseite des Tisches geschehen, weshalb es ausschlaggebend ist, alle Kabel mit einem deutlichen Übermaß zu schneiden. Die deutlich beschrifteten Kabel können anschließend der Funktionalität des jeweiligen Bauteils entsprechend in den dafür konzipierten \ac{SPS}-Slot eingebaut werden.\\\\
 	Mit dem Einbau der Füllstandssensoren in den drei Tanks sind die letzten Arbeitsschritte des physikalischen Aufbaus der Anlage getan.
 
 	\section{Prozeduren und Rezepte}
-	Der Begriff Prozedur beschreibt das Zusammenfassen mehrerer Grundfunktionen einer Anlage, um einen Ablauf zu automatisieren. Zenon Batchcontrol, ein Unterprogramm der gewählten Softwarelösung, folgt der in IEC 61512 definierten Statemachine (siehe Abbildung~\ref{fig:statemachine}). Da eine SPS dem zyklischen Abarbeiten programmierter Funktionen unterliegt, werden diese Zustände regelmäßig von Batch-Control an die Soft-SPS Zenon Logic gesendet, die dann eine weitere Verarbeitung vornimmt und die angeforderte Statusänderung bestätigt. Durch global gesetzte Status kann so ein automatischer Wechsel der ausgeführten Funktionen erfolgen. Als Rezept wird das sequentielle Ausführen mehrerer Prozeduren bezeichnet, um einen weiteren Schritt der Automatisierung zu gehen.\\
+	Der Begriff Prozedur beschreibt das Zusammenfassen mehrerer Grundfunktionen einer Anlage, um einen Ablauf zu automatisieren. Zenon Batchcontrol, ein Unterprogramm der gewählten Softwarelösung, folgt der in IEC 61512 definierten Statemachine (siehe Abbildung~\ref{fig:statemachine}). Da eine \ac{SPS} dem zyklischen Abarbeiten programmierter Funktionen unterliegt, werden diese Zustände regelmäßig von Batch-Control an die Soft-\ac{SPS} Zenon Logic gesendet, die dann eine weitere Verarbeitung vornimmt und die angeforderte Statusänderung bestätigt. Durch global gesetzte Status kann so ein automatischer Wechsel der ausgeführten Funktionen erfolgen. Als Rezept wird das sequentielle Ausführen mehrerer Prozeduren bezeichnet, um einen weiteren Schritt der Automatisierung zu gehen.\\
 
 \begin{figure}[h!]
   \centering
@@ -66,15 +66,15 @@ Auf Basis des Rohr- und Instrumentenfließschemas kristallisiert sich eine exakt
   \label{fig:var_phase}
 \end{figure}
 	
-	Für die Kommunikation zwischen einer Prozedur bzw. eines Rezepts und der SPS stehen drei Kommunikationsvariablen (cmd, stat, batchstat) sowie eine weitere Strukturvariable (com) zur Verfügung (siehe Abbildung~\ref{fig:var_phase})
+	Für die Kommunikation zwischen einer Prozedur bzw. eines Rezepts und der \ac{SPS} stehen drei Kommunikationsvariablen (cmd, stat, batchstat) sowie eine weitere Strukturvariable (com) zur Verfügung (siehe Abbildung~\ref{fig:var_phase})
 	
 	\begin{itemize}
-		\item Kommando: Sendet Befehle an SPS-Grundfunktion
-		\item Status: Empfängt internen Status der SPS-Grundfunktion
-		\item Batchstatus: Sendet internen Status des Rezepts zur SPS
+		\item Kommando: Sendet Befehle an \ac{SPS}-Grundfunktion
+		\item Status: Empfängt internen Status der \ac{SPS}-Grundfunktion
+		\item Batchstatus: Sendet internen Status des Rezepts zur \ac{SPS}
 	\end{itemize}
 
-	\textit{Kommando} trägt der SPS auf, welcher Arbeitsschritte ausgeführt werden müssen. Mit dem \textit{Status} wird der Software zenon mitgeteilt, in welchem Stadium sich die Prozedur zum aktuellen Zeitpunkt befindet. Die Variable \textit{Batchstat} repräsentiert eine qualitätssichernde Redundanz, da der Status der SPS teilweise in den Zustand 'running' wechselt, jedoch der interne Zustand von Batch Control diesen noch nicht erreicht hat. Zusätzlich erreicht in wenigen Fällen die SPS den Status 'done', während Batch Control unterdessen noch nicht einmal den internen Zustand auf 'running' gesetzt hat. Mit Hilfe dieser zusätzlichen Variable kann die Prozedur nur dann auf 'done' schalten, wenn die SPS \textbf{und} Batch Control den Zustand 'running' besitzen.\\
+	\textit{Kommando} trägt der \ac{SPS} auf, welcher Arbeitsschritte ausgeführt werden müssen. Mit dem \textit{Status} wird der Software zenon mitgeteilt, in welchem Stadium sich die Prozedur zum aktuellen Zeitpunkt befindet. Die Variable \textit{Batchstat} repräsentiert eine qualitätssichernde Redundanz, da der Status der \ac{SPS} teilweise in den Zustand 'running' wechselt, jedoch der interne Zustand von Batch Control diesen noch nicht erreicht hat. Zusätzlich erreicht in wenigen Fällen die \ac{SPS} den Status 'done', während Batch Control unterdessen noch nicht einmal den internen Zustand auf 'running' gesetzt hat. Mit Hilfe dieser zusätzlichen Variable kann die Prozedur nur dann auf 'done' schalten, wenn die \ac{SPS} \textbf{und} Batch Control den Zustand 'running' besitzen.\\
 	
 	Um eine Prozedur in zenon zu konfigurieren, benötigt es eine ganze Anzahl an zu erledigenden Arbeitsschritten, die da wären:\\
 
@@ -105,11 +105,11 @@ Auf Basis des Rohr- und Instrumentenfließschemas kristallisiert sich eine exakt
 \begin{figure}[h!]
   \centering
   \includegraphics[width=1\textwidth]{graphics/implementation/StateMachine.jpg}
-  \caption{Kommunikationsmodell von zenon und SPS}
+  \caption{Kommunikationsmodell von zenon und \ac{SPS} \space \cite{demo_zenonbatch}}
   \label{fig:statemachine}
 \end{figure}
 
-	Die Prozedur benötigt als zu setzenden Eingangsparameter die vorhandene Strukturvariable \glqq phase\grqq \space vom Typ \textit{phase}. Abschließend, vor Inbetriebnahme der Prozedur muss eine Weiterschaltbedingung definiert werden. Dazu wird im Unterpunkt Batch Control in den Eigenschaften der Grundfunktion der Menüpunkt Allgemein ausgewählt und die Weiterschaltbedingung eingefügt. Diese gilt für alle angelegten Grundfunktionen, da es sich dabei lediglich um das vergleichen der Status der Software zenon und SPS handelt.
+	Die Prozedur benötigt als zu setzenden Eingangsparameter die vorhandene Strukturvariable \glqq phase\grqq \space vom Typ \textit{phase}. Abschließend, vor Inbetriebnahme der Prozedur muss eine Weiterschaltbedingung definiert werden. Dazu wird im Unterpunkt Batch Control in den Eigenschaften der Grundfunktion der Menüpunkt Allgemein ausgewählt und die Weiterschaltbedingung eingefügt. Diese gilt für alle angelegten Grundfunktionen, da es sich dabei lediglich um das vergleichen der Status der Software zenon und \ac{SPS} handelt.
 	
 	\begin{framed}
 		(X01.Wert=2) AND ((X02.Wert=2) OR (X02.Wert=11) OR (X02.Wert=13))
@@ -149,19 +149,19 @@ Als Ausgangspunkt für die Visualisierung wurde das RI-Fließeschema zur Hand ge
 \\
 \newpage
 \textbf{Feldbuskonfiguration}\\
-Um eine Visualisierung mit aktuellen Sensorwerten zu befüllen, wird eine Verbindung zur SPS benötigt. Diese Verbindung wird über das Teilprogramm zenon Logic (im weiteren nur noch Logic genannt) hergestellt.\\
+Um eine Visualisierung mit aktuellen Sensorwerten zu befüllen, wird eine Verbindung zur \ac{SPS} benötigt. Diese Verbindung wird über das Teilprogramm zenon Logic (im weiteren nur noch Logic genannt) hergestellt.\\
 \\
-Als ersten Schritt, um in Logic eine SPS hinzuzufügen, muss im Unterpunkt \glqq Feldbuskonfiguration\grqq\space die Treibersoftware für die ADAM5550 SPS hinzugefügt werden. Daraufhin müssen alle Module, die an der SPS angebracht sind, in die Konfiguration hinzugefügt werden.\\
+Als ersten Schritt, um in Logic eine \ac{SPS} hinzuzufügen, muss im Unterpunkt \glqq Feldbuskonfiguration\grqq\space die Treibersoftware für die ADAM5550 \ac{SPS} hinzugefügt werden. Daraufhin müssen alle Module, die an der \ac{SPS} angebracht sind, in die Konfiguration hinzugefügt werden.\\
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.7\textwidth]{graphics/implementation/Feldbuskonfiguration}
-  \caption{Feldbuskonfiguration für eine SPS in zenon}
+  \caption{Feldbuskonfiguration für eine \ac{SPS} in zenon}
 \end{figure}
 \\
 \textbf{Variablen}\\
 In zenon können auf mehrere Arten Variablen erstellt werden. Damit diese für die Visualisierung und von Logic sichtbar sind, müssen sie als Globale Variable definiert werden. Der einfachste Weg dafür ist es, im Logic Variablenfenster, über den Reiter  \glqq Globale Variablen\grqq, die Funktion \glqq Variable hinzufügen\grqq\space aufzurufen.\\
 \\
-Sobald alle Variablen erstellt sind, werden diese mit der Feldbuskonfiguration verknüpft. Durch diesen Schritt erhält man Zugang zu den an der SPS angeschlossenen Bauteilen.
+Sobald alle Variablen erstellt sind, werden diese mit der Feldbuskonfiguration verknüpft. Durch diesen Schritt erhält man Zugang zu den an der \ac{SPS} angeschlossenen Bauteilen.
 
 \newpage
 \begin{figure}[h!]
@@ -193,7 +193,7 @@ Da es den Rahmen dieser Arbeit sprengen würde, auf jeden einzelnen Gedankengang
 \\
 Zu aller erste werden alle Bauteile der Anlage in Kategorien eingeteilt.\\
 Tanks, Reaktoren und Pumpen sind die Hauptelemente dieser Anlage und werden deswegen auch in einer Gruppe zusammengefasst. Neben ihnen gibt es eine Gruppe an Bauteilen die etwas tun, hierzu gehören die Ventile, Sensoren, Heiz- und Rührstäbe. Die restlichen Elemente der Anlage sind Statische Objekte die einen Nutzen besitzen, jedoch keine Arbeit erledigen, daher fallen diese zusammen unter die Kategorie von Passiven Elementen. Zu diesem Zeitpunkt sind dies nur die Rohre.\\
-Eine Ausnahme dieser Gruppen ist die SPS welche etwas tut, daher an sich in Kategorie 2 Fallen würde, aber nicht direkt Teil der Anlage ist und daher auch als einzelstehendes Objekt einen Platz in der Ontologie findet.
+Eine Ausnahme dieser Gruppen ist die \ac{SPS} welche etwas tut, daher an sich in Kategorie 2 Fallen würde, aber nicht direkt Teil der Anlage ist und daher auch als einzelstehendes Objekt einen Platz in der Ontologie findet.
 
 \newpage
 \begin{figure}[hbt!]
@@ -202,7 +202,7 @@ Eine Ausnahme dieser Gruppen ist die SPS welche etwas tut, daher an sich in Kate
   \caption{Erste Version der Ontologie}
 \end{figure}
 
-Verbindungen zwischen 2 Klassen werden normalerweise mit einer Objekt Eigenschaft dargestellt, da eine Verbindung zwischen 2 Bauteilen aber eine andere Information als die Verbindung zwischen einer SPS und einem Bauteil enthält, gibt es die Kategorie Connections mit den Klassen “Weg” und “IO”.
+Verbindungen zwischen 2 Klassen werden normalerweise mit einer Objekt Eigenschaft dargestellt, da eine Verbindung zwischen 2 Bauteilen aber eine andere Information als die Verbindung zwischen einer \ac{SPS} und einem Bauteil enthält, gibt es die Kategorie Connections mit den Klassen “Weg” und “IO”.
 
 Kurz zusammengefasst können die Kategorien wie folgt beschreiben werden\\
 \\
@@ -220,7 +220,7 @@ Mit dieser Ontologie ist es grundsätzlich möglich die Anlage aus Kapitel 4.2 a
 Nun wird die erste Version der Ontologie, in Hinsicht einer automatisierten Codegenerierung, evaluiert und dementsprechend umgebaut.\\
 Die Kategorien werden im nächsten Schritt genauer definiert um eine Konsistenz in die Ontologie zu bringen.\\
 \\
-Die definition von \glqq Active\_Element\grqq\space ist in Grunde richtig, nur beinhaltet diese die SPS was nicht der Fall sein soll. Daher wird die Definition auf \glqq Elemente die mit einer SPS (I/O) verbunden sind\grqq\space geändert. In diese Kategorie fallen nun die Elemente der Ersten Version ohne SPS und auch die Pumpe hinein.\\
+Die definition von \glqq Active\_Element\grqq\space ist in Grunde richtig, nur beinhaltet diese die \ac{SPS} was nicht der Fall sein soll. Daher wird die Definition auf \glqq Elemente die mit einer \ac{SPS} (I/O) verbunden sind\grqq\space geändert. In diese Kategorie fallen nun die Elemente der Ersten Version ohne \ac{SPS} und auch die Pumpe hinein.\\
 \\
 Die nächste Kategorie die bearbeitet wird ist \glqq Main Part\grqq\space. Die Definition in dieser Gruppe ist noch sehr grob definiert und lässt eine Subjektive Gruppierung zu, daher muss die Definition von Grund auf geändert werden ohne Bauteile die zurzeit Enthalten sind auszuschließen. Die passende Interpretation ist \glqq Elemente mit mindestens 2 Ein bzw. Ausgängen\grqq\space. Durch diese Änderung fallen nun auch die Ventile in die Gruppe \glqq Main Part\grqq\space.\\
 \\
@@ -236,7 +236,7 @@ Die Kategorie \glqq Passive Element\grqq\space wird komplett entfernt da sie kei
 \end{figure}
 
 Von diesem Punkt aus wird die Ontologie nur noch verfeinert und nicht mehr großartig an der Struktur gearbeitet.\\
-Die Klasse SPS wird, um Konsistenz in die Namen zu bringen, in die Englische Bezeichnung PCL umbenannt. 
+Die Klasse \ac{SPS} wird, um Konsistenz in die Namen zu bringen, in die Englische Bezeichnung PCL umbenannt. 
 
 \begin{figure}[hbt!]
   \centering
@@ -302,7 +302,7 @@ Um ein Element der Anlage im Programm abzubilden, werden einige Attribute benöt
 \lstinputlisting[caption=Anlegen eines Datentyps in zenon,style=csharp]{extra/createdatatype.txt}
 
 \subsection{Variable anlegen}
-Damit der aktuelle Zustand, sowie die weiteren Attribute jedes eingebauten Elements der Anlage, abgespeichert werden können, muss für eben jedes dieser eine eigene Variable angelegt werden. Eine Variable muss an einen Treiber angebunden werden, wobei die Auswahl durch den Benutzer über die Benutzerschnittstelle erfolgt. Damit die Variable global, also auch in Zenon Logic, erreichbar ist, muss sie in einem Namespace sein. Dies wird dadurch erreicht, dass vor dem Namen der Variable ein „Logic/Global/“ hinzugefügt wird, wobei Logic hier der Name des Zenon Logic Projekts ist. Da alle durch die Codegenerierung angelegten Variablen verwendet werden um Teile unserer SPS anzusprechen, muss als Kanal der „SPSMerker“ angeben werden.
+Damit der aktuelle Zustand, sowie die weiteren Attribute jedes eingebauten Elements der Anlage, abgespeichert werden können, muss für eben jedes dieser eine eigene Variable angelegt werden. Eine Variable muss an einen Treiber angebunden werden, wobei die Auswahl durch den Benutzer über die Benutzerschnittstelle erfolgt. Damit die Variable global, also auch in Zenon Logic, erreichbar ist, muss sie in einem Namespace sein. Dies wird dadurch erreicht, dass vor dem Namen der Variable ein „Logic/Global/“ hinzugefügt wird, wobei Logic hier der Name des Zenon Logic Projekts ist. Da alle durch die Codegenerierung angelegten Variablen verwendet werden um Teile unserer \ac{SPS} anzusprechen, muss als Kanal der „SPSMerker“ angeben werden.
 \begin{figure}[hbt!]
   \centering
   \includegraphics[width=0.4\textwidth]{graphics/implementation/treiberauswahl}

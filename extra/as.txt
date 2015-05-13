@@ -1,0 +1,16 @@
+INITIAL_STEP Warten:
+	Ventil_V1 := 0;
+	Ventil_V2 := 0;
+	Heizung := 0;
+	fertig := 0;
+END_STEP
+TRANSITION FROM Warten TO Fuellen
+	:= Start_B0;
+END_TRANSITION
+STEP FUELLEN:
+	Ventil_V1 := 1;
+END_STEP
+TRANSITION FROM Fuellen TO Heizen
+	:= Niveau_B2;
+END_TRANSITION
+...
