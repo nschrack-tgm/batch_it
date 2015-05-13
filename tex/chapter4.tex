@@ -178,19 +178,19 @@ Sobald alle Variablen erstellt sind, werden diese mit der Feldbuskonfiguration v
 
 \textbf{Steuerung}\\
 \\
-Phase 1 Steuerung mittels Buttons\\
+Phase 1 Steuerung mittels Buttons:\\
 	Der erste Versuch war es die Steuerung mittels einfachen Buttons umzusetzen. Diese haben meist die in zenon vorhandene Funktion  \glqq Sollwert absetzen\grqq\space  verwendet, welche den Wert einer Variable ändert.\\
 	So konnten alle Funktionen umgesetzt werden, dadurch erhielt das  \glqq Bild\grqq\space  jedoch viele Elemente die von der Eigentlichen Visualisierung ablenkten.\\
 \\
-Phase 2 Versteckte Buttons\\
+Phase 2 Versteckte Buttons:\\
 	Um den Element-Overload zu verringern war der nächste Schritt die Button zu  \glqq verstecken\grqq\space  indem sie Transparent über die eigentlichen Elementen (beispielsweise ein Ventil) verschoben wurden.\\
 	In der Visualisierung wurden nun weniger  \glqq unwichtige\grqq\space  Bausteine angezeigt, die Elemente waren jedoch immer noch da, wodurch die Größe (MB) der Visualisierung deutlich anstieg.\\
 \\
-Phase 3 Funktionale Elemente\\
+Phase 3 Funktionale Elemente:\\
 	Der nächste schritt war es die nicht funktionalen Grafikelemente durch Buttons in Form der gewünschten Elemente zu ersetzten.\\
 \\
 
-\section{Ontology}
+\section{Ontologie}
 Nachdem die Evaluierung der wichtigsten Aspekte im Kapitel Ontologie der Chargenprozessanlage in Hinsicht auf eine automatisierte Codegenerierung durchgeführt wurden, behandelt dieses Kapitel den Werdegang der Ontologie vom Ersten bis hin zum Finalem Design.\\
 \\
 Das Ziel der Ontologie ist es, die im laufe dieses Projekts aufgebaute Anlage in einer Art und Weise abbilden zu können, die es erlaubt daraus eine automatisierte Codegenerierung durchzuführen und dabei auf einem Abstraktionslevel zu bleiben um einen Großteil an in der Industrie vorkommenden Produktionsanlagen abbilden zu können.\\
@@ -213,10 +213,13 @@ Kurz zusammengefasst können die Kategorien wie folgt beschreiben werden\\
 \\
 Main\_Part:\\
 	Dies sind alle Elemente die subjektiv als Hauptelemente bezeichnet werden.\\
+
 Active\_Element:\\
 	Jene Bauteile die etwas tun - Aktuatoren, Sensoren\\
+
 Passive\_Elements:\\
 	In der Anlage verbaute teile die keine Arbeit verrichten.\\ 
+
 Connection:\\
 	Verbindungsarten zwischen den einzelnen Bauteilen\\
 \\
@@ -272,10 +275,15 @@ Die Ontologie besteht nun aus Klassen und deren Relationen, nun muss sie mit Eig
 \\
 Dafür wurden die folgenden Data Properties erstellt:\\
 \textbf{capacity: }Volumen/Füllmenge eines Tanks; Datentyp: int\\
+
 \textbf{direction: }Gibt die Richtung einer Connection an.\\
+
 \textbf{maximum: }Maximaler Wert mit dem das Element angesprochen werden kann, bzw. maximal wert den das Element zurück liefert.\\
+
 \textbf{minimum: }Kleinster Wert mit dem das Element angesprochen werden kann, bzw. den das Element zurück liefert.\\
+
 \textbf{offstate: }Signal bei dem das Element stoppt bzw. schließt.\\
+
 \textbf{signal: }1-Signal des Elements ist Digital; 2-Signal des Elements ist Analog.\\
 
 \section{Aktivitätsdiagramm}
@@ -299,7 +307,7 @@ Abgeschlossen werden alle Prozeduren in dem Diagramm mit einem Endknoten, wie es
 \section{Codegenerierung}
 
 Die Codegenerierung könnte in unterschiedlichsten Sprachen erfolgen, jedoch können nur über Zenon Wizards auch direkte eingriffe auf ein Zenon Projekt vorgenommen werden. Es gibt zwei Arten von Zenon Wizards: \ac{VSTA} und \ac{VBA}. Es wird \ac{VSTA} verwendet, da hier die grafische Benutzeroberfläche ansprechender ist. Die Funktionalität mit \ac{VBA} deckt sich größtenteils.\\\\
-Der erste wichtige Punkt ist es herauszufinden, wie weit die Prozeduren und Rezepte automatisiert werden können. Hierfür wird  die zenOn Library in \ac{VSTA} verwendet, die schon integriert ist. \ac{VSTA} unterstützt mehrere Programmiersprachen, der Wizard wird jedoch in C\# geschrieben, da in C\# eine gute Unterstützung für XML gegeben ist.\\
+Der erste wichtige Punkt ist es herauszufinden, wie weit die Prozeduren und Rezepte automatisiert werden können. Hierfür wird\ac{XML}  die zenOn Library in \ac{VSTA} verwendet, die schon integriert ist. \ac{VSTA} unterstützt mehrere Programmiersprachen, der Wizard wird jedoch in C\# geschrieben, da in C\# eine gute Unterstützung für \ac{XML} gegeben ist.\\
 
 \subsection{Datentyp anlegen}
 Um ein Element der Anlage im Programm abzubilden, werden einige Attribute benötigt, weshalb hier ein Strukturdatentyp erstellt wird. Dieser wird den Namen des Elements erhalten und alle in der Ontologie abgebildeten Attribute beinhalten.
@@ -316,8 +324,8 @@ Damit der aktuelle Zustand, sowie die weiteren Attribute jedes eingebauten Eleme
 
 \lstinputlisting[caption=Anlegen einer Variable in zenon,style=csharp]{extra/createvar.txt}
 
-\subsection{Ontologie als XML}
-Die Ontologie wird als XML exportiert. Diese XML Datei ist auf den Standards \ac{OWL} und \ac{RDF} aufgebaut, welche die Struktur und Aufteilung der abgebildeten Elemente vorgeben.\\
+\subsection{Ontologie als \ac{XML}}
+Die Ontologie wird als \ac{XML} exportiert. Diese \ac{XML} Datei ist auf den Standards \ac{OWL} und \ac{RDF} aufgebaut, welche die Struktur und Aufteilung der abgebildeten Elemente vorgeben.\\
 
 \textbf{\ac{OWL}:}, \textbf{\ac{RDF}:}, \textbf{rdfs:} sowie \textbf{Facility:} und \textbf{\&Facility;} sind Namespaces, also für den Namen selber nicht relevant, sie grenzen nur den Gültigkeitsbereich der Namen ab.\\
 
@@ -347,8 +355,8 @@ Die für die Variablen wichtigen Elemente werden in \ac{OWL} als Named Individua
 
 Parallel zum Vorgang bei dem die Variablen an gelegt werden, wird auch ein \textbf{Init} und \textbf{Reset} Programm angelegt, das in \textbf{Structured Text} verfasst ist. Das Init-Programm wird einmal ausgeführt und initialisiert alle Attributwerte jeder Variable, es weist also alle in der Ontologie zugewiesenen Werte zu, damit das Programm diese dann zur Unterstützung des Ablaufs abfragen kann. Das Reset-Programm dient als eine Art Software gesteuertem Notausschalter, es werden alle aktiven Elemente in ihren passiven Zustand versetzt, sodass die Anlage ihre Arbeit beendet.
 
-\subsection{Aktivitätsdiagramm als XML}
-Das Aktivitätsdiagramm wird als XML exportiert. Diese XML Datei ist auf dem Standard \ac{XMI} aufgebaut, in welchem der \ac{UML} Standard integriert ist.\\
+\subsection{Aktivitätsdiagramm als \ac{XML}}
+Das Aktivitätsdiagramm wird als \ac{XML} exportiert. Diese \ac{XML} Datei ist auf dem Standard \ac{XMI} aufgebaut, in welchem der \ac{UML} Standard integriert ist.\\
 
 \textbf{\ac{UML}:} ist ein Namespace, also für den Namen selber nicht relevant, er grenzt nur den Gültigkeitsbereich der Namen ab.\\
 
@@ -371,7 +379,7 @@ Um eine Grundlage für die Generierung der Prozeduren zu bilden, wird erst eine 
 
 Der Name der Prozedur und die Abbruchbedingung wird dem PseudoState entnommen (siehe Listing \ref{lst:pseudo}). Listing \ref{lst:action} zeigt, wie ein Bauteil in der Aktivität abgebildet ist, für jeden ActionState werden die in der Prozedur benötigten Befehle zusammengestellt, sodass bei Ausführung der Prozedur das entsprechende Signal an das Bauteil gesendet wird. Sobald der FinalState erreicht wird, ist eine Prozedur abgeschlossen (Listing \ref{lst:final}).\\
 
-Die Prozeduren werden als XML Datei abgespeichert und können in zenon Logic importiert werden.
+Die Prozeduren werden als \ac{XML} Datei abgespeichert und können in zenon Logic importiert werden.
 
 \subsection{zenon Wizard}
 Die zenon Supervisor Software besteht aus einem integrierten Editor für C\#, der sich \ac{VSTA} nennt. In diesem ist außerdem das sogenannte WorkspaceAddin integriert, welches das eigentliche Programm ist, das die \ac{VSTA} Wizards startet.\\\\

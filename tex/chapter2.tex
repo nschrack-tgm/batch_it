@@ -140,7 +140,7 @@
 	Ziel dieser Vielfalt ist es, eine Vereinheitlichung der Programmierung von \ac{SPS}en zu erreichen. Der Standard 61131 ist seit 1993 eingeführt und industriell etabliert. Mittlerweile schon in der dritten Edition verfügbar, und somit auch Objektorientierung unterstützend, sind die Programmiersprachen für zentrale und eng gekoppelte Systeme ausgelegt.
 	
 	\subsection{Anweisungsliste}
-	Diese textbasierte Programmiersprache nach der Norm \acs{IEC} \acs{DIN} \acs{EN} 61131-3 ist sehr maschinennahe. Vergleicht man die Anweisungsliste aus Abbildung~\ref{fig:Anweisungsliste} mit höheren Programmiersprachen der Informatik, so ist es eine Art Assemblersprache, die normalerweise 1:1 den jeweiligen Maschinencode übersetzt. Es werden die einzelnen Anweisungen in der Reihenfolge geschrieben, wie sie die Maschine (\ac{CPU}) abarbeiten soll (auch \glqq Stackorientierte Abarbeitung\grqq \space genannt). Ein großer Vorteil gegenüber allen graphischen Programmiersprachen ist die Tatsache, das AWL funktionell über diese hinausgeht, weil beispielsweise ein komplexer Zählvorgang mittels eines Kontaktplans nicht realisierbar sein könnte. \cite{spslehrgang_struktur, egroetsch_sps}
+	Diese textbasierte Programmiersprache nach der Norm \acs{IEC} \acs{DIN} \acs{EN} 61131-3 ist sehr maschinennahe. Vergleicht man die Anweisungsliste aus Abbildung~\ref{fig:Anweisungsliste} mit höheren Programmiersprachen der Informatik, so ist es eine Art Assemblersprache, die normalerweise 1:1 den jeweiligen Maschinencode übersetzt. Es werden die einzelnen Anweisungen in der Reihenfolge geschrieben, wie sie die Maschine (\ac{CPU}) abarbeiten soll (auch \glqq Stackorientierte Abarbeitung\grqq \space genannt). Ein großer Vorteil gegenüber allen grafischen Programmiersprachen ist die Tatsache, das AWL funktionell über diese hinausgeht, weil beispielsweise ein komplexer Zählvorgang mittels eines Kontaktplans nicht realisierbar sein könnte. \cite{spslehrgang_struktur, egroetsch_sps}
 
 	\lstinputlisting[language=c,belowcaptionskip=5pt,frame=bt,caption=Beispiel einer Anweisungsliste]{extra/awl.txt}
 
@@ -150,21 +150,21 @@
 	\lstinputlisting[language=c,belowcaptionskip=5pt,frame=bt,caption=Beispiel eines Strukturierten Texts]{extra/st.txt}
 	
 	\subsection{Ablaufsprache}
-	Eine Sonderstellung unter den Sprachen zur Programmierung einer \ac{SPS} nimmt die Ablaufsprache ein. Da die Inhalte dieser entweder graphisch oder textuell definiert werden, wird ein recht breit gefächertes Feld an Anwendern abgedeckt.\\
+	Eine Sonderstellung unter den Sprachen zur Programmierung einer \ac{SPS} nimmt die Ablaufsprache ein. Da die Inhalte dieser entweder grafisch oder textuell definiert werden, wird ein recht breit gefächertes Feld an Anwendern abgedeckt.\\
 
 	Die eigentliche Programmierung verläuft mittels Schrittketten. Generell ist diese Art der Programmierung einer \ac{SPS} anderen Sprachen übergeordnet. Der oberste Programmablauf wird immer mittels Ablaufsprache beschrieben. Der eigentliche Programmaufbau erfolgt durch Schritte und Transitionen, die in einer gerichteten Ablaufkette zusammengefügt werden. Üblicherweise sind den Transitionen Schaltbedingungen, und den Schritten Aktionen zugeordnet. Voraussetzung für das Schalten in einen Schritt ist, dass der vorhergehende Schritt aktiv ist und die Transitionsbedingung erfüllt ist.\\
 
 	\begin{figure}[h!]
   		\centering
     	\includegraphics[width=1\textwidth]{graphics/stateoftheart/as.png}
-  		\caption{Graphisches Beispiel der Ablaufsprache \cite{indsteu}}
+  		\caption{Grafisches Beispiel der Ablaufsprache \cite{indsteu}}
   		\label{fig:as}
 	\end{figure}
 	
 	\lstinputlisting[language=c,belowcaptionskip=5pt,frame=bt,caption=Textuelles Beispiel der Ablaufsprache]{extra/as.txt}
 	
 	\subsection{Kontaktplan}
-	Die Darstellungsart des Kontaktplans (siehe Abbildung~\ref{fig:kontaktplan}) ermöglicht \ac{SPS}-Programmierern ein Programm auf graphischer Ebene zu erstellen und darzustellen. Ein \ac{KOP} ist einem Stromlaufplan sehr ähnlich, um Programmieranfängern, die beispielsweise nur in der Elektronik tätig sind/waren und noch nie zuvor analytisch hinterfragten Code entwickelt haben, den Einstieg zu erleichtern. Es werden Elemente wie Spulen, Öffner/Schließer, Eingänge/Ausgänge, usw... verwendet, die zu logischen Blöcken zusammengefasst werden können und so einen Teil des gesamten Programms ergeben. Ein Nachteil dieser standardisierten Programmiersprache ist jedoch, dass es nicht für alle möglichen Operationen auch ein einheitliches Symbol in einem Stromlaufplan gibt. Das wiederum bedeutet, dass bei komplexen Steuerungen oft eine Mischung aus |\ac{KOP} und der \ac{FBS} verwendet wird.\\
+	Die Darstellungsart des Kontaktplans (siehe Abbildung~\ref{fig:kontaktplan}) ermöglicht \ac{SPS}-Programmierern ein Programm auf grafischer Ebene zu erstellen und darzustellen. Ein \ac{KOP} ist einem Stromlaufplan sehr ähnlich, um Programmieranfängern, die beispielsweise nur in der Elektronik tätig sind/waren und noch nie zuvor analytisch hinterfragten Code entwickelt haben, den Einstieg zu erleichtern. Es werden Elemente wie Spulen, Öffner/Schließer, Eingänge/Ausgänge, usw... verwendet, die zu logischen Blöcken zusammengefasst werden können und so einen Teil des gesamten Programms ergeben. Ein Nachteil dieser standardisierten Programmiersprache ist jedoch, dass es nicht für alle möglichen Operationen auch ein einheitliches Symbol in einem Stromlaufplan gibt. Das wiederum bedeutet, dass bei komplexen Steuerungen oft eine Mischung aus |\ac{KOP} und der \ac{FBS} verwendet wird.\\
 
 	\begin{figure}[h!]
   		\centering
@@ -174,7 +174,7 @@
 	\end{figure}
 
 	\subsection{Funktionsbausteinsprache}
-	Diese graphische Programmiersprache (siehe Abbildung~\ref{fig:fup}) verwendet für ihre Anweisungen logische Symbole der Boolschen Algebra. Diese Sprache ist insbesondere für Verknüpfungssteuerungen geeignet und deswegen bei Anfängern oder Programmier - Laien beliebt. Durch den einfachen graphischen Aufbau ist die Programmlogik relativ schnell zu erkennen und nachzuvollziehen.
+	Diese grafische Programmiersprache (siehe Abbildung~\ref{fig:fup}) verwendet für ihre Anweisungen logische Symbole der Boolschen Algebra. Diese Sprache ist insbesondere für Verknüpfungssteuerungen geeignet und deswegen bei Anfängern oder Programmier - Laien beliebt. Durch den einfachen grafischen Aufbau ist die Programmlogik relativ schnell zu erkennen und nachzuvollziehen.
 
 	\begin{figure}[h!]
   		\centering
@@ -284,7 +284,7 @@ Das Steuerrezept selbst enthält nicht genügend Information, um die Anlage zu b
 
 \section{Zenon Wizard}
 Ein Zenon Wizard ist ein Programm, das verwendet wird um projektspezifische Daten zu manipulieren, löschen oder erstellen. Dies kann mit oder ohne Benutzeroberfläche geschehen.\\
-Der zenon Supervisor enthält schon bei der Installation Wizards zum Importieren sowie auch Exportieren von in XML gespeicherten Daten und zum Erzeugen von Variablen.\\
+Der zenon Supervisor enthält schon bei der Installation Wizards zum Importieren sowie auch Exportieren von in \ac{XML} gespeicherten Daten und zum Erzeugen von Variablen.\\
 Der Quellcode der mitgelieferten Wizards kann geöffnet und auch editiert werden. Zenon Wizards können mittels \ac{VSTA} oder \ac{VBA} erstellt werden. \cite{zenprog}
 
 \begin{figure}[h!]
@@ -335,32 +335,32 @@ Allerdings können die einzelnen Gebiete dieser Entwicklung im heutigen Betrieb 
 Ein Modell der gesamten Anlage wird schon im frühen Stadium der Entwicklung in Form eines RI-Fließschemas hergestellt, um klar zu definieren, welche Bauteile benötigt werden und welches mit welchem Bauteil verbunden ist. Dies ist nur das erste Modell das in der Industrie eingesetzt wird.\\
 \\
 Oft werden aber mehr Informationen benötigt als im RI-Fließschema ersichtlich sind, weswegen man auf eine andere Methode umsteigen muss ein Modell abzubilden.\\
-Auf die gängigsten Methoden (XML, Ontologie, \ac{UML}) wird in den nächsten Punkten genauer eingegangen.
-\subsection{XML}
-XML ist eine textbasierte Modellierungssprache bzw. Dateiformat, dass obwohl es für Dokumente gedacht ist, oft für das Abbilden von Daten Strukturen verwendet wird. XML ist wie viele andere \glqq Markup-Languages\grqq\space tag basiert, jedoch mit dem großen Unterschied das die Tags nicht vordefiniert werden, sonder die Benutzer diese erstellen. Ein wichtiger Aspekt der erwähnt werden muss ist der, das die erstellten XML Dateien keine eigene Funktion besitzen.\\
+Auf die gängigsten Methoden (\ac{XML}, Ontologie, \ac{UML}) wird in den nächsten Punkten genauer eingegangen.
+\subsection{\ac{XML}}
+\ac{XML} ist eine textbasierte Modellierungssprache bzw. Dateiformat, dass obwohl es für Dokumente gedacht ist, oft für das Abbilden von Daten Strukturen verwendet wird. \ac{XML} ist wie viele andere \glqq Markup-Languages\grqq\space tag basiert, jedoch mit dem großen Unterschied das die Tags nicht vordefiniert werden, sonder die Benutzer diese erstellen. Ein wichtiger Aspekt der erwähnt werden muss ist der, das die erstellten \ac{XML} Dateien keine eigene Funktion besitzen.\\
 
 \newpage
-\lstinputlisting[style=XML,caption=XML Beispiel Code]{extra/sample.xml}
+\lstinputlisting[style=XML,caption=\ac{XML} Beispiel Code]{extra/sample.xml}
 
-Der Aufbau einer XML Datei ist leicht zu erklären: Es gibt 1 rootElement, dass den Anfang und das Ende des Inhaltes markiert. Zwischen dem Start- und Endtag befinden sich weitere Tags, die das Dokument oder die Struktur genauer beschreiben. Jeder Tag kann Attribute besitzen die es weiter definieren. Zwischen einem Start- und Endtag können sich entweder weitere Tags oder einfacher Text befinden.
+Der Aufbau einer \ac{XML} Datei ist leicht zu erklären: Es gibt 1 rootElement, dass den Anfang und das Ende des Inhaltes markiert. Zwischen dem Start- und Endtag befinden sich weitere Tags, die das Dokument oder die Struktur genauer beschreiben. Jeder Tag kann Attribute besitzen die es weiter definieren. Zwischen einem Start- und Endtag können sich entweder weitere Tags oder einfacher Text befinden.
 \\
-Einsatz findet XML meist in Programmen oder Webseiten, die größere Mengen an Daten bzw. Befehle Systemunabhängig übertragen sollen. Grund dafür ist unter anderem die Tatsache, dass Mensch und Maschine die Datei ohne Übersetzung bzw. Kompilieren lesen und verstehen kann.\\
-Doch auch wenn eine Person XML-Dateien lesen kann, dauert es länger die Struktur eines Textes, im Vergleich zu einer grafischen Darstellung, zu verstehen.\\  
-Dafür gibt es andere Werkzeuge, die auf XML basieren, aber eine grafische Darstellung erzeugen.
+Einsatz findet \ac{XML} meist in Programmen oder Webseiten, die größere Mengen an Daten bzw. Befehle Systemunabhängig übertragen sollen. Grund dafür ist unter anderem die Tatsache, dass Mensch und Maschine die Datei ohne Übersetzung bzw. Kompilieren lesen und verstehen kann.\\
+Doch auch wenn eine Person \ac{XML}-Dateien lesen kann, dauert es länger die Struktur eines Textes, im Vergleich zu einer grafischen Darstellung, zu verstehen.\\  
+Dafür gibt es andere Werkzeuge, die auf \ac{XML} basieren, aber eine grafische Darstellung erzeugen.
 \subsection{Ontologie}
-Eine Ontologie ist ein auf XML basierendes Konstrukt, dass einem das Abbilden von Dingen und deren Relationen ermöglicht. Um solch komplexe Zustände darzustellen, stehen neben einfachen Entitäten (Dinge) auch Eigenschaften zur Verfügung.
+Eine Ontologie ist ein auf \ac{XML} basierendes Konstrukt, dass einem das Abbilden von Dingen und deren Relationen ermöglicht. Um solch komplexe Zustände darzustellen, stehen neben einfachen Entitäten (Dinge) auch Eigenschaften zur Verfügung.
 
 \glqq ... we have at least two parts to the overall philosophical project of ontology: first, say what there is, what exists, what the stuff is reality is made out off, secondly, say what the most general features and relations of these things are. \grqq \cite{ontology_stanford} \\
 \\
 
 \textbf{Allgemeiner Aufbau einer Ontologie}\\
-Das Modell an sich ohne zusätzliche Attribute oder Eigenschaften ist vom Aufbau her so zu erklären: Es gibt ein 'Thing', von dem alles aus geht, sozusagen ist das das root-Element bei XML. Von diesem Punkt aus können weitere Entitäten abgeleitet werden, diesen Schritt kann als eine Vererbung gesehen werden. Die neu erstellte Entität ist immer noch ein Thing, jedoch genauer definiert. Es gibt keine Grenzen oder Vorschriften, in welche Tiefe diese Definition gehen muss. Daher kann dies für sehr komplexe aber auch simple Modelle eingesetzt werden.\\
+Das Modell an sich ohne zusätzliche Attribute oder Eigenschaften ist vom Aufbau her so zu erklären: Es gibt ein 'Thing', von dem alles aus geht, sozusagen ist das das root-Element bei \ac{XML}. Von diesem Punkt aus können weitere Entitäten abgeleitet werden, diesen Schritt kann als eine Vererbung gesehen werden. Die neu erstellte Entität ist immer noch ein Thing, jedoch genauer definiert. Es gibt keine Grenzen oder Vorschriften, in welche Tiefe diese Definition gehen muss. Daher kann dies für sehr komplexe aber auch simple Modelle eingesetzt werden.\\
 
 \begin{figure}[hbt!]
   \centering
   \includegraphics[width=0.8\textwidth]{graphics/stateoftheart/Ontology_example}
   \caption{Aufbau einer Ontologie}
-	\label{fig:Ontology_Aufbau}
+  \label{fig:Ontology_Aufbau}
 \end{figure}
 
 Wie in Abbildung~\ref{fig:Ontology_Aufbau} erkennbar ist, erhält man so die Struktur des Modells, jedoch werden oft weitere Informationen zu den einzelnen Objekten/Entitäten benötigt, welche als Eigenschaften abgespeichert werden.\\
@@ -383,7 +383,7 @@ Daten Eigenschaften werden benötigt um Objekte genauer zu beschreiben.
 Beispiel für ein Modell einer Produktionsanlage ist es etwaige Sensoren im Modell einen Wertebereich festzulegen in welchem dieser arbeitet bzw. was für Werte dieser sammelt oder zurückgibt: Ein Füllstandsensor mit einem Wertebereich von 4-20V, wobei 4V=Leer und 20V=Voll bedeutet, kann in einer Ontologie mit wenigen Data Properties abgebildet werden.
 
 \subsection{\ac{UML}}
-\ac{UML} ist, wie eine Ontologie, eine auf XML basierte Modellierungssprache.
+\ac{UML} ist, wie eine Ontologie, eine auf \ac{XML} basierte Modellierungssprache.
 Das Ziel von \ac{UML} ist es, System Architekten, Software Ingenieuren und Software Entwicklern ein Werkzeug zur Analyse, Design, Implementation von Softwarebasierenden Systemen, sowie für Modell Entwicklung und ähnliche Prozesse zu bieten.\\
 \\
 Mit Hilfe von \ac{UML} können viele verschiedene Arten von Diagrammen erstellt werden, für dieses Projekt relevant ist jedoch nur das Aktivitätsdiagramm, daher wird im weiteren nur auf dieses genauer eingegangen.\\
@@ -403,9 +403,9 @@ Ein Aktivitätsdiagramm beschreibt das Verhalten von Systemen auf Grundlage von 
 
 \glqq An Activity is a kind of Behavior that is specified as a graph of nodes interconnected by edges. A subset of the nodes are executable nodes that embody lower-level steps in the overall Activity. Object nodes hold data that is input to and output from executable nodes, and moves across object flow edges. Control nodes specify sequencing of executable nodes via control flow edges. Activities are essentially what are commonly called “control and data flow” models. Such models of computation are inherently concurrent, as any sequencing of activity node execution is modeled explicitly by activity edges, and no ordering is mandated for any computation not explicitly sequenced.\\Activities may describe procedural computation, forming hierarchies of Activities invoking other Activities, or, in an object- oriented model, they may be invoked indirectly as methods bound to Operations that are directly invoked. Activities may be applied to organizational modeling for business process engineering and workflow. In this context, events often originate from inside the system, such as the finishing of a task, but also from outside the system, such as a customer call. Activities can also be used for information system modeling to specify system level processes.\\
 \\
-Activity Nodes\\ActivityNodes are used to model the individual steps in the behavior specified by an Activity.\\
+\textbf{Activity Nodes}\\ActivityNodes are used to model the individual steps in the behavior specified by an Activity.\\
 \\
-Activity Edges\\An ActivityEdge is a directed connection between two ActivityNodes along which tokens may flow, from the source ActivityNode to the target ActivityNod.\grqq \cite{UML_def} \\
+\textbf{Activity Edges}\\An ActivityEdge is a directed connection between two ActivityNodes along which tokens may flow, from the source ActivityNode to the target ActivityNod.\grqq \cite{UML_def} \\
 
 \begin{figure}[hbt!]
  \centering
