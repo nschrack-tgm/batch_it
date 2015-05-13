@@ -30,7 +30,7 @@
 		\caption{Definition eines Prozess}
 	\end{figure}
 	
-	Laut der Norm DIN IEC 60050-351 ist ein Prozess wie folgt definiert:\\
+	Laut der Norm \acs{DIN} \acs{IEC} 60050-351 ist ein Prozess wie folgt definiert:\\
 	
 	\textit{Ein Prozess repräsentiert einen Ablauf von sequentiell ausgeführten Aktivitäten innerhalb eines Systems zum Umwandeln, Lagern und Transportieren von Material, Energie oder Informationen.}\\
 	
@@ -62,11 +62,11 @@
 	
 	Um die im späteren Verlauf aufbauende Hardware genauer beschreiben zu können, muss zu Beginn ein wenig thematisch ausgeholt werden. So hat der Begriff der Steuerung einen undenkbar hohen Stellenwert, welcher ebenso geklärt gehört.\\
 
-	Unter einer Prozess- Steuerung versteht man nach der Norm DIN 19226 einen Vorgang, bei dem durch Rückführen gemessener Prozesszustände, verglichen mit von der speicherprogrammierbaren Steuerung formulierten Parametern, Sollwerte zur Beeinflussung des gesamten Prozesses erzeugt werden. Im Gegensatz zu einer Regelung muss der von einem Sensor ausgelesene Ist-Wert jedoch nicht zwanghaft rückgeführt werden. Dies ist in Abbildung~\ref{fig:Aufbau_Steuerkreis_Selfmade} ersichtlich.\cite{mseitz_sps}\\
+	Unter einer Prozess- Steuerung versteht man nach der Norm \acs{DIN} 19226 einen Vorgang, bei dem durch Rückführen gemessener Prozesszustände, verglichen mit von der speicherprogrammierbaren Steuerung formulierten Parametern, Sollwerte zur Beeinflussung des gesamten Prozesses erzeugt werden. Im Gegensatz zu einer Regelung muss der von einem Sensor ausgelesene Ist-Wert jedoch nicht zwanghaft rückgeführt werden. Dies ist in Abbildung~\ref{fig:Aufbau_Steuerkreis_Selfmade} ersichtlich.\cite{mseitz_sps}\\
 	
 	Der Steuerkreis besteht aus Sensoren, einem Steuerungsrechner, welcher meistens mittels einer \ac{SPS} realisiert wird, sowie Aktoren. Die Steuerungseinheit selbst ist ein Rechner mit dem Hauptaufgabenbereich, die programmierten, im Speicher abgelegten Anweisungen zyklisch auszuführen und über einfach anzusprechende Schnittstellen Daten einzulesen oder auszugeben. \cite{mseitz_sps} \\
 	
-	Der Begriff \ac{SPS} wird in der Norm DIN EN 61131-1 (IEC 61131-1) wie folgt definiert:\\
+	Der Begriff \ac{SPS} wird in der Norm \acs{DIN} \acs{EN} 61131-1 (\acs{IEC} 61131-1) wie folgt definiert:\\
 	
 	\glqq \textit{Ein digital arbeitendes elektronisches System für den Einsatz in industriellen Umgebungen mit einem programmierbaren Speicher zur internen Speicherung der anwenderorientierten Steuerungsanweisungen zur Implementierung spezifischer Funktionen wie z.B. Verknüpfungssteuerung, Ablaufsteuerung, Zeit-, Zähl- und arithmetische Funktionen, um durch digitale oder analoge Eingangs- und Ausgangssignale verschiedene Arten von Maschinen und Prozesse zu steuern. Die Speicherprogrammierbare Steuerung und die zugehörige Peripheriegerät (das \ac{SPS}- System) sind so konzipiert, dass sie sich leicht in ein industrielles Steuerungssystem integrieren und in allen ihren beabsichtigten Funktionen einsetzen lassen.}\grqq \space \cite{sps_programmierung}\\
  
@@ -78,7 +78,7 @@
 	\end{figure}	
  
  
- Im Detail gehört zum Aufbau einer \ac{SPS} eine Stromversorgung, eine Verarbeitungseinheit (CPU), digitale sowie analoge I/O Anschlüsse, eine Feldbusschnittstelle und das Programmiergerät, wobei es sich dabei heutzutage eigentlich ausschließlich um einen externen Computer handelt. Die Stromversorgung PS (\textbf{P}ower \textbf{S}upply) wandelt gleichzeitig die Netzspannung in eine 24-V-Gleichspannung um, mit der die Elektronik der \ac{SPS} versorgt wird.\\
+ Im Detail gehört zum Aufbau einer \ac{SPS} eine Stromversorgung, eine Verarbeitungseinheit (\ac{CPU}), digitale sowie analoge I/O Anschlüsse, eine Feldbusschnittstelle und das Programmiergerät, wobei es sich dabei heutzutage eigentlich ausschließlich um einen externen Computer handelt. Die Stromversorgung \ac{PS} wandelt gleichzeitig die Netzspannung in eine 24-V-Gleichspannung um, mit der die Elektronik der \ac{SPS} versorgt wird.\\
 	
 	Man unterscheidet drei verschiedene Aufbauarten bei \ac{SPS}en
 	
@@ -92,10 +92,10 @@
 	Der im vorigen Abschnitt beschriebene Aufbau einer \ac{SPS} bezieht sich auf die klassische Aufbauform einer \textit{Hardware - \ac{SPS}}. Ihre Komponenten sind als gewöhnliche Einsteckkarten in einem Gehäuse oder Schaltschrank angeordnet und sind über einen Rückwandbus miteinander verbunden. Die Hardware - \ac{SPS} benötigt einen externen PC als Programmiergerät.\\
 	
 	\textbf{Slot - \ac{SPS}}\\\\
-	Eine Slot - \ac{SPS} ist eine Einsteckkarte für den PC, welche alle Module einer \ac{SPS} enthält. Anstatt einer CPU befindet sich ein Co-Prozessor in ihr, auf dem ein eigenes multitaskingfähiges Betriebssystem läuft. Zusätzlich verfügt sie über einen sogenannten multi-ported RAM (ein geteilter Speicher, der sowohl für \ac{SPS}, als auch für PC zugreifbar ist).\\
+	Eine Slot - \ac{SPS} ist eine Einsteckkarte für den PC, welche alle Module einer \ac{SPS} enthält. Anstatt einer \ac{CPU} befindet sich ein Co-Prozessor in ihr, auf dem ein eigenes multitaskingfähiges Betriebssystem läuft. Zusätzlich verfügt sie über einen sogenannten multi-ported RAM (ein geteilter Speicher, der sowohl für \ac{SPS}, als auch für PC zugreifbar ist).\\
 	
 	\textbf{Soft - \ac{SPS}}\\\\
-	Zu guter Letzt gibt es die Soft - \ac{SPS}, welche im Gegensatz zu den anderen Steuerungseinheiten eine reine Softwarelösung ist, die komplett auf der CPU des Host-PCs läuft und auch deren Hardware nutzt. Zur Ankopplung der Sensoren und Aktoren ist eine Einsteckkarte zur Feldbuskopplung notwendig, die mit einem Prozessor zur Buskommunikation und einem dual-ported Ram ausgestattet ist.\\
+	Zu guter Letzt gibt es die Soft - \ac{SPS}, welche im Gegensatz zu den anderen Steuerungseinheiten eine reine Softwarelösung ist, die komplett auf der \ac{CPU} des Host-PCs läuft und auch deren Hardware nutzt. Zur Ankopplung der Sensoren und Aktoren ist eine Einsteckkarte zur Feldbuskopplung notwendig, die mit einem Prozessor zur Buskommunikation und einem dual-ported Ram ausgestattet ist.\\
 	
 	Die Vorteile der \ac{SPS} im PC ergeben sich hauptsächlich dadurch, dass die rasante Entwicklung der PC-Leistungen für \ac{SPS}en genau dafür genutzt werden kann.\\
 	
@@ -107,7 +107,7 @@
 		\item \textbf{A}usgeben der Soll-Werte an die Aktoren
 	\end{itemize}
 	
-	Die CPU fragt anfangs nacheinander alle Eingangskanäle ab und legt anschließend die Daten in den Arbeitsspeicher - es entsteht das sogenannte \glqq Eingangsabbild\grqq. Hierbei handelt es sich jedoch nicht um die aktuellen, sondern um die zum Abtastzeitpunkt ausgelesenen Werte. Die erstellten Programme werden ausschließlich von der CPU jeweils Schritt für Schritt abgearbeitet. Erst nach Abarbeitung \textbf{aller} Programme werden die im Ausgangsabbild abgelegten Sollwerte nacheinander an die Ausgangskanäle übertragen. \cite{mseitz_sps} \\ 
+	Die \ac{CPU} fragt anfangs nacheinander alle Eingangskanäle ab und legt anschließend die Daten in den Arbeitsspeicher - es entsteht das sogenannte \glqq Eingangsabbild\grqq. Hierbei handelt es sich jedoch nicht um die aktuellen, sondern um die zum Abtastzeitpunkt ausgelesenen Werte. Die erstellten Programme werden ausschließlich von der \ac{CPU} jeweils Schritt für Schritt abgearbeitet. Erst nach Abarbeitung \textbf{aller} Programme werden die im Ausgangsabbild abgelegten Sollwerte nacheinander an die Ausgangskanäle übertragen. \cite{mseitz_sps} \\ 
 		Kleinere \ac{SPS} - Hersteller versuchen ihre eigene spezifische Hardware möglichst kompatibel für fremde Software zu produzieren, um mit ihrem Produkt eine möglichst große Zielgruppe anzusprechen. Große Hersteller hingegen möchten ihr System eher geschlossen für den Zugriff mittels fremder Software halten, um die Kundenbindung auf den verschiedensten Ebenen der Automatisierungspyramide zu erhöhen.
 	
 	\begin{figure}[h!]
@@ -140,7 +140,7 @@
 	Ziel dieser Vielfalt ist es, eine Vereinheitlichung der Programmierung von \ac{SPS}en zu erreichen. Der Standard 61131 ist seit 1993 eingeführt und industriell etabliert. Mittlerweile schon in der dritten Edition verfügbar, und somit auch Objektorientierung unterstützend, sind die Programmiersprachen für zentrale und eng gekoppelte Systeme ausgelegt.
 	
 	\subsection{Anweisungsliste}
-	Diese textbasierte Programmiersprache nach der Norm IEC DIN EN 61131-3 ist sehr maschinennahe. Vergleicht man die Anweisungsliste aus Abbildung~\ref{fig:Anweisungsliste} mit höheren Programmiersprachen der Informatik, so ist es eine Art Assemblersprache, die normalerweise 1:1 den jeweiligen Maschinencode übersetzt. Es werden die einzelnen Anweisungen in der Reihenfolge geschrieben, wie sie die Maschine (CPU) abarbeiten soll (auch \glqq Stackorientierte Abarbeitung\grqq \space genannt). Ein großer Vorteil gegenüber allen graphischen Programmiersprachen ist die Tatsache, das AWL funktionell über diese hinausgeht, weil beispielsweise ein komplexer Zählvorgang mittels eines Kontaktplans nicht realisierbar sein könnte. \cite{spslehrgang_struktur, egroetsch_sps}
+	Diese textbasierte Programmiersprache nach der Norm \acs{IEC} \acs{DIN} \acs{EN} 61131-3 ist sehr maschinennahe. Vergleicht man die Anweisungsliste aus Abbildung~\ref{fig:Anweisungsliste} mit höheren Programmiersprachen der Informatik, so ist es eine Art Assemblersprache, die normalerweise 1:1 den jeweiligen Maschinencode übersetzt. Es werden die einzelnen Anweisungen in der Reihenfolge geschrieben, wie sie die Maschine (\ac{CPU}) abarbeiten soll (auch \glqq Stackorientierte Abarbeitung\grqq \space genannt). Ein großer Vorteil gegenüber allen graphischen Programmiersprachen ist die Tatsache, das AWL funktionell über diese hinausgeht, weil beispielsweise ein komplexer Zählvorgang mittels eines Kontaktplans nicht realisierbar sein könnte. \cite{spslehrgang_struktur, egroetsch_sps}
 
 	\lstinputlisting[language=c,belowcaptionskip=5pt,frame=bt,caption=Beispiel einer Anweisungsliste]{extra/awl.txt}
 
@@ -208,7 +208,7 @@ Beispiele für Operationen sind:
 \end{itemize}
 
 \textbf{Funktion}\\
-Die Funktion einer Prozedursteuerung ist das kleinste Element, das eine prozessorientierte Abfolge realisieren kann. Eine Funktion kann in Subteile unterteilt werden. Der IEC 60848 Standard definiert die Art, wie Funktionen durch Schritte und Übergenge unterteilt werden können. \\
+Die Funktion einer Prozedursteuerung ist das kleinste Element, das eine prozessorientierte Abfolge realisieren kann. Eine Funktion kann in Subteile unterteilt werden. Der \acs{IEC} 60848 Standard definiert die Art, wie Funktionen durch Schritte und Übergenge unterteilt werden können. \\
 Ein Schritt kann eine oder mehrere Anweisungen ausgeben oder eine oder mehrere Maßnahmen bewirken, zum Beispiel:
 \begin{itemize}
 	\item Setzen, Löschen und Ändern von Alarmgrenzen und anderen Grenzwerten.
@@ -224,7 +224,7 @@ Beispiele für eine Funktion wären:
 \cite{en61512}
 
 \section{Rezept}
-Rezepte sind Teil der Europäischen Norm EN 61512, welche den Aufbau bei der Chargenorientierten Fahrweise definiert.\\\\
+Rezepte sind Teil der Europäischen Norm \acs{EN} 61512, welche den Aufbau bei der Chargenorientierten Fahrweise definiert.\\\\
 \textit{„Ein Rezept ist eine Gesamtheit, die die Minimalmenge von Informationen enthält, die eindeutig die Herstellungsanforderungen für ein bestimmtes Produkt beschreibt. Rezepte bieten eine Methode, Produkte und die Art, wie diese Produkte hergestellt werden, zu beschreiben“.} \cite{en61512}\\\\
 In der Norm werden die vier Typen von Rezepten, die fünf Kategorien von Informationen, die ein Rezept enthält und wie sich diese Information bei den verschiedenen Rezepttypen verändert, behandelt.\\\\
 Es können unternehmensintern noch eigene Rezepttypen verwendet werden, falls die Definierten nicht alle benötigten Anforderungen abdecken, außerdem kann es sein, dass für ein Produkt mehrere Rezepte bestehen, wenn dieses zum Beispiel in verschiedenen Werken produziert wird und dadurch unterschiedliche Abläufe beinhaltet. \cite{en61512}\\
@@ -285,33 +285,33 @@ Das Steuerrezept selbst enthält nicht genügend Information, um die Anlage zu b
 \section{Zenon Wizard}
 Ein Zenon Wizard ist ein Programm, das verwendet wird um projektspezifische Daten zu manipulieren, löschen oder erstellen. Dies kann mit oder ohne Benutzeroberfläche geschehen.\\
 Der zenon Supervisor enthält schon bei der Installation Wizards zum Importieren sowie auch Exportieren von in XML gespeicherten Daten und zum Erzeugen von Variablen.\\
-Der Quellcode der mitgelieferten Wizards kann geöffnet und auch editiert werden. Zenon Wizards können mittels VSTA oder VBA erstellt werden. \cite{zenprog}
+Der Quellcode der mitgelieferten Wizards kann geöffnet und auch editiert werden. Zenon Wizards können mittels \ac{VSTA} oder \ac{VBA} erstellt werden. \cite{zenprog}
 
 \begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.8\textwidth]{graphics/stateoftheart/demowizard.png}
-		\caption{Beispiel eines VSTA Wizards \cite{zenprog}}
+		\caption{Beispiel eines \ac{VSTA} Wizards \cite{zenprog}}
 \end{figure}
 
-\subsection{VSTA}
-VSTA steht für \textit{Visual Studio Tools for Applications}, es ist eine Ansammlung von Werkzeugen zum erstellen von Programmen. VSTA unterstützt die Programmiersprachen Visual Basic .Net und C\#.
-VSTA ist in Zenon als Editor integriert.
+\subsection{\ac{VSTA}}
+\ac{VSTA} ist eine Ansammlung von Werkzeugen zum erstellen von Programmen. \ac{VSTA} unterstützt die Programmiersprachen Visual Basic .Net und C\#.
+\ac{VSTA} ist in Zenon als Editor integriert.
 
 \lstinputlisting[caption=Anlegen einer Variable in C\#,style=csharp]{extra/sota_var_csharp.txt}
 
-\subsection{VBA}
-VBA steht für \textit{Visual Basic for Applications} und ist eine Skriptsprache, die hauptsächlich für die Steuerung in Microsoft Office Produkten verwendet wird.
-Ein Editor für VBA ist in Zenon integriert.
+\subsection{\ac{VBA}}
+\ac{VBA} steht für \textit{Visual Basic for Applications} und ist eine Skriptsprache, die hauptsächlich für die Steuerung in Microsoft Office Produkten verwendet wird.
+Ein Editor für \ac{VBA} ist in Zenon integriert.
 
-\lstinputlisting[caption=Anlegen einer Variable in VBA,style=VBA]{extra/sota_var_vba.txt}
+\lstinputlisting[caption=Anlegen einer Variable in \ac{VBA},style=VBA]{extra/sota_var_vba.txt}
 
 \section{Visualisierung von Produktionsanlagen}
-\subsection{SCADA}
-Ein SCADA System, Supervisory Control And Data Acquisition, ist im Allgemeinen eine Sammelstelle für alle aus der Anlagen generierten Werte. Diese Daten müssen dann weiterverarbeitet werden um daraus Analysen zu erstellen.\\
-Zu den Elemente eines SCADA Systems gehören:\\
-Ein SCADA System besteht aus den folgenden 3 Teilen:\\
+\subsection{\ac{SCADA}}
+Ein \ac{SCADA} System ist im Allgemeinen eine Sammelstelle für alle aus der Anlagen generierten Werte. Diese Daten müssen dann weiterverarbeitet werden um daraus Analysen zu erstellen.\\
+Zu den Elemente eines \ac{SCADA} Systems gehören:\\
+Ein \ac{SCADA} System besteht aus den folgenden 3 Teilen:\\
 \\
-\textbf{SCADA Master Station Computer Systems}\\
+\textbf{\ac{SCADA} Master Station Computer Systems}\\
 Dies ist die Sammelstelle für Echtzeitdaten, die von RTUs generiert werden. Meist sind diese Station herkömmliche Computer.\cite{scada_system} \\ 
 \\
 \textbf{Remote Terminal Units (RTUs)}\\
@@ -321,9 +321,9 @@ Sensoren, die physikalische Änderungen in der Anlage mit einem Signalumformer i
 Im HMI werden die gesammelten Daten der RTUs analysiert und daraus Prognosen bzw. Diagnosen Visuell aufbereitet, um den Anwender eine schnell erkennbare Anzeige zu bieten.\cite{scada_system}
 
 \subsection{HMI}
-Die Visualisierung einer Produktionsanlage ist ein wesentlicher Punkt der Datenverarbeitung und wird oft als Benachrichtigungszentrale benutzt. Meist werden in dieser mit geringer Verzögerung aktualisierte Statuswerte sowie Benachrichtigungen zu unerwarteten Ereignissen angezeigt. Die hierfür benötigten Daten müssen von der \ac{SPS} in die Visualisierungssoftware übermittelt werden. Da dies ein sehr aufwendiger Prozess ist, gibt es SCADA-Systeme die all diese Funktionen vereinen.\\
+Die Visualisierung einer Produktionsanlage ist ein wesentlicher Punkt der Datenverarbeitung und wird oft als Benachrichtigungszentrale benutzt. Meist werden in dieser mit geringer Verzögerung aktualisierte Statuswerte sowie Benachrichtigungen zu unerwarteten Ereignissen angezeigt. Die hierfür benötigten Daten müssen von der \ac{SPS} in die Visualisierungssoftware übermittelt werden. Da dies ein sehr aufwendiger Prozess ist, gibt es \ac{SCADA}-Systeme die all diese Funktionen vereinen.\\
 \\
-Für dieses Projekt wurde eine Umsetzung in der SCADA Software zenon verlangt, daher wird im weiteren nur noch über die Visualisierung in zenon's HMI System, \textbf{zenon Supervisor}, gesprochen.\\
+Für dieses Projekt wurde eine Umsetzung in der \ac{SCADA} Software zenon verlangt, daher wird im weiteren nur noch über die Visualisierung in zenon's HMI System, \textbf{zenon Supervisor}, gesprochen.\\
 \\
 
 \newpage
@@ -335,7 +335,7 @@ Allerdings können die einzelnen Gebiete dieser Entwicklung im heutigen Betrieb 
 Ein Modell der gesamten Anlage wird schon im frühen Stadium der Entwicklung in Form eines RI-Fließschemas hergestellt, um klar zu definieren, welche Bauteile benötigt werden und welches mit welchem Bauteil verbunden ist. Dies ist nur das erste Modell das in der Industrie eingesetzt wird.\\
 \\
 Oft werden aber mehr Informationen benötigt als im RI-Fließschema ersichtlich sind, weswegen man auf eine andere Methode umsteigen muss ein Modell abzubilden.\\
-Auf die gängigsten Methoden (XML, Ontologie, UML) wird in den nächsten Punkten genauer eingegangen.
+Auf die gängigsten Methoden (XML, Ontologie, \ac{UML}) wird in den nächsten Punkten genauer eingegangen.
 \subsection{XML}
 XML ist eine textbasierte Modellierungssprache bzw. Dateiformat, dass obwohl es für Dokumente gedacht ist, oft für das Abbilden von Daten Strukturen verwendet wird. XML ist wie viele andere \glqq Markup-Languages\grqq\space tag basiert, jedoch mit dem großen Unterschied das die Tags nicht vordefiniert werden, sonder die Benutzer diese erstellen. Ein wichtiger Aspekt der erwähnt werden muss ist der, das die erstellten XML Dateien keine eigene Funktion besitzen.\\
 
@@ -382,11 +382,11 @@ Daten Eigenschaften werden benötigt um Objekte genauer zu beschreiben.
 \\
 Beispiel für ein Modell einer Produktionsanlage ist es etwaige Sensoren im Modell einen Wertebereich festzulegen in welchem dieser arbeitet bzw. was für Werte dieser sammelt oder zurückgibt: Ein Füllstandsensor mit einem Wertebereich von 4-20V, wobei 4V=Leer und 20V=Voll bedeutet, kann in einer Ontologie mit wenigen Data Properties abgebildet werden.
 
-\subsection{UML}
-UML ist, wie eine Ontologie, eine auf XML basierte Modellierungssprache.
-Das Ziel von UML ist es, System Architekten, Software Ingenieuren und Software Entwicklern ein Werkzeug zur Analyse, Design, Implementation von Softwarebasierenden Systemen, sowie für Modell Entwicklung und ähnliche Prozesse zu bieten.\\
+\subsection{\ac{UML}}
+\ac{UML} ist, wie eine Ontologie, eine auf XML basierte Modellierungssprache.
+Das Ziel von \ac{UML} ist es, System Architekten, Software Ingenieuren und Software Entwicklern ein Werkzeug zur Analyse, Design, Implementation von Softwarebasierenden Systemen, sowie für Modell Entwicklung und ähnliche Prozesse zu bieten.\\
 \\
-Mit Hilfe von UML können viele verschiedene Arten von Diagrammen erstellt werden, für dieses Projekt relevant ist jedoch nur das Aktivitätsdiagramm, daher wird im weiteren nur auf dieses genauer eingegangen.\\
+Mit Hilfe von \ac{UML} können viele verschiedene Arten von Diagrammen erstellt werden, für dieses Projekt relevant ist jedoch nur das Aktivitätsdiagramm, daher wird im weiteren nur auf dieses genauer eingegangen.\\
 \\
 %\textbf{Klassendiagramm}\\
 %\\
@@ -405,7 +405,7 @@ Ein Aktivitätsdiagramm beschreibt das Verhalten von Systemen auf Grundlage von 
 \\
 Activity Nodes\\ActivityNodes are used to model the individual steps in the behavior specified by an Activity.\\
 \\
-Activity Edges\\An ActivityEdge is a directed connection between two ActivityNodes along which tokens may flow, from the source ActivityNode to the target ActivityNod.\grqq \cite{uml_def} \\
+Activity Edges\\An ActivityEdge is a directed connection between two ActivityNodes along which tokens may flow, from the source ActivityNode to the target ActivityNod.\grqq \cite{UML_def} \\
 
 \begin{figure}[hbt!]
  \centering
@@ -422,7 +422,7 @@ Wie sich herausgestellt hat, ist die Codegenerierung für \ac{SPS}en in Produkti
 %„“
 Die Idee ist, diesen Implementierungsschritt auf einer Laboranlage zu automatisieren. Der \ac{SPS} Code soll einerseits auf einem Ontologie-basierten Informationsmodell, um das Produktionssystem abzubilden, und andererseits auf einem Aktivitätsdiagramm, um die Prozeduren zu definieren, generiert werden.
 Wenn es nun zu Änderungen der Produktionsanlage kommt, können diese im Modell angepasst werden und durch eine Codegenerierung der nötige Implementierungsschritt automatisiert werden. Zusätzlich wird die Integrierbarkeit des Codes in eine Steuerungsapplikation mit Visualisierung mittels der Software zenon von COPA-DATA getestet werden.\\\\
-Im Rahmen des Projekts Batch\_it soll eine Laboranlage konzeptioniert und aufgebaut werden. Darüber hinaus wird eine Steuerungsapplikation mit Visualisierung mithilfe der Software zenon erstellt werden. Dies umfasst das Implementieren von Prozeduren und Rezepten nach dem IEC 61512 Standard. Hierbei handelt es sich um Funktionen wie z.B. das Pumpen von Flüssigkeiten von Tank zu Reaktor. Im letzten Schritt wird die modellbasierte Entwicklung der Steuerung umgesetzt. Dabei wird einen Ontologie erstellt, welche die Laboranlage abbildet und ein Aktivitätsdiagramm, welches die Prozeduren definiert. Anhand dieser wird einen Codegenerierung für die Steuerung der Anlage mittels des zenon Wizards implementiert.\\\\
+Im Rahmen des Projekts Batch\_it soll eine Laboranlage konzeptioniert und aufgebaut werden. Darüber hinaus wird eine Steuerungsapplikation mit Visualisierung mithilfe der Software zenon erstellt werden. Dies umfasst das Implementieren von Prozeduren und Rezepten nach dem \acs{IEC} 61512 Standard. Hierbei handelt es sich um Funktionen wie z.B. das Pumpen von Flüssigkeiten von Tank zu Reaktor. Im letzten Schritt wird die modellbasierte Entwicklung der Steuerung umgesetzt. Dabei wird einen Ontologie erstellt, welche die Laboranlage abbildet und ein Aktivitätsdiagramm, welches die Prozeduren definiert. Anhand dieser wird einen Codegenerierung für die Steuerung der Anlage mittels des zenon Wizards implementiert.\\\\
 \textbf{Forschungsfragen}\\\\
 %Mit welchen Technologien ist die Implementierung von Code einer \ac{SPS} einer Chargenprozessanlage automatisierbar? \\\\
 Wie genau muss die Chargenprozessanlage abgebildet werden um eine Codegenerierung zu ermöglichen? \\\\

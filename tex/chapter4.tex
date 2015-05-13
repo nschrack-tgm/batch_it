@@ -19,7 +19,7 @@ Jedes Ventil hat eine vorteilhafte Durchflussrichtung, die meistens mit einem Pf
   \caption{Ventil mit vorteilhafter Fließrichtung}
 \end{figure}
 
-Um in der Anlage befindliche Flüssigkeiten zu entfernen, muss ein eigens für den Auslass vorgesehenes Ventil installiert werden. Vorteilhafterweise handelt es sich bei der Position dieses Bauteils um den tiefsten Punkt der Apperetur. Alternativ dazu kann dieses auch direkt nach einer Pumpe montiert werden.
+Um in der Anlage befindliche Flüssigkeiten zu entfernen, muss ein eigens für den Auslass vorgesehenes Ventil installiert werden. Vorteilhafterweise handelt es sich bei der Position dieses Bauteils um den tiefsten Punkt der Apparatur. Alternativ dazu kann dieses auch direkt nach einer Pumpe montiert werden.
 
 \section{Aufbau der Anlage}
 Auf Basis des Rohr- und Instrumentenfließschemas kristallisiert sich eine exakte Anzahl an benötigten Bauteilen heraus. Für den noch bevorstehenden Aufbau der Anlage ist zu beachten, dass beim Auswählen der Einzelteile alles kompatibel sein muss. Nicht vorhandene Vereinbarkeit kann vor allem für diesen speziellen Anwendungszweck zu katastrophalen Auswirkungen führen, da einerseits mit Flüssigkeiten gearbeitet wird, sowie gleichzeitig stromdurchflossene Leitungen existieren. Eine Verbindung dieser genannten Komponenten hätte irreparable Schäden zur Folge. Im Rahmen einer übergeordneten Forschungsarbeit wurde diesem Projekt ein Budget von 6000\euro \space zugesprochen. Die Auswahl der benötigten Teile hat verständlicherweise im Rahmen dieser beschränkten Geldmittel zu geschehen.\\
@@ -140,8 +140,8 @@ Zum jetzigen Zeitpunkt sind alle relevanten Komponenten einer Prozedur erstellt 
   \label{fig:rezepte_list}
 \end{figure}
 	
-\section{HMI}
-Für dieses Projekt wurde als SCADA System die Software zenon vorgegeben, daher wird das HMI in zenon Supervisor (zenons HMI Programm) umgesetzt.\\
+\section{\ac{HMI}}
+Für dieses Projekt wurde als SCADA System die Software zenon vorgegeben, daher wird das \ac{HMI} in zenon Supervisor (zenons \ac{HMI} Programm) umgesetzt.\\
 \\
 \textbf{Visualisierung}\\
 In zenon wird eine Visualisierung \glqq Bild\grqq\space  gennant. Dieses kann mit vorgefertigten Elementen erweitert werden. 
@@ -298,8 +298,8 @@ Abgeschlossen werden alle Prozeduren in dem Diagramm mit einem Endknoten, wie es
 
 \section{Codegenerierung}
 
-Die Codegenerierung könnte in unterschiedlichsten Sprachen erfolgen, jedoch können nur über Zenon Wizards auch direkte eingriffe auf ein Zenon Projekt vorgenommen werden. Es gibt zwei Arten von Zenon Wizards: VSTA und VBA. Es wird VSTA verwendet, da hier die grafische Benutzeroberfläche ansprechender ist. Die Funktionalität mit VBA deckt sich größtenteils.\\\\
-Der erste wichtige Punkt ist es herauszufinden, wie weit die Prozeduren und Rezepte automatisiert werden können. Hierfür wird  die zenOn Library in VSTA verwendet, die schon integriert ist. VSTA unterstützt mehrere Programmiersprachen, der Wizard wird jedoch in C\# geschrieben, da in C\# eine gute Unterstützung für XML gegeben ist.\\
+Die Codegenerierung könnte in unterschiedlichsten Sprachen erfolgen, jedoch können nur über Zenon Wizards auch direkte eingriffe auf ein Zenon Projekt vorgenommen werden. Es gibt zwei Arten von Zenon Wizards: \ac{VSTA} und \ac{VBA}. Es wird \ac{VSTA} verwendet, da hier die grafische Benutzeroberfläche ansprechender ist. Die Funktionalität mit \ac{VBA} deckt sich größtenteils.\\\\
+Der erste wichtige Punkt ist es herauszufinden, wie weit die Prozeduren und Rezepte automatisiert werden können. Hierfür wird  die zenOn Library in \ac{VSTA} verwendet, die schon integriert ist. \ac{VSTA} unterstützt mehrere Programmiersprachen, der Wizard wird jedoch in C\# geschrieben, da in C\# eine gute Unterstützung für XML gegeben ist.\\
 
 \subsection{Datentyp anlegen}
 Um ein Element der Anlage im Programm abzubilden, werden einige Attribute benötigt, weshalb hier ein Strukturdatentyp erstellt wird. Dieser wird den Namen des Elements erhalten und alle in der Ontologie abgebildeten Attribute beinhalten.
@@ -317,9 +317,9 @@ Damit der aktuelle Zustand, sowie die weiteren Attribute jedes eingebauten Eleme
 \lstinputlisting[caption=Anlegen einer Variable in zenon,style=csharp]{extra/createvar.txt}
 
 \subsection{Ontologie als XML}
-Die Ontologie wird als XML exportiert. Diese XML Datei ist auf den Standards OWL und RDF aufgebaut, welche die Struktur und Aufteilung der abgebildeten Elemente vorgeben.\\
+Die Ontologie wird als XML exportiert. Diese XML Datei ist auf den Standards \ac{OWL} und \ac{RDF} aufgebaut, welche die Struktur und Aufteilung der abgebildeten Elemente vorgeben.\\
 
-\textbf{owl:}, \textbf{rdf:}, \textbf{rdfs:} sowie \textbf{Facility:} und \textbf{\&Facility;} sind Namespaces, also für den Namen selber nicht relevant, sie grenzen nur den Gültigkeitsbereich der Namen ab.\\
+\textbf{\ac{OWL}:}, \textbf{\ac{RDF}:}, \textbf{rdfs:} sowie \textbf{Facility:} und \textbf{\&Facility;} sind Namespaces, also für den Namen selber nicht relevant, sie grenzen nur den Gültigkeitsbereich der Namen ab.\\
 
 Wichtig für die Codegenerierung sind folgende Tags:\\
 
@@ -336,21 +336,21 @@ Das „NamedIndividual“ ist ein konkretes eingebautes Element der Anlage. Dies
 \lstinputlisting[caption=XML Struktur des NamedIndividual Tags,label=lst:indiv,style=XML]{extra/namedindividual.xml}
 
 \subsection{Generierung der Datentypen}
-Die Datentypen entsprechen den Klassen in OWL, sie bilden eine Objektstruktur durch die eine Variable dieses Typs angelegt werden kann. Zusätzlich zu den Klassen werden auch die in OWL Datatype Properties genannten Ressourcen eingebracht werden, da diese die erforderliche Objektstruktur mit Subtypen genauer definieren.\\
+Die Datentypen entsprechen den Klassen in \ac{OWL}, sie bilden eine Objektstruktur durch die eine Variable dieses Typs angelegt werden kann. Zusätzlich zu den Klassen werden auch die in \ac{OWL} Datatype Properties genannten Ressourcen eingebracht werden, da diese die erforderliche Objektstruktur mit Subtypen genauer definieren.\\
 
 Um dies zu erreichen, werden erst alle Datatype Properties aus der Ontologie ausgelesen und dessen Name, wie auch Datentyp, mit der zugehörigen Klasse verbunden. Als Beispiel in Listing \ref{lst:dtprop} ersichtlich ist das Attribut \textbf{offstate} mit dem Datentyp \textbf{int} (für ganzzahlige Werte) für alle Elemente der Klasse \textbf{Active\_Element}.\\
 
 Da nach diesem Schritt alle Attribute verfügbar sind, können nun die Klassen angelegt werden. Um dies zu erreichen liest man alle Klassen aus der Ontologie aus und legt einen Datentyp für diese an. Listing \ref{lst:class} zeigt, dass das Element \textbf{Valve} eine Subklasse von \textbf{Active\_Element} ist, daher übernimmt es das Attribut \textbf{offstate} jedoch auch alle Attribute, die für \textbf{Valve} und \textbf{Main\_Part} registriert sind. Außerdem muss überprüft werden, ob das Element ein Main\_Part oder Active\_Element ist, da diese in der Ontologie als jene definiert sind, die über die Steuerung angesprochen werden können. Jedes Element bekommt zusätzlich noch das Attribut \textbf{value}, welches den aktuellen Wert anzeigen soll oder mit dem man den gewünschten Wert setzen kann.
 
 \subsection{Generierung der Variablen}
-Die für die Variablen wichtigen Elemente werden in OWL als Named Individual abgebildet, welche also ausgelesen werden müssen um die Variablen anlegen zu können. Eine Voraussetzung um die Variablen anlegen zu können ist auch, dass die Datentypen bereits generiert wurden. In Listing \ref{lst:indiv} erkennt man, dass die Variable \textbf{V123} in mit drei Klassen in Verbindung steht: Valve, Main\_Part und Active\_Element). Also muss man um den Datentyp herauszufinden die Vererbungsstruktur dieser untersuchen, um das spezifischste zu finden. Durch die in Listing \ref{lst:class} ersichtliche Struktur der Klasse Valve kann man darauf schließen, dass Valve von Main\_Part und Active\_Element erbt, also ist dies die spezifischste Klasse. Das Named Individual enthält zusätzlich noch gesetzte Werte zu den Attributen, welche hier ausgelesen werden.\\
+Die für die Variablen wichtigen Elemente werden in \ac{OWL} als Named Individual abgebildet, welche also ausgelesen werden müssen um die Variablen anlegen zu können. Eine Voraussetzung um die Variablen anlegen zu können ist auch, dass die Datentypen bereits generiert wurden. In Listing \ref{lst:indiv} erkennt man, dass die Variable \textbf{V123} in mit drei Klassen in Verbindung steht: Valve, Main\_Part und Active\_Element). Also muss man um den Datentyp herauszufinden die Vererbungsstruktur dieser untersuchen, um das spezifischste zu finden. Durch die in Listing \ref{lst:class} ersichtliche Struktur der Klasse Valve kann man darauf schließen, dass Valve von Main\_Part und Active\_Element erbt, also ist dies die spezifischste Klasse. Das Named Individual enthält zusätzlich noch gesetzte Werte zu den Attributen, welche hier ausgelesen werden.\\
 
 Parallel zum Vorgang bei dem die Variablen an gelegt werden, wird auch ein \textbf{Init} und \textbf{Reset} Programm angelegt, das in \textbf{Structured Text} verfasst ist. Das Init-Programm wird einmal ausgeführt und initialisiert alle Attributwerte jeder Variable, es weist also alle in der Ontologie zugewiesenen Werte zu, damit das Programm diese dann zur Unterstützung des Ablaufs abfragen kann. Das Reset-Programm dient als eine Art Software gesteuertem Notausschalter, es werden alle aktiven Elemente in ihren passiven Zustand versetzt, sodass die Anlage ihre Arbeit beendet.
 
 \subsection{Aktivitätsdiagramm als XML}
-Das Aktivitätsdiagramm wird als XML exportiert. Diese XML Datei ist auf dem Standard XMI aufgebaut, in welchem der UML Standard integriert ist.\\
+Das Aktivitätsdiagramm wird als XML exportiert. Diese XML Datei ist auf dem Standard \ac{XMI} aufgebaut, in welchem der \ac{UML} Standard integriert ist.\\
 
-\textbf{UML:} ist ein Namespace, also für den Namen selber nicht relevant, er grenzt nur den Gültigkeitsbereich der Namen ab.\\
+\textbf{\ac{UML}:} ist ein Namespace, also für den Namen selber nicht relevant, er grenzt nur den Gültigkeitsbereich der Namen ab.\\
 
 Wichtig für die Codegenerierung sind folgende Tags:\\
 
@@ -374,7 +374,7 @@ Der Name der Prozedur und die Abbruchbedingung wird dem PseudoState entnommen (s
 Die Prozeduren werden als XML Datei abgespeichert und können in zenon Logic importiert werden.
 
 \subsection{zenon Wizard}
-Die zenon Supervisor Software besteht aus einem integrierten Editor für C\#, der sich VSTA nennt. In diesem ist außerdem das sogenannte WorkspaceAddin integriert, welches das eigentliche Programm ist, das die VSTA Wizards startet.\\\\
+Die zenon Supervisor Software besteht aus einem integrierten Editor für C\#, der sich \ac{VSTA} nennt. In diesem ist außerdem das sogenannte WorkspaceAddin integriert, welches das eigentliche Programm ist, das die \ac{VSTA} Wizards startet.\\\\
 Der erste Schritt um einen zenon Wizard zu erstellen ist gewisse Methoden, die zenon benötigt um Informationen über den Wizard abzufragen, zu implementieren.
 \lstinputlisting[caption=Methoden um den Wizard zu beschreiben,style=csharp]{extra/wizard.txt}
 
@@ -385,7 +385,7 @@ Nachdem diese Werte gesetzt sind, kann der Wizard in zenon angezeigt werden.
   \caption{Auswahl des zenon Wizards}
 \end{figure}
 
-VSTA verfügt über ein Modul zum aufbauen und ändern von Benutzeroberflächen, welches ermöglicht mit recht geringem Aufwand eine Vielzahl an Interaktionselementen zu positionieren und falls benötigt auch Templates der Methoden zur Bearbeitung der vom Benutzer eingegebenen Daten generiert.
+\ac{VSTA} verfügt über ein Modul zum aufbauen und ändern von Benutzeroberflächen, welches ermöglicht mit recht geringem Aufwand eine Vielzahl an Interaktionselementen zu positionieren und falls benötigt auch Templates der Methoden zur Bearbeitung der vom Benutzer eingegebenen Daten generiert.
 
 \begin{figure}[hbt!]
   \centering
