@@ -7,11 +7,11 @@
 	% ##################################################################
 
 	\section{Konzeptionelle Planung einer Anlage}
-	Es ist gängige Praxis in der Anlagen- und Verfahrenstechnik, vor Realisierung der Anlage eine schematische Darstellung zu modellieren. Das Rohr- und Instrumentenfließschema ist ein probates Mittel für die Erstellung eines vollständiges Abbildes. Die verwendeten Bauteile sind jedenfalls namentlich beschriftet, können aber auch zusätzliche Informationen, die zum Verständnis der Verwendung beitragen, beinhalten. Das beschriebene Schema ist im Standard \todo{Welcher Standard?} wie folgt niedergeschrieben \todo[color=green]{Lepu: Wo ist der Standard niedergeschrieben?}\\
+	Es ist gängige Praxis in der Anlagen- und Verfahrenstechnik, vor Realisierung der Anlage eine schematische Darstellung zu modellieren. Das \ac{RI} ist ein probates Mittel für die Erstellung eines vollständiges Abbildes. Die verwendeten Bauteile sind jedenfalls namentlich beschriftet, können aber auch zusätzliche Informationen, die zum Verständnis der Verwendung beitragen, beinhalten. Das beschriebene Schema unterliegt dem Standard DIN EN ISO 10628. Weitere Rohrleitungssymbole können der DIN 2429 entnommen werden.\\
+
+	Zur Anwendung kommt der beschriebene Arbeitsschritt beispielsweise bei einem Reaktor, welcher die hinreichende Bedingung \glqq Name \grqq \space und darüber hinaus fakultative Invarianten wie Anzahl und Lokalisation der Ein- und Ausgänge hat. Weiteres könnten auch Angaben zur Implementierung von Sensoren oder Aktoren vermerkt sein. Rohre werden im \ac{RI} als Verbindungslinien zwischen Bauteilen dargestellt. Detailinformationen wie Nenndruck, Rohrklasse oder Spezifikationsnummer können ergänzend vermerkt werden. Somit sind in einem \ac{RI} Apparate (Tanks, Speicherbehälter, Reaktoren, o. Ä.), Maschinen (Pumpen, Verdichter, o. Ä.) und Leitungen darstellbar.\\
 	
-	Zur Anwendung kommt der beschriebene Arbeitsschritt beispielsweise bei einem Reaktor, welcher die hinreichende Bedingung \glqq Name \grqq \space und darüber hinaus fakultative Invarianten wie Anzahl und Lokalisation der Ein- und Ausgänge hat. Weiteres könnten auch Angaben zur Implementierung von Sensoren oder Aktoren vermerkt sein. Rohre werden im Rohr- und Instrumentenfließschema als Verbindungslinien zwischen Bauteilen dargestellt. Detailinformationen wie Nenndruck, Rohrklasse oder Spezifikationsnummer können ergänzend vermerkt werden. Somit sind in einem Rohr- und Instrumentenfließschema Apparate (Tanks, Speicherbehälter, Reaktoren, o. Ä.), Maschinen (Pumpen, Verdichter, o. Ä.) und Leitungen darstellbar.\\
-	
-	Die folgende Abbildung~\ref{fig:RI_SotA} zeigt den Aufbau einer simplen Anlage mit Hilfe des Rohr- und Instrumentenfließschemas.\\
+	Die folgende Abbildung~\ref{fig:RI_SotA} zeigt den Aufbau einer simplen Anlage mit Hilfe des \ac{RI}.\\
 
 	\begin{figure}[h!]
   		\centering
@@ -273,8 +273,7 @@ Die Rezeptprozedur beschreibt die Strategie, um einen Prozess durchzuführen. Ve
 
 \subsection{Einrichtungssteuerung}
 Das Steuerrezept selbst enthält nicht genügend Information, um die Anlage zu betreiben. Daher wird es mit der Einrichtungssteuerung, die tatsächlich die Einrichtungen zum Betrieb und zur Produktion von Chargen veranlasst, verknüpft. Die Einrichtungssteuerung wird nicht als Teil des Rezeptes angesehen.
-\todo{Quellen haben bei den vorherigen gefehlt}
-%Quelle EN 61522
+
 \begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.8\textwidth]{graphics/stateoftheart/steuerrezeptprozedur_einrichtungssteuerung.png}
@@ -332,9 +331,9 @@ Für dieses Projekt wurde eine Umsetzung in der \ac{SCADA} Software zenon verlan
 Das Gebiet der modellbasierten Entwicklung bzw. der automatisierten Codegenerierung aus einem Modell als ganzes kann nicht als State of the Art erklärt werden, da sich dieser Ansatz zurzeit noch in der Forschung befindet.\\
 Allerdings können die einzelnen Gebiete dieser Entwicklung im heutigen Betrieb schon gefunden werden.
 \subsection{Modell}
-Ein Modell der gesamten Anlage wird schon im frühen Stadium der Entwicklung in Form eines RI-Fließschemas hergestellt, um klar zu definieren, welche Bauteile benötigt werden und welches mit welchem Bauteil verbunden ist. Dies ist nur das erste Modell das in der Industrie eingesetzt wird.\\
+Ein Modell der gesamten Anlage wird schon im frühen Stadium der Entwicklung in Form eines \ac{RI} hergestellt, um klar zu definieren, welche Bauteile benötigt werden und welches mit welchem Bauteil verbunden ist. Dies ist nur das erste Modell das in der Industrie eingesetzt wird.\\
 \\
-Oft werden aber mehr Informationen benötigt als im RI-Fließschema ersichtlich sind, weswegen man auf eine andere Methode umsteigen muss ein Modell abzubilden.\\
+Oft werden aber mehr Informationen benötigt als im \ac{RI} ersichtlich sind, weswegen man auf eine andere Methode umsteigen muss ein Modell abzubilden.\\
 Auf die gängigsten Methoden (\ac{XML}, Ontologie, \ac{UML}) wird in den nächsten Punkten genauer eingegangen.
 \subsection{\ac{XML}}
 \ac{XML} ist eine textbasierte Modellierungssprache bzw. Dateiformat, dass obwohl es für Dokumente gedacht ist, oft für das Abbilden von Daten Strukturen verwendet wird. \ac{XML} ist wie viele andere \glqq Markup-Languages\grqq\space tag basiert, jedoch mit dem großen Unterschied das die Tags nicht vordefiniert werden, sonder die Benutzer diese erstellen. Ein wichtiger Aspekt der erwähnt werden muss ist der, das die erstellten \ac{XML} Dateien keine eigene Funktion besitzen.\\
