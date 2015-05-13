@@ -52,64 +52,6 @@
 	<key>GraphicsList</key>
 	<array>
 		<dict>
-			<key>Bounds</key>
-			<string>{{174.5, 165.968505859375}, {1, 49.606300354003906}}</string>
-			<key>Class</key>
-			<string>ShapedGraphic</string>
-			<key>ID</key>
-			<integer>401</integer>
-			<key>Shape</key>
-			<string>Rectangle</string>
-			<key>Style</key>
-			<dict>
-				<key>fill</key>
-				<dict>
-					<key>Color</key>
-					<dict>
-						<key>b</key>
-						<string>0.0980392</string>
-						<key>g</key>
-						<string>0.0980392</string>
-						<key>r</key>
-						<string>0.0980392</string>
-					</dict>
-				</dict>
-				<key>shadow</key>
-				<dict>
-					<key>Draws</key>
-					<string>NO</string>
-				</dict>
-				<key>stroke</key>
-				<dict>
-					<key>Width</key>
-					<real>0.15000000596046448</real>
-				</dict>
-			</dict>
-		</dict>
-		<dict>
-			<key>Bounds</key>
-			<string>{{164.5, 165.968505859375}, {21, 49.464565277099609}}</string>
-			<key>Class</key>
-			<string>ShapedGraphic</string>
-			<key>ID</key>
-			<integer>400</integer>
-			<key>Shape</key>
-			<string>Rectangle</string>
-			<key>Style</key>
-			<dict>
-				<key>shadow</key>
-				<dict>
-					<key>Draws</key>
-					<string>NO</string>
-				</dict>
-				<key>stroke</key>
-				<dict>
-					<key>Draws</key>
-					<string>NO</string>
-				</dict>
-			</dict>
-		</dict>
-		<dict>
 			<key>Class</key>
 			<string>Group</string>
 			<key>Graphics</key>
@@ -200,8 +142,8 @@
 			<integer>366</integer>
 			<key>Points</key>
 			<array>
-				<string>{246.26816051533245, 328.74742110447028}</string>
-				<string>{409.50000000780653, 328.74742110447028}</string>
+				<string>{246.26816051533248, 328.74742110447028}</string>
+				<string>{409.00000001561301, 328.74742110447028}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -246,12 +188,14 @@
 					<key>Color</key>
 					<dict>
 						<key>b</key>
-						<string>0.0980392</string>
+						<string>0</string>
 						<key>g</key>
-						<string>0.0980392</string>
+						<string>0</string>
 						<key>r</key>
-						<string>0.0980392</string>
+						<string>1</string>
 					</dict>
+					<key>Width</key>
+					<real>2</real>
 				</dict>
 			</dict>
 			<key>Text</key>
@@ -277,7 +221,7 @@
 			<integer>389</integer>
 			<key>Points</key>
 			<array>
-				<string>{448.32671957330768, 304.6201036961844}</string>
+				<string>{448.3221507620205, 304.12012457663394}</string>
 				<string>{446, 50}</string>
 				<string>{271.86797596706396, 51.363042845810646}</string>
 			</array>
@@ -477,7 +421,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2015-05-11 11:21:05 +0000</string>
+	<string>2015-05-11 11:23:38 +0000</string>
 	<key>Modifier</key>
 	<string>Niko</string>
 	<key>NotesVisible</key>
@@ -558,7 +502,7 @@
 			</dict>
 		</array>
 		<key>Frame</key>
-		<string>{{27, -0}, {1253, 777}}</string>
+		<string>{{27, 0}, {1253, 777}}</string>
 		<key>ListView</key>
 		<true/>
 		<key>OutlineWidth</key>
@@ -572,7 +516,7 @@
 		<key>SidebarWidth</key>
 		<integer>120</integer>
 		<key>VisibleRegion</key>
-		<string>{{-280, 0}, {1118, 635}}</string>
+		<string>{{-280, 0}, {1104, 635}}</string>
 		<key>Zoom</key>
 		<real>1</real>
 		<key>ZoomValues</key>
