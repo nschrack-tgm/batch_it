@@ -1,0 +1,1 @@
+(X01.Wert=2) AND ((X02.Wert=2) OR (X02.Wert=11) OR (X02.Wert=13))

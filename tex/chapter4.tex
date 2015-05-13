@@ -92,22 +92,22 @@ Auf Basis des Rohr- und Instrumentenfließschemas kristallisiert sich eine exakt
 	\subsection{get\_cmd()}
 	Das Unterprogramm dient zum Null setzen (\glqq false\grqq \space setzen) aller Boolean-Werte die einen Status repräsentieren um alle gesetzten Werte zurückzusetzen. Desweiteren werden alle zur Auswahl stehenden Kommandos iteriert und nur die Variable des zutreffenden Kommandos gesetzt (\glqq true\grqq \space gesetzt).
 
-	\lstinputlisting[language=c,belowcaptionskip=5pt,frame=bt,caption=get\_cmd()]{extra/get_cmd.txt}
+	\lstinputlisting[caption=get\_cmd(),style=ST]{extra/get_cmd.txt}
 
 	\subsection{get\_batchstat()}
 	Dieses Unterprogramm setzt den zutreffenden aktuellen Status der Grundfunktion.
 	
-	\lstinputlisting[language=c,frame=bt,caption=get\_batchstat()]{extra/get_batchstat.txt}
+	\lstinputlisting[caption=get\_batchstat(),style=ST]{extra/get_batchstat.txt}
 
 	\subsection{Prozedur}
 	Innerhalb dieses Unterprogramms werden die Variablen bis zur Abbruchbedingung gesetzt.
 	
-	\lstinputlisting[language=c,belowcaptionskip=5pt,frame=bt,caption=Prozedur]{extra/prozedur.txt}
+	\lstinputlisting[caption=Prozedur,style=ST]{extra/prozedur.txt}
 
 	\subsection{send\_state()}
 	Dieses Unterprogramm dient zum globalen Setzen des aktuellen Status.
 	
-	\lstinputlisting[language=c,belowcaptionskip=5pt,frame=bt,caption=send\_status()]{extra/send_status.txt}
+	\lstinputlisting[caption=send\_status(),style=ST]{extra/send_status.txt}
 		
 \begin{figure}[h!]
   \centering
@@ -117,10 +117,8 @@ Auf Basis des Rohr- und Instrumentenfließschemas kristallisiert sich eine exakt
 \end{figure}
 
 	Die Prozedur benötigt als zu setzenden Eingangsparameter die vorhandene Strukturvariable \glqq phase\grqq \space vom Typ \textit{phase}. Abschließend, vor Inbetriebnahme der Prozedur muss eine Weiterschaltbedingung definiert werden. Dazu wird im Unterpunkt Batch Control in den Eigenschaften der Grundfunktion der Menüpunkt Allgemein ausgewählt und die Weiterschaltbedingung eingefügt. Diese gilt für alle angelegten Grundfunktionen, da es sich dabei lediglich um das vergleichen der Status der Software zenon und \ac{SPS} handelt.
-	
-	\begin{framed}
-		(X01.Wert=2) AND ((X02.Wert=2) OR (X02.Wert=11) OR (X02.Wert=13))
-	\end{framed}
+
+\lstinputlisting[caption=Beispiel einer Weiterschaltbedingung,style=ST]{extra/weiterschaltbedingung.txt}
 	
 	Zusätzlich werden wiederum zwei weitere Parameter (Status, Command) zum Weiterschalten benötigt. (siehe Abbildung~\ref{fig:weiterschaltbedingung})\\
 	
