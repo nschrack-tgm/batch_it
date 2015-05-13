@@ -54,7 +54,7 @@ Auf Basis des Rohr- und Instrumentenfließschemas kristallisiert sich eine exakt
 	Das Einbauen der bestellten Pumpen gestaltet sich komplizierter als gedacht, da die ursprüngliche Bestellung einen Fehler beinhaltet. Nur eines der beiden gelieferten Modelle entspricht der gestellten Anforderung, was einschließlich der Rücksendung weitere wertvolle Zeit kostet. Unterdessen kann die zweite Pumpe verbaut werden. Funktionale Bauteile dieser Art sind bei der zeitgemäßen verfügbaren Leistung gut gedämpft. Angesichts der Tatsache, dass man mit dieser bis zu 30 Meter hoch pumpen könnte, befindet sich auf der Unterseite ein gummiertes Verbindungsstück, um bei Inbetriebnahme die stärksten Vibrationen abfangen zu können. Mit vom Profilschienen Schneiden übergebliebenen Reststücken wird eine Konstruktion gebaut, um die Höhe der Pumpe mit der der Rohre gleichzusetzen. Unmittelbar nach der Pumpe wird ein Durchflusssensor angebracht, der im späteren Verlauf des Projekts zur automatischen Steuerung beitragen soll.\\\\
 	Abermals in der Werkstatt genauest zugeschnittene Profilschienen ergeben eine Konstruktion zur Aufhängung der Reaktoren. Das beste Beispiel der Bauteil-Positionsuntreue eines Rohr- \& Instrumentenfließschemas ist anhand des aufkommenden Arbeitsschritts zu sehen. Ursprünglich sind die beiden Reaktoren seitlich der restlichen Anlage platziert. Da es die Profilplatte aber nicht zulässt, da sie nur eine gewisse Breite hat, müssen diese in den Vordergrund geholt werden. Bei der Bauart der Reaktoraufhängung ist zu beachten, dass das größt möglich aufkommende Gewicht ausschließlich dort zustande kommen kann, da Reaktoren zum Mischen mehrerer Tankinhalte verwendet werden können. Diese Überlegung muss jedenfalls dazu beitragen, ausreichend Stabilität und Belastungsfähigkeit zu erlangen.\\\\	
 	Die bereits eingebauten Ventile besitzen jeweils zwei Phasen und eine Masse. Die Verkabelung selbst wird mit einem starren 3-Phasen-Kabel umgesetzt, da über eine flexibles Litzenverbindung nicht so viel Strom geleitet \todo{Stimmt das?}  werden sollte. Aus Gründen der Übersichtlichkeit wird jedes Kabel sowie Ventil beschriftet, um eventuell aufkommende Komplikationen zu unterbinden. In den Rillen der Profilschienen verlegt, werden alle mit Kabelbindern verbundene Leiter zur \ac{SPS} zurückgeführt. Im späteren Verlauf eines Folgeprojekts soll eine Verlegung der \ac{SPS} an die Unterseite des Tisches geschehen, weshalb es ausschlaggebend ist, alle Kabel mit einem deutlichen Übermaß zu schneiden. Die deutlich beschrifteten Kabel können anschließend der Funktionalität des jeweiligen Bauteils entsprechend in den dafür konzipierten \ac{SPS}-Slot eingebaut werden.\\\\
-	Mit dem Einbau der Füllstandssensoren in den drei Tanks sind die letzten Arbeitsschritte des physikalischen Aufbaus der Anlage getan.
+	Mit dem Einbau der Füllstandssensoren in den drei Tanks sind die letzten Arbeitsschritte des physikalischen Aufbaus der Anlage getan. (siehe Abbildung~\ref{fig:finaler_aufbau})
 	
 	\begin{figure}[h!]
 	  \centering
@@ -140,7 +140,6 @@ Zum jetzigen Zeitpunkt sind alle relevanten Komponenten einer Prozedur erstellt 
   \label{fig:rezepte_list}
 \end{figure}
 	
-\newpage
 \section{HMI}
 Für dieses Projekt wurde als SCADA System die Software zenon vorgegeben, daher wird das HMI in zenon Supervisor (zenons HMI Programm) umgesetzt.\\
 \\
@@ -202,7 +201,6 @@ Zu aller erste werden alle Bauteile der Anlage in Kategorien eingeteilt.\\
 Tanks, Reaktoren und Pumpen sind die Hauptelemente dieser Anlage und werden deswegen auch in einer Gruppe zusammengefasst. Neben ihnen gibt es eine Gruppe an Bauteilen die etwas tun, hierzu gehören die Ventile, Sensoren, Heiz- und Rührstäbe. Die restlichen Elemente der Anlage sind Statische Objekte die einen Nutzen besitzen, jedoch keine Arbeit erledigen, daher fallen diese zusammen unter die Kategorie von Passiven Elementen. Zu diesem Zeitpunkt sind dies nur die Rohre.\\
 Eine Ausnahme dieser Gruppen ist die \ac{SPS} welche etwas tut, daher an sich in Kategorie 2 Fallen würde, aber nicht direkt Teil der Anlage ist und daher auch als einzelstehendes Objekt einen Platz in der Ontologie findet.
 
-\newpage
 \begin{figure}[hbt!]
   \centering
   \includegraphics[width=0.7\textwidth]{graphics/implementation/Ontology_v1}
