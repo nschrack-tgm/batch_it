@@ -4,7 +4,6 @@ VAR
   s3: BOOL;	//[input] Sensor Deklaration
   M: BOOL := 0;	//[output] Motor Deklaration
 END_VAR
-
 /*ODER-Verknuepfung von s1 und s2
  anschliessendes UND-Verknuepfung von Ergebnis
  mit negiertem s3.*/

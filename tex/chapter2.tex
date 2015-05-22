@@ -2,12 +2,8 @@
 
 \chapter{State of the Art} \label{chapter:stateoftheart}
 
-	% ##################################################################
-	% Definition Prozessen, für die späterer Verwendung der Worte 
-	% ##################################################################
-
 	\section{Konzeptionelle Planung einer Anlage}
-	Es ist gängige Praxis in der Anlagen- und Verfahrenstechnik, vor Realisierung der Anlage eine schematische Darstellung zu modellieren. Das \ac{RI} ist ein probates Mittel für die Erstellung eines vollständiges Abbildes. Die verwendeten Bauteile sind jedenfalls namentlich beschriftet, können aber auch zusätzliche Informationen, die zum Verständnis der Verwendung beitragen, beinhalten. Das beschriebene Schema unterliegt dem Standard DIN EN ISO 10628. Weitere Rohrleitungssymbole können der DIN 2429 entnommen werden.\\
+	Es ist gängige Praxis in der Anlagen- und Verfahrenstechnik, vor Realisierung der Anlage eine schematische Darstellung zu modellieren. Das \acf{RI} ist ein probates Mittel für die Erstellung eines vollständiges Abbildes. Die verwendeten Bauteile sind jedenfalls namentlich beschriftet, können aber auch zusätzliche Informationen, die zum Verständnis der Verwendung beitragen, beinhalten. Das beschriebene Schema unterliegt dem Standard DIN EN ISO 10628. Weitere Rohrleitungssymbole können der DIN 2429 entnommen werden.\\
 
 	Zur Anwendung kommt der beschriebene Arbeitsschritt beispielsweise bei einem Reaktor, welcher die hinreichende Bedingung \glqq Name \grqq \space und darüber hinaus fakultative Invarianten wie Anzahl und Lokalisation der Ein- und Ausgänge hat. Weiteres könnten auch Angaben zur Implementierung von Sensoren oder Aktoren vermerkt sein. Rohre werden im \ac{RI} als Verbindungslinien zwischen Bauteilen dargestellt. Detailinformationen wie Nenndruck, Rohrklasse oder Spezifikationsnummer können ergänzend vermerkt werden. Somit sind in einem \ac{RI} Apparate (Tanks, Speicherbehälter, Reaktoren, o. Ä.), Maschinen (Pumpen, Verdichter, o. Ä.) und Leitungen darstellbar.\\
 	
@@ -22,12 +18,13 @@
 
 	\newpage
 	\section{Definition eines Prozesses}
-	Ein Prozess ist dadurch definiert, welche Arbeitsschritte bewerkstelligt werden müssen, um als Ergebnis das gewünschte Produkt zu erlangen. Die Anforderungen beziehungsweise das Zielprodukt formt somit den Arbeitsprozess.
+	Ein Prozess ist dadurch definiert, welche Arbeitsschritte bewerkstelligt werden müssen, um als Ergebnis das gewünschte Produkt zu erlangen. Die Anforderungen beziehungsweise das Zielprodukt formt somit den Arbeitsprozess. Zu beachten ist, dass diese Verbindung unidirektional ist, da Produkte nicht auf Basis der Prozesse definiert werden (siehe Abbildung~\ref{fig:prozessdef}).
 	
 	\begin{figure}[h!]
   		\centering
 		\includegraphics[height=0.5\textwidth]{graphics/stateoftheart/Prozess.jpg}
 		\caption{Definition eines Prozess}
+	  	\label{fig:prozessdef}		
 	\end{figure}
 	
 	Laut der Norm \acs{DIN} \acs{IEC} 60050-351 ist ein Prozess wie folgt definiert:\\
@@ -51,7 +48,7 @@
 	Konträr zum diskreten Prozess steht der häufig bei der Stromerzeugung zum Einsatz kommende kontinuierliche Prozess. Hierbei gibt es keinerlei festgeschriebenen Anfangs- und Endzeitpunkt, was zur Folge hat, dass an jedem Ort immer die selben Zustände auftreten, wobei der Betrachtungszeitpunkt irrelevant ist. Bei diesen oft auch als stationär bezeichneten Prozessen wird etwa zu Beginn einer Produktionskette stets der selbe Zustand des Produkts auftreten. Dabei beschränkt sich die Verarbeitung auf formlose Stoffe, die Sand, Flüssigkeiten oder Ähnliches sein können. Es kommt lediglich zu einer stofflichen Veränderung, wie einer chemischen Reaktion oder dem Aufheizen beziehungsweise Mischen mit einer anderen Substanz.
 	
 	\subsection{Chargenprozess}
-	Bei der dritten und letzten Beschreibung handelt es sich um eine Art von Prozess, die teilweise Parallelen zu den diskreten und kontinuierlichen Prozesse aufweist. So wird abermals mit formlosen Materialien gearbeitet, welche ausschließlich stofflich verändert werden. Der ausschlaggebende Unterschied zu kontinuierlichen Prozessen ist jedoch, dass es klare Anfangs- und Endzeitpunkte während des Prozesses gibt. So hat etwa das Füllen eines Tanks ein eindeutiges Endergebnis, über das nicht folgenlos hinausgegangen werden kann.\\
+	Bei der dritten und letzten Beschreibung handelt es sich um eine Art von Prozess, die teilweise Parallelen zu diskreten und kontinuierlichen Prozessen aufweist. So wird abermals mit formlosen Materialien gearbeitet, welche ausschließlich stofflich verändert werden. Der ausschlaggebende Unterschied zu kontinuierlichen Prozessen ist jedoch, dass es klare Anfangs- und Endzeitpunkte während des Prozesses gibt. So hat etwa das Füllen eines Tanks ein eindeutiges Endergebnis, über das nicht folgenlos hinausgegangen werden kann.\\
 
 	Ableitbar aus den obigen Definitionen müssen Anlagen auf Basis spezifischer Prozesse geplant und erbaut werden. Die Anlage hat hingegen keinen Selbstzweck, sondern dient einzig und alleine nur dafür, einen oder mehrere Prozesse zu realisieren.\\
 
@@ -107,13 +104,14 @@
 		\item \textbf{A}usgeben der Soll-Werte an die Aktoren
 	\end{itemize}
 	
-	Die \ac{CPU} fragt anfangs nacheinander alle Eingangskanäle ab und legt anschließend die Daten in den Arbeitsspeicher - es entsteht das sogenannte \glqq Eingangsabbild\grqq. Hierbei handelt es sich jedoch nicht um die aktuellen, sondern um die zum Abtastzeitpunkt ausgelesenen Werte. Die erstellten Programme werden ausschließlich von der \ac{CPU} jeweils Schritt für Schritt abgearbeitet. Erst nach Abarbeitung \textbf{aller} Programme werden die im Ausgangsabbild abgelegten Sollwerte nacheinander an die Ausgangskanäle übertragen. \cite{mseitz_sps} \\ 
+	Die \ac{CPU} fragt anfangs nacheinander alle Eingangskanäle ab und legt anschließend die Daten in den Arbeitsspeicher - es entsteht das sogenannte \glqq Eingangsabbild\grqq. Hierbei handelt es sich jedoch nicht um die aktuellen, sondern um die zum Abtastzeitpunkt ausgelesenen Werte. Die erstellten Programme werden ausschließlich von der \ac{CPU} jeweils Schritt für Schritt abgearbeitet. Erst nach Abarbeitung \textbf{aller} Programme werden die im Ausgangsabbild abgelegten Sollwerte nacheinander an die Ausgangskanäle übertragen (siehe Abbildung~\ref{fig:eva}). \cite{mseitz_sps} \\ 
 		Kleinere \ac{SPS} - Hersteller versuchen ihre eigene spezifische Hardware möglichst kompatibel für fremde Software zu produzieren, um mit ihrem Produkt eine möglichst große Zielgruppe anzusprechen. Große Hersteller hingegen möchten ihr System eher geschlossen für den Zugriff mittels fremder Software halten, um die Kundenbindung auf den verschiedensten Ebenen der Automatisierungspyramide zu erhöhen.
 	
 	\begin{figure}[h!]
   		\centering
     	\includegraphics[width=1\textwidth]{graphics/stateoftheart/Signalverarbeitung_Selfmade.png}
   		\caption{Signalverarbeitung und Arbeitsweise einer \ac{SPS} \cite{mseitz_sps}}
+  		\label{fig:eva}
 	\end{figure}
 		
 	% ##############################################################
@@ -140,17 +138,17 @@
 	Ziel dieser Vielfalt ist es, eine Vereinheitlichung der Programmierung von \ac{SPS}en zu erreichen. Der Standard 61131 ist seit 1993 eingeführt und industriell etabliert. Mittlerweile schon in der dritten Edition verfügbar, und somit auch Objektorientierung unterstützend, sind die Programmiersprachen für zentrale und eng gekoppelte Systeme ausgelegt.
 	
 	\subsection{Anweisungsliste}
-	Diese textbasierte Programmiersprache nach der Norm \acs{IEC} \acs{DIN} \acs{EN} 61131-3 ist sehr maschinennahe. Vergleicht man die Anweisungsliste aus Abbildung~\ref{fig:Anweisungsliste} mit höheren Programmiersprachen der Informatik, so ist es eine Art Assemblersprache, die normalerweise 1:1 den jeweiligen Maschinencode übersetzt. Es werden die einzelnen Anweisungen in der Reihenfolge geschrieben, wie sie die Maschine (\ac{CPU}) abarbeiten soll (auch \glqq Stackorientierte Abarbeitung\grqq \space genannt). Ein großer Vorteil gegenüber allen grafischen Programmiersprachen ist die Tatsache, das AWL funktionell über diese hinausgeht, weil beispielsweise ein komplexer Zählvorgang mittels eines Kontaktplans nicht realisierbar sein könnte. \cite{spslehrgang_struktur, egroetsch_sps}
+	Diese textbasierte Programmiersprache nach der Norm \acs{IEC} \acs{DIN} \acs{EN} 61131-3 ist sehr maschinennahe. Vergleicht man die Anweisungsliste aus Listing \ref{lst:awl} mit höheren Programmiersprachen der Informatik, so ist es eine Art Assemblersprache, die normalerweise 1:1 den jeweiligen Maschinencode übersetzt. Es werden die einzelnen Anweisungen in der Reihenfolge geschrieben, wie sie die Maschine (\ac{CPU}) abarbeiten soll (auch \glqq Stackorientierte Abarbeitung\grqq \space genannt). Ein großer Vorteil gegenüber allen grafischen Programmiersprachen ist die Tatsache, das AWL funktionell über diese hinausgeht, weil beispielsweise ein komplexer Zählvorgang mittels eines Kontaktplans nicht realisierbar sein könnte. \cite{spslehrgang_struktur, egroetsch_sps}
 
-	\lstinputlisting[caption=Beispiel einer Anweisungsliste,style=ST]{extra/awl.txt}
+	\lstinputlisting[caption=Beispiel einer Anweisungsliste,label=lst:awl,style=ST]{extra/awl.txt}
 
 	\subsection{Strukturierter Text}
-	Diese anschließend angeführte Programmiersprache der Automatisierungstechnik orientiert sich an der Sprache Pascal, enthält aber neben dieser Sprache zugehörigen spezifischen Elementen aber auch noch \ac{SPS}-typische Elemente. Geeignet ist ST am vorteilhaftesten für Aufgaben mit mathematischem Hintergrund sowie zum Beschreiben komplexer Algorithmen. Auch für Rezept- und Datenverwaltung hebt sich diese Art der Programmierung durch enorme Vereinfachung vor. Typische Anweisungen für ST sind solche, die in höheren Sprachen durch Bedingungen oder Schleifen ausgeführt werden können \cite{grundlagen_automatisierungstechnik}
+	Diese anschließend angeführte Programmiersprache der Automatisierungstechnik orientiert sich an der Sprache Pascal, enthält aber neben dieser Sprache zugehörigen spezifischen Elementen aber auch noch \ac{SPS}-typische Elemente. Geeignet ist \ac{ST} am vorteilhaftesten für Aufgaben mit mathematischem Hintergrund sowie zum Beschreiben komplexer Algorithmen. Auch für Rezept- und Datenverwaltung hebt sich diese Art der Programmierung durch enorme Vereinfachung vor. Typische Anweisungen für ST sind solche, die in höheren Sprachen durch Bedingungen oder Schleifen ausgeführt werden können \cite{grundlagen_automatisierungstechnik}
 	
 	\lstinputlisting[caption=Beispiel eines Strukturierten Texts,style=ST]{extra/st.txt}
 	
 	\subsection{Ablaufsprache}
-	Eine Sonderstellung unter den Sprachen zur Programmierung einer \ac{SPS} nimmt die Ablaufsprache ein. Da die Inhalte dieser entweder grafisch oder textuell definiert werden, wird ein recht breit gefächertes Feld an Anwendern abgedeckt.\\
+	Eine Sonderstellung unter den Sprachen zur Programmierung einer \ac{SPS} nimmt die Ablaufsprache ein. Da die Inhalte dieser entweder grafisch (siehe Abbildung ~\ref{fig:as}) oder textuell (siehe Listing~\ref{lst:as}) definiert werden, wird ein recht breit gefächertes Feld an Anwendern abgedeckt.\\
 
 	Die eigentliche Programmierung verläuft mittels Schrittketten. Generell ist diese Art der Programmierung einer \ac{SPS} anderen Sprachen übergeordnet. Der oberste Programmablauf wird immer mittels Ablaufsprache beschrieben. Der eigentliche Programmaufbau erfolgt durch Schritte und Transitionen, die in einer gerichteten Ablaufkette zusammengefügt werden. Üblicherweise sind den Transitionen Schaltbedingungen, und den Schritten Aktionen zugeordnet. Voraussetzung für das Schalten in einen Schritt ist, dass der vorhergehende Schritt aktiv ist und die Transitionsbedingung erfüllt ist.\\
 
@@ -161,10 +159,10 @@
   		\label{fig:as}
 	\end{figure}
 	
-	\lstinputlisting[caption=Textuelles Beispiel der Ablaufsprache,style=ST]{extra/as.txt}
+	\lstinputlisting[caption=Textuelles Beispiel der Ablaufsprache,label=lst:as, style=ST]{extra/as.txt}
 	
 	\subsection{Kontaktplan}
-	Die Darstellungsart des Kontaktplans (siehe Abbildung~\ref{fig:kontaktplan}) ermöglicht \ac{SPS}-Programmierern ein Programm auf grafischer Ebene zu erstellen und darzustellen. Ein \ac{KOP} ist einem Stromlaufplan sehr ähnlich, um Programmieranfängern, die beispielsweise nur in der Elektronik tätig sind/waren und noch nie zuvor analytisch hinterfragten Code entwickelt haben, den Einstieg zu erleichtern. Es werden Elemente wie Spulen, Öffner/Schließer, Eingänge/Ausgänge, usw... verwendet, die zu logischen Blöcken zusammengefasst werden können und so einen Teil des gesamten Programms ergeben. Ein Nachteil dieser standardisierten Programmiersprache ist jedoch, dass es nicht für alle möglichen Operationen auch ein einheitliches Symbol in einem Stromlaufplan gibt. Das wiederum bedeutet, dass bei komplexen Steuerungen oft eine Mischung aus |\ac{KOP} und der \ac{FBS} verwendet wird.\\
+	Die Darstellungsart des Kontaktplans (siehe Abbildung~\ref{fig:kontaktplan}) ermöglicht \ac{SPS}-Programmierern ein Programm auf grafischer Ebene zu erstellen und darzustellen. Ein \ac{KOP} ist einem Stromlaufplan sehr ähnlich, um Programmieranfängern, die noch nie zuvor analytisch hinterfragten Code entwickelt haben, den Einstieg zu erleichtern. Es werden Elemente wie Spulen, Öffner/Schließer, Eingänge/Ausgänge, usw... verwendet, die zu logischen Blöcken zusammengefasst werden können und so einen Teil des gesamten Programms ergeben. Ein Nachteil dieser standardisierten Programmiersprache ist jedoch, dass es nicht für alle möglichen Operationen auch ein einheitliches Symbol in einem Stromlaufplan gibt. Das wiederum bedeutet, dass bei komplexen Steuerungen oft eine Mischung aus \ac{KOP} und der \ac{FBS} verwendet wird.\\
 
 	\begin{figure}[h!]
   		\centering
