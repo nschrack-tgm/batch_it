@@ -341,14 +341,14 @@ Das „NamedIndividual“ ist ein konkretes eingebautes Element der Anlage. Dies
 \subsection{Generierung der Datentypen}
 Die Datentypen entsprechen den Klassen in \ac{OWL}, sie bilden eine Objektstruktur durch die eine Variable dieses Typs angelegt werden kann. Zusätzlich zu den Klassen werden auch die in \ac{OWL} Datatype Properties genannten Ressourcen eingebracht werden, da diese die erforderliche Objektstruktur mit Subtypen genauer definieren.\\
 
-Um dies zu erreichen, werden erst alle Datatype Properties aus der Ontologie ausgelesen und dessen Name, wie auch Datentyp, mit der zugehörigen Klasse verbunden. Als Beispiel in Listing \ref{lst:dtprop} ersichtlich ist das Attribut \textbf{offstate} mit dem Datentyp \textbf{int} (für ganzzahlige Werte) für alle Elemente der Klasse \textbf{Active\_Element}.\\
+Um dies zu erreichen, werden erst alle Datatype Properties aus der Ontologie ausgelesen und dessen Name, wie auch Datentyp, mit der zugehörigen Klasse verbunden. Als Beispiel in Listing \ref{lst:dtprop} ist z.B. das Attribut \textbf{offstate} mit dem Datentyp \textbf{int} (für ganzzahlige Werte) für alle Elemente der Klasse \textbf{Active\_Element} ersichtlich.\\
 
 Da nach diesem Schritt alle Attribute verfügbar sind, können nun die Klassen angelegt werden. Um dies zu erreichen liest man alle Klassen aus der Ontologie aus und legt einen Datentyp für diese an. Listing \ref{lst:class} zeigt, dass das Element \textbf{Valve} eine Subklasse von \textbf{Active\_Element} ist, daher übernimmt es das Attribut \textbf{offstate} jedoch auch alle Attribute, die für \textbf{Valve} und \textbf{Main\_Part} registriert sind. Außerdem muss überprüft werden, ob das Element ein Main\_Part oder Active\_Element ist, da diese in der Ontologie als jene definiert sind, die über die Steuerung angesprochen werden können. Jedes Element bekommt zusätzlich noch das Attribut \textbf{value}, welches den aktuellen Wert anzeigen soll oder mit dem man den gewünschten Wert setzen kann.
 
 \subsection{Generierung der Variablen}
 Die für die Variablen wichtigen Elemente werden in \ac{OWL} als Named Individual abgebildet, welche also ausgelesen werden müssen um die Variablen anlegen zu können. Eine Voraussetzung um die Variablen anlegen zu können ist auch, dass die Datentypen bereits generiert wurden. In Listing \ref{lst:indiv} erkennt man, dass die Variable \textbf{V123} in mit drei Klassen in Verbindung steht: Valve, Main\_Part und Active\_Element). Also muss man um den Datentyp herauszufinden die Vererbungsstruktur dieser untersuchen, um das spezifischste zu finden. Durch die in Listing \ref{lst:class} ersichtliche Struktur der Klasse Valve kann man darauf schließen, dass Valve von Main\_Part und Active\_Element erbt, also ist dies die spezifischste Klasse. Das Named Individual enthält zusätzlich noch gesetzte Werte zu den Attributen, welche hier ausgelesen werden.\\
 
-Parallel zum Vorgang bei dem die Variablen an gelegt werden, wird auch ein \textbf{Init} und \textbf{Reset} Programm angelegt, das in \textbf{Structured Text} verfasst ist. Das Init-Programm wird einmal ausgeführt und initialisiert alle Attributwerte jeder Variable, es weist also alle in der Ontologie zugewiesenen Werte zu, damit das Programm diese dann zur Unterstützung des Ablaufs abfragen kann. Das Reset-Programm dient als eine Art Software gesteuertem Notausschalter, es werden alle aktiven Elemente in ihren passiven Zustand versetzt, sodass die Anlage ihre Arbeit beendet.
+Parallel zum Vorgang bei dem die Variablen angelegt werden, wird auch ein \textbf{Init} und \textbf{Reset} Programm angelegt, das in \textbf{Structured Text} verfasst ist. Das Init-Programm wird einmal ausgeführt und initialisiert alle Attributwerte jeder Variable. Es weist also alle in der Ontologie zugewiesenen Werte zu, damit das Programm diese dann zur Unterstützung des Ablaufs abfragen kann. Das Reset-Programm dient als eine Art Software gesteuertem Notausschalter, es werden alle aktiven Elemente in ihren passiven Zustand versetzt, sodass die Anlage ihre Arbeit beendet.
 
 \subsection{Aktivitätsdiagramm als \ac{XML}}
 Das Aktivitätsdiagramm wird als \ac{XML} exportiert. Diese \ac{XML} Datei ist auf dem Standard \ac{XMI} aufgebaut, in welchem der \ac{UML} Standard integriert ist.\\
@@ -378,8 +378,8 @@ Die Prozeduren werden als \ac{XML} Datei abgespeichert und können in zenon Logi
 
 \subsection{zenon Wizard}
 Die zenon Supervisor Software besteht aus einem integrierten Editor für C\#, der sich \ac{VSTA} nennt. In diesem ist außerdem das sogenannte WorkspaceAddin integriert, welches das eigentliche Programm ist, das die \ac{VSTA} Wizards startet.\\\\
-Der erste Schritt um einen zenon Wizard zu erstellen ist gewisse Methoden, die zenon benötigt um Informationen über den Wizard abzufragen, zu implementieren.
-\lstinputlisting[caption=Methoden um den Wizard zu beschreiben,style=csharp]{extra/wizard.txt}
+Der erste Schritt um einen zenon Wizard zu erstellen ist gewisse Methoden, die zenon benötigt um Informationen über den Wizard abzufragen, zu implementieren. Diese werden in Listing~\ref{lst:wizmeth} dargestellt und erklärt.
+\lstinputlisting[caption=Methoden um den Wizard zu beschreiben,style=csharp,label=lst:wizmeth]{extra/wizard.txt}
 
 Nachdem diese Werte gesetzt sind, kann der Wizard in zenon angezeigt werden.
 \begin{figure}[hbt!]
