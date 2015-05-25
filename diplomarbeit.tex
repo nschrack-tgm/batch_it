@@ -303,6 +303,10 @@
 %%-----------------------------------------------------------------------
 
 
+\markboth{\nomname}{\nomname}%
+\addcontentsline{toc}{chapter}{\numberline{}\nomname}%
+\printnomenclature
+
 \makeatletter
 \def\tableofcontents{\chapter*{\contentsname\@mkboth{\contentsname}{\contentsname}}
   \@starttoc{toc}}
@@ -310,13 +314,14 @@
 
 \clearpage%
 \tableofcontents
-\todo{Abbildungsverzeichnis falsch}
-\clearpage
+
+\addcontentsline{toc}{chapter}{\numberline{}Listings}%
+
 \listoffigures
 \clearpage
 \lstlistoflistings %\listoftables
 \clearpage 
-\chapter{Abkürzungsverzeichnis}
+\addcontentsline{toc}{chapter}{\numberline{}Abkürzungsverzeichnis}%
 \begin{acronym}
   \acro{SPS}{Speicherprogrammierbare Steuerung}
   \acro{KOP}{Kontaktplan}
@@ -354,10 +359,10 @@
 \clearpage%
 
 
-\include{tex/nomenclature}
-\markboth{\nomname}{\nomname}%
-\addcontentsline{toc}{chapter}{\numberline{}\nomname}%
-\printnomenclature
+%\include{tex/nomenclature}
+%\markboth{\nomname}{\nomname}%
+%\addcontentsline{toc}{chapter}{\numberline{}\nomname}%
+%\printnomenclature
 
 
 \mainmatter%   %% main part will be numbered in Arabic letter
