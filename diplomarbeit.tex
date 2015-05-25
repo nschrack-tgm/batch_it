@@ -23,7 +23,7 @@
 \usepackage{fancyhdr}
 \usepackage{subfigure}
 \usepackage[xindy, acronym, toc]{glossaries}
-\usepackage{cite}
+%\usepackage{cite}
 \usepackage{listings}
 \usepackage{color}
 \usepackage[dvipsnames]{xcolor}
@@ -35,6 +35,7 @@
 \usepackage{afterpage}
 \usepackage{eurosym}
 \usepackage{acronym}
+\usepackage[style=ieee,backend=bibtex]{biblatex}
 
 
 \input{tex/acronyms}
@@ -79,6 +80,8 @@
 \makenomenclature
 
 
+
+\addbibresource{tex/bib_file.bib}
 
 %%-----------------------------------------------------------------------
 % Makes Bibliography available in Winedt
@@ -399,15 +402,15 @@
 \cleardoublepage
 
 % IEEE Style
-\bibliographystyle{sty/IEEEtranS}
+%\bibliographystyle{sty/IEEEtranS}
 
 % GATHER
 %\input "bib_file.bib"
 \phantomsection{}
 \addcontentsline{toc}{chapter}{\bibname}
 \pagestyle{myheadings}\markboth{\bibname}{\bibname}
-%\bibliographystyle{unsrt}
-\bibliography{tex/bib_file}
+%\bibliography{tex/bib_file}
+\printbibliography
 
 %%% generate index
 %\clearpage%
