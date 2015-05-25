@@ -15,18 +15,16 @@ In diesem Kapitel wird jeder Schritt, der im Kreislauf von Abbildung~\ref{fig:ko
 Für eine Anlage gibt es gewisse Parameter, die beim konzeptionellen Entwurf beachtet werden müssen. Für die gestellten Anforderungen wie etwa funktionale Parallelität sowie für die zukünftig darauf aufbauenden Projekte ist es unentbehrlich, dass diverse Redundanzen vorhanden sind. Eine Voraussetzung ist jedenfalls eine Vielzahl an Hauptleitungen. Durch diese kann erst ermöglicht werden, zwei Arbeitsschritte parallel auszuführen. Das noch folgende Vorhaben, einen Wegfindungsalgorithmus zu integrieren, ist obendrein nur nutzbringend, wenn mehrere, durch die Redundanz gebotene Wege zur Auswahl stehen. Ebenso ist die Disponibilität von mehr als einer Pumpe eine essentielle Bedingung. Dadurch kann die Anlage bei der Eventualität eines Ausfalls einer Pumpe diese vollständig kompensieren. Die Ansteuerung jeder einzelnen Funktion muss somit stets von zumindest einer anderen Pumpe durchführbar sein. Zudem ist es vorgesehen, auf ausgewählten Routen die Steuerung mit Hilfe der Schwerkraft durchzuführen.\\
 
 %Ein Ziel der Anlage muss sein, eine möglichst hohe Effizienz mit der modellbasierten Entwicklung zu erreichen.\\
-
-
 \begin{figure}[h!]
 		\centering
 		\includegraphics[width=1\textwidth]{graphics/konzept/RI_K.png}
 		\caption{Konzept einer Anlage mit Redundanzen}
 \end{figure}
 \section{Informationskonzept}
-Die Informationen für die Codegenerierung benötigen einerseits einen Ontologie, zur Speicherung der Informationen der Produktionsanlagen, und andererseits ein Aktivitätsdiagramm. In diesem werden die gewünschten Prozeduren dargestellt, die später generiert werden sollen.
-Die beiden sind von einander abhängig, denn die Namen, der von in der Ontologie erstellen Identitäten (Datensätze), werden den Namen des Aktivitätsdiagramms zugeordnet.
-Mithilfe der Ontologie und des Aktivitätsdiagramms können die Informationen bereitgestellt werden, die für die Codegenerierung nötige sind.  
 
+Um eine Codegenerierung zu ermöglichen werden zwei Informationsquellen gebraucht. Einerseits einen Ontologie zur Speicherung der Informationen der Produktionsanlage und andererseits ein Aktivitätsdiagramm zur Darstellung der Prozeduren. 
+Die Daten der Ontologie werden über den Namen der erstellen Identitäten (Datensätze) den Daten des Aktivitätsdiagramm zugeordnet.
+Durch die Ontologie und dem Aktivitätsdiagramms werden die Informationen bereitgestellt, die für die Codegenerierung nötig sind.
 \subsection{Ontologie der Chargenprozessanlage}
 Hierbei handelt es sich um die Speicherung der Daten der Produktionsanlage in einer Ontologie. Je genauer diese abgebildet ist, desto mehr kann automatisch generiert werden. Wenn zum Beispiel Maximal- und Minimalwerte einfließen, können diese berücksichtigt werden.
 Eine Ontologie, die eine Chargenprozessanlage abbildet, kann folgendermaßen aussehen. 
@@ -34,9 +32,12 @@ Eine Ontologie, die eine Chargenprozessanlage abbildet, kann folgendermaßen aus
  \centering
   \includegraphics[width=0.6\textwidth]{graphics/stateoftheart/Ontology_Aufbau}
   \caption{Aufbau einer Ontologie}
+  \label{fig:konz_Aufbau_Ontologie}
 \end{figure}\\
 %Die Verbindungen zwischen den Klassen (In Abbildung 3.2. die Vierecke)
-Damit bei der Codegenerierung ein hoher Automatisierungsgrad  erreicht werden kann, müssen möglichst viele Daten abgespeichert werden. In einer Ontologie können unteranderem Klassen (Classes), Eigenschaften von Klassen (Object Properties) und Verbindungen zwischen Klassen (Data Properties) definiert werden. Dies wird sich zu Nutze gemacht um die Produktionsanlagen sehr genau abzubilden. Damit die Codegenerierung best möglich umgesetzt werden kann, werden folgende Daten einer Chargenprozessanlage gebraucht:
+In Abbildung~\ref{fig:konz_Aufbau_Ontologie} ist eine grafische Darstellung einer beispielhaften Ontologie einer Chargenprozessanlage zu sehen. Es wird zwischen „Active Element“, welches ein elektrisches Element beschreibt und „Main\_Part“ unterschieden. Unter „Main\_Part“ würden Elemente fallen die z.B. mit Rohren mit anderen Element verbunden sind.
+\\\\
+Damit bei der Codegenerierung ein hoher Automatisierungsgrad  erreicht werden kann, müssen möglichst viele Daten abgespeichert werden. In einer Ontologie können unteranderem Klassen (Classes), Eigenschaften von Klassen (Object Properties) und Verbindungen zwischen Klassen (Data Properties) definiert werden (siehe Kapitel 2.9.3 „Ontologie“). Dies wird sich zu Nutze gemacht um die Produktionsanlagen sehr genau abzubilden. Damit die Codegenerierung best möglich umgesetzt werden kann, werden folgende Daten einer Chargenprozessanlage gebraucht:
 
 \begin{itemize}
   \item Elektrische Elemente (Pumpe, Ventil, \ac{SPS})
@@ -74,3 +75,5 @@ Jede Prozedur wird durch einen Start- und Endpunkt definiert. Dazwischen werden 
 In Abbildung~\ref{fig:konz_UML_Activity} ist das erste Element der „Prozedur 1“ ein Tank (T1), gefolgt von der Öffnung zweier Ventile (V1, V2) und der Inbetriebnahme der Pumpe (P1). Danach ist die Messung des Durchflusssensor (DS1) gefolgt von der Öffnung weiterer Ventile (V3, V4) mit dem Ziel im Reaktor (R1). 
 Mithilfe einer solchen Folge kann der Ablauf einer Prozedur genau bestimmt werden, um bei der Codegenerierung diese erstellen zu können. 
 
+\section{Zusammenfassung}
+\todo{Zusammenfassung Kapitel 3}
