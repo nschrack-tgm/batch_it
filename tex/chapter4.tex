@@ -179,23 +179,23 @@ Phase 1 Steuerung mittels Buttons:\\
 	So konnten alle Funktionen umgesetzt werden, dadurch erhielt das  \glqq Bild\grqq\space  jedoch viele Elemente die von der Eigentlichen Visualisierung ablenkten.\\
 \\
 Phase 2 Versteckte Buttons:\\
-	Um den Element-Overload zu verringern war der nächste Schritt die Button zu  \glqq verstecken\grqq\space  indem sie Transparent über die eigentlichen Elementen (beispielsweise ein Ventil) verschoben wurden.\\
-	In der Visualisierung wurden nun weniger  \glqq unwichtige\grqq\space  Bausteine angezeigt, die Elemente waren jedoch immer noch da, wodurch die Größe (MB) der Visualisierung deutlich anstieg.\\
+	Um den Element-Overload zu verringern war der nächste Schritt die Buttons zu  \glqq verstecken\grqq\space  indem sie Transparent über die eigentlichen Elementen (beispielsweise ein Ventil) verschoben wurden.\\
+	In der Visualisierung wurden nun weniger  \glqq unwichtige\grqq\space  Bausteine angezeigt, die Elemente waren jedoch immer noch da, wodurch die Speichergröße der Visualisierung deutlich anstieg.\\
 \\
 Phase 3 Funktionale Elemente:\\
 	Der nächste schritt war es die nicht funktionalen Grafikelemente durch Buttons in Form der gewünschten Elemente zu ersetzten.\\
 \\
 
 \section{Ontologie}
-Nachdem die Evaluierung der wichtigsten Aspekte im Kapitel Ontologie der Chargenprozessanlage in Hinsicht auf eine automatisierte Codegenerierung durchgeführt wurden, behandelt dieses Kapitel den Werdegang der Ontologie vom Ersten bis hin zum Finalem Design.\\
+Nachdem die Evaluierung der wichtigsten Aspekte im Kapitel Ontologie der Chargenprozessanlage in Hinsicht auf eine automatisierte Codegenerierung durchgeführt wurden, behandelt dieses Kapitel den Werdegang der Ontologie vom Ersten bis hin zum finalem Design.\\
 \\
 Das Ziel der Ontologie ist es, die im laufe dieses Projekts aufgebaute Anlage in einer Art und Weise abbilden zu können, die es erlaubt daraus eine automatisierte Codegenerierung durchzuführen und dabei auf einem Abstraktionslevel zu bleiben um einen Großteil an in der Industrie vorkommenden Produktionsanlagen abbilden zu können.\\
 \\
 Da es den Rahmen dieser Arbeit sprengen würde, auf jeden einzelnen Gedankengang in der Erstellung der Ontologie einzugehen, werden nur die großen Revisionen der Ontologie genauer beschrieben.\\
 \\
-Zu aller erste werden alle Bauteile der Anlage in Kategorien eingeteilt.\\
-Tanks, Reaktoren und Pumpen sind die Hauptelemente dieser Anlage und werden deswegen auch in einer Gruppe zusammengefasst. Neben ihnen gibt es eine Gruppe an Bauteilen die etwas tun, hierzu gehören die Ventile, Sensoren, Heiz- und Rührstäbe. Die restlichen Elemente der Anlage sind Statische Objekte die einen Nutzen besitzen, jedoch keine Arbeit erledigen, daher fallen diese zusammen unter die Kategorie von Passiven Elementen. Zu diesem Zeitpunkt sind dies nur die Rohre.\\
-Eine Ausnahme dieser Gruppen ist die \ac{SPS} welche etwas tut, daher an sich in Kategorie 2 Fallen würde, aber nicht direkt Teil der Anlage ist und daher auch als einzelstehendes Objekt einen Platz in der Ontologie findet.
+Zu erst werden alle Bauteile der Anlage in Kategorien eingeteilt.\\
+Tanks, Reaktoren und Pumpen sind die Hauptelemente dieser Anlage und werden deswegen auch in einer Gruppe zusammengefasst. Neben ihnen gibt es eine Gruppe an Bauteilen die Arbeit verrichten, hierzu gehören die Ventile, Sensoren, Heiz- und Rührstäbe. Die restlichen Elemente der Anlage sind statische Objekte die einen Nutzen besitzen, jedoch keine Arbeit erledigen, daher fallen diese zusammen unter die Kategorie von Passiven Elementen. Zu diesem Zeitpunkt sind dies nur die Rohre.\\
+Eine Ausnahme dieser Gruppen ist die \ac{SPS} welche arbeitet, daher an sich in Kategorie 2 Fallen würde, aber nicht direkt Teil der Anlage ist und daher auch als einzelstehendes Objekt einen Platz in der Ontologie findet.
 
 \begin{figure}[hbt!]
   \centering
@@ -211,17 +211,18 @@ Main\_Part:\\
 	Dies sind alle Elemente die subjektiv als Hauptelemente bezeichnet werden.\\
 
 Active\_Element:\\
-	Jene Bauteile die etwas tun - Aktuatoren, Sensoren\\
+	Jene Bauteile die arbeit verrichten - Aktuatoren, Sensoren\\
 
 Passive\_Elements:\\
-	In der Anlage verbaute teile die keine Arbeit verrichten.\\ 
+	In der Anlage verbaute Teile die keine Arbeit verrichten.\\ 
 
 Connection:\\
 	Verbindungsarten zwischen den einzelnen Bauteilen\\
 \\
 Mit dieser Ontologie ist es grundsätzlich möglich die Anlage aus Kapitel 4.2 abzubilden, jedoch finden sich einige Inkonsistenzen die die automatisierte Codegenerierung erschweren wenn nicht sogar unmöglich machen würden.\\
+Ein Beispiel dafür wäre die Pumpe welche bei Main\_Part untergebracht ist. Jedoch wurde die Gruppe der \glqq Active\_Elements\grqq\space als Aktuatoren bestimmt. Dies hätte zur folge das eine automatisierte Codegenerierung für Aktuatoren in verschiedenen Plätzen suchen müsste.\\
 \\
-Nun wird die erste Version der Ontologie, in Hinsicht einer automatisierten Codegenerierung, evaluiert und dementsprechend umgebaut.\\
+Als nächstes wird die erste Version der Ontologie, in Hinsicht einer automatisierten Codegenerierung, evaluiert und dementsprechend umgebaut.\\
 Die Kategorien werden im nächsten Schritt genauer definiert um eine Konsistenz in die Ontologie zu bringen.\\
 \\
 Die definition von \glqq Active\_Element\grqq\space ist in Grunde richtig, nur beinhaltet diese die \ac{SPS} was nicht der Fall sein soll. Daher wird die Definition auf \glqq Elemente die mit einer \ac{SPS} (I/O) verbunden sind\grqq\space geändert. In diese Kategorie fallen nun die Elemente der Ersten Version ohne \ac{SPS} und auch die Pumpe hinein.\\
@@ -284,20 +285,20 @@ Dafür wurden die folgenden Data Properties erstellt:\\
 
 \section{Aktivitätsdiagramm}
 Im vorigem Kapitel wurde der Werdegang der für die Codegenerierung erstellten Ontologie genauer beschrieben. Um mit dieser nun auch Prozeduren automatisch generieren zu lassen, wird ein Diagram bzw. eine Aufzählung von den gewollten Prozeduren benötigt.\\
-Im Gegensatz zu der Erstellung der Ontologie ist das Design bzw. der Aufbau dieses Diagramms schon vor der Ersten Iteration klar definiert.\\
+Im Gegensatz zu der Erstellung der Ontologie ist das Design bzw. der Aufbau dieses Diagramms schon vor der ersten Iteration klar definiert.\\
 \\
-In diesem Projekt wird eine sehr vereinfachte Form eines Aktivitätsdiagramms verwendet, da mit diesen Diagrammen die benötigten Informationen übermittelt werden können.\\
+In diesem Projekt wird eine sehr vereinfachte Form eines Aktivitätsdiagramms verwendet, da mit diesen Diagrammen die benötigten Informationen (Namen, Abbruchbedingungen, etc.) übermittelt werden können.\\
 
 \begin{figure}[hbt!]
   \centering
   \includegraphics[width=0.7\textwidth]{graphics/konzept/UML_Activity}
-  \caption{Diagram 2er Prozeduren}
+  \caption{Diagram für zwei Prozeduren}
 \end{figure}
 Die wirkliche Aufgabe, bei diesem Diagramm, ist es herauszufinden welche Daten man zu den jeweiligen Elementen hinzufügen muss, um eine Codegenerierung bestmöglich durchführen zu können.\\
-Dies ist ein langwieriger Prozess der bis zur Fertigstellung der Codegenerierung andauert, da erst beim automatischem erstellen der Prozeduren klar wird, welche Informationen weiters hinzugefügt werden können, um das Ergebnis der Codegenerierung zu verbessern.\\
+Dies ist ein langwieriger Prozess der bis zur Fertigstellung der Codegenerierung andauert, da erst beim automatischem Erstellen der Prozeduren klar wird, welche Informationen weiters hinzugefügt werden können, um das Ergebnis der Codegenerierung zu verbessern.\\
 \\
-Um den generierten Prozeduren einen Namen geben zu können, befindet sich im Startknoten das Attribut \glqq name\grqq\space bei dem dieser definiert werden kann. Neben eben diesem befindet sich noch ein weiteres \glqq verstecktes Attribut\grqq\space , das die Abbruchbedingung der jeweiligen Prozedur angibt.\\
-In den einzelnen States, die jeweils ein Element der Anlage abbilden, befindet sich ein Attribut mit dem jeweiligem Wert der in der Prozedur für den jeweiligen Schritt benötigt wird. Beispielsweise bei den Ventilen (V1,V2,...) der Wert \glqq 1\grqq\space und bei der Pumpe ein Mittelwert der nach der Generierung vom Benutzer genauer definiert werden kann.\\
+Um den generierten Prozeduren einen Namen geben zu können, befindet sich im Startknoten das Attribut \glqq name\grqq\space bei dem dieser definiert werden kann. Neben diesem befindet sich noch ein weiteres \glqq verstecktes Attribut\grqq\space , das die Abbruchbedingung der jeweiligen Prozedur angibt.\\
+In den einzelnen Aktivitäten, die jeweils ein Element der Anlage abbilden, befindet sich ein Attribut mit dem jeweiligem Wert der in der Prozedur für den jeweiligen Schritt benötigt wird. Beispielsweise bei den Ventilen (V1,V2,...) der Wert \glqq 1\grqq\space und bei der Pumpe ein Mittelwert der nach der Generierung vom Benutzer genauer definiert werden kann.\\
 Abgeschlossen werden alle Prozeduren in dem Diagramm mit einem Endknoten, wie es in einem Vollständigem Aktivitätsdiagramm auch der Fall ist.\\
 
 \section{Codegenerierung}

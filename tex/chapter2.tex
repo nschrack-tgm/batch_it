@@ -325,8 +325,6 @@ Im HMI werden die gesammelten Daten der RTUs analysiert und daraus Prognosen bzw
 \subsection{HMI}
 Die Visualisierung einer Produktionsanlage ist ein wesentlicher Punkt der Datenverarbeitung und wird oft als Benachrichtigungszentrale benutzt. Meist werden in dieser mit geringer Verzögerung aktualisierte Statuswerte sowie Benachrichtigungen zu unerwarteten Ereignissen angezeigt. Die hierfür benötigten Daten müssen von der \ac{SPS} in die Visualisierungssoftware übermittelt werden. Da dies ein sehr aufwendiger Prozess ist, gibt es \ac{SCADA}-Systeme die all diese Funktionen vereinen.\\
 \\
-Für dieses Projekt wurde eine Umsetzung in der \ac{SCADA} Software zenon verlangt, daher wird im weiteren nur noch über die Visualisierung in zenon's HMI System, \textbf{zenon Supervisor}, gesprochen.\\
-\\
 
 \newpage
 
@@ -350,10 +348,13 @@ Einsatz findet \ac{XML} meist in Programmen oder Webseiten, die größere Mengen
 Doch auch wenn eine Person \ac{XML}-Dateien lesen kann, dauert es länger die Struktur eines Textes, im Vergleich zu einer grafischen Darstellung, zu verstehen.\\  
 Dafür gibt es andere Werkzeuge, die auf \ac{XML} basieren, aber eine grafische Darstellung erzeugen.
 \subsection{Ontologie}
-Eine Ontologie ist ein auf \ac{XML} basierendes Konstrukt, dass einem das Abbilden von Dingen und deren Relationen ermöglicht. Um solch komplexe Zustände darzustellen, stehen neben einfachen Entitäten (Dinge) auch Eigenschaften zur Verfügung.
-
-\glqq ... we have at least two parts to the overall philosophical project of ontology: first, say what there is, what exists, what the stuff is reality is made out off, secondly, say what the most general features and relations of these things are. \grqq \cite{ontology_stanford} \\
+Eine Ontologie ist ein auf \ac{XML} basierendes Konstrukt, dass einem das Abbilden von Dingen und deren Relationen ermöglicht. Um solch komplexe Zustände darzustellen, stehen neben einfachen Entitäten (Dinge) auch Eigenschaften zur Verfügung.\\
 \\
+Im Philosophischem Sinne von der Stanford Encyclopedia of Philosophy:\\
+\glqq ... we have at least two parts to the overall philosophical project of ontology: first, say what there is, what exists, what the stuff is reality is made out off, secondly, say what the most general features and relations of these things are.\grqq \cite{ontology_stanford} \\
+\\
+Definition einer Ontologie von Thomas Gruber:\\
+\glqq In the context of knowledge sharing, I use the term ontology to mean a specification of a conceptualization. That is, an ontology is a description (like a formal specification of a program) of the concepts and relationships that can exist for an agent or a community of agents.\grqq \cite{onto_def}\\
 
 \textbf{Allgemeiner Aufbau einer Ontologie}\\
 Das Modell an sich ohne zusätzliche Attribute oder Eigenschaften ist vom Aufbau her so zu erklären: Es gibt ein 'Thing', von dem alles aus geht, sozusagen ist das das root-Element bei \ac{XML}. Von diesem Punkt aus können weitere Entitäten abgeleitet werden, diesen Schritt kann als eine Vererbung gesehen werden. Die neu erstellte Entität ist immer noch ein Thing, jedoch genauer definiert. Es gibt keine Grenzen oder Vorschriften, in welche Tiefe diese Definition gehen muss. Daher kann dies für sehr komplexe aber auch simple Modelle eingesetzt werden.\\
@@ -399,19 +400,16 @@ Ein Aktivitätsdiagramm beschreibt das Verhalten von Systemen auf Grundlage von 
 
 \begin{figure}[hbt!]
  \centering
-  \includegraphics[width=0.8\textwidth]{graphics/stateoftheart/Activity_Elemente}
+  \includegraphics[width=0.6\textwidth]{graphics/stateoftheart/Activity_Elemente}
   \caption{Basis Elemente eines Aktivitätsdiagramm \cite{activity_list}}
 \end{figure}
 
-\glqq An Activity is a kind of Behavior that is specified as a graph of nodes interconnected by edges. A subset of the nodes are executable nodes that embody lower-level steps in the overall Activity. Object nodes hold data that is input to and output from executable nodes, and moves across object flow edges. Control nodes specify sequencing of executable nodes via control flow edges. Activities are essentially what are commonly called “control and data flow” models. Such models of computation are inherently concurrent, as any sequencing of activity node execution is modeled explicitly by activity edges, and no ordering is mandated for any computation not explicitly sequenced.\\Activities may describe procedural computation, forming hierarchies of Activities invoking other Activities, or, in an object- oriented model, they may be invoked indirectly as methods bound to Operations that are directly invoked. Activities may be applied to organizational modeling for business process engineering and workflow. In this context, events often originate from inside the system, such as the finishing of a task, but also from outside the system, such as a customer call. Activities can also be used for information system modeling to specify system level processes.\\
+\glqq An Activity is a kind of Behavior that is specified as a graph of nodes interconnected by edges. A subset of the nodes are executable nodes that embody lower-level steps in the overall Activity. Object nodes hold data that is input to and output from executable nodes, and moves across object flow edges. Control nodes specify sequencing of executable nodes via control flow edges. Activities are essentially what are commonly called “control and data flow” models. Such models of computation are inherently concurrent, as any sequencing of activity node execution is modeled explicitly by activity edges, and no ordering is mandated for any computation not explicitly sequenced.\\Activities may describe procedural computation, forming hierarchies of Activities invoking other Activities, or, in an object- oriented model, they may be invoked indirectly as methods bound to Operations that are directly invoked. Activities may be applied to organizational modeling for business process engineering and workflow. In this context, events often originate from inside the system, such as the finishing of a task, but also from outside the system, such as a customer call. Activities can also be used for information system modeling to specify system level processes.\grqq \cite{UML_def}\\
 \\
-\textbf{Activity Nodes}\\ActivityNodes are used to model the individual steps in the behavior specified by an Activity.\\
-\\
-\textbf{Activity Edges}\\An ActivityEdge is a directed connection between two ActivityNodes along which tokens may flow, from the source ActivityNode to the target ActivityNod.\grqq \cite{UML_def} \\
 
 \begin{figure}[hbt!]
  \centering
-  \includegraphics[width=0.9\textwidth]{graphics/stateoftheart/Activity_bsp}
+  \includegraphics[width=1\textwidth]{graphics/stateoftheart/Activity_bsp}
   \caption{Beispiel für ein Aktivitätsdiagramm \cite{activity_example}}
 \end{figure}
  
