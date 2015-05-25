@@ -302,26 +302,21 @@
 % Define Header for Content chapter
 %%-----------------------------------------------------------------------
 
-
-\markboth{\nomname}{\nomname}%
-\addcontentsline{toc}{chapter}{\numberline{}\nomname}%
-\printnomenclature
-
 \makeatletter
 \def\tableofcontents{\chapter*{\contentsname\@mkboth{\contentsname}{\contentsname}}
   \@starttoc{toc}}
 \makeatother
 
-\clearpage%
 \tableofcontents
 
+\printnomenclature
+\listoffigures
+\addcontentsline{toc}{chapter}{\numberline{}\nomname}%
+
+\lstlistoflistings %\listoftables
 \addcontentsline{toc}{chapter}{\numberline{}Listings}%
 
-\listoffigures
 \clearpage
-\lstlistoflistings %\listoftables
-\clearpage 
-\addcontentsline{toc}{chapter}{\numberline{}Abkürzungsverzeichnis}%
 \begin{acronym}
   \acro{SPS}{Speicherprogrammierbare Steuerung}
   \acro{KOP}{Kontaktplan}
@@ -348,9 +343,10 @@
   \acro{PLC}{Programmable Logic Controller}  
 \end{acronym}
 
+\addcontentsline{toc}{chapter}{\numberline{}Abkürzungsverzeichnis}%
+
 \clearpage
 \markboth{Contents}{Contents}
-
 
 %\addcontentsline{toc}{chapter}{\numberline{}\listfigurename}%
 %\listoffigures
