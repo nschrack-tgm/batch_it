@@ -11,7 +11,7 @@ Die zwei Pumpen sind so platziert, dass bei einem auftretenden Defekt die andere
   \caption{Mögliche Parallelität im \ac{RI}}
 \end{figure}
 
-Jedes Ventil hat eine vorteilhafte Durchflussrichtung, die meistens mit einem Pfeil direkt auf dem Bauteil gekennzeichnet ist. Ganz abgesehen davon, ob es sich um ein Ventil handelt, welches im stromlosen Zustand geschlossen ist oder ob es ein schließendes Ventil ist, diese Vorgabe sollte stets eingehalten werden. Aspekte wie dieser haben in die Modellierung der Anlage selbstverständlich eingebaut zu werden.\\
+Jedes Ventil hat eine vorteilhafte Durchflussrichtung, die meistens mit einem Pfeil direkt auf dem Bauteil gekennzeichnet ist. Ganz abgesehen davon, ob es sich um ein Ventil handelt, welches im stromlosen Zustand geschlossen ist oder ob es ein schließendes Ventil ist, diese Vorgabe sollte eingehalten werden. Aspekte wie dieser haben in die Modellierung der Anlage selbstverständlich eingebaut zu werden.\\
 
 \begin{figure}[h!]
   \centering
@@ -185,22 +185,14 @@ Sobald alle Variablen erstellt sind, werden diese mit der Feldbuskonfiguration v
 \section{Ontologie}
 Nachdem die Evaluierung der wichtigsten Aspekte im Kapitel Ontologie der Chargenprozessanlage in Hinsicht auf eine automatisierte Codegenerierung durchgeführt wurden, behandelt dieses Kapitel den Werdegang der Ontologie vom ersten bis hin zum finalen Design.\\
 \\
-Das Ziel der Ontologie ist es die aufgebaute Anlage in einer Art und Weise abbilden zu können, die es erlaubt eine automatisierte Codegenerierung durchzuführen. Dabei soll auf einem Abstraktionslevel geblieben werden, um einen Großteil von, in der Industrie vorkommenden, Produktionsanlagen abbilden zu können.\\
-\\
+Das Ziel der Ontologie ist es die aufgebaute Anlage in einer Art und Weise abbilden zu können, die es erlaubt eine automatisierte Codegenerierung durchzuführen. Dabei soll auf einem Abstraktionslevel geblieben werden, um einen Großteil von, in der Industrie vorkommenden, Produktionsanlagen abbilden zu können.
 Da es den Rahmen dieser Arbeit sprengen würde, auf jeden einzelnen Gedankengang in der Erstellung der Ontologie einzugehen, werden nur die großen Revisionen der Ontologie genauer beschrieben.\\
 \\
 Zu Beginn werden alle Bauteile der Anlage in Kategorien eingeteilt. Tanks, Reaktoren und Pumpen sind die Hauptelemente der Anlage und werden deswegen auch in einer Gruppe zusammengefasst. Neben ihnen gibt es eine Gruppe an Bauteilen die steuerbar sind, hierzu gehören die Ventile, Sensoren, Heiz- und Rührstäbe. Die restlichen Elemente der Anlage sind statische Objekte die einen Nutzen haben, jedoch keine Arbeit erledigen. Daher fallen diese unter die Kategorie von passiven Elementen. Zu diesem Zeitpunkt sind das nur die Rohre.\\
 
 Eine Ausnahme dieser Gruppen ist die \ac{SPS}, welche steuerbar ist und daher in Kategorie 2 fallen würde. Da sie aber nicht direkt Teil der Anlage ist, findet sie einen Platz als einzelstehendes Objekt in der Ontologie. Verbindungen zwischen zwei Klassen werden normalerweise mit einer Objekt Eigenschaft dargestellt. Da eine Verbindung zwischen zwei Bauteilen mehr Informationen als die Verbindung zwischen einer \ac{SPS} und einem Bauteil enthält, gibt es die Kategorie Connections mit den Klassen \glqq Weg” und \glqq IO”. \\
 
-Kurz zusammengefasst können die Kategorien wie folgt beschrieben werden\\
-
-\begin{figure}[hbt!]
-  \centering
-  \includegraphics[width=0.7\textwidth]{graphics/implementation/Ontology_v1}
-  \caption{Erste Version der Ontologie}
-\end{figure}
-
+Kurz zusammengefasst können die Kategorien wie folgt beschrieben werden.\\
 \textbf{Main\_Part:}\\
 	Alle Elemente die subjektiv als Hauptelemente bezeichnet werden können.\\
 
@@ -212,7 +204,13 @@ Kurz zusammengefasst können die Kategorien wie folgt beschrieben werden\\
 
 \textbf{Connection:}\\
 	Verbindungsarten zwischen den einzelnen Bauteilen.\\
-\\
+
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=0.7\textwidth]{graphics/implementation/Ontology_v1}
+  \caption{Erste Version der Ontologie}
+\end{figure}
+
 Mit dieser Ontologie ist es grundsätzlich möglich die Anlage aus Kapitel 4.2 abzubilden, jedoch finden sich einige Inkonsistenzen, die die automatisierte Codegenerierung erschweren wenn nicht sogar unmöglich machen würden.\\
 
 Ein Beispiel dafür wäre die Pumpe, welche bei \glqq Main\_Part\grqq\space untergebracht ist, obwohl die Gruppe der \glqq Active\_Elements\grqq\space als Aktuatoren bestimmt ist. Dies hätte zur Folge, dass bei einer automatisierte Codegenerierung für Aktuatoren in verschiedenen Plätzen gesucht werden müsste.\\
