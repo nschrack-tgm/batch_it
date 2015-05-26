@@ -301,7 +301,7 @@ Dies ist ein langwieriger Prozess der bis zur Fertigstellung der Codegenerierung
 Um den generierten Prozeduren einen Namen geben zu können, befindet sich im Startknoten das Attribut \glqq name\grqq\space bei dem dieser definiert werden kann. Neben diesem befindet sich noch ein weiteres \glqq verstecktes Attribut\grqq\space , das die Abbruchbedingung der jeweiligen Prozedur angibt.\\
 In den einzelnen Zuständen der Aktivität, die jeweils ein Element der Anlage abbilden, befindet sich ein Attribut mit dem Wert der in der Prozedur für diesen Schritt benötigt wird. Beispielsweise bei den Ventilen (V1,V2,...) der Wert \glqq 1\grqq\space und bei der Pumpe ein Mittelwert der nach der Generierung vom Benutzer genauer definiert werden kann.\\
 Abgeschlossen werden alle Prozeduren in dem Diagramm mit einem Endknoten, wie es in einem Vollständigem Aktivitätsdiagramm auch der Fall ist.\\
-
+\newpage
 \section{Codegenerierung}
 
 Die Codegenerierung könnte in unterschiedlichsten Sprachen erfolgen, jedoch können nur über Zenon Wizards auch direkte Eingriffe auf ein Zenon Projekt vorgenommen werden. Es gibt zwei Arten von Zenon Wizards, die sich durch die Benutzeroberfläche unterscheiden, aber auch mit verschiedenen in zenon integrierten Editoren erstellt werden. Die Editoren untersützen außerdem unterschiedliche Sprachen. Die verfügbaren Editoren sind \ac{VSTA} und \ac{VBA}.\\
@@ -313,7 +313,7 @@ Der erste wichtige Punkt ist es herauszufinden, wie weit die Prozeduren und Reze
 Um ein Element der Anlage im Programm abzubilden, werden einige Attribute benötigt, weshalb hier ein Strukturdatentyp erstellt wird. Dieser wird den Namen des Elements erhalten und alle in der Ontologie abgebildeten Attribute beinhalten.
 
 \lstinputlisting[caption=Anlegen eines Datentyps in zenon,style=csharp]{extra/createdatatype.txt}
-
+\newpage
 \subsection{Variable anlegen}
 Damit der aktuelle Zustand, sowie die weiteren Attribute jedes eingebauten Elements der Anlage, abgespeichert werden können, muss für eben jedes dieser eine eigene Variable angelegt werden. Eine Variable muss an einen Treiber angebunden werden, wobei die Auswahl durch den Benutzer über die Benutzerschnittstelle erfolgt. Damit die Variable global, also auch in Zenon Logic, erreichbar ist, muss sie in einem Namespace sein. Dies wird dadurch erreicht, dass vor dem Namen der Variable ein „Logic/Global/“ hinzugefügt wird, wobei Logic hier der Name des Zenon Logic Projekts ist. Da alle durch die Codegenerierung angelegten Variablen verwendet werden um Teile unserer \ac{SPS} anzusprechen, muss als Kanal der „SPSMerker“ angeben werden.
 \begin{figure}[hbt!]
@@ -328,7 +328,7 @@ Damit der aktuelle Zustand, sowie die weiteren Attribute jedes eingebauten Eleme
 Die Ontologie wird als \ac{XML} exportiert. Diese \ac{XML} Datei ist auf den Standards \ac{OWL} und \ac{RDF} aufgebaut, welche die Struktur und Aufteilung der abgebildeten Elemente vorgeben.\\
 
 \textbf{\ac{OWL}:}, \textbf{\ac{RDF}:}, \textbf{rdfs:} sowie \textbf{Facility:} und \textbf{\&Facility;} sind Namespaces, also für den Namen selber nicht relevant, sie grenzen nur den Gültigkeitsbereich der Namen ab.\\
-
+\newpage
 Wichtig für die Codegenerierung sind folgende Tags:\\
 
 \textbf{DatatypeProperty}\\
@@ -368,7 +368,7 @@ Der Pseudostate ist der Startknoten der Aktivität, hier wird außerdem als Attr
 \textbf{ActionState}\\
 Ein ActionState bildet ein Bauteil ab, das in der Prozedur verwendet wird. Es können beliebig viele ActionStates verwendet werden. Weiters muss bei jedem ActionState der Wert angegeben werden, auf den der IO des Bauteils gesetzt werden soll.\\
 \lstinputlisting[caption=XML Struktur des ActionState Tags,label=lst:action,style=XML]{extra/actionstate.xml}
-
+\newpage
 \textbf{FinalState}\\
 Der FinalState ist der Endknoten, er schließt die Aktivität ab. Falls nach dem FinalState ein weiterer Pseudostate folgt, bedeutet dies, dass eine weitere Aktivität beginnt.\\
 \lstinputlisting[caption=XML Struktur des FinalState Tags,label=lst:final,style=XML]{extra/finalstate.xml}
@@ -379,7 +379,7 @@ Um eine Grundlage für die Generierung der Prozeduren zu bilden, wird erst eine 
 Der Name der Prozedur und die Abbruchbedingung wird dem PseudoState entnommen (siehe Listing \ref{lst:pseudo}). Listing \ref{lst:action} zeigt, wie ein Bauteil in der Aktivität abgebildet ist, für jeden ActionState werden die in der Prozedur benötigten Befehle zusammengestellt, sodass bei Ausführung der Prozedur das entsprechende Signal an das Bauteil gesendet wird. Sobald der FinalState erreicht wird, ist eine Prozedur abgeschlossen (Listing \ref{lst:final}).\\
 
 Die Prozeduren werden als \ac{XML} Datei abgespeichert und können in zenon Logic importiert werden.
-
+\newpage
 \subsection{zenon Wizard}
 Die zenon Supervisor Software besteht aus einem integrierten Editor für C\#, der sich \ac{VSTA} nennt. In diesem ist außerdem das sogenannte WorkspaceAddin integriert, welches das eigentliche Programm ist, das die \ac{VSTA} Wizards startet.\\\\
 Der erste Schritt um einen zenon Wizard zu erstellen ist gewisse Methoden, die zenon benötigt um Informationen über den Wizard abzufragen, zu implementieren. Diese werden in Listing~\ref{lst:wizmeth} dargestellt und erklärt.
@@ -396,7 +396,7 @@ Nachdem diese Werte gesetzt sind, kann der Wizard in zenon angezeigt werden.
 
 \begin{figure}[hbt!]
   \centering
-  \includegraphics[width=0.9\textwidth]{graphics/implementation/wizard_final}
+  \includegraphics[width=0.8\textwidth]{graphics/implementation/wizard_final}
   \caption{Benutzeroberfläche für den Wizard}
 \end{figure}
 
