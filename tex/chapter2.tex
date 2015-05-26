@@ -329,8 +329,8 @@ Die Visualisierung einer Produktionsanlage ist ein wesentlicher Punkt der Datenv
 \newpage
 
 \section{Modellbasierte Entwicklung der Steuerung} \label{modellbasierte_entwicklung}
-Das Gebiet der modellbasierten Entwicklung bzw. der automatisierten Codegenerierung aus einem Modell als ganzes kann nicht als State of the Art erklärt werden, da sich dieser Ansatz zurzeit noch in der Forschung befindet.\\
-Allerdings können die einzelnen Gebiete dieser Entwicklung im heutigen Betrieb schon gefunden werden.
+Das Gebiet der modellbasierten Entwicklung bzw. der automatisierten Codegenerierung aus einem Modell ist zurzeit einer der dringlichsten Forschungsfragen.\\
+Eine Implementation zur Lösung dieser Frage wird in diesem Projekt entwickelt.
 \subsection{Modell}
 Ein Modell der gesamten Anlage wird schon im frühen Stadium der Entwicklung in Form eines \ac{RI} hergestellt, um klar zu definieren, welche Bauteile benötigt werden und welches mit welchem Bauteil verbunden ist. Dies ist nur das erste Modell das in der Industrie eingesetzt wird.\\
 \\
@@ -338,6 +338,8 @@ Oft werden aber mehr Informationen benötigt als im \ac{RI} ersichtlich sind, we
 Auf die gängigsten Methoden (\ac{XML}, Ontologie, \ac{UML}) wird in den nächsten Punkten genauer eingegangen.
 \subsection{\ac{XML}}
 \ac{XML} ist eine textbasierte Modellierungssprache bzw. Dateiformat, dass obwohl es für Dokumente gedacht ist, oft für das Abbilden von Daten Strukturen verwendet wird. \ac{XML} ist wie viele andere \glqq Markup-Languages\grqq\space tag basiert, jedoch mit dem großen Unterschied das die Tags nicht vordefiniert werden, sonder die Benutzer diese erstellen. Ein wichtiger Aspekt der erwähnt werden muss ist der, das die erstellten \ac{XML} Dateien keine eigene Funktion besitzen.\\
+\\
+\glqq Extensible Markup Language, abbreviated XML, describes a class of data objects called XML documents and partially describes the behavior of computer programs which process them.\grqq\cite{xml_ref}
 
 \newpage
 \lstinputlisting[style=XML,caption=\ac{XML} Beispiel Code]{extra/sample.xml}
