@@ -332,10 +332,6 @@ Im HMI werden die gesammelten Daten der RTUs analysiert und daraus Prognosen bzw
 \subsection{HMI}
 Die Visualisierung einer Produktionsanlage ist ein wesentlicher Punkt der Datenverarbeitung und wird oft als Benachrichtigungszentrale benutzt. Meist werden in dieser mit geringer Verzögerung aktualisierte Statuswerte sowie Benachrichtigungen zu unerwarteten Ereignissen angezeigt. Die hierfür benötigten Daten müssen von der \ac{SPS} in die Visualisierungssoftware übermittelt werden. Da dies ein sehr aufwendiger Prozess ist, gibt es \ac{SCADA}-Systeme die all diese Funktionen vereinen.\\
 \\
-Für dieses Projekt wurde eine Umsetzung in der \ac{SCADA} Software zenon verlangt, daher werden keine weiteren untersucht. zenon's HMI System, \textbf{zenon Supervisor}, steht daher im Vordergrund.\\
-\\
-
-\newpage
 
 \section{Modellbasierte Entwicklung der Steuerung} \label{modellbasierte_entwicklung}
 Das Gebiet der modellbasierten Entwicklung bzw. der automatisierten Codegenerierung aus einem Modell ist zurzeit eine der dringlichsten Forschungsfragen.\\
@@ -349,7 +345,6 @@ Auf die gängigsten Methoden (\ac{XML}, Ontologie, \ac{UML}) wird in den nächst
 \ac{XML} ist eine textbasierte Modellierungssprache bzw. Dateiformat, dass obwohl es für Dokumente gedacht ist, oft für das Abbilden von Daten Strukturen verwendet wird. \ac{XML} ist wie viele andere \glqq Markup-Languages\grqq\space tag basiert, jedoch mit dem großen Unterschied das die Tags nicht vordefiniert werden, sondern die Benutzer diese erstellen. Ein wichtiger Aspekt der erwähnt werden muss ist der, das die erstellten \ac{XML} Dateien keine eigene Funktion besitzen.\ac{XML} ist durch die XML 1.0 Specification des World Wide Web Consortiums definiert.\\
 \glqq Extensible Markup Language, abbreviated XML, describes a class of data objects called XML documents and partially describes the behavior of computer programs which process them.\grqq \cite{xml_ref}
 
-\newpage
 \lstinputlisting[style=XML,caption=\ac{XML} Beispiel Code]{extra/sample.xml}
 
 Der Aufbau einer \ac{XML} Datei ist leicht zu erklären: Es gibt 1 rootElement, dass den Anfang und das Ende des Inhaltes markiert. Zwischen dem Start- und Endtag befinden sich weitere Tags, die das Dokument oder die Struktur genauer beschreiben. Jeder Tag kann Attribute besitzen die es weiter definieren. Zwischen einem Start- und Endtag können sich entweder weitere Tags oder einfacher Text befinden.
