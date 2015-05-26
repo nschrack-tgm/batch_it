@@ -307,9 +307,9 @@ Ein Editor für \ac{VBA} ist in Zenon integriert.
 
 \section{Visualisierung von Produktionsanlagen}
 \subsection{\ac{SCADA}}
-Ein \ac{SCADA} System ist im Allgemeinen eine Sammelstelle für alle aus der Anlagen generierten Werte. Diese Daten müssen dann weiterverarbeitet werden um daraus Analysen zu erstellen.\\
-Zu den Elemente eines \ac{SCADA} Systems gehören:\\
-Ein \ac{SCADA} System besteht aus den folgenden 3 Teilen:
+Ein \ac{SCADA} System ist im Allgemeinen eine Sammelstelle für alle aus der Anlagen generierten Werte. Diese Daten müssen dann weiterverarbeitet werden um daraus Analysen zu erstellen.\\\\
+
+Ein \ac{SCADA} System besteht aus den folgenden 3 Teilen \cite{scada_system}:
 \begin{enumerate}
 	\item \ac{SCADA} Master Station Computer Systems
 	\item Remote Terminal Units (RTUs)
@@ -317,13 +317,13 @@ Ein \ac{SCADA} System besteht aus den folgenden 3 Teilen:
 \end{enumerate}
 
 \textbf{1. \ac{SCADA} Master Station Computer Systems}\\
-Dies ist die Sammelstelle für Echtzeitdaten, die von RTUs generiert werden. Meist sind diese Station herkömmliche Computer.\cite{scada_system} \\ 
+Dies ist die Sammelstelle für Echtzeitdaten, die von RTUs generiert werden. Meist sind diese Statiosn herkömmliche Computer.\\ 
 \\
 \textbf{2. Remote Terminal Units (RTUs)}\\
-Sensoren, die physikalische Änderungen in der Anlage mit einem Signalumformer in elektrische Werte umwandelt. Je nachdem was gemessen werden soll, entstehen analoge (Füllstand, Helligkeit, Druck, ...) oder digitale (z.B. Status eines Geräts) Werte.\cite{scada_system} \\
+Sensoren, die physikalische Änderungen in der Anlage mit einem Signalumformer in elektrische Werte umwandeln. Je nachdem was gemessen werden soll, entstehen analoge (Füllstand, Helligkeit, Druck, ...) oder digitale (Durchfluss, Ventil, ...) Werte.\\
 \\
-\textbf{3. Human-Machine Interface}\\
-Im HMI werden die gesammelten Daten der RTUs analysiert und daraus Prognosen bzw. Diagnosen Visuell aufbereitet, um den Anwender eine schnell erkennbare Anzeige zu bieten.\cite{scada_system}
+\textbf{3. Human-Machine Interface (HMI)}\\
+Im HMI werden die gesammelten Daten der RTUs analysiert und daraus Prognosen bzw. Diagnosen visuell aufbereitet, um dem Anwender eine schnell erkennbare Anzeige zu bieten.
 
 \subsection{HMI}
 Die Visualisierung einer Produktionsanlage ist ein wesentlicher Punkt der Datenverarbeitung und wird oft als Benachrichtigungszentrale benutzt. Meist werden in dieser mit geringer Verzögerung aktualisierte Statuswerte sowie Benachrichtigungen zu unerwarteten Ereignissen angezeigt. Die hierfür benötigten Daten müssen von der \ac{SPS} in die Visualisierungssoftware übermittelt werden. Da dies ein sehr aufwendiger Prozess ist, gibt es \ac{SCADA}-Systeme die all diese Funktionen vereinen.\\
@@ -331,26 +331,27 @@ Die Visualisierung einer Produktionsanlage ist ein wesentlicher Punkt der Datenv
 
 \section{Modellbasierte Entwicklung der Steuerung} \label{modellbasierte_entwicklung}
 Das Gebiet der modellbasierten Entwicklung bzw. der automatisierten Codegenerierung aus einem Modell ist zurzeit eine der dringlichsten Forschungsfragen.\\
-Eine Implementation zur Lösung dieser Frage wird in diesem Projekt entwickelt.
+Eine Implementierung zur Lösung dieser Frage wird in diesem Projekt entwickelt.
 \subsection{Modell}
-Ein Modell der gesamten Anlage wird schon im frühen Stadium der Entwicklung in Form eines \ac{RI} hergestellt, um klar zu definieren, welche Bauteile benötigt werden und welches mit welchem Bauteil verbunden ist. Dies ist nur das erste Modell das in der Industrie eingesetzt wird.\\
+Ein Modell der gesamten Anlage wird schon im frühen Stadium der Entwicklung in Form eines \ac{RI} hergestellt, um klar zu definieren, welche Bauteile benötigt werden und wie die Verbindungen zwischen den Bauteilen sind. Dies ist nur das erste Modell das in der Industrie eingesetzt wird.\\
 \\
 Oft werden aber mehr Informationen benötigt als im \ac{RI} ersichtlich sind, weswegen man auf eine andere Methode umsteigen muss ein Modell abzubilden.\\
 Auf die gängigsten Methoden (\ac{XML}, Ontologie, \ac{UML}) wird in den nächsten Punkten genauer eingegangen.
 \subsection{\ac{XML}}
-\ac{XML} ist eine textbasierte Modellierungssprache bzw. Dateiformat, dass obwohl es für Dokumente gedacht ist, oft für das Abbilden von Daten Strukturen verwendet wird. \ac{XML} ist wie viele andere \glqq Markup-Languages\grqq\space tag basiert, jedoch mit dem großen Unterschied das die Tags nicht vordefiniert werden, sondern die Benutzer diese erstellen. Ein wichtiger Aspekt der erwähnt werden muss ist der, das die erstellten \ac{XML} Dateien keine eigene Funktion besitzen.\ac{XML} ist durch die XML 1.0 Specification des World Wide Web Consortiums definiert.\\
-\glqq Extensible Markup Language, abbreviated XML, describes a class of data objects called XML documents and partially describes the behavior of computer programs which process them.\grqq \cite{xml_ref}
+\ac{XML} ist eine textbasierte Modellierungssprache, die obwohl sie für Dokumente gedacht ist, oft für das Abbilden von Datenstrukturen verwendet wird. \ac{XML} ist wie viele andere \glqq Markup-Languages\grqq\space tag-basiert, jedoch mit dem großen Unterschied das die Tags nicht vordefiniert werden, sondern die Benutzer diese erstellen. Ein wichtiger Aspekt der erwähnt werden muss, ist der, dass die erstellten \ac{XML} Dateien keine eigene Funktion besitzen.\ac{XML} ist durch die XML 1.0 Specification des World Wide Web Consortiums definiert.\\\\
+\glqq Extensible Markup Language, abbreviated XML, describes a class of data objects called XML documents and partially describes the behavior of computer programs which process them.\grqq\space\cite{xml_ref}
 
 \lstinputlisting[style=XML,caption=\ac{XML} Beispiel Code]{extra/sample.xml}
 
-Der Aufbau einer \ac{XML} Datei ist leicht zu erklären: Es gibt 1 rootElement, dass den Anfang und das Ende des Inhaltes markiert. Zwischen dem Start- und Endtag befinden sich weitere Tags, die das Dokument oder die Struktur genauer beschreiben. Jeder Tag kann Attribute besitzen die es weiter definieren. Zwischen einem Start- und Endtag können sich entweder weitere Tags oder einfacher Text befinden.
-\\
-Einsatz findet \ac{XML} meist in Programmen oder Webseiten, die größere Mengen an Daten bzw. Befehle Systemunabhängig übertragen sollen. Grund dafür ist unter anderem die Tatsache, dass Mensch und Maschine die Datei ohne Übersetzung bzw. Kompilieren lesen und verstehen kann.\\
-Doch auch wenn eine Person \ac{XML}-Dateien lesen kann, dauert es länger die Struktur eines Textes, im Vergleich zu einer grafischen Darstellung, zu verstehen.\\  
+Der Aufbau einer \ac{XML} Datei ist leicht zu erklären:\\
+Es gibt 1 root-Element, dass den Anfang und das Ende des Inhaltes markiert. Zwischen dem Start- und Endtag befinden sich weitere Tags, die das Dokument oder die Struktur genauer beschreiben. Jeder Tag kann Attribute besitzen die es weiter definieren. Zwischen einem Start- und Endtag können sich entweder weitere Tags oder einfacher Text befinden.
+\\\\
+Einsatz findet \ac{XML} meist in Programmen oder Webseiten, die größere Mengen an Daten bzw. Befehlen systemunabhängig übertragen sollen. Grund dafür ist unter anderem die Tatsache, dass Mensch und Maschine die Datei ohne Übersetzung bzw. Kompilieren lesen und verstehen kann. Doch auch wenn eine Person \ac{XML}-Dateien lesen kann, dauert es länger die Struktur eines Textes, im Vergleich zu einer grafischen Darstellung, zu verstehen.\\  
 Dafür gibt es andere Werkzeuge, die auf \ac{XML} basieren, aber eine grafische Darstellung erzeugen.
+
 \subsection{Ontologie}
-Eine Ontologie ist ein auf \ac{XML} basierendes Konstrukt, dass einem das Abbilden von Dingen und deren Relationen ermöglicht. Um solch komplexe Zustände darzustellen, stehen neben einfachen Entitäten (Dinge) auch Eigenschaften zur Verfügung.\\
-\\
+Eine Ontologie ist ein auf \ac{XML} basierendes Konstrukt, dass einem das Abbilden von Dingen und deren Relationen ermöglicht. Um solch komplexe Zustände darzustellen, stehen neben einfachen Entitäten (Dinge) auch Eigenschaften zur Verfügung.
+\newpage
 Im Philosophischem Sinne von der Stanford Encyclopedia of Philosophy:\\
 \glqq ... we have at least two parts to the overall philosophical project of ontology: first, say what there is, what exists, what the stuff is reality is made out off, secondly, say what the most general features and relations of these things are.\grqq \cite{ontology_stanford} \\
 \\
@@ -358,7 +359,8 @@ Definition einer Ontologie von Thomas Gruber:\\
 \glqq In the context of knowledge sharing, I use the term ontology to mean a specification of a conceptualization. That is, an ontology is a description (like a formal specification of a program) of the concepts and relationships that can exist for an agent or a community of agents.\grqq \cite{onto_def}\\
 
 \textbf{Allgemeiner Aufbau einer Ontologie}\\
-Das Modell an sich ohne zusätzliche Attribute oder Eigenschaften ist vom Aufbau her so zu erklären: Es gibt ein 'Thing', von dem alles aus geht, sozusagen ist das das root-Element bei \ac{XML}. Von diesem Punkt aus können weitere Entitäten abgeleitet werden, diesen Schritt kann als eine Vererbung gesehen werden. Die neu erstellte Entität ist immer noch ein Thing, jedoch genauer definiert. Es gibt keine Grenzen oder Vorschriften, in welche Tiefe diese Definition gehen muss. Daher kann dies für sehr komplexe aber auch simple Modelle eingesetzt werden.\\
+Das Modell an sich, ohne zusätzliche Attribute oder Eigenschaften, ist vom Aufbau her so zu erklären:\\
+Es gibt ein 'Thing', von dem alles aus geht, sozusagen ist das das root-Element bei \ac{XML}. Von diesem Punkt aus können weitere Entitäten abgeleitet werden. Dieser Schritt kann als eine Vererbung gesehen werden. Die neu erstellte Entität ist immer noch ein Thing, jedoch genauer definiert. Es gibt keine Grenzen oder Vorschriften, in welche Tiefe diese Definition gehen muss. Daher kann dies für sehr komplexe aber auch simple Modelle eingesetzt werden.\\
 
 \begin{figure}[hbt!]
   \centering
@@ -368,29 +370,29 @@ Das Modell an sich ohne zusätzliche Attribute oder Eigenschaften ist vom Aufbau
 \end{figure}
 
 Wie in Abbildung~\ref{fig:Ontology_Aufbau} erkennbar ist, erhält man so die Struktur des Modells, jedoch werden oft weitere Informationen zu den einzelnen Objekten/Entitäten benötigt, welche als Eigenschaften abgespeichert werden.\\
-Dies ermöglicht ein Modell aufzubauen, dass nicht nur die Struktur abbilden, sondern komplexe Netzwerke konstruieren kann.\\
+Dies ermöglicht es Modelle aufzubauen, die nicht nur die Struktur abbilden, sondern komplexe Netzwerke darstellen kann.\\
 \\
 \noindent \textbf{Objekt Eigenschaften}\\
-Objekt Eigenschaften werden benötigt um Relationen zwischen den einzelnen Objekten genauer zu beschreiben.\\
+Objekt Eigenschaften werden benötigt um Relationen (Verbindungen) zwischen den einzelnen Objekten genauer zu beschreiben.\\
 \\
 Allgemeine Definition:\\
 \textbf{Domain} -> \textbf{Name} -> \textbf{Range}\\
 KlasseA -> Eigenschaft -> KlasseB\\
 \\
-Ein Beispiel wäre eine Verknüpfung zwischen einem Tank und einer Pumpe und genau für diese Relationen gibt es Objekt Eigenschaften. Für diesen Zweck kann eine Eigenschaft mit dem Namen 'verbunden\_mit' erstellen und diese dann dem Tank beifügen. So ergibt sich die Relation:\\
+Ein Beispiel wäre eine Verknüpfung zwischen einem Tank und einer Pumpe und genau für diese Relationen gibt es Objekt Eigenschaften. Für diesen Zweck kann man eine Eigenschaft mit dem Namen 'verbunden\_mit' erstellen und diese dann dem Tank beifügen. So ergibt sich die Relation:\\
 \textbf{Tank -> verbunden\_mit -> Pumpe}
 \\
 \\
 \textbf{Daten Eigenschaften}\\
 Daten Eigenschaften werden benötigt um Objekte genauer zu beschreiben. 
 \\
-Beispiel für ein Modell einer Produktionsanlage ist es etwaige Sensoren im Modell einen Wertebereich festzulegen in welchem dieser arbeitet bzw. was für Werte dieser sammelt oder zurückgibt: Ein Füllstandsensor mit einem Wertebereich von 4-20V, wobei 4V=Leer und 20V=Voll bedeutet, kann in einer Ontologie mit wenigen Data Properties abgebildet werden.
+Beispiel an einem Modell einer Produktionsanlage ist es für etwaige Sensoren im Modell einen Wertebereich festzulegen in welchem dieser arbeitet bzw. welche Werte dieser sammelt oder zurückgibt: Ein Füllstandsensor mit einem Wertebereich von 4-20V, wobei 4V=Leer und 20V=Voll bedeutet, kann in einer Ontologie mit wenigen Data Properties abgebildet werden.
 
 \subsection{\ac{UML}}
 \ac{UML} ist, wie eine Ontologie, eine auf \ac{XML} basierte Modellierungssprache.
-Das Ziel von \ac{UML} ist es, System Architekten, Software Ingenieuren und Software Entwicklern ein Werkzeug zur Analyse, Design, Implementation von Softwarebasierenden Systemen, sowie für Modell Entwicklung und ähnliche Prozesse zu bieten.\\
+Das Ziel von \ac{UML} ist es, System Architekten, Software Ingenieuren und Software Entwicklern ein Werkzeug zur Analyse, zum Design und zur Implementierung von softwarebasierenden Systemen, sowie für die Entwicklung von Modellen und ähnlichen Prozessen zu bieten.\\
 \\
-Mit Hilfe von \ac{UML} können viele verschiedene Arten von Diagrammen erstellt werden, für dieses Projekt relevant ist jedoch nur das Aktivitätsdiagramm, daher wird im weiteren nur auf dieses genauer eingegangen.\\
+Mit Hilfe von \ac{UML} können viele verschiedene Arten von Diagrammen erstellt werden, für dieses Projekt relevant ist jedoch nur das Aktivitätsdiagramm. Daher wird im weiteren nur auf dieses genauer eingegangen.\\
 \\
 %\textbf{Klassendiagramm}\\
 %\\
