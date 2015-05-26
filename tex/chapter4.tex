@@ -209,7 +209,7 @@ Kurz zusammengefasst können die Kategorien wie folgt beschreiben werden\\
 	Alle Elemente die subjektiv als Hauptelemente bezeichnet werden können.\\
 
 \textbf{Active\_Element:}\\
-	Jene Bauteile die steuerbar sind. (Aktoren, Sensoren)\\
+	Jene Bauteile die steuerbar sind. (Aktuatoren, Sensoren)\\
 
 \textbf{Passive\_Elements:}\\
 	In der Anlage verbaute Teile, die keine Arbeit verrichten.\\ 
@@ -217,20 +217,20 @@ Kurz zusammengefasst können die Kategorien wie folgt beschreiben werden\\
 \textbf{Connection:}\\
 	Verbindungsarten zwischen den einzelnen Bauteilen.\\
 \\
-Mit dieser Ontologie ist es grundsätzlich möglich die Anlage aus Kapitel 4.2 abzubilden, jedoch finden sich einige Inkonsistenzen die die automatisierte Codegenerierung erschweren wenn nicht sogar unmöglich machen würden.\\
+Mit dieser Ontologie ist es grundsätzlich möglich die Anlage aus Kapitel 4.2 abzubilden, jedoch finden sich einige Inkonsistenzen, die die automatisierte Codegenerierung erschweren wenn nicht sogar unmöglich machen würden.\\
 
-Ein Beispiel dafür wäre die Pumpe welche bei Main\_Part untergebracht ist. Jedoch wurde die Gruppe der \glqq Active\_Elements\grqq\space als Aktuatoren bestimmt. Dies hätte zur folge das eine automatisierte Codegenerierung für Aktuatoren in verschiedenen Plätzen suchen müsste.\\
+Ein Beispiel dafür wäre die Pumpe, welche bei \glqq Main\_Part \grqq\space untergebracht ist. Jedoch wurde die Gruppe der \glqq Active\_Elements\grqq\space als Aktuatoren bestimmt. Dies hätte zur Folge, dass bei einer automatisierte Codegenerierung für Aktuatoren in verschiedenen Plätzen gesucht werden müsste.\\
 \\
-Als nächstes wird die erste Version der Ontologie, in Hinsicht einer automatisierten Codegenerierung, evaluiert und dementsprechend umgebaut.\\
+In Hinsicht einer automatisierten Codegenerierung wird die erste Version der Ontologie evaluiert und dementsprechend umgebaut.
 Die Kategorien werden im nächsten Schritt genauer definiert um eine Konsistenz in die Ontologie zu bringen.\\
 \\
-Die definition von \glqq Active\_Element\grqq\space ist in Grunde richtig, nur beinhaltet diese die \ac{SPS} was nicht der Fall sein soll. Daher wird die Definition auf \glqq Elemente die mit einer \ac{SPS} (I/O) verbunden sind\grqq\space geändert. In diese Kategorie fallen nun die Elemente der Ersten Version ohne \ac{SPS} und auch die Pumpe hinein.\\
+Die Definition von \glqq Active\_Element\grqq\space ist im Grunde richtig, allerdings ist die SPS in \glqq Active\_Element\grqq\space beinhaltet. Daher wird die Definition auf \glqq Elemente die mit einer \ac{SPS} (I/O) verbunden sind\grqq\space geändert. In diese Kategorie fallen nun die Elemente der ersten Version ohne \ac{SPS} und Pumpe hinein.\\
 \\
-Die nächste Kategorie die bearbeitet wird ist \glqq Main Part\grqq\space. Die Definition in dieser Gruppe ist noch sehr grob definiert und lässt eine Subjektive Gruppierung zu, daher muss die Definition von Grund auf geändert werden ohne Bauteile die zurzeit Enthalten sind auszuschließen. Die passende Interpretation ist \glqq Elemente mit mindestens 2 Ein bzw. Ausgängen\grqq\space. Durch diese Änderung fallen nun auch die Ventile in die Gruppe \glqq Main Part\grqq\space.\\
+Die nächste Kategorie ist \glqq Main Part\grqq. Die Definition dieser Gruppe ist sehr grob definiert und lässt eine subjektive Gruppierung zu, daher muss die Definition von Grund auf geändert werden. Die passende Interpretation ist \glqq Elemente mit mindestens zwei Ein bzw. Ausgängen\grqq. Durch diese Änderung fallen nun auch die Ventile in die Gruppe \glqq Main Part\grqq.\\
 \\
-Um Ein-/Ausgänge besser zu definieren wird die Gruppe \glqq Connection\grqq\space verändert. Die Klasse \glqq I/O\grqq\space wird heraus genommen da man diese genauer beschreiben muss. Dadurch enthält \glqq Connection\grqq\space nur noch Verbindungen zwischen Bauteilen, welche nur noch Ein-/Ausgänge sein können.\\
+Um Ein-/Ausgänge besser zu definieren wird die Gruppe \glqq Connection\grqq\space verändert. Die Klasse \glqq I/O\grqq\space wird heraus genommen, da man diese genauer beschreiben muss. Dadurch enthält \glqq Connection\grqq\space nur noch Verbindungen zwischen Bauteilen, welche Ein-/Ausgänge sein können.\\
 \\
-Die Kategorie \glqq Passive Element\grqq\space wird komplett entfernt da sie keine Relevanten Information enthält.
+Die Kategorie \glqq Passive Element\grqq\space wird komplett entfernt, da sie keine relevanten Information enthält.
 
 \begin{figure}[hbt!]
   \centering
@@ -239,8 +239,9 @@ Die Kategorie \glqq Passive Element\grqq\space wird komplett entfernt da sie kei
   \label{fig:v2_ontology}
 \end{figure}
 
-Von diesem Punkt aus wird die Ontologie nur noch verfeinert und nicht mehr großartig an der Struktur gearbeitet.\\
-Die Klasse \ac{SPS} wird, um Konsistenz in die Namen zu bringen, in die Englische Bezeichnung \ac{PLC} umbenannt. 
+Von diesem Punkt aus wird die Ontologie nur noch verfeinert und nicht mehr großartig an der Struktur gearbeitet.
+Die Klasse \ac{SPS} wird, um Konsistenz in die Namen zu bringen, in die englische Bezeichnung \ac{PLC} umbenannt. \\\\ 
+Die Änderungen, die von Abbildung \ref{fig:v2_ontology} hin zur finalen Version der Ontologie Abbildung \ref{fig:final_ontology} gemacht wurden, sind trivial. Dazu gehört das Entfernen der Subklasse \glqq Sensoren\grqq, um den Aufwand für die Codegenerierung zu verringern.\\
 
 \begin{figure}[hbt!]
   \centering
@@ -248,8 +249,6 @@ Die Klasse \ac{SPS} wird, um Konsistenz in die Namen zu bringen, in die Englisch
   \caption{Finale Version der Ontologie}
   \label{fig:final_ontology}
 \end{figure}
-Die Änderungen die von Abbildung \ref{fig:v2_ontology} hin zur Finalen Version der Ontologie Abbildung \ref{fig:final_ontology} begangen wurden sind Trivial. Dazu gehört das entfernen der Subklasse \glqq Sensoren \grqq\space, um den Aufwand für die Codegenerierung zu verringern.\\
-\\
 \begin{table}[h]
 \centering
 \begin{tabular}{l|l|l}
@@ -264,27 +263,26 @@ isConnectedTo & Connection      & Connection
 \end{table}
 \newpage
 \textbf{Object Properties}\\
-Nachdem die Klassenstruktur feststeht, müssen als nächstes die Relationen bestimmt werden. Mit Hilfe dieser Object Properties lassen sich alle Verbindungen zwischen den jeweiligen Elementen/Klassen abbilden.\\
+Nachdem die Klassenstruktur feststeht, müssen als nächstes die Relationen bestimmt werden. Mit Hilfe von Object Properties lassen sich alle Verbindungen zwischen den jeweiligen Elementen/Klassen abbilden.\\
 \\
 \textbf{Data Properties}\\
-Die Ontologie besteht nun aus Klassen und deren Relationen, nun muss sie mit Eigenschaften erweitert werden um eine Codegenerierung zu ermöglichen.\\
-\\
-Dafür wurden die folgenden Data Properties erstellt:\\
-\textbf{capacity: }Volumen/Füllmenge eines Tanks; Datentyp: int\\
+Die Ontologie besteht nun aus Klassen und deren Relationen, jetzt muss sie mit Eigenschaften erweitert werden, um eine Codegenerierung zu ermöglichen.
+Dafür wurden die folgenden Data Properties erstellt:\\\\
+\textbf{capacity: }Das Volumen bzw. die Füllmenge eines Tanks. Der Datentyp ist ein Integer.\\
 
 \textbf{direction: }Gibt die Richtung einer Connection an.\\
 
-\textbf{maximum: }Maximaler Wert mit dem das Element angesprochen werden kann, bzw. maximal wert den das Element zurück liefert.\\
+\textbf{maximum: }Der maximaler Wert mit dem das Element angesprochen werden kann, bzw. maximal Wert den das Element zurück liefert.\\
 
-\textbf{minimum: }Kleinster Wert mit dem das Element angesprochen werden kann, bzw. den das Element zurück liefert.\\
+\textbf{minimum: }Der kleinster Wert mit dem das Element angesprochen werden kann, bzw. minimal Wert den das Element zurück liefert.\\
 
 \textbf{offstate: }Signal bei dem das Element stoppt bzw. schließt.\\
 
-\textbf{signal: }1-Signal des Elements ist Digital; 2-Signal des Elements ist Analog.\\
+\textbf{signal: }Dies ist ein numerischer Wert, der entweder eins oder zwei sein kann. Eins steht dafür, dass das Element digital ist. Zwei steht dafür, dass das Element analog ist.\\
 
 \section{Aktivitätsdiagramm}
 
-Im vorigem Kapitel wurde der Werdegang der für die Codegenerierung erstellten Ontologie genauer beschrieben. Um mit dieser nun auch Prozeduren automatisch generieren zu lassen, wird ein Diagramm bzw. eine Aufzählung von den gewollten Prozeduren benötigt.\\
+Im vorigen Kapitel wurde der Werdegang der Ontologie genauer beschrieben. Um auch Prozeduren automatisch generieren zu lassen, wird ein Diagramm bzw. eine Aufzählung von den gewollten Prozeduren benötigt.\\
 Im Gegensatz zu der Erstellung der Ontologie ist das Design bzw. der Aufbau dieses Diagramms schon vor der ersten Iteration klar definiert.\\
 \\
 In diesem Projekt wird eine sehr vereinfachte Form eines Aktivitätsdiagramms verwendet, da mit diesen Diagrammen die benötigten Informationen (Namen, Abbruchbedingungen, etc.) übermittelt werden können.\\
@@ -294,12 +292,12 @@ In diesem Projekt wird eine sehr vereinfachte Form eines Aktivitätsdiagramms ve
   \includegraphics[width=0.7\textwidth]{graphics/konzept/UML_Activity}
   \caption{Diagramm für zwei Prozeduren}
 \end{figure}
-Die wirkliche Aufgabe, bei diesem Diagramm, ist es herauszufinden welche Daten man zu den jeweiligen Elementen hinzufügen muss, um eine Codegenerierung bestmöglich durchführen zu können.\\
-Dies ist ein langwieriger Prozess der bis zur Fertigstellung der Codegenerierung andauert, da erst beim automatischem Erstellen der Prozeduren klar wird, welche Informationen weiters hinzugefügt werden können, um das Ergebnis der Codegenerierung zu verbessern.\\
+Die wirkliche Aufgabe bei diesem Diagramm ist es herauszufinden, welche Daten man zu den jeweiligen Elementen hinzufügen muss, um eine Codegenerierung bestmöglich durchführen zu können.\\
+Dies ist ein langwieriger Prozess der bis zur Fertigstellung der Codegenerierung andauert, da erst beim automatischem Erstellen der Prozeduren klar wird, welche Informationen hinzugefügt werden können um das Ergebnis der Codegenerierung zu verbessern.\\
 \\
-Um den generierten Prozeduren einen Namen geben zu können, befindet sich im Startknoten das Attribut \glqq name\grqq\space bei dem dieser definiert werden kann. Neben diesem befindet sich noch ein weiteres \glqq verstecktes Attribut\grqq\space , das die Abbruchbedingung der jeweiligen Prozedur angibt.\\
+Um den generierten Prozeduren einen Namen geben zu können, befindet sich im Startknoten das Attribut \glqq name\grqq. Neben diesem befindet sich noch ein weiteres \glqq verstecktes Attribut\grqq, dass die Abbruchbedingung der jeweiligen Prozedur angibt.\\
 
-In den einzelnen Zuständen der Aktivität, die jeweils ein Element der Anlage abbilden, befindet sich ein Attribut mit dem Wert der in der Prozedur für diesen Schritt benötigt wird. Beispielsweise bei den Ventilen (V1,V2,...) der Wert \glqq 1\grqq\space und bei der Pumpe ein Mittelwert der nach der Generierung vom Benutzer genauer definiert werden kann. Abgeschlossen werden alle Prozeduren in dem Diagramm mit einem Endknoten, wie es in einem Vollständigem Aktivitätsdiagramm auch der Fall ist.\\
+In den einzelnen Zuständen der Aktivität, die jeweils ein Element der Anlage abbilden, befindet sich ein Attribut mit dem Wert, der in der Prozedur für diesen Schritt benötigt wird. Beispielsweise bei den Ventilen (V1,V2,...) der Wert \glqq 1\grqq\space und bei der Pumpe ein Mittelwert, der nach der Generierung vom Benutzer genauer definiert werden kann. Abgeschlossen werden alle Prozeduren in dem Diagramm mit einem Endknoten, wie es in einem vollständigen Aktivitätsdiagramm der Fall ist.\\
 \newpage
 \section{Codegenerierung}
 
