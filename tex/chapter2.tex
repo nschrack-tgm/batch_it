@@ -281,7 +281,7 @@ Das Steuerrezept selbst enthält nicht genügend Information, um die Anlage zu b
 
 \section{Zenon Wizard}
 Ein zenon Wizard ist ein Programm, das verwendet wird um, innerhalb der HMI SCADA Software zenon von COPA-DATA, projektspezifische Daten zu manipulieren, löschen oder erstellen. Dies kann mit oder ohne Benutzeroberfläche geschehen.\\\\
-Der zenon Supervisor enthält schon bei der Installation Wizards zum Importieren sowie auch Exportieren von in \ac{XML} gespeicherten Daten und zum Erzeugen von Variablen.\cite{zenprog}\\\\
+Der zenon Supervisor enthält schon bei der Installation mehrere Wizards zum Importieren sowie auch Exportieren von, in \ac{XML} gespeicherten, Daten und zum Erzeugen von Variablen.\cite{zenprog}\\\\
 Der Quellcode der mitgelieferten Wizards kann geöffnet und auch editiert werden.\\
 Zenon Wizards können mittels \ac{VSTA} oder \ac{VBA} erstellt werden. Als Beispiel zur Anwendung dieser wird in Listing~\ref{lst:vstavar} und Listing~\ref{lst:vbavar} ein Vergleich gezogen.\\\\
 Außerdem kann ein selbstgeschriebener Wizard leicht mit einer benutzerfreundlichen Oberfläche verbunden werden, die in Abbildung~\ref{fig:zenwiz} dargestellt wird.
@@ -307,9 +307,14 @@ Ein Editor für \ac{VBA} ist in Zenon integriert.
 
 \section{Visualisierung von Produktionsanlagen}
 \subsection{\ac{SCADA}}
+<<<<<<< Updated upstream
 Ein \ac{SCADA} System ist im Allgemeinen eine Sammelstelle für alle aus der Anlagen generierten Werte. Diese Daten müssen dann weiterverarbeitet werden um daraus Analysen zu erstellen.\\\\
 
 Ein \ac{SCADA} System besteht aus den folgenden 3 Teilen \cite{scada_system}:
+=======
+Ein \ac{SCADA} System ist im Allgemeinen eine Sammelstelle für alle, aus der Anlage generierten, Werte. Diese Daten müssen weiterverarbeitet werden um daraus Analysen zu erstellen.\\
+Ein \ac{SCADA} System besteht aus den folgenden 3 Teilen:
+>>>>>>> Stashed changes
 \begin{enumerate}
 	\item \ac{SCADA} Master Station Computer Systems
 	\item Remote Terminal Units (RTUs)
@@ -322,20 +327,23 @@ Dies ist die Sammelstelle für Echtzeitdaten, die von RTUs generiert werden. Mei
 \textbf{2. Remote Terminal Units (RTUs)}\\
 Sensoren, die physikalische Änderungen in der Anlage mit einem Signalumformer in elektrische Werte umwandeln. Je nachdem was gemessen werden soll, entstehen analoge (Füllstand, Helligkeit, Druck, ...) oder digitale (Durchfluss, Ventil, ...) Werte.\\
 \\
+<<<<<<< Updated upstream
 \textbf{3. Human-Machine Interface (HMI)}\\
 Im HMI werden die gesammelten Daten der RTUs analysiert und daraus Prognosen bzw. Diagnosen visuell aufbereitet, um dem Anwender eine schnell erkennbare Anzeige zu bieten.
+=======
+\textbf{3. Human-Machine Interface}\\
+Im HMI werden die gesammelten Daten der RTUs analysiert und daraus Prognosen bzw. Diagnosen visuell aufbereitet, um den Anwender eine schnell erkennbare Anzeige zu bieten.\cite{scada_system}
+>>>>>>> Stashed changes
 
 \subsection{HMI}
-Die Visualisierung einer Produktionsanlage ist ein wesentlicher Punkt der Datenverarbeitung und wird oft als Benachrichtigungszentrale benutzt. Meist werden in dieser mit geringer Verzögerung aktualisierte Statuswerte sowie Benachrichtigungen zu unerwarteten Ereignissen angezeigt. Die hierfür benötigten Daten müssen von der \ac{SPS} in die Visualisierungssoftware übermittelt werden. Da dies ein sehr aufwendiger Prozess ist, gibt es \ac{SCADA}-Systeme die all diese Funktionen vereinen.\\
-\\
-
+Die Visualisierung einer Produktionsanlage ist ein wesentlicher Punkt der Datenverarbeitung und wird oft als Benachrichtigungszentrale benutzt. Meist werden in dieser mit geringer Verzögerung aktualisierte Statuswerte sowie Benachrichtigungen zu unerwarteten Ereignissen angezeigt. Die hierfür benötigten Daten müssen von der \ac{SPS} in die Visualisierungssoftware übermittelt werden. Da dies ein sehr aufwendiger Prozess ist, gibt es \ac{SCADA}-Systeme die all diese Funktionen vereinen.
 \section{Modellbasierte Entwicklung der Steuerung} \label{modellbasierte_entwicklung}
 Das Gebiet der modellbasierten Entwicklung bzw. der automatisierten Codegenerierung aus einem Modell ist zurzeit eine der dringlichsten Forschungsfragen.\\
 Eine Implementierung zur Lösung dieser Frage wird in diesem Projekt entwickelt.
 \subsection{Modell}
 Ein Modell der gesamten Anlage wird schon im frühen Stadium der Entwicklung in Form eines \ac{RI} hergestellt, um klar zu definieren, welche Bauteile benötigt werden und wie die Verbindungen zwischen den Bauteilen sind. Dies ist nur das erste Modell das in der Industrie eingesetzt wird.\\
 \\
-Oft werden aber mehr Informationen benötigt als im \ac{RI} ersichtlich sind, weswegen man auf eine andere Methode umsteigen muss ein Modell abzubilden.\\
+Oft werden aber mehr Informationen benötigt als im \ac{RI} ersichtlich sind, weswegen man auf andere Methode umsteigen muss ein Modell zu erstellen.\\
 Auf die gängigsten Methoden (\ac{XML}, Ontologie, \ac{UML}) wird in den nächsten Punkten genauer eingegangen.
 \subsection{\ac{XML}}
 \ac{XML} ist eine textbasierte Modellierungssprache, die obwohl sie für Dokumente gedacht ist, oft für das Abbilden von Datenstrukturen verwendet wird. \ac{XML} ist wie viele andere \glqq Markup-Languages\grqq\space tag-basiert, jedoch mit dem großen Unterschied das die Tags nicht vordefiniert werden, sondern die Benutzer diese erstellen. Ein wichtiger Aspekt der erwähnt werden muss, ist der, dass die erstellten \ac{XML} Dateien keine eigene Funktion besitzen.\ac{XML} ist durch die XML 1.0 Specification des World Wide Web Consortiums definiert.\\\\
@@ -392,7 +400,7 @@ Beispiel an einem Modell einer Produktionsanlage ist es für etwaige Sensoren im
 \ac{UML} ist, wie eine Ontologie, eine auf \ac{XML} basierte Modellierungssprache.
 Das Ziel von \ac{UML} ist es, System Architekten, Software Ingenieuren und Software Entwicklern ein Werkzeug zur Analyse, zum Design und zur Implementierung von softwarebasierenden Systemen, sowie für die Entwicklung von Modellen und ähnlichen Prozessen zu bieten.\\
 \\
-Mit Hilfe von \ac{UML} können viele verschiedene Arten von Diagrammen erstellt werden, für dieses Projekt relevant ist jedoch nur das Aktivitätsdiagramm. Daher wird im weiteren nur auf dieses genauer eingegangen.\\
+Mit Hilfe von \ac{UML} können viele verschiedene Arten von Diagrammen erstellt werden, jedoch ist für dieses Projekt nur das Aktivitätsdiagramm relevant. Daher wird im Weiteren nur auf dieses genauer eingegangen.\\
 \\
 %\textbf{Klassendiagramm}\\
 %\\
