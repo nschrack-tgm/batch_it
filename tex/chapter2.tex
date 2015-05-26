@@ -231,19 +231,21 @@ In der Norm werden die vier Typen von Rezepten, die fünf Kategorien von Informa
 Es können unternehmensintern noch eigene Rezepttypen verwendet werden, falls die Definierten nicht alle benötigten Anforderungen abdecken, außerdem kann es sein, dass für ein Produkt mehrere Rezepte bestehen, wenn dieses zum Beispiel in verschiedenen Werken produziert wird und dadurch unterschiedliche Abläufe beinhaltet.\\
 
 \subsection{Rezepttypen}
-%Quelle EN 61522
+
+Die verschiedenen Rezepttypen enthalten unterschiedliche viele Informationen zu Produkt und Produktionsstätte.\\\\
+Die Verfahrens- und Werksrezepte beschreiben zum Beispiel nur das Prinzip, wie produziert wird während die Grund- und Steuerrezepte schon die wirklichen Betriebsmittel enthalten. Abbildung~\ref{fig:rezepttypen} soll eine Übersicht über Rezepttypen und deren Zusammenhänge bieten.
+\newpage
 \begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.6\textwidth]{graphics/stateoftheart/rezepttypen.png}
 		\caption{Zusammenhang der Rezepttypen \cite{en61512}}
+		\label{fig:rezepttypen}
 \end{figure}
-Die verschiedenen Rezepttypen enthalten unterschiedliche viele Informationen zu Produkt und Produktionsstätte.\\\\
-Die Verfahrens- und Werksrezepte beschreiben zum Beispiel nur das Prinzip, wie produziert wird während die Grund- und Steuerrezepte schon die wirklichen Betriebsmittel enthalten.
-\\\\
+
 \textbf{Verfahrensrezept}\\
 Das Verfahrensrezept ist ein Rezept auf Unternehmensebene, das als Grundlage für Rezepte auf niedrigeren Ebenen dient. Das Verfahrensrezept wird ohne spezifische Kenntnis der Anlagenausrüstung erstellt, die zur Herstellung des Produktes benutzt werden wird. Es bestimmt die Rohstoffe, ihre relativen Mengen und die erforderliche Verarbeitung, allerdings ohne Bezug zu einem bestimmten Werk oder der in diesem Werk verfügbaren Ausrüstung. Es wird von Personen mit Kenntnissen der Chemie und den Verarbeitungsanforderungen erstellt, die für das betreffende Produkt typisch sind, und gibt deren Interessen und Überlegungen wieder.\\\\
 Das Verfahrensrezept kann für die unternehmensweite Planung und für Investitionsentscheidungen benutzt werden. Es kann ein Teil von Produktionsvorgaben sein oder von solchen in Bezug genommen werden und kann als solches für die Produktionsplanung und zur Information von Kunden und Behörden verwendet werden.
-\\\\
+\newpage
 \textbf{Werksrezept}\\
 Das Werksrezept ist spezifisch für ein bestimmtes Werk. Es ist eine Kombination von werksspezifischer Information und dem Verfahrensrezept. Es wird gewöhnlich aus einem Verfahrensrezept abgeleitet, um die Bedingungen einer bestimmten Produktionsstätte zu erfüllen, und bietet einen für werksbezogene, langfristige Produktionsplanung erforderlichen Detaillierungsgrad.
 \\\\
@@ -252,8 +254,8 @@ Das Grundrezept ist die Rezeptstufe, die auf eine Anlage oder eine Gruppe von Ei
 Das Grundrezept ist eine unverzichtbare Rezeptstufe, da ohne es keine Steuerrezepte erzeugt und daher keine Chargen produziert werden können.
 \\\\
 \textbf{Steuerrezept}\\
-Das Steuerrezept entsteht als eine Kopie einer bestimmten Version des Grundrezeptes und wird anschließend wie erforderlich durch Informationen für Dispositionsplanung und Ausführung verändert, um spezifisch für eine einzelne Charge zu sein. Es enthält produktspezifische Prozessinformationen, wie sie zur Produktion einer bestimmten Charge erforderlich sind. Es bietet den Detaillierungsgrad, wie er zum Start und zur Überwachung der Einrichtungsprozedurobjekte einer Anlage erforderlich ist. Es kann verändert worden sein, um die tatsächlichen Rohstoffqualitäten und die tatsächlich eingesetzte Ausrüstung zu berücksichtigen. Die Auswahl von Teilanlagen und entsprechende Skalierung kann jederzeit durchgeführt werden, bevor diese Information benötigt wird. \cite{batchproc}\\
-
+Das Steuerrezept entsteht als eine Kopie einer bestimmten Version des Grundrezeptes und wird anschließend wie erforderlich durch Informationen für Dispositionsplanung und Ausführung verändert, um spezifisch für eine einzelne Charge zu sein. Es enthält produktspezifische Prozessinformationen, wie sie zur Produktion einer bestimmten Charge erforderlich sind. Es bietet den Detaillierungsgrad, wie er zum Start und zur Überwachung der Einrichtungsprozedurobjekte einer Anlage erforderlich ist. Es kann verändert worden sein, um die tatsächlichen Rohstoffqualitäten und die tatsächlich eingesetzte Ausrüstung zu berücksichtigen. Die Auswahl von Teilanlagen und entsprechende Skalierung kann jederzeit durchgeführt werden, bevor diese Information benötigt wird. \cite{batchproc}
+\newpage
 \subsection{Bestandteile des Rezeptes}
 
 \textbf{Rezeptkopf}\\
@@ -311,35 +313,39 @@ Ein Editor für \ac{VBA} ist in Zenon integriert.
 \subsection{\ac{SCADA}}
 Ein \ac{SCADA} System ist im Allgemeinen eine Sammelstelle für alle aus der Anlagen generierten Werte. Diese Daten müssen dann weiterverarbeitet werden um daraus Analysen zu erstellen.\\
 Zu den Elemente eines \ac{SCADA} Systems gehören:\\
-Ein \ac{SCADA} System besteht aus den folgenden 3 Teilen:\\
-\\
-\textbf{\ac{SCADA} Master Station Computer Systems}\\
+Ein \ac{SCADA} System besteht aus den folgenden 3 Teilen:
+\begin{enumerate}
+	\item \ac{SCADA} Master Station Computer Systems
+	\item Remote Terminal Units (RTUs)
+	\item Human-Machine Interface
+\end{enumerate}
+
+\textbf{1. \ac{SCADA} Master Station Computer Systems}\\
 Dies ist die Sammelstelle für Echtzeitdaten, die von RTUs generiert werden. Meist sind diese Station herkömmliche Computer.\cite{scada_system} \\ 
 \\
-\textbf{Remote Terminal Units (RTUs)}\\
+\textbf{2. Remote Terminal Units (RTUs)}\\
 Sensoren, die physikalische Änderungen in der Anlage mit einem Signalumformer in elektrische Werte umwandelt. Je nachdem was gemessen werden soll, entstehen analoge (Füllstand, Helligkeit, Druck, ...) oder digitale (z.B. Status eines Geräts) Werte.\cite{scada_system} \\
 \\
-\textbf{Human-Machine Interface}\\
+\textbf{3. Human-Machine Interface}\\
 Im HMI werden die gesammelten Daten der RTUs analysiert und daraus Prognosen bzw. Diagnosen Visuell aufbereitet, um den Anwender eine schnell erkennbare Anzeige zu bieten.\cite{scada_system}
 
 \subsection{HMI}
 Die Visualisierung einer Produktionsanlage ist ein wesentlicher Punkt der Datenverarbeitung und wird oft als Benachrichtigungszentrale benutzt. Meist werden in dieser mit geringer Verzögerung aktualisierte Statuswerte sowie Benachrichtigungen zu unerwarteten Ereignissen angezeigt. Die hierfür benötigten Daten müssen von der \ac{SPS} in die Visualisierungssoftware übermittelt werden. Da dies ein sehr aufwendiger Prozess ist, gibt es \ac{SCADA}-Systeme die all diese Funktionen vereinen.\\
 \\
-Für dieses Projekt wurde eine Umsetzung in der \ac{SCADA} Software zenon verlangt, daher wird im weiteren nur noch über die Visualisierung in zenon's HMI System, \textbf{zenon Supervisor}, gesprochen.\\
+Für dieses Projekt wurde eine Umsetzung in der \ac{SCADA} Software zenon verlangt, daher werden keine weiteren untersucht. zenon's HMI System, \textbf{zenon Supervisor}, steht daher im Vordergrund.\\
 \\
 
 \newpage
 
 \section{Modellbasierte Entwicklung der Steuerung} \label{modellbasierte_entwicklung}
-Das Gebiet der modellbasierten Entwicklung bzw. der automatisierten Codegenerierung aus einem Modell als ganzes kann nicht als State of the Art erklärt werden, da sich dieser Ansatz zurzeit noch in der Forschung befindet.\\
-Allerdings können die einzelnen Gebiete dieser Entwicklung im heutigen Betrieb schon gefunden werden.
+Das Gebiet der modellbasierten Entwicklung bzw. der automatisierten Codegenerierung aus einem Modell ist zur Zeit eine der dringlichsten Forschungsfragen.
 \subsection{Modell}
 Ein Modell der gesamten Anlage wird schon im frühen Stadium der Entwicklung in Form eines \ac{RI} hergestellt, um klar zu definieren, welche Bauteile benötigt werden und welches mit welchem Bauteil verbunden ist. Dies ist nur das erste Modell das in der Industrie eingesetzt wird.\\
 \\
 Oft werden aber mehr Informationen benötigt als im \ac{RI} ersichtlich sind, weswegen man auf eine andere Methode umsteigen muss ein Modell abzubilden.\\
 Auf die gängigsten Methoden (\ac{XML}, Ontologie, \ac{UML}) wird in den nächsten Punkten genauer eingegangen.
 \subsection{\ac{XML}}
-\ac{XML} ist eine textbasierte Modellierungssprache bzw. Dateiformat, dass obwohl es für Dokumente gedacht ist, oft für das Abbilden von Daten Strukturen verwendet wird. \ac{XML} ist wie viele andere \glqq Markup-Languages\grqq\space tag basiert, jedoch mit dem großen Unterschied das die Tags nicht vordefiniert werden, sonder die Benutzer diese erstellen. Ein wichtiger Aspekt der erwähnt werden muss ist der, das die erstellten \ac{XML} Dateien keine eigene Funktion besitzen.\\
+\ac{XML} ist eine textbasierte Modellierungssprache bzw. Dateiformat, dass obwohl es für Dokumente gedacht ist, oft für das Abbilden von Daten Strukturen verwendet wird. \ac{XML} ist wie viele andere \glqq Markup-Languages\grqq\space tag basiert, jedoch mit dem großen Unterschied das die Tags nicht vordefiniert werden, sondern die Benutzer diese erstellen. Ein wichtiger Aspekt der erwähnt werden muss ist der, das die erstellten \ac{XML} Dateien keine eigene Funktion besitzen.\ac{XML} ist durch die XML 1.0 Specification des World Wide Web Consortiums definiert.\\
 
 \newpage
 \lstinputlisting[style=XML,caption=\ac{XML} Beispiel Code]{extra/sample.xml}
