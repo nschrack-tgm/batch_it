@@ -179,8 +179,8 @@ Phase 1 Steuerung mittels Buttons:\\
 	So konnten alle Funktionen umgesetzt werden, dadurch erhielt das  \glqq Bild\grqq\space  jedoch viele Elemente die von der Eigentlichen Visualisierung ablenkten.\\
 \\
 Phase 2 Versteckte Buttons:\\
-	Um den Element-Overload zu verringern war der nächste Schritt die Button zu  \glqq verstecken\grqq\space  indem sie Transparent über die eigentlichen Elementen (beispielsweise ein Ventil) verschoben wurden.\\
-	In der Visualisierung wurden nun weniger  \glqq unwichtige\grqq\space  Bausteine angezeigt, die Elemente waren jedoch immer noch da, wodurch die Größe (MB) der Visualisierung deutlich anstieg.\\
+	Um den Element-Overload zu verringern war der nächste Schritt die Buttons zu  \glqq verstecken\grqq\space  indem sie Transparent über die eigentlichen Elementen (beispielsweise ein Ventil) verschoben wurden.\\
+	In der Visualisierung wurden nun weniger  \glqq unwichtige\grqq\space  Bausteine angezeigt, die Elemente waren jedoch immer noch da, wodurch die Speichergröße der Visualisierung deutlich anstieg.\\
 \\
 Phase 3 Funktionale Elemente:\\
 	Der nächste schritt war es die nicht funktionalen Grafikelemente durch Buttons in Form der gewünschten Elemente zu ersetzten.\\
@@ -220,8 +220,9 @@ Connection:\\
 	Verbindungsarten zwischen den einzelnen Bauteilen\\
 \\
 Mit dieser Ontologie ist es grundsätzlich möglich die Anlage aus Kapitel 4.2 abzubilden, jedoch finden sich einige Inkonsistenzen die die automatisierte Codegenerierung erschweren wenn nicht sogar unmöglich machen würden.\\
+Ein Beispiel dafür wäre die Pumpe welche bei Main\_Part untergebracht ist. Jedoch wurde die Gruppe der \glqq Active\_Elements\grqq\space als Aktuatoren bestimmt. Dies hätte zur folge das eine automatisierte Codegenerierung für Aktuatoren in verschiedenen Plätzen suchen müsste.\\
 \\
-Nun wird die erste Version der Ontologie, in Hinsicht einer automatisierten Codegenerierung, evaluiert und dementsprechend umgebaut.\\
+Als nächstes wird die erste Version der Ontologie, in Hinsicht einer automatisierten Codegenerierung, evaluiert und dementsprechend umgebaut.\\
 Die Kategorien werden im nächsten Schritt genauer definiert um eine Konsistenz in die Ontologie zu bringen.\\
 \\
 Die definition von \glqq Active\_Element\grqq\space ist in Grunde richtig, nur beinhaltet diese die \ac{SPS} was nicht der Fall sein soll. Daher wird die Definition auf \glqq Elemente die mit einer \ac{SPS} (I/O) verbunden sind\grqq\space geändert. In diese Kategorie fallen nun die Elemente der Ersten Version ohne \ac{SPS} und auch die Pumpe hinein.\\
@@ -283,10 +284,11 @@ Dafür wurden die folgenden Data Properties erstellt:\\
 \textbf{signal: }1-Signal des Elements ist Digital; 2-Signal des Elements ist Analog.\\
 
 \section{Aktivitätsdiagramm}
+
 Im vorigem Kapitel wurde der Werdegang der für die Codegenerierung erstellten Ontologie genauer beschrieben. Um mit dieser nun auch Prozeduren automatisch generieren zu lassen, wird ein Diagramm bzw. eine Aufzählung von den gewollten Prozeduren benötigt.\\
 Im Gegensatz zu der Erstellung der Ontologie ist das Design bzw. der Aufbau dieses Diagramms schon vor der ersten Iteration klar definiert.\\
 \\
-In diesem Projekt wird eine sehr vereinfachte Form eines Aktivitätsdiagramms verwendet, da mit diesen Diagrammen die für eine Prozedur, also der Steuerung eines Ablaufs, benötigten Informationen übermittelt werden können.\\
+In diesem Projekt wird eine sehr vereinfachte Form eines Aktivitätsdiagramms verwendet, da mit diesen Diagrammen die benötigten Informationen (Namen, Abbruchbedingungen, etc.) übermittelt werden können.\\
 
 \begin{figure}[hbt!]
   \centering
