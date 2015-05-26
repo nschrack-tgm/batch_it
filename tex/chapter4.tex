@@ -1,9 +1,9 @@
 % Chapter4
 \chapter{Implementierung} \label{chapter:thevetestcase}
 \section{Modellierung der Anlage}
-Für das Aufbauen einer Anlage, ist ein vorab überlegtes Konzept von großer Bedeutung. Mittels des \ac{RI} wird ein schematisches Abbild der Apparatur erstellt. Die in der Anfangsphase aufkommenden Änderungen ergeben sich angesichts der zeitlich bedingten, schrittweisen Implementierung der Anforderungen. Initial wird hoher Wert auf Redundanzen gelegt. Erst eine größere Anzahl an Bauteilen kann einen parallelen Ablauf mehrerer Arbeitsschritte ermöglichen. Durch die drei eingebauten Tanks und zwei Reaktoren, die mittels der drei Hauptleitungen verbunden sind, ist das Umfüllen zwischen zwei Tanks, sowie das gleichzeitige Befördern von Flüssigkeit vom dritten Tank in einen der Reaktoren möglich.\\
+Für das Aufbauen einer Anlage ist ein vorab überlegtes Konzept von großer Bedeutung. Mittels des \ac{RI} wird ein schematisches Abbild der Apparatur erstellt. Die anfangs aufkommenden Änderungen ergeben sich angesichts der zeitlich bedingten, schrittweisen Implementierung der Anforderungen. Initial wird hoher Wert auf Redundanzen gelegt. Erst eine größere Anzahl an Bauteilen kann einen parallelen Ablauf mehrerer Arbeitsschritte ermöglichen. Durch die drei eingebauten Tanks und zwei Reaktoren, die mittels der drei Hauptleitungen verbunden sind, ist das Umfüllen zwischen zwei Tanks, sowie das gleichzeitige Befördern von Flüssigkeit vom dritten Tank in einen der Reaktoren möglich.\\
 
-Die zwei Pumpen sind so platziert, dass bei einem eventuell auftretenden Defekt die andere Pumpe deren Aufgabe übernehmen kann. Arbeitsschritte können dadurch zwar nur noch sequentiell abgearbeitet werden, jedoch kommt es nicht gleich zu einem totalen Ausfall der Funktionalität der Anlage. Eine weitere Absicherung gegen möglich aufkommende Störfälle ist die Position der Tanks. Durch ihre Lokalisation an der höchsten Stelle der Apparatur besteht die Opportunität die Schwerkraft zu nutzen.\\
+Die zwei Pumpen sind so platziert, dass bei einem auftretenden Defekt die andere Pumpe deren Aufgabe übernehmen kann. Arbeitsschritte können dadurch zwar nur noch sequentiell abgearbeitet werden, jedoch kommt es nicht gleich zu einem totalen Ausfall der Funktionalität der Anlage. Eine weitere Absicherung gegen möglich aufkommende Störfälle ist die Position der Tanks. Durch ihre Lokalisation an der höchsten Stelle der Apparatur besteht die Opportunität die Schwerkraft zu nutzen.\\
 
 \begin{figure}[h!]
   \centering
@@ -193,9 +193,11 @@ Das Ziel der Ontologie ist es, die im laufe dieses Projekts aufgebaute Anlage in
 \\
 Da es den Rahmen dieser Arbeit sprengen würde, auf jeden einzelnen Gedankengang in der Erstellung der Ontologie einzugehen, werden nur die großen Revisionen der Ontologie genauer beschrieben.\\
 \\
-Zu aller erste werden alle Bauteile der Anlage in Kategorien eingeteilt.\\
-Tanks, Reaktoren und Pumpen sind die Hauptelemente dieser Anlage und werden deswegen auch in einer Gruppe zusammengefasst. Neben ihnen gibt es eine Gruppe an Bauteilen die steuerbar sind, hierzu gehören die Ventile, Sensoren, Heiz- und Rührstäbe. Die restlichen Elemente der Anlage sind statische Objekte die einen Nutzen besitzen, jedoch keine Arbeit erledigen, daher fallen diese zusammen unter die Kategorie von Passiven Elementen. Zu diesem Zeitpunkt sind dies nur die Rohre.\\
-Eine Ausnahme dieser Gruppen ist die \ac{SPS} welche steuerbar ist, daher an sich in Kategorie 2 Fallen würde, aber nicht direkt Teil der Anlage ist und daher auch als einzelstehendes Objekt einen Platz in der Ontologie findet.
+Zu Beginn werden alle Bauteile der Anlage in Kategorien eingeteilt. Tanks, Reaktoren und Pumpen sind die Hauptelemente der Anlage und werden deswegen auch in einer Gruppe zusammengefasst. Neben ihnen gibt es eine Gruppe an Bauteilen die steuerbar sind, hierzu gehören die Ventile, Sensoren, Heiz- und Rührstäbe. Die restlichen Elemente der Anlage sind statische Objekte die einen Nutzen haben, jedoch keine Arbeit erledigen. Daher fallen diese zusammen unter die Kategorie von passiven Elementen. Zu diesem Zeitpunkt sind das nur die Rohre.\\
+
+Eine Ausnahme dieser Gruppen ist die \ac{SPS}, welche steuerbar ist und daher in Kategorie 2 fallen würde. Da sie aber nicht direkt Teil der Anlage ist, findet sie einen Platz als einzelstehendes Objekt in der Ontologie. Verbindungen zwischen zwei Klassen werden normalerweise mit einer Objekt Eigenschaft dargestellt. Da eine Verbindung zwischen zwei Bauteilen mehr Informationen als die Verbindung zwischen einer \ac{SPS} und einem Bauteil enthält, gibt es die Kategorie Connections mit den Klassen “Weg” und “IO”. \\
+
+Kurz zusammengefasst können die Kategorien wie folgt beschreiben werden\\
 
 \begin{figure}[hbt!]
   \centering
@@ -203,23 +205,20 @@ Eine Ausnahme dieser Gruppen ist die \ac{SPS} welche steuerbar ist, daher an sic
   \caption{Erste Version der Ontologie}
 \end{figure}
 
-Verbindungen zwischen 2 Klassen werden normalerweise mit einer Objekt Eigenschaft dargestellt, da eine Verbindung zwischen 2 Bauteilen aber eine andere Information als die Verbindung zwischen einer \ac{SPS} und einem Bauteil enthält, gibt es die Kategorie Connections mit den Klassen “Weg” und “IO”.
+\textbf{Main\_Part:}\\
+	Alle Elemente die subjektiv als Hauptelemente bezeichnet werden können.\\
 
-Kurz zusammengefasst können die Kategorien wie folgt beschreiben werden\\
-\\
-Main\_Part:\\
-	Dies sind alle Elemente die subjektiv als Hauptelemente bezeichnet werden.\\
+\textbf{Active\_Element:}\\
+	Jene Bauteile die steuerbar sind. (Aktoren, Sensoren)\\
 
-Active\_Element:\\
-	Jene Bauteile die steuerbar sind - Aktuatoren, Sensoren\\
+\textbf{Passive\_Elements:}\\
+	In der Anlage verbaute Teile, die keine Arbeit verrichten.\\ 
 
-Passive\_Elements:\\
-	In der Anlage verbaute Teile die keine Arbeit verrichten.\\ 
-
-Connection:\\
-	Verbindungsarten zwischen den einzelnen Bauteilen\\
+\textbf{Connection:}\\
+	Verbindungsarten zwischen den einzelnen Bauteilen.\\
 \\
 Mit dieser Ontologie ist es grundsätzlich möglich die Anlage aus Kapitel 4.2 abzubilden, jedoch finden sich einige Inkonsistenzen die die automatisierte Codegenerierung erschweren wenn nicht sogar unmöglich machen würden.\\
+
 Ein Beispiel dafür wäre die Pumpe welche bei Main\_Part untergebracht ist. Jedoch wurde die Gruppe der \glqq Active\_Elements\grqq\space als Aktuatoren bestimmt. Dies hätte zur folge das eine automatisierte Codegenerierung für Aktuatoren in verschiedenen Plätzen suchen müsste.\\
 \\
 Als nächstes wird die erste Version der Ontologie, in Hinsicht einer automatisierten Codegenerierung, evaluiert und dementsprechend umgebaut.\\
@@ -251,8 +250,6 @@ Die Klasse \ac{SPS} wird, um Konsistenz in die Namen zu bringen, in die Englisch
 \end{figure}
 Die Änderungen die von Abbildung \ref{fig:v2_ontology} hin zur Finalen Version der Ontologie Abbildung \ref{fig:final_ontology} begangen wurden sind Trivial. Dazu gehört das entfernen der Subklasse \glqq Sensoren \grqq\space, um den Aufwand für die Codegenerierung zu verringern.\\
 \\
-\textbf{Object Properties}\\
-Nachdem die Klassenstruktur feststeht, müssen als nächstes die Relationen bestimmt werden.
 \begin{table}[h]
 \centering
 \begin{tabular}{l|l|l}
@@ -265,7 +262,9 @@ isIncludedTo  & Tank            & Active\_Element \\ \hline
 isConnectedTo & Connection      & Connection                            
 \end{tabular}
 \end{table}
-Mit Hilfe dieser Object Properties lassen sich alle Verbindungen zwischen den jeweiligen Elementen/Klassen abbilden.\\
+\newpage
+\textbf{Object Properties}\\
+Nachdem die Klassenstruktur feststeht, müssen als nächstes die Relationen bestimmt werden. Mit Hilfe dieser Object Properties lassen sich alle Verbindungen zwischen den jeweiligen Elementen/Klassen abbilden.\\
 \\
 \textbf{Data Properties}\\
 Die Ontologie besteht nun aus Klassen und deren Relationen, nun muss sie mit Eigenschaften erweitert werden um eine Codegenerierung zu ermöglichen.\\
@@ -299,8 +298,8 @@ Die wirkliche Aufgabe, bei diesem Diagramm, ist es herauszufinden welche Daten m
 Dies ist ein langwieriger Prozess der bis zur Fertigstellung der Codegenerierung andauert, da erst beim automatischem Erstellen der Prozeduren klar wird, welche Informationen weiters hinzugefügt werden können, um das Ergebnis der Codegenerierung zu verbessern.\\
 \\
 Um den generierten Prozeduren einen Namen geben zu können, befindet sich im Startknoten das Attribut \glqq name\grqq\space bei dem dieser definiert werden kann. Neben diesem befindet sich noch ein weiteres \glqq verstecktes Attribut\grqq\space , das die Abbruchbedingung der jeweiligen Prozedur angibt.\\
-In den einzelnen Zuständen der Aktivität, die jeweils ein Element der Anlage abbilden, befindet sich ein Attribut mit dem Wert der in der Prozedur für diesen Schritt benötigt wird. Beispielsweise bei den Ventilen (V1,V2,...) der Wert \glqq 1\grqq\space und bei der Pumpe ein Mittelwert der nach der Generierung vom Benutzer genauer definiert werden kann.\\
-Abgeschlossen werden alle Prozeduren in dem Diagramm mit einem Endknoten, wie es in einem Vollständigem Aktivitätsdiagramm auch der Fall ist.\\
+
+In den einzelnen Zuständen der Aktivität, die jeweils ein Element der Anlage abbilden, befindet sich ein Attribut mit dem Wert der in der Prozedur für diesen Schritt benötigt wird. Beispielsweise bei den Ventilen (V1,V2,...) der Wert \glqq 1\grqq\space und bei der Pumpe ein Mittelwert der nach der Generierung vom Benutzer genauer definiert werden kann. Abgeschlossen werden alle Prozeduren in dem Diagramm mit einem Endknoten, wie es in einem Vollständigem Aktivitätsdiagramm auch der Fall ist.\\
 \newpage
 \section{Codegenerierung}
 
