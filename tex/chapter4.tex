@@ -141,8 +141,7 @@ Für dieses Projekt wurde als SCADA System die Software zenon vorgegeben, daher 
 \\
 \textbf{Visualisierung}\\
 In zenon wird eine Visualisierung \glqq Bild\grqq\space  gennant. Dieses kann mit vorgefertigten Elementen erweitert werden. 
-
-Als Ausgangspunkt für die Visualisierung wurde das \ac{RI} zur Hand genommen. Aus diesem wurde die Anzahl der Elemente und die Grundstruktur übernommen. Als nächsten Schritt musste evaluiert werden, welche Inhalte des \ac{RI} für die Visualisierung relevant und welche Informationen nicht vorhanden waren.\\
+Als Ausgangspunkt der Visualisierung wurde das \ac{RI} zur Hand genommen. Aus diesem wurde die Anzahl der Elemente und die Grundstruktur übernommen. Als nächsten Schritt musste evaluiert werden, welche Inhalte des \ac{RI} für die Visualisierung relevant und welche Informationen nicht vorhanden waren.\\
 \begin{figure}[hbt!]
   \centering
   \includegraphics[width=1\textwidth]{graphics/implementation/Visualisierung}
@@ -161,7 +160,7 @@ Als ersten Schritt, um in Logic eine \ac{SPS} hinzuzufügen, muss im Unterpunkt 
 \end{figure}
 \\
 \textbf{Variablen}\\
-In zenon können auf mehrere Arten Variablen erstellt werden. Damit diese für die Visualisierung und von Logic sichtbar sind, müssen sie als Globale Variable definiert werden. Der einfachste Weg dafür ist es, im Logic Variablenfenster, über den Reiter  \glqq Globale Variablen\grqq, die Funktion \glqq Variable hinzufügen\grqq\space aufzurufen.\\
+In zenon können auf mehrere Arten Variablen erstellt werden. Damit diese für die Visualisierung und von Logic sichtbar sind, müssen sie als Globale Variable definiert werden. Der einfachste Weg dafür ist es im Logic Variablenfenster über den Reiter  \glqq Globale Variablen\grqq die Funktion \glqq Variable hinzufügen\grqq\space aufzurufen.\\
 \\
 Sobald alle Variablen erstellt sind, werden diese mit der Feldbuskonfiguration verknüpft. Durch diesen Schritt erhält man Zugang zu den an der \ac{SPS} angeschlossenen Bauteilen.
 
@@ -173,31 +172,28 @@ Sobald alle Variablen erstellt sind, werden diese mit der Feldbuskonfiguration v
 \end{figure}
 
 \textbf{Steuerung}\\
+	Der erste Versuch war es die Steuerung mittels einfachen Buttons umzusetzen. Es wurde meist die in zenon vorhandene Funktion  \glqq Sollwert absetzen\grqq\space verwendet, welche den Wert einer Variable ändert.\\
+	So konnten alle Funktionen umgesetzt werden, allerdings erhielt das \glqq Bild\grqq\space viele Elemente die von der eigentlichen Visualisierung ablenkten.\\
 \\
-Phase 1 Steuerung mittels Buttons:\\
-	Der erste Versuch war es die Steuerung mittels einfachen Buttons umzusetzen. Diese haben meist die in zenon vorhandene Funktion  \glqq Sollwert absetzen\grqq\space  verwendet, welche den Wert einer Variable ändert.\\
-	So konnten alle Funktionen umgesetzt werden, dadurch erhielt das  \glqq Bild\grqq\space  jedoch viele Elemente die von der Eigentlichen Visualisierung ablenkten.\\
-\\
-Phase 2 Versteckte Buttons:\\
 	Um den Element-Overload zu verringern war der nächste Schritt die Buttons zu  \glqq verstecken\grqq\space  indem sie Transparent über die eigentlichen Elementen (beispielsweise ein Ventil) verschoben wurden.\\
 	In der Visualisierung wurden nun weniger  \glqq unwichtige\grqq\space  Bausteine angezeigt, die Elemente waren jedoch immer noch da, wodurch die Speichergröße der Visualisierung deutlich anstieg.\\
 \\
-Phase 3 Funktionale Elemente:\\
-	Der nächste schritt war es die nicht funktionalen Grafikelemente durch Buttons in Form der gewünschten Elemente zu ersetzten.\\
+	Der nächste Schritt war es die nicht funktionalen Grafikelemente durch Buttons in Form der gewünschten Elemente zu ersetzten.\\
 \\
+\newpage
 
 \section{Ontologie}
-Nachdem die Evaluierung der wichtigsten Aspekte im Kapitel Ontologie der Chargenprozessanlage in Hinsicht auf eine automatisierte Codegenerierung durchgeführt wurden, behandelt dieses Kapitel den Werdegang der Ontologie vom Ersten bis hin zum finalem Design.\\
+Nachdem die Evaluierung der wichtigsten Aspekte im Kapitel Ontologie der Chargenprozessanlage in Hinsicht auf eine automatisierte Codegenerierung durchgeführt wurden, behandelt dieses Kapitel den Werdegang der Ontologie vom ersten bis hin zum finalen Design.\\
 \\
-Das Ziel der Ontologie ist es, die im laufe dieses Projekts aufgebaute Anlage in einer Art und Weise abbilden zu können, die es erlaubt daraus eine automatisierte Codegenerierung durchzuführen und dabei auf einem Abstraktionslevel zu bleiben um einen Großteil an in der Industrie vorkommenden Produktionsanlagen abbilden zu können.\\
+Das Ziel der Ontologie ist es die aufgebaute Anlage in einer Art und Weise abbilden zu können, die es erlaubt eine automatisierte Codegenerierung durchzuführen. Dabei soll auf einem Abstraktionslevel geblieben werden, um einen Großteil von, in der Industrie vorkommenden, Produktionsanlagen abbilden zu können.\\
 \\
 Da es den Rahmen dieser Arbeit sprengen würde, auf jeden einzelnen Gedankengang in der Erstellung der Ontologie einzugehen, werden nur die großen Revisionen der Ontologie genauer beschrieben.\\
 \\
-Zu Beginn werden alle Bauteile der Anlage in Kategorien eingeteilt. Tanks, Reaktoren und Pumpen sind die Hauptelemente der Anlage und werden deswegen auch in einer Gruppe zusammengefasst. Neben ihnen gibt es eine Gruppe an Bauteilen die steuerbar sind, hierzu gehören die Ventile, Sensoren, Heiz- und Rührstäbe. Die restlichen Elemente der Anlage sind statische Objekte die einen Nutzen haben, jedoch keine Arbeit erledigen. Daher fallen diese zusammen unter die Kategorie von passiven Elementen. Zu diesem Zeitpunkt sind das nur die Rohre.\\
+Zu Beginn werden alle Bauteile der Anlage in Kategorien eingeteilt. Tanks, Reaktoren und Pumpen sind die Hauptelemente der Anlage und werden deswegen auch in einer Gruppe zusammengefasst. Neben ihnen gibt es eine Gruppe an Bauteilen die steuerbar sind, hierzu gehören die Ventile, Sensoren, Heiz- und Rührstäbe. Die restlichen Elemente der Anlage sind statische Objekte die einen Nutzen haben, jedoch keine Arbeit erledigen. Daher fallen diese unter die Kategorie von passiven Elementen. Zu diesem Zeitpunkt sind das nur die Rohre.\\
 
-Eine Ausnahme dieser Gruppen ist die \ac{SPS}, welche steuerbar ist und daher in Kategorie 2 fallen würde. Da sie aber nicht direkt Teil der Anlage ist, findet sie einen Platz als einzelstehendes Objekt in der Ontologie. Verbindungen zwischen zwei Klassen werden normalerweise mit einer Objekt Eigenschaft dargestellt. Da eine Verbindung zwischen zwei Bauteilen mehr Informationen als die Verbindung zwischen einer \ac{SPS} und einem Bauteil enthält, gibt es die Kategorie Connections mit den Klassen “Weg” und “IO”. \\
+Eine Ausnahme dieser Gruppen ist die \ac{SPS}, welche steuerbar ist und daher in Kategorie 2 fallen würde. Da sie aber nicht direkt Teil der Anlage ist, findet sie einen Platz als einzelstehendes Objekt in der Ontologie. Verbindungen zwischen zwei Klassen werden normalerweise mit einer Objekt Eigenschaft dargestellt. Da eine Verbindung zwischen zwei Bauteilen mehr Informationen als die Verbindung zwischen einer \ac{SPS} und einem Bauteil enthält, gibt es die Kategorie Connections mit den Klassen \glqq Weg” und \glqq IO”. \\
 
-Kurz zusammengefasst können die Kategorien wie folgt beschreiben werden\\
+Kurz zusammengefasst können die Kategorien wie folgt beschrieben werden\\
 
 \begin{figure}[hbt!]
   \centering
@@ -219,7 +215,7 @@ Kurz zusammengefasst können die Kategorien wie folgt beschreiben werden\\
 \\
 Mit dieser Ontologie ist es grundsätzlich möglich die Anlage aus Kapitel 4.2 abzubilden, jedoch finden sich einige Inkonsistenzen, die die automatisierte Codegenerierung erschweren wenn nicht sogar unmöglich machen würden.\\
 
-Ein Beispiel dafür wäre die Pumpe, welche bei \glqq Main\_Part \grqq\space untergebracht ist. Jedoch wurde die Gruppe der \glqq Active\_Elements\grqq\space als Aktuatoren bestimmt. Dies hätte zur Folge, dass bei einer automatisierte Codegenerierung für Aktuatoren in verschiedenen Plätzen gesucht werden müsste.\\
+Ein Beispiel dafür wäre die Pumpe, welche bei \glqq Main\_Part\grqq\space untergebracht ist, obwohl die Gruppe der \glqq Active\_Elements\grqq\space als Aktuatoren bestimmt ist. Dies hätte zur Folge, dass bei einer automatisierte Codegenerierung für Aktuatoren in verschiedenen Plätzen gesucht werden müsste.\\
 \\
 In Hinsicht einer automatisierten Codegenerierung wird die erste Version der Ontologie evaluiert und dementsprechend umgebaut.
 Die Kategorien werden im nächsten Schritt genauer definiert um eine Konsistenz in die Ontologie zu bringen.\\
